@@ -34,38 +34,6 @@ CIMGUI_API void igEndPlot()
 {
     return ImGui::EndPlot();
 }
-CIMGUI_API void igSetNextPlotRange(float x_min,float x_max,float y_min,float y_max,ImGuiCond cond)
-{
-    return ImGui::SetNextPlotRange(x_min,x_max,y_min,y_max,cond);
-}
-CIMGUI_API void igSetNextPlotRangeX(float x_min,float x_max,ImGuiCond cond)
-{
-    return ImGui::SetNextPlotRangeX(x_min,x_max,cond);
-}
-CIMGUI_API void igSetNextPlotRangeY(float y_min,float y_max,ImGuiCond cond)
-{
-    return ImGui::SetNextPlotRangeY(y_min,y_max,cond);
-}
-CIMGUI_API bool igIsPlotHovered()
-{
-    return ImGui::IsPlotHovered();
-}
-CIMGUI_API void igGetPlotMousePos(ImVec2 *pOut)
-{
-    *pOut = ImGui::GetPlotMousePos();
-}
-CIMGUI_API ImPlotRange igGetPlotRange()
-{
-    return ImGui::GetPlotRange();
-}
-CIMGUI_API bool igIsPlotQueried()
-{
-    return ImGui::IsPlotQueried();
-}
-CIMGUI_API ImPlotRange igGetPlotQuery()
-{
-    return ImGui::GetPlotQuery();
-}
 CIMGUI_API void igPlotFloatPtrInt(const char* label_id,const float* values,int count,int offset,int stride)
 {
     return ImGui::Plot(label_id,values,count,offset,stride);
@@ -118,6 +86,26 @@ CIMGUI_API void igPlotLabel(const char* text,float x,float y,bool vertical,const
 {
     return ImGui::PlotLabel(text,x,y,vertical,pixel_offset);
 }
+CIMGUI_API bool igIsPlotHovered()
+{
+    return ImGui::IsPlotHovered();
+}
+CIMGUI_API void igGetPlotMousePos(ImVec2 *pOut)
+{
+    *pOut = ImGui::GetPlotMousePos();
+}
+CIMGUI_API ImPlotRange igGetPlotRange()
+{
+    return ImGui::GetPlotRange();
+}
+CIMGUI_API bool igIsPlotQueried()
+{
+    return ImGui::IsPlotQueried();
+}
+CIMGUI_API ImPlotRange igGetPlotQuery()
+{
+    return ImGui::GetPlotQuery();
+}
 CIMGUI_API ImPlotStyle* igGetPlotStyle()
 {
     return &ImGui::GetPlotStyle();
@@ -153,6 +141,42 @@ CIMGUI_API void igPushPlotStyleVarInt(ImPlotStyleVar idx,int val)
 CIMGUI_API void igPopPlotStyleVar(int count)
 {
     return ImGui::PopPlotStyleVar(count);
+}
+CIMGUI_API void igSetNextPlotRange(float x_min,float x_max,float y_min,float y_max,ImGuiCond cond)
+{
+    return ImGui::SetNextPlotRange(x_min,x_max,y_min,y_max,cond);
+}
+CIMGUI_API void igSetNextPlotRangeX(float x_min,float x_max,ImGuiCond cond)
+{
+    return ImGui::SetNextPlotRangeX(x_min,x_max,cond);
+}
+CIMGUI_API void igSetNextPlotRangeY(float y_min,float y_max,ImGuiCond cond)
+{
+    return ImGui::SetNextPlotRangeY(y_min,y_max,cond);
+}
+CIMGUI_API void igGetPlotPos(ImVec2 *pOut)
+{
+    *pOut = ImGui::GetPlotPos();
+}
+CIMGUI_API void igGetPlotSize(ImVec2 *pOut)
+{
+    *pOut = ImGui::GetPlotSize();
+}
+CIMGUI_API void igPixelsToPlot(ImVec2 *pOut,const ImVec2 pix)
+{
+    *pOut = ImGui::PixelsToPlot(pix);
+}
+CIMGUI_API void igPlotToPixels(ImVec2 *pOut,const ImVec2 plt)
+{
+    *pOut = ImGui::PlotToPixels(plt);
+}
+CIMGUI_API void igPushPlotClipRect()
+{
+    return ImGui::PushPlotClipRect();
+}
+CIMGUI_API void igPopPlotClipRect()
+{
+    return ImGui::PopPlotClipRect();
 }
 CIMGUI_API void igShowImPlotDemoWindow(bool* p_open)
 {

@@ -3,10 +3,6 @@ igPlotBarH	3
 1	void	igPlotBarHFloatPtrInt (const char*,const float*,int,float,float,int,int)
 2	void	igPlotBarHFloatPtrFloatPtr (const char*,const float*,const float*,int,float,int,int)
 3	void	igPlotBarHFnPtr (const char*,ImVec2(*)(void*,int),void*,int,float,int)
-igPlotBar	3
-1	void	igPlotBarFloatPtrInt (const char*,const float*,int,float,float,int,int)
-2	void	igPlotBarFloatPtrFloatPtr (const char*,const float*,const float*,int,float,int,int)
-3	void	igPlotBarFnPtr (const char*,ImVec2(*)(void*,int),void*,int,float,int)
 igPlot	3
 1	void	igPlotFloatPtrInt (const char*,const float*,int,int,int)
 2	void	igPlotFloatPtrFloatPtr (const char*,const float*,const float*,int,int,int)
@@ -21,4 +17,8 @@ igPushPlotStyleVar	2
 igPushPlotColor	2
 1	void	igPushPlotColorU32 (ImPlotCol,ImU32)
 2	void	igPushPlotColorVec4 (ImPlotCol,const ImVec4)
+igPlotBar	3
+1	void	igPlotBarFloatPtrInt (const char*,const float*,int,float,float,int,int)
+2	void	igPlotBarFloatPtrFloatPtr (const char*,const float*,const float*,int,float,int,int)
+3	void	igPlotBarFnPtr (const char*,ImVec2(*)(void*,int),void*,int,float,int)
 16 overloaded

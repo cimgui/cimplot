@@ -181,6 +181,28 @@
       "stname": ""
     }
   ],
+  "igGetPlotPos": [
+    {
+      "args": "(ImVec2 *pOut)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igGetPlotPos",
+      "defaults": [],
+      "funcname": "GetPlotPos",
+      "namespace": "ImGui",
+      "nonUDT": 1,
+      "ov_cimguiname": "igGetPlotPos",
+      "ret": "void",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
   "igGetPlotQuery": [
     {
       "args": "()",
@@ -209,6 +231,28 @@
       "namespace": "ImGui",
       "ov_cimguiname": "igGetPlotRange",
       "ret": "ImPlotRange",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "igGetPlotSize": [
+    {
+      "args": "(ImVec2 *pOut)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igGetPlotSize",
+      "defaults": [],
+      "funcname": "GetPlotSize",
+      "namespace": "ImGui",
+      "nonUDT": 1,
+      "ov_cimguiname": "igGetPlotSize",
+      "ret": "void",
       "signature": "()",
       "stname": ""
     }
@@ -259,6 +303,32 @@
       "ov_cimguiname": "igIsPlotQueried",
       "ret": "bool",
       "signature": "()",
+      "stname": ""
+    }
+  ],
+  "igPixelsToPlot": [
+    {
+      "args": "(ImVec2 *pOut,const ImVec2 pix)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        },
+        {
+          "name": "pix",
+          "type": "const ImVec2"
+        }
+      ],
+      "argsoriginal": "(const ImVec2& pix)",
+      "call_args": "(pix)",
+      "cimguiname": "igPixelsToPlot",
+      "defaults": [],
+      "funcname": "PixelsToPlot",
+      "namespace": "ImGui",
+      "nonUDT": 1,
+      "ov_cimguiname": "igPixelsToPlot",
+      "ret": "void",
+      "signature": "(const ImVec2)",
       "stname": ""
     }
   ],
@@ -838,6 +908,48 @@
       "stname": ""
     }
   ],
+  "igPlotToPixels": [
+    {
+      "args": "(ImVec2 *pOut,const ImVec2 plt)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        },
+        {
+          "name": "plt",
+          "type": "const ImVec2"
+        }
+      ],
+      "argsoriginal": "(const ImVec2& plt)",
+      "call_args": "(plt)",
+      "cimguiname": "igPlotToPixels",
+      "defaults": [],
+      "funcname": "PlotToPixels",
+      "namespace": "ImGui",
+      "nonUDT": 1,
+      "ov_cimguiname": "igPlotToPixels",
+      "ret": "void",
+      "signature": "(const ImVec2)",
+      "stname": ""
+    }
+  ],
+  "igPopPlotClipRect": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igPopPlotClipRect",
+      "defaults": [],
+      "funcname": "PopPlotClipRect",
+      "namespace": "ImGui",
+      "ov_cimguiname": "igPopPlotClipRect",
+      "ret": "void",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
   "igPopPlotColor": [
     {
       "args": "(int count)",
@@ -881,6 +993,22 @@
       "ov_cimguiname": "igPopPlotStyleVar",
       "ret": "void",
       "signature": "(int)",
+      "stname": ""
+    }
+  ],
+  "igPushPlotClipRect": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igPushPlotClipRect",
+      "defaults": [],
+      "funcname": "PushPlotClipRect",
+      "namespace": "ImGui",
+      "ov_cimguiname": "igPushPlotClipRect",
+      "ret": "void",
+      "signature": "()",
       "stname": ""
     }
   ],

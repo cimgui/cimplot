@@ -199,26 +199,31 @@
       },
       {
         "calc_value": 16,
-        "name": "ImPlotFlags_ContextMenu",
+        "name": "ImPlotFlags_PixelQuery",
         "value": "1 << 4"
       },
       {
         "calc_value": 32,
-        "name": "ImPlotFlags_Crosshairs",
+        "name": "ImPlotFlags_ContextMenu",
         "value": "1 << 5"
       },
       {
         "calc_value": 64,
-        "name": "ImPlotFlags_CullData",
+        "name": "ImPlotFlags_Crosshairs",
         "value": "1 << 6"
       },
       {
         "calc_value": 128,
-        "name": "ImPlotFlags_AntiAliased",
+        "name": "ImPlotFlags_CullData",
         "value": "1 << 7"
       },
       {
-        "calc_value": 95,
+        "calc_value": 256,
+        "name": "ImPlotFlags_AntiAliased",
+        "value": "1 << 8"
+      },
+      {
+        "calc_value": 175,
         "name": "ImPlotFlags_Default",
         "value": "ImPlotFlags_MousePos | ImPlotFlags_Legend | ImPlotFlags_Highlight | ImPlotFlags_Selection | ImPlotFlags_ContextMenu | ImPlotFlags_CullData"
       }

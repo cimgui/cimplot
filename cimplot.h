@@ -54,10 +54,11 @@ typedef enum {
     ImPlotFlags_Legend = 1 << 1,
     ImPlotFlags_Highlight = 1 << 2,
     ImPlotFlags_Selection = 1 << 3,
-    ImPlotFlags_ContextMenu = 1 << 4,
-    ImPlotFlags_Crosshairs = 1 << 5,
-    ImPlotFlags_CullData = 1 << 6,
-    ImPlotFlags_AntiAliased = 1 << 7,
+    ImPlotFlags_PixelQuery = 1 << 4,
+    ImPlotFlags_ContextMenu = 1 << 5,
+    ImPlotFlags_Crosshairs = 1 << 6,
+    ImPlotFlags_CullData = 1 << 7,
+    ImPlotFlags_AntiAliased = 1 << 8,
     ImPlotFlags_Default = ImPlotFlags_MousePos | ImPlotFlags_Legend | ImPlotFlags_Highlight | ImPlotFlags_Selection | ImPlotFlags_ContextMenu | ImPlotFlags_CullData
 }ImPlotFlags_;
 typedef enum {
@@ -136,14 +137,6 @@ CIMGUI_API ImPlotStyle* ImPlotStyle_ImPlotStyle(void);
 CIMGUI_API void ImPlotStyle_destroy(ImPlotStyle* self);
 CIMGUI_API bool igBeginPlot(const char* title_id,const char* x_label,const char* y_label,const ImVec2 size,ImPlotFlags flags,ImAxisFlags x_flags,ImAxisFlags y_flags);
 CIMGUI_API void igEndPlot(void);
-CIMGUI_API void igSetNextPlotRange(float x_min,float x_max,float y_min,float y_max,ImGuiCond cond);
-CIMGUI_API void igSetNextPlotRangeX(float x_min,float x_max,ImGuiCond cond);
-CIMGUI_API void igSetNextPlotRangeY(float y_min,float y_max,ImGuiCond cond);
-CIMGUI_API bool igIsPlotHovered(void);
-CIMGUI_API void igGetPlotMousePos(ImVec2 *pOut);
-CIMGUI_API ImPlotRange igGetPlotRange(void);
-CIMGUI_API bool igIsPlotQueried(void);
-CIMGUI_API ImPlotRange igGetPlotQuery(void);
 CIMGUI_API void igPlotFloatPtrInt(const char* label_id,const float* values,int count,int offset,int stride);
 CIMGUI_API void igPlotFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride);
 CIMGUI_API void igPlotFnPtr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset);
@@ -157,6 +150,11 @@ CIMGUI_API void igPlotErrorBarsFloatPtrInt(const char* label_id,const float* xs,
 CIMGUI_API void igPlotErrorBarsFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,const float* neg,const float* pos,int count,int offset,int stride);
 CIMGUI_API void igPlotErrorBarsFnPtr(const char* label_id,ImVec4(*getter)(void* data,int idx),void* data,int count,int offset);
 CIMGUI_API void igPlotLabel(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset);
+CIMGUI_API bool igIsPlotHovered(void);
+CIMGUI_API void igGetPlotMousePos(ImVec2 *pOut);
+CIMGUI_API ImPlotRange igGetPlotRange(void);
+CIMGUI_API bool igIsPlotQueried(void);
+CIMGUI_API ImPlotRange igGetPlotQuery(void);
 CIMGUI_API ImPlotStyle* igGetPlotStyle(void);
 CIMGUI_API void igSetPlotPalette(const ImVec4* colors,int num_colors);
 CIMGUI_API void igRestorePlotPalette(void);
@@ -166,6 +164,15 @@ CIMGUI_API void igPopPlotColor(int count);
 CIMGUI_API void igPushPlotStyleVarFloat(ImPlotStyleVar idx,float val);
 CIMGUI_API void igPushPlotStyleVarInt(ImPlotStyleVar idx,int val);
 CIMGUI_API void igPopPlotStyleVar(int count);
+CIMGUI_API void igSetNextPlotRange(float x_min,float x_max,float y_min,float y_max,ImGuiCond cond);
+CIMGUI_API void igSetNextPlotRangeX(float x_min,float x_max,ImGuiCond cond);
+CIMGUI_API void igSetNextPlotRangeY(float y_min,float y_max,ImGuiCond cond);
+CIMGUI_API void igGetPlotPos(ImVec2 *pOut);
+CIMGUI_API void igGetPlotSize(ImVec2 *pOut);
+CIMGUI_API void igPixelsToPlot(ImVec2 *pOut,const ImVec2 pix);
+CIMGUI_API void igPlotToPixels(ImVec2 *pOut,const ImVec2 plt);
+CIMGUI_API void igPushPlotClipRect(void);
+CIMGUI_API void igPopPlotClipRect(void);
 CIMGUI_API void igShowImPlotDemoWindow(bool* p_open);
 
 
