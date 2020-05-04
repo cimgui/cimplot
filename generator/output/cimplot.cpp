@@ -86,7 +86,7 @@ CIMGUI_API void igPlotErrorBarsFnPtr(const char* label_id,ImVec4(*getter)(void* 
 {
     return ImGui::PlotErrorBars(label_id,getter,data,count,offset);
 }
-CIMGUI_API void igPlotPieChart(char** label_ids,float* values,int count,const ImVec2 center,float radius,bool show_percents,float angle0)
+CIMGUI_API void igPlotPieChart(const char** label_ids,float* values,int count,const ImVec2 center,float radius,bool show_percents,float angle0)
 {
     return ImGui::PlotPieChart(label_ids,values,count,center,radius,show_percents,angle0);
 }

@@ -151,7 +151,7 @@ CIMGUI_API void igPlotBarHFnPtr(const char* label_id,ImVec2(*getter)(void* data,
 CIMGUI_API void igPlotErrorBarsFloatPtrInt(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset,int stride);
 CIMGUI_API void igPlotErrorBarsFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,const float* neg,const float* pos,int count,int offset,int stride);
 CIMGUI_API void igPlotErrorBarsFnPtr(const char* label_id,ImVec4(*getter)(void* data,int idx),void* data,int count,int offset);
-CIMGUI_API void igPlotPieChart(char** label_ids,float* values,int count,const ImVec2 center,float radius,bool show_percents,float angle0);
+CIMGUI_API void igPlotPieChart(const char** label_ids,float* values,int count,const ImVec2 center,float radius,bool show_percents,float angle0);
 CIMGUI_API void igPlotLabel(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset);
 CIMGUI_API bool igIsPlotHovered(void);
 CIMGUI_API void igGetPlotMousePos(ImVec2 *pOut);
