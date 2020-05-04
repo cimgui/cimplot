@@ -42,6 +42,10 @@ CIMGUI_API void igPlotFloatPtrFloatPtr(const char* label_id,const float* xs,cons
 {
     return ImGui::Plot(label_id,xs,ys,count,offset,stride);
 }
+CIMGUI_API void igPlotVec2Ptr(const char* label_id,const ImVec2* data,int count,int offset)
+{
+    return ImGui::Plot(label_id,data,count,offset);
+}
 CIMGUI_API void igPlotFnPtr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset)
 {
     return ImGui::Plot(label_id,getter,data,count,offset);
@@ -81,6 +85,10 @@ CIMGUI_API void igPlotErrorBarsFloatPtrFloatPtr(const char* label_id,const float
 CIMGUI_API void igPlotErrorBarsFnPtr(const char* label_id,ImVec4(*getter)(void* data,int idx),void* data,int count,int offset)
 {
     return ImGui::PlotErrorBars(label_id,getter,data,count,offset);
+}
+CIMGUI_API void igPlotPieChart(char** label_ids,float* values,int count,const ImVec2 center,float radius,bool show_percents,float angle0)
+{
+    return ImGui::PlotPieChart(label_ids,values,count,center,radius,show_percents,angle0);
 }
 CIMGUI_API void igPlotLabel(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset)
 {

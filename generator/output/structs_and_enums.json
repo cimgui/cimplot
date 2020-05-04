@@ -223,6 +223,11 @@
         "value": "1 << 8"
       },
       {
+        "calc_value": 512,
+        "name": "ImPlotFlags_NoChild",
+        "value": "1 << 9"
+      },
+      {
         "calc_value": 175,
         "name": "ImPlotFlags_Default",
         "value": "ImPlotFlags_MousePos | ImPlotFlags_Legend | ImPlotFlags_Highlight | ImPlotFlags_Selection | ImPlotFlags_ContextMenu | ImPlotFlags_CullData"

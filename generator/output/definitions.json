@@ -414,6 +414,39 @@
       "stname": ""
     },
     {
+      "args": "(const char* label_id,const ImVec2* data,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "data",
+          "type": "const ImVec2*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const ImVec2* data,int count,int offset=0)",
+      "call_args": "(label_id,data,count,offset)",
+      "cimguiname": "igPlot",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "Plot",
+      "namespace": "ImGui",
+      "ov_cimguiname": "igPlotVec2Ptr",
+      "ret": "void",
+      "signature": "(const char*,const ImVec2*,int,int)",
+      "stname": ""
+    },
+    {
       "args": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset)",
       "argsT": [
         {
@@ -905,6 +938,54 @@
       "ov_cimguiname": "igPlotLabel",
       "ret": "void",
       "signature": "(const char*,float,float,bool,const ImVec2)",
+      "stname": ""
+    }
+  ],
+  "igPlotPieChart": [
+    {
+      "args": "(char** label_ids,float* values,int count,const ImVec2 center,float radius,bool show_percents,float angle0)",
+      "argsT": [
+        {
+          "name": "label_ids",
+          "type": "char**"
+        },
+        {
+          "name": "values",
+          "type": "float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "center",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "radius",
+          "type": "float"
+        },
+        {
+          "name": "show_percents",
+          "type": "bool"
+        },
+        {
+          "name": "angle0",
+          "type": "float"
+        }
+      ],
+      "argsoriginal": "(char** label_ids,float* values,int count,const ImVec2& center,float radius,bool show_percents=true,float angle0=90)",
+      "call_args": "(label_ids,values,count,center,radius,show_percents,angle0)",
+      "cimguiname": "igPlotPieChart",
+      "defaults": {
+        "angle0": "90",
+        "show_percents": "true"
+      },
+      "funcname": "PlotPieChart",
+      "namespace": "ImGui",
+      "ov_cimguiname": "igPlotPieChart",
+      "ret": "void",
+      "signature": "(char**,float*,int,const ImVec2,float,bool,float)",
       "stname": ""
     }
   ],

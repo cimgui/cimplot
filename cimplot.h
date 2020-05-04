@@ -59,6 +59,7 @@ typedef enum {
     ImPlotFlags_Crosshairs = 1 << 6,
     ImPlotFlags_CullData = 1 << 7,
     ImPlotFlags_AntiAliased = 1 << 8,
+    ImPlotFlags_NoChild = 1 << 9,
     ImPlotFlags_Default = ImPlotFlags_MousePos | ImPlotFlags_Legend | ImPlotFlags_Highlight | ImPlotFlags_Selection | ImPlotFlags_ContextMenu | ImPlotFlags_CullData
 }ImPlotFlags_;
 typedef enum {
@@ -139,6 +140,7 @@ CIMGUI_API bool igBeginPlot(const char* title_id,const char* x_label,const char*
 CIMGUI_API void igEndPlot(void);
 CIMGUI_API void igPlotFloatPtrInt(const char* label_id,const float* values,int count,int offset,int stride);
 CIMGUI_API void igPlotFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride);
+CIMGUI_API void igPlotVec2Ptr(const char* label_id,const ImVec2* data,int count,int offset);
 CIMGUI_API void igPlotFnPtr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset);
 CIMGUI_API void igPlotBarFloatPtrInt(const char* label_id,const float* values,int count,float width,float shift,int offset,int stride);
 CIMGUI_API void igPlotBarFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,float width,int offset,int stride);
@@ -149,6 +151,7 @@ CIMGUI_API void igPlotBarHFnPtr(const char* label_id,ImVec2(*getter)(void* data,
 CIMGUI_API void igPlotErrorBarsFloatPtrInt(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset,int stride);
 CIMGUI_API void igPlotErrorBarsFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,const float* neg,const float* pos,int count,int offset,int stride);
 CIMGUI_API void igPlotErrorBarsFnPtr(const char* label_id,ImVec4(*getter)(void* data,int idx),void* data,int count,int offset);
+CIMGUI_API void igPlotPieChart(char** label_ids,float* values,int count,const ImVec2 center,float radius,bool show_percents,float angle0);
 CIMGUI_API void igPlotLabel(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset);
 CIMGUI_API bool igIsPlotHovered(void);
 CIMGUI_API void igGetPlotMousePos(ImVec2 *pOut);
