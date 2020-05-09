@@ -94,6 +94,14 @@ CIMGUI_API void igPlotLabel(const char* text,float x,float y,bool vertical,const
 {
     return ImGui::PlotLabel(text,x,y,vertical,pixel_offset);
 }
+CIMGUI_API void igPlotDigitalFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride)
+{
+    return ImGui::PlotDigital(label_id,xs,ys,count,offset,stride);
+}
+CIMGUI_API void igPlotDigitalFnPtr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset)
+{
+    return ImGui::PlotDigital(label_id,getter,data,count,offset);
+}
 CIMGUI_API bool igIsPlotHovered()
 {
     return ImGui::IsPlotHovered();

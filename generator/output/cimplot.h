@@ -96,6 +96,7 @@ typedef enum {
     ImPlotStyleVar_MarkerWeight,
     ImPlotStyleVar_ErrorBarSize,
     ImPlotStyleVar_ErrorBarWeight,
+    ImPlotStyleVar_DigitalBitHeight,
     ImPlotStyleVar_COUNT
 }ImPlotStyleVar_;
 typedef enum {
@@ -123,6 +124,7 @@ struct ImPlotStyle
     float MarkerWeight;
     float ErrorBarSize;
     float ErrorBarWeight;
+    float DigitalBitHeight;
     ImVec4 Colors[ImPlotCol_COUNT];
 };
 #else
@@ -153,6 +155,8 @@ CIMGUI_API void igPlotErrorBarsFloatPtrFloatPtr(const char* label_id,const float
 CIMGUI_API void igPlotErrorBarsFnPtr(const char* label_id,ImVec4(*getter)(void* data,int idx),void* data,int count,int offset);
 CIMGUI_API void igPlotPieChart(const char** label_ids,float* values,int count,const ImVec2 center,float radius,bool show_percents,float angle0);
 CIMGUI_API void igPlotLabel(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset);
+CIMGUI_API void igPlotDigitalFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride);
+CIMGUI_API void igPlotDigitalFnPtr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset);
 CIMGUI_API bool igIsPlotHovered(void);
 CIMGUI_API void igGetPlotMousePos(ImVec2 *pOut);
 CIMGUI_API ImPlotRange igGetPlotRange(void);

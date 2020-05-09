@@ -764,6 +764,89 @@
       "stname": ""
     }
   ],
+  "igPlotDigital": [
+    {
+      "args": "(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const float*"
+        },
+        {
+          "name": "ys",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,xs,ys,count,offset,stride)",
+      "cimguiname": "igPlotDigital",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "PlotDigital",
+      "namespace": "ImGui",
+      "ov_cimguiname": "igPlotDigitalFloatPtr",
+      "ret": "void",
+      "signature": "(const char*,const float*,const float*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "getter",
+          "ret": "ImVec2",
+          "signature": "(void* data,int idx)",
+          "type": "ImVec2(*)(void* data,int idx)"
+        },
+        {
+          "name": "data",
+          "type": "void*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset=0)",
+      "call_args": "(label_id,getter,data,count,offset)",
+      "cimguiname": "igPlotDigital",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotDigital",
+      "namespace": "ImGui",
+      "ov_cimguiname": "igPlotDigitalFnPtr",
+      "ret": "void",
+      "signature": "(const char*,ImVec2(*)(void*,int),void*,int,int)",
+      "stname": ""
+    }
+  ],
   "igPlotErrorBars": [
     {
       "args": "(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset,int stride)",

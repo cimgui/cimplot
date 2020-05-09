@@ -266,8 +266,13 @@
       },
       {
         "calc_value": 6,
-        "name": "ImPlotStyleVar_COUNT",
+        "name": "ImPlotStyleVar_DigitalBitHeight",
         "value": 6
+      },
+      {
+        "calc_value": 7,
+        "name": "ImPlotStyleVar_COUNT",
+        "value": 7
       }
     ]
   },
@@ -313,6 +318,10 @@
       },
       {
         "name": "ErrorBarWeight",
+        "type": "float"
+      },
+      {
+        "name": "DigitalBitHeight",
         "type": "float"
       },
       {
