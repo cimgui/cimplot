@@ -305,7 +305,7 @@ local function parseImGuiHeader(header,names)
 	--prepare parser
 	local parser = cpp2ffi.Parser()
 	parser.getCname = function(stname,funcname)
-		local pre = (stname == "") and "ig" or stname.."_"
+		local pre = (stname == "") and "ImPlot_" or stname.."_"
 		return pre..funcname
 	end
 	parser.cname_overloads = cimgui_overloads

@@ -46,179 +46,179 @@ CIMGUI_API void ImPlotStyle_destroy(ImPlotStyle* self)
 {
     IM_DELETE(self);
 }
-CIMGUI_API bool igBeginPlot(const char* title_id,const char* x_label,const char* y_label,const ImVec2 size,ImPlotFlags flags,ImPlotAxisFlags x_flags,ImPlotAxisFlags y_flags,ImPlotAxisFlags y2_flags,ImPlotAxisFlags y3_flags)
+CIMGUI_API bool ImPlot_BeginPlot(const char* title_id,const char* x_label,const char* y_label,const ImVec2 size,ImPlotFlags flags,ImPlotAxisFlags x_flags,ImPlotAxisFlags y_flags,ImPlotAxisFlags y2_flags,ImPlotAxisFlags y3_flags)
 {
     return ImPlot::BeginPlot(title_id,x_label,y_label,size,flags,x_flags,y_flags,y2_flags,y3_flags);
 }
-CIMGUI_API void igEndPlot()
+CIMGUI_API void ImPlot_EndPlot()
 {
     return ImPlot::EndPlot();
 }
-CIMGUI_API void igPlotFloatPtrInt(const char* label_id,const float* values,int count,int offset,int stride)
+CIMGUI_API void ImPlot_PlotFloatPtrInt(const char* label_id,const float* values,int count,int offset,int stride)
 {
     return ImPlot::Plot(label_id,values,count,offset,stride);
 }
-CIMGUI_API void igPlotFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride)
+CIMGUI_API void ImPlot_PlotFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride)
 {
     return ImPlot::Plot(label_id,xs,ys,count,offset,stride);
 }
-CIMGUI_API void igPlotVec2Ptr(const char* label_id,const ImVec2* data,int count,int offset)
+CIMGUI_API void ImPlot_PlotVec2Ptr(const char* label_id,const ImVec2* data,int count,int offset)
 {
     return ImPlot::Plot(label_id,data,count,offset);
 }
-CIMGUI_API void igPlotFnPtr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset)
+CIMGUI_API void ImPlot_PlotFnPtr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset)
 {
     return ImPlot::Plot(label_id,getter,data,count,offset);
 }
-CIMGUI_API void igBarFloatPtrInt(const char* label_id,const float* values,int count,float width,float shift,int offset,int stride)
+CIMGUI_API void ImPlot_BarFloatPtrInt(const char* label_id,const float* values,int count,float width,float shift,int offset,int stride)
 {
     return ImPlot::Bar(label_id,values,count,width,shift,offset,stride);
 }
-CIMGUI_API void igBarFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,float width,int offset,int stride)
+CIMGUI_API void ImPlot_BarFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,float width,int offset,int stride)
 {
     return ImPlot::Bar(label_id,xs,ys,count,width,offset,stride);
 }
-CIMGUI_API void igBarFnPtr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float width,int offset)
+CIMGUI_API void ImPlot_BarFnPtr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float width,int offset)
 {
     return ImPlot::Bar(label_id,getter,data,count,width,offset);
 }
-CIMGUI_API void igBarHFloatPtrInt(const char* label_id,const float* values,int count,float height,float shift,int offset,int stride)
+CIMGUI_API void ImPlot_BarHFloatPtrInt(const char* label_id,const float* values,int count,float height,float shift,int offset,int stride)
 {
     return ImPlot::BarH(label_id,values,count,height,shift,offset,stride);
 }
-CIMGUI_API void igBarHFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,float height,int offset,int stride)
+CIMGUI_API void ImPlot_BarHFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,float height,int offset,int stride)
 {
     return ImPlot::BarH(label_id,xs,ys,count,height,offset,stride);
 }
-CIMGUI_API void igBarHFnPtr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float height,int offset)
+CIMGUI_API void ImPlot_BarHFnPtr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float height,int offset)
 {
     return ImPlot::BarH(label_id,getter,data,count,height,offset);
 }
-CIMGUI_API void igErrorBarsFloatPtrInt(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset,int stride)
+CIMGUI_API void ImPlot_ErrorBarsFloatPtrInt(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset,int stride)
 {
     return ImPlot::ErrorBars(label_id,xs,ys,err,count,offset,stride);
 }
-CIMGUI_API void igErrorBarsFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,const float* neg,const float* pos,int count,int offset,int stride)
+CIMGUI_API void ImPlot_ErrorBarsFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,const float* neg,const float* pos,int count,int offset,int stride)
 {
     return ImPlot::ErrorBars(label_id,xs,ys,neg,pos,count,offset,stride);
 }
-CIMGUI_API void igErrorBarsFnPtr(const char* label_id,ImVec4(*getter)(void* data,int idx),void* data,int count,int offset)
+CIMGUI_API void ImPlot_ErrorBarsFnPtr(const char* label_id,ImVec4(*getter)(void* data,int idx),void* data,int count,int offset)
 {
     return ImPlot::ErrorBars(label_id,getter,data,count,offset);
 }
-CIMGUI_API void igPieChart(const char** label_ids,float* values,int count,const ImVec2 center,float radius,bool show_percents,float angle0)
+CIMGUI_API void ImPlot_PieChart(const char** label_ids,float* values,int count,const ImVec2 center,float radius,bool show_percents,float angle0)
 {
     return ImPlot::PieChart(label_ids,values,count,center,radius,show_percents,angle0);
 }
-CIMGUI_API void igDigitalFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride)
+CIMGUI_API void ImPlot_DigitalFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride)
 {
     return ImPlot::Digital(label_id,xs,ys,count,offset,stride);
 }
-CIMGUI_API void igDigitalFnPtr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset)
+CIMGUI_API void ImPlot_DigitalFnPtr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset)
 {
     return ImPlot::Digital(label_id,getter,data,count,offset);
 }
-CIMGUI_API void igText(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset)
+CIMGUI_API void ImPlot_Text(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset)
 {
     return ImPlot::Text(text,x,y,vertical,pixel_offset);
 }
-CIMGUI_API bool igIsPlotHovered()
+CIMGUI_API bool ImPlot_IsPlotHovered()
 {
     return ImPlot::IsPlotHovered();
 }
-CIMGUI_API void igGetPlotMousePos(ImVec2 *pOut,int y_axis)
+CIMGUI_API void ImPlot_GetPlotMousePos(ImVec2 *pOut,int y_axis)
 {
     *pOut = ImPlot::GetPlotMousePos(y_axis);
 }
-CIMGUI_API ImPlotLimits igGetPlotLimits(int y_axis)
+CIMGUI_API ImPlotLimits ImPlot_GetPlotLimits(int y_axis)
 {
     return ImPlot::GetPlotLimits(y_axis);
 }
-CIMGUI_API bool igIsPlotQueried()
+CIMGUI_API bool ImPlot_IsPlotQueried()
 {
     return ImPlot::IsPlotQueried();
 }
-CIMGUI_API ImPlotLimits igGetPlotQuery(int y_axis)
+CIMGUI_API ImPlotLimits ImPlot_GetPlotQuery(int y_axis)
 {
     return ImPlot::GetPlotQuery(y_axis);
 }
-CIMGUI_API ImPlotStyle* igGetStyle()
+CIMGUI_API ImPlotStyle* ImPlot_GetStyle()
 {
     return &ImPlot::GetStyle();
 }
-CIMGUI_API void igSetPalette(const ImVec4* colors,int num_colors)
+CIMGUI_API void ImPlot_SetPalette(const ImVec4* colors,int num_colors)
 {
     return ImPlot::SetPalette(colors,num_colors);
 }
-CIMGUI_API void igRestorePalette()
+CIMGUI_API void ImPlot_RestorePalette()
 {
     return ImPlot::RestorePalette();
 }
-CIMGUI_API void igPushStyleColorU32(ImPlotCol idx,ImU32 col)
+CIMGUI_API void ImPlot_PushStyleColorU32(ImPlotCol idx,ImU32 col)
 {
     return ImPlot::PushStyleColor(idx,col);
 }
-CIMGUI_API void igPushStyleColorVec4(ImPlotCol idx,const ImVec4 col)
+CIMGUI_API void ImPlot_PushStyleColorVec4(ImPlotCol idx,const ImVec4 col)
 {
     return ImPlot::PushStyleColor(idx,col);
 }
-CIMGUI_API void igPopStyleColor(int count)
+CIMGUI_API void ImPlot_PopStyleColor(int count)
 {
     return ImPlot::PopStyleColor(count);
 }
-CIMGUI_API void igPushStyleVarFloat(ImPlotStyleVar idx,float val)
+CIMGUI_API void ImPlot_PushStyleVarFloat(ImPlotStyleVar idx,float val)
 {
     return ImPlot::PushStyleVar(idx,val);
 }
-CIMGUI_API void igPushStyleVarInt(ImPlotStyleVar idx,int val)
+CIMGUI_API void ImPlot_PushStyleVarInt(ImPlotStyleVar idx,int val)
 {
     return ImPlot::PushStyleVar(idx,val);
 }
-CIMGUI_API void igPopStyleVar(int count)
+CIMGUI_API void ImPlot_PopStyleVar(int count)
 {
     return ImPlot::PopStyleVar(count);
 }
-CIMGUI_API void igSetNextPlotLimits(float x_min,float x_max,float y_min,float y_max,ImGuiCond cond)
+CIMGUI_API void ImPlot_SetNextPlotLimits(float x_min,float x_max,float y_min,float y_max,ImGuiCond cond)
 {
     return ImPlot::SetNextPlotLimits(x_min,x_max,y_min,y_max,cond);
 }
-CIMGUI_API void igSetNextPlotLimitsX(float x_min,float x_max,ImGuiCond cond)
+CIMGUI_API void ImPlot_SetNextPlotLimitsX(float x_min,float x_max,ImGuiCond cond)
 {
     return ImPlot::SetNextPlotLimitsX(x_min,x_max,cond);
 }
-CIMGUI_API void igSetNextPlotLimitsY(float y_min,float y_max,ImGuiCond cond,int y_axis)
+CIMGUI_API void ImPlot_SetNextPlotLimitsY(float y_min,float y_max,ImGuiCond cond,int y_axis)
 {
     return ImPlot::SetNextPlotLimitsY(y_min,y_max,cond,y_axis);
 }
-CIMGUI_API void igSetPlotYAxis(int y_axis)
+CIMGUI_API void ImPlot_SetPlotYAxis(int y_axis)
 {
     return ImPlot::SetPlotYAxis(y_axis);
 }
-CIMGUI_API void igGetPlotPos(ImVec2 *pOut)
+CIMGUI_API void ImPlot_GetPlotPos(ImVec2 *pOut)
 {
     *pOut = ImPlot::GetPlotPos();
 }
-CIMGUI_API void igGetPlotSize(ImVec2 *pOut)
+CIMGUI_API void ImPlot_GetPlotSize(ImVec2 *pOut)
 {
     *pOut = ImPlot::GetPlotSize();
 }
-CIMGUI_API void igPixelsToPlot(ImVec2 *pOut,const ImVec2 pix,int y_axis)
+CIMGUI_API void ImPlot_PixelsToPlot(ImVec2 *pOut,const ImVec2 pix,int y_axis)
 {
     *pOut = ImPlot::PixelsToPlot(pix,y_axis);
 }
-CIMGUI_API void igPlotToPixels(ImVec2 *pOut,const ImVec2 plt,int y_axis)
+CIMGUI_API void ImPlot_PlotToPixels(ImVec2 *pOut,const ImVec2 plt,int y_axis)
 {
     *pOut = ImPlot::PlotToPixels(plt,y_axis);
 }
-CIMGUI_API void igPushPlotClipRect()
+CIMGUI_API void ImPlot_PushPlotClipRect()
 {
     return ImPlot::PushPlotClipRect();
 }
-CIMGUI_API void igPopPlotClipRect()
+CIMGUI_API void ImPlot_PopPlotClipRect()
 {
     return ImPlot::PopPlotClipRect();
 }
-CIMGUI_API void igShowDemoWindow(bool* p_open)
+CIMGUI_API void ImPlot_ShowDemoWindow(bool* p_open)
 {
     return ImPlot::ShowDemoWindow(p_open);
 }
