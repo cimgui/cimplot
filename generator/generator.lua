@@ -304,8 +304,9 @@ print("IMPLOT_VERSION",implot_version)
 local function parseImGuiHeader(header,names)
 	--prepare parser
 	local parser = cpp2ffi.Parser()
-	parser.getCname = function(stname,funcname)
-		local pre = (stname == "") and "ImPlot_" or stname.."_"
+	parser.getCname = function(stname,funcname,namespace)
+		--local pre = (stname == "") and "ImPlot_" or stname.."_"
+		local pre = (stname == "") and (namespace and (namespace=="ImGui" and "ig" or namespace.."_") or "ig") or stname.."_"
 		return pre..funcname
 	end
 	parser.cname_overloads = cimgui_overloads
