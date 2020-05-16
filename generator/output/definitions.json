@@ -1,11 +1,11 @@
 {
-  "ImPlotRange_Contains": [
+  "ImPlotLimits_Contains": [
     {
-      "args": "(ImPlotRange* self,const ImVec2 p)",
+      "args": "(ImPlotLimits* self,const ImVec2 p)",
       "argsT": [
         {
           "name": "self",
-          "type": "ImPlotRange*"
+          "type": "ImPlotLimits*"
         },
         {
           "name": "p",
@@ -14,12 +14,95 @@
       ],
       "argsoriginal": "(const ImVec2& p)",
       "call_args": "(p)",
+      "cimguiname": "ImPlotLimits_Contains",
+      "defaults": [],
+      "funcname": "Contains",
+      "ov_cimguiname": "ImPlotLimits_Contains",
+      "ret": "bool",
+      "signature": "(const ImVec2)const",
+      "stname": "ImPlotLimits"
+    }
+  ],
+  "ImPlotLimits_ImPlotLimits": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotLimits_ImPlotLimits",
+      "constructor": true,
+      "defaults": [],
+      "funcname": "ImPlotLimits",
+      "ov_cimguiname": "ImPlotLimits_ImPlotLimits",
+      "signature": "()",
+      "stname": "ImPlotLimits"
+    }
+  ],
+  "ImPlotLimits_Size": [
+    {
+      "args": "(ImVec2 *pOut,ImPlotLimits* self)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        },
+        {
+          "name": "self",
+          "type": "ImPlotLimits*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotLimits_Size",
+      "defaults": [],
+      "funcname": "Size",
+      "nonUDT": 1,
+      "ov_cimguiname": "ImPlotLimits_Size",
+      "ret": "void",
+      "signature": "()const",
+      "stname": "ImPlotLimits"
+    }
+  ],
+  "ImPlotLimits_destroy": [
+    {
+      "args": "(ImPlotLimits* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotLimits*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotLimits_destroy",
+      "defaults": [],
+      "destructor": true,
+      "ov_cimguiname": "ImPlotLimits_destroy",
+      "ret": "void",
+      "signature": "(ImPlotLimits*)",
+      "stname": "ImPlotLimits"
+    }
+  ],
+  "ImPlotRange_Contains": [
+    {
+      "args": "(ImPlotRange* self,float value)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotRange*"
+        },
+        {
+          "name": "value",
+          "type": "float"
+        }
+      ],
+      "argsoriginal": "(float value)",
+      "call_args": "(value)",
       "cimguiname": "ImPlotRange_Contains",
       "defaults": [],
       "funcname": "Contains",
       "ov_cimguiname": "ImPlotRange_Contains",
       "ret": "bool",
-      "signature": "(const ImVec2)",
+      "signature": "(float)const",
       "stname": "ImPlotRange"
     }
   ],
@@ -35,6 +118,26 @@
       "funcname": "ImPlotRange",
       "ov_cimguiname": "ImPlotRange_ImPlotRange",
       "signature": "()",
+      "stname": "ImPlotRange"
+    }
+  ],
+  "ImPlotRange_Size": [
+    {
+      "args": "(ImPlotRange* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotRange*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotRange_Size",
+      "defaults": [],
+      "funcname": "Size",
+      "ov_cimguiname": "ImPlotRange_Size",
+      "ret": "float",
+      "signature": "()const",
       "stname": "ImPlotRange"
     }
   ],
@@ -91,402 +194,7 @@
       "stname": "ImPlotStyle"
     }
   ],
-  "igBeginPlot": [
-    {
-      "args": "(const char* title_id,const char* x_label,const char* y_label,const ImVec2 size,ImPlotFlags flags,ImAxisFlags x_flags,ImAxisFlags y_flags)",
-      "argsT": [
-        {
-          "name": "title_id",
-          "type": "const char*"
-        },
-        {
-          "name": "x_label",
-          "type": "const char*"
-        },
-        {
-          "name": "y_label",
-          "type": "const char*"
-        },
-        {
-          "name": "size",
-          "type": "const ImVec2"
-        },
-        {
-          "name": "flags",
-          "type": "ImPlotFlags"
-        },
-        {
-          "name": "x_flags",
-          "type": "ImAxisFlags"
-        },
-        {
-          "name": "y_flags",
-          "type": "ImAxisFlags"
-        }
-      ],
-      "argsoriginal": "(const char* title_id,const char* x_label=((void*)0),const char* y_label=((void*)0),const ImVec2& size=ImVec2(-1,-1),ImPlotFlags flags=ImPlotFlags_Default,ImAxisFlags x_flags=ImAxisFlags_Default,ImAxisFlags y_flags=ImAxisFlags_Default)",
-      "call_args": "(title_id,x_label,y_label,size,flags,x_flags,y_flags)",
-      "cimguiname": "igBeginPlot",
-      "defaults": {
-        "flags": "ImPlotFlags_Default",
-        "size": "ImVec2(-1,-1)",
-        "x_flags": "ImAxisFlags_Default",
-        "x_label": "((void*)0)",
-        "y_flags": "ImAxisFlags_Default",
-        "y_label": "((void*)0)"
-      },
-      "funcname": "BeginPlot",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igBeginPlot",
-      "ret": "bool",
-      "signature": "(const char*,const char*,const char*,const ImVec2,ImPlotFlags,ImAxisFlags,ImAxisFlags)",
-      "stname": ""
-    }
-  ],
-  "igEndPlot": [
-    {
-      "args": "()",
-      "argsT": [],
-      "argsoriginal": "()",
-      "call_args": "()",
-      "cimguiname": "igEndPlot",
-      "defaults": [],
-      "funcname": "EndPlot",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igEndPlot",
-      "ret": "void",
-      "signature": "()",
-      "stname": ""
-    }
-  ],
-  "igGetPlotMousePos": [
-    {
-      "args": "(ImVec2 *pOut)",
-      "argsT": [
-        {
-          "name": "pOut",
-          "type": "ImVec2*"
-        }
-      ],
-      "argsoriginal": "()",
-      "call_args": "()",
-      "cimguiname": "igGetPlotMousePos",
-      "defaults": [],
-      "funcname": "GetPlotMousePos",
-      "namespace": "ImGui",
-      "nonUDT": 1,
-      "ov_cimguiname": "igGetPlotMousePos",
-      "ret": "void",
-      "signature": "()",
-      "stname": ""
-    }
-  ],
-  "igGetPlotPos": [
-    {
-      "args": "(ImVec2 *pOut)",
-      "argsT": [
-        {
-          "name": "pOut",
-          "type": "ImVec2*"
-        }
-      ],
-      "argsoriginal": "()",
-      "call_args": "()",
-      "cimguiname": "igGetPlotPos",
-      "defaults": [],
-      "funcname": "GetPlotPos",
-      "namespace": "ImGui",
-      "nonUDT": 1,
-      "ov_cimguiname": "igGetPlotPos",
-      "ret": "void",
-      "signature": "()",
-      "stname": ""
-    }
-  ],
-  "igGetPlotQuery": [
-    {
-      "args": "()",
-      "argsT": [],
-      "argsoriginal": "()",
-      "call_args": "()",
-      "cimguiname": "igGetPlotQuery",
-      "defaults": [],
-      "funcname": "GetPlotQuery",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igGetPlotQuery",
-      "ret": "ImPlotRange",
-      "signature": "()",
-      "stname": ""
-    }
-  ],
-  "igGetPlotRange": [
-    {
-      "args": "()",
-      "argsT": [],
-      "argsoriginal": "()",
-      "call_args": "()",
-      "cimguiname": "igGetPlotRange",
-      "defaults": [],
-      "funcname": "GetPlotRange",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igGetPlotRange",
-      "ret": "ImPlotRange",
-      "signature": "()",
-      "stname": ""
-    }
-  ],
-  "igGetPlotSize": [
-    {
-      "args": "(ImVec2 *pOut)",
-      "argsT": [
-        {
-          "name": "pOut",
-          "type": "ImVec2*"
-        }
-      ],
-      "argsoriginal": "()",
-      "call_args": "()",
-      "cimguiname": "igGetPlotSize",
-      "defaults": [],
-      "funcname": "GetPlotSize",
-      "namespace": "ImGui",
-      "nonUDT": 1,
-      "ov_cimguiname": "igGetPlotSize",
-      "ret": "void",
-      "signature": "()",
-      "stname": ""
-    }
-  ],
-  "igGetPlotStyle": [
-    {
-      "args": "()",
-      "argsT": [],
-      "argsoriginal": "()",
-      "call_args": "()",
-      "cimguiname": "igGetPlotStyle",
-      "defaults": [],
-      "funcname": "GetPlotStyle",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igGetPlotStyle",
-      "ret": "ImPlotStyle*",
-      "retref": "&",
-      "signature": "()",
-      "stname": ""
-    }
-  ],
-  "igIsPlotHovered": [
-    {
-      "args": "()",
-      "argsT": [],
-      "argsoriginal": "()",
-      "call_args": "()",
-      "cimguiname": "igIsPlotHovered",
-      "defaults": [],
-      "funcname": "IsPlotHovered",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igIsPlotHovered",
-      "ret": "bool",
-      "signature": "()",
-      "stname": ""
-    }
-  ],
-  "igIsPlotQueried": [
-    {
-      "args": "()",
-      "argsT": [],
-      "argsoriginal": "()",
-      "call_args": "()",
-      "cimguiname": "igIsPlotQueried",
-      "defaults": [],
-      "funcname": "IsPlotQueried",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igIsPlotQueried",
-      "ret": "bool",
-      "signature": "()",
-      "stname": ""
-    }
-  ],
-  "igPixelsToPlot": [
-    {
-      "args": "(ImVec2 *pOut,const ImVec2 pix)",
-      "argsT": [
-        {
-          "name": "pOut",
-          "type": "ImVec2*"
-        },
-        {
-          "name": "pix",
-          "type": "const ImVec2"
-        }
-      ],
-      "argsoriginal": "(const ImVec2& pix)",
-      "call_args": "(pix)",
-      "cimguiname": "igPixelsToPlot",
-      "defaults": [],
-      "funcname": "PixelsToPlot",
-      "namespace": "ImGui",
-      "nonUDT": 1,
-      "ov_cimguiname": "igPixelsToPlot",
-      "ret": "void",
-      "signature": "(const ImVec2)",
-      "stname": ""
-    }
-  ],
-  "igPlot": [
-    {
-      "args": "(const char* label_id,const float* values,int count,int offset,int stride)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "values",
-          "type": "const float*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        },
-        {
-          "name": "stride",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,const float* values,int count,int offset=0,int stride=sizeof(float))",
-      "call_args": "(label_id,values,count,offset,stride)",
-      "cimguiname": "igPlot",
-      "defaults": {
-        "offset": "0",
-        "stride": "sizeof(float)"
-      },
-      "funcname": "Plot",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotFloatPtrInt",
-      "ret": "void",
-      "signature": "(const char*,const float*,int,int,int)",
-      "stname": ""
-    },
-    {
-      "args": "(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "xs",
-          "type": "const float*"
-        },
-        {
-          "name": "ys",
-          "type": "const float*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        },
-        {
-          "name": "stride",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,int offset=0,int stride=sizeof(float))",
-      "call_args": "(label_id,xs,ys,count,offset,stride)",
-      "cimguiname": "igPlot",
-      "defaults": {
-        "offset": "0",
-        "stride": "sizeof(float)"
-      },
-      "funcname": "Plot",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotFloatPtrFloatPtr",
-      "ret": "void",
-      "signature": "(const char*,const float*,const float*,int,int,int)",
-      "stname": ""
-    },
-    {
-      "args": "(const char* label_id,const ImVec2* data,int count,int offset)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "data",
-          "type": "const ImVec2*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,const ImVec2* data,int count,int offset=0)",
-      "call_args": "(label_id,data,count,offset)",
-      "cimguiname": "igPlot",
-      "defaults": {
-        "offset": "0"
-      },
-      "funcname": "Plot",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotVec2Ptr",
-      "ret": "void",
-      "signature": "(const char*,const ImVec2*,int,int)",
-      "stname": ""
-    },
-    {
-      "args": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "getter",
-          "ret": "ImVec2",
-          "signature": "(void* data,int idx)",
-          "type": "ImVec2(*)(void* data,int idx)"
-        },
-        {
-          "name": "data",
-          "type": "void*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset=0)",
-      "call_args": "(label_id,getter,data,count,offset)",
-      "cimguiname": "igPlot",
-      "defaults": {
-        "offset": "0"
-      },
-      "funcname": "Plot",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotFnPtr",
-      "ret": "void",
-      "signature": "(const char*,ImVec2(*)(void*,int),void*,int,int)",
-      "stname": ""
-    }
-  ],
-  "igPlotBar": [
+  "igBar": [
     {
       "args": "(const char* label_id,const float* values,int count,float width,float shift,int offset,int stride)",
       "argsT": [
@@ -521,16 +229,16 @@
       ],
       "argsoriginal": "(const char* label_id,const float* values,int count,float width=0.67f,float shift=0,int offset=0,int stride=sizeof(float))",
       "call_args": "(label_id,values,count,width,shift,offset,stride)",
-      "cimguiname": "igPlotBar",
+      "cimguiname": "igBar",
       "defaults": {
         "offset": "0",
         "shift": "0",
         "stride": "sizeof(float)",
         "width": "0.67f"
       },
-      "funcname": "PlotBar",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotBarFloatPtrInt",
+      "funcname": "Bar",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igBarFloatPtrInt",
       "ret": "void",
       "signature": "(const char*,const float*,int,float,float,int,int)",
       "stname": ""
@@ -569,14 +277,14 @@
       ],
       "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,float width,int offset=0,int stride=sizeof(float))",
       "call_args": "(label_id,xs,ys,count,width,offset,stride)",
-      "cimguiname": "igPlotBar",
+      "cimguiname": "igBar",
       "defaults": {
         "offset": "0",
         "stride": "sizeof(float)"
       },
-      "funcname": "PlotBar",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotBarFloatPtrFloatPtr",
+      "funcname": "Bar",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igBarFloatPtrFloatPtr",
       "ret": "void",
       "signature": "(const char*,const float*,const float*,int,float,int,int)",
       "stname": ""
@@ -613,19 +321,19 @@
       ],
       "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float width,int offset=0)",
       "call_args": "(label_id,getter,data,count,width,offset)",
-      "cimguiname": "igPlotBar",
+      "cimguiname": "igBar",
       "defaults": {
         "offset": "0"
       },
-      "funcname": "PlotBar",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotBarFnPtr",
+      "funcname": "Bar",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igBarFnPtr",
       "ret": "void",
       "signature": "(const char*,ImVec2(*)(void*,int),void*,int,float,int)",
       "stname": ""
     }
   ],
-  "igPlotBarH": [
+  "igBarH": [
     {
       "args": "(const char* label_id,const float* values,int count,float height,float shift,int offset,int stride)",
       "argsT": [
@@ -660,16 +368,16 @@
       ],
       "argsoriginal": "(const char* label_id,const float* values,int count,float height=0.67f,float shift=0,int offset=0,int stride=sizeof(float))",
       "call_args": "(label_id,values,count,height,shift,offset,stride)",
-      "cimguiname": "igPlotBarH",
+      "cimguiname": "igBarH",
       "defaults": {
         "height": "0.67f",
         "offset": "0",
         "shift": "0",
         "stride": "sizeof(float)"
       },
-      "funcname": "PlotBarH",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotBarHFloatPtrInt",
+      "funcname": "BarH",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igBarHFloatPtrInt",
       "ret": "void",
       "signature": "(const char*,const float*,int,float,float,int,int)",
       "stname": ""
@@ -708,14 +416,14 @@
       ],
       "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,float height,int offset=0,int stride=sizeof(float))",
       "call_args": "(label_id,xs,ys,count,height,offset,stride)",
-      "cimguiname": "igPlotBarH",
+      "cimguiname": "igBarH",
       "defaults": {
         "offset": "0",
         "stride": "sizeof(float)"
       },
-      "funcname": "PlotBarH",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotBarHFloatPtrFloatPtr",
+      "funcname": "BarH",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igBarHFloatPtrFloatPtr",
       "ret": "void",
       "signature": "(const char*,const float*,const float*,int,float,int,int)",
       "stname": ""
@@ -752,19 +460,81 @@
       ],
       "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float height,int offset=0)",
       "call_args": "(label_id,getter,data,count,height,offset)",
-      "cimguiname": "igPlotBarH",
+      "cimguiname": "igBarH",
       "defaults": {
         "offset": "0"
       },
-      "funcname": "PlotBarH",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotBarHFnPtr",
+      "funcname": "BarH",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igBarHFnPtr",
       "ret": "void",
       "signature": "(const char*,ImVec2(*)(void*,int),void*,int,float,int)",
       "stname": ""
     }
   ],
-  "igPlotDigital": [
+  "igBeginPlot": [
+    {
+      "args": "(const char* title_id,const char* x_label,const char* y_label,const ImVec2 size,ImPlotFlags flags,ImPlotAxisFlags x_flags,ImPlotAxisFlags y_flags,ImPlotAxisFlags y2_flags,ImPlotAxisFlags y3_flags)",
+      "argsT": [
+        {
+          "name": "title_id",
+          "type": "const char*"
+        },
+        {
+          "name": "x_label",
+          "type": "const char*"
+        },
+        {
+          "name": "y_label",
+          "type": "const char*"
+        },
+        {
+          "name": "size",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "flags",
+          "type": "ImPlotFlags"
+        },
+        {
+          "name": "x_flags",
+          "type": "ImPlotAxisFlags"
+        },
+        {
+          "name": "y_flags",
+          "type": "ImPlotAxisFlags"
+        },
+        {
+          "name": "y2_flags",
+          "type": "ImPlotAxisFlags"
+        },
+        {
+          "name": "y3_flags",
+          "type": "ImPlotAxisFlags"
+        }
+      ],
+      "argsoriginal": "(const char* title_id,const char* x_label=((void*)0),const char* y_label=((void*)0),const ImVec2& size=ImVec2(-1,-1),ImPlotFlags flags=ImPlotFlags_Default,ImPlotAxisFlags x_flags=ImPlotAxisFlags_Default,ImPlotAxisFlags y_flags=ImPlotAxisFlags_Default,ImPlotAxisFlags y2_flags=ImPlotAxisFlags_Auxiliary,ImPlotAxisFlags y3_flags=ImPlotAxisFlags_Auxiliary)",
+      "call_args": "(title_id,x_label,y_label,size,flags,x_flags,y_flags,y2_flags,y3_flags)",
+      "cimguiname": "igBeginPlot",
+      "defaults": {
+        "flags": "ImPlotFlags_Default",
+        "size": "ImVec2(-1,-1)",
+        "x_flags": "ImPlotAxisFlags_Default",
+        "x_label": "((void*)0)",
+        "y2_flags": "ImPlotAxisFlags_Auxiliary",
+        "y3_flags": "ImPlotAxisFlags_Auxiliary",
+        "y_flags": "ImPlotAxisFlags_Default",
+        "y_label": "((void*)0)"
+      },
+      "funcname": "BeginPlot",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igBeginPlot",
+      "ret": "bool",
+      "signature": "(const char*,const char*,const char*,const ImVec2,ImPlotFlags,ImPlotAxisFlags,ImPlotAxisFlags,ImPlotAxisFlags,ImPlotAxisFlags)",
+      "stname": ""
+    }
+  ],
+  "igDigital": [
     {
       "args": "(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride)",
       "argsT": [
@@ -795,14 +565,14 @@
       ],
       "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,int offset=0,int stride=sizeof(float))",
       "call_args": "(label_id,xs,ys,count,offset,stride)",
-      "cimguiname": "igPlotDigital",
+      "cimguiname": "igDigital",
       "defaults": {
         "offset": "0",
         "stride": "sizeof(float)"
       },
-      "funcname": "PlotDigital",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotDigitalFloatPtr",
+      "funcname": "Digital",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igDigitalFloatPtr",
       "ret": "void",
       "signature": "(const char*,const float*,const float*,int,int,int)",
       "stname": ""
@@ -835,19 +605,35 @@
       ],
       "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset=0)",
       "call_args": "(label_id,getter,data,count,offset)",
-      "cimguiname": "igPlotDigital",
+      "cimguiname": "igDigital",
       "defaults": {
         "offset": "0"
       },
-      "funcname": "PlotDigital",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotDigitalFnPtr",
+      "funcname": "Digital",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igDigitalFnPtr",
       "ret": "void",
       "signature": "(const char*,ImVec2(*)(void*,int),void*,int,int)",
       "stname": ""
     }
   ],
-  "igPlotErrorBars": [
+  "igEndPlot": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igEndPlot",
+      "defaults": [],
+      "funcname": "EndPlot",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igEndPlot",
+      "ret": "void",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "igErrorBars": [
     {
       "args": "(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset,int stride)",
       "argsT": [
@@ -882,14 +668,14 @@
       ],
       "argsoriginal": "(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset=0,int stride=sizeof(float))",
       "call_args": "(label_id,xs,ys,err,count,offset,stride)",
-      "cimguiname": "igPlotErrorBars",
+      "cimguiname": "igErrorBars",
       "defaults": {
         "offset": "0",
         "stride": "sizeof(float)"
       },
-      "funcname": "PlotErrorBars",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotErrorBarsFloatPtrInt",
+      "funcname": "ErrorBars",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igErrorBarsFloatPtrInt",
       "ret": "void",
       "signature": "(const char*,const float*,const float*,const float*,int,int,int)",
       "stname": ""
@@ -932,14 +718,14 @@
       ],
       "argsoriginal": "(const char* label_id,const float* xs,const float* ys,const float* neg,const float* pos,int count,int offset=0,int stride=sizeof(float))",
       "call_args": "(label_id,xs,ys,neg,pos,count,offset,stride)",
-      "cimguiname": "igPlotErrorBars",
+      "cimguiname": "igErrorBars",
       "defaults": {
         "offset": "0",
         "stride": "sizeof(float)"
       },
-      "funcname": "PlotErrorBars",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotErrorBarsFloatPtrFloatPtr",
+      "funcname": "ErrorBars",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igErrorBarsFloatPtrFloatPtr",
       "ret": "void",
       "signature": "(const char*,const float*,const float*,const float*,const float*,int,int,int)",
       "stname": ""
@@ -972,59 +758,186 @@
       ],
       "argsoriginal": "(const char* label_id,ImVec4(*getter)(void* data,int idx),void* data,int count,int offset=0)",
       "call_args": "(label_id,getter,data,count,offset)",
-      "cimguiname": "igPlotErrorBars",
+      "cimguiname": "igErrorBars",
       "defaults": {
         "offset": "0"
       },
-      "funcname": "PlotErrorBars",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotErrorBarsFnPtr",
+      "funcname": "ErrorBars",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igErrorBarsFnPtr",
       "ret": "void",
       "signature": "(const char*,ImVec4(*)(void*,int),void*,int,int)",
       "stname": ""
     }
   ],
-  "igPlotLabel": [
+  "igGetPlotLimits": [
     {
-      "args": "(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset)",
+      "args": "(int y_axis)",
       "argsT": [
         {
-          "name": "text",
-          "type": "const char*"
-        },
-        {
-          "name": "x",
-          "type": "float"
-        },
-        {
-          "name": "y",
-          "type": "float"
-        },
-        {
-          "name": "vertical",
-          "type": "bool"
-        },
-        {
-          "name": "pixel_offset",
-          "type": "const ImVec2"
+          "name": "y_axis",
+          "type": "int"
         }
       ],
-      "argsoriginal": "(const char* text,float x,float y,bool vertical=false,const ImVec2& pixel_offset=ImVec2(0,0))",
-      "call_args": "(text,x,y,vertical,pixel_offset)",
-      "cimguiname": "igPlotLabel",
+      "argsoriginal": "(int y_axis=-1)",
+      "call_args": "(y_axis)",
+      "cimguiname": "igGetPlotLimits",
       "defaults": {
-        "pixel_offset": "ImVec2(0,0)",
-        "vertical": "false"
+        "y_axis": "-1"
       },
-      "funcname": "PlotLabel",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotLabel",
-      "ret": "void",
-      "signature": "(const char*,float,float,bool,const ImVec2)",
+      "funcname": "GetPlotLimits",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igGetPlotLimits",
+      "ret": "ImPlotLimits",
+      "signature": "(int)",
       "stname": ""
     }
   ],
-  "igPlotPieChart": [
+  "igGetPlotMousePos": [
+    {
+      "args": "(ImVec2 *pOut,int y_axis)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        },
+        {
+          "name": "y_axis",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int y_axis=-1)",
+      "call_args": "(y_axis)",
+      "cimguiname": "igGetPlotMousePos",
+      "defaults": {
+        "y_axis": "-1"
+      },
+      "funcname": "GetPlotMousePos",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "igGetPlotMousePos",
+      "ret": "void",
+      "signature": "(int)",
+      "stname": ""
+    }
+  ],
+  "igGetPlotPos": [
+    {
+      "args": "(ImVec2 *pOut)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igGetPlotPos",
+      "defaults": [],
+      "funcname": "GetPlotPos",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "igGetPlotPos",
+      "ret": "void",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "igGetPlotQuery": [
+    {
+      "args": "(int y_axis)",
+      "argsT": [
+        {
+          "name": "y_axis",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int y_axis=-1)",
+      "call_args": "(y_axis)",
+      "cimguiname": "igGetPlotQuery",
+      "defaults": {
+        "y_axis": "-1"
+      },
+      "funcname": "GetPlotQuery",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igGetPlotQuery",
+      "ret": "ImPlotLimits",
+      "signature": "(int)",
+      "stname": ""
+    }
+  ],
+  "igGetPlotSize": [
+    {
+      "args": "(ImVec2 *pOut)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igGetPlotSize",
+      "defaults": [],
+      "funcname": "GetPlotSize",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "igGetPlotSize",
+      "ret": "void",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "igGetStyle": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igGetStyle",
+      "defaults": [],
+      "funcname": "GetStyle",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igGetStyle",
+      "ret": "ImPlotStyle*",
+      "retref": "&",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "igIsPlotHovered": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igIsPlotHovered",
+      "defaults": [],
+      "funcname": "IsPlotHovered",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igIsPlotHovered",
+      "ret": "bool",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "igIsPlotQueried": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "igIsPlotQueried",
+      "defaults": [],
+      "funcname": "IsPlotQueried",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igIsPlotQueried",
+      "ret": "bool",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "igPieChart": [
     {
       "args": "(const char** label_ids,float* values,int count,const ImVec2 center,float radius,bool show_percents,float angle0)",
       "argsT": [
@@ -1059,22 +972,208 @@
       ],
       "argsoriginal": "(const char** label_ids,float* values,int count,const ImVec2& center,float radius,bool show_percents=true,float angle0=90)",
       "call_args": "(label_ids,values,count,center,radius,show_percents,angle0)",
-      "cimguiname": "igPlotPieChart",
+      "cimguiname": "igPieChart",
       "defaults": {
         "angle0": "90",
         "show_percents": "true"
       },
-      "funcname": "PlotPieChart",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPlotPieChart",
+      "funcname": "PieChart",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igPieChart",
       "ret": "void",
       "signature": "(const char**,float*,int,const ImVec2,float,bool,float)",
       "stname": ""
     }
   ],
+  "igPixelsToPlot": [
+    {
+      "args": "(ImVec2 *pOut,const ImVec2 pix,int y_axis)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        },
+        {
+          "name": "pix",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "y_axis",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImVec2& pix,int y_axis=-1)",
+      "call_args": "(pix,y_axis)",
+      "cimguiname": "igPixelsToPlot",
+      "defaults": {
+        "y_axis": "-1"
+      },
+      "funcname": "PixelsToPlot",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "igPixelsToPlot",
+      "ret": "void",
+      "signature": "(const ImVec2,int)",
+      "stname": ""
+    }
+  ],
+  "igPlot": [
+    {
+      "args": "(const char* label_id,const float* values,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "values",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* values,int count,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,values,count,offset,stride)",
+      "cimguiname": "igPlot",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "Plot",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igPlotFloatPtrInt",
+      "ret": "void",
+      "signature": "(const char*,const float*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const float*"
+        },
+        {
+          "name": "ys",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,xs,ys,count,offset,stride)",
+      "cimguiname": "igPlot",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "Plot",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igPlotFloatPtrFloatPtr",
+      "ret": "void",
+      "signature": "(const char*,const float*,const float*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const ImVec2* data,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "data",
+          "type": "const ImVec2*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const ImVec2* data,int count,int offset=0)",
+      "call_args": "(label_id,data,count,offset)",
+      "cimguiname": "igPlot",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "Plot",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igPlotVec2Ptr",
+      "ret": "void",
+      "signature": "(const char*,const ImVec2*,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "getter",
+          "ret": "ImVec2",
+          "signature": "(void* data,int idx)",
+          "type": "ImVec2(*)(void* data,int idx)"
+        },
+        {
+          "name": "data",
+          "type": "void*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset=0)",
+      "call_args": "(label_id,getter,data,count,offset)",
+      "cimguiname": "igPlot",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "Plot",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igPlotFnPtr",
+      "ret": "void",
+      "signature": "(const char*,ImVec2(*)(void*,int),void*,int,int)",
+      "stname": ""
+    }
+  ],
   "igPlotToPixels": [
     {
-      "args": "(ImVec2 *pOut,const ImVec2 plt)",
+      "args": "(ImVec2 *pOut,const ImVec2 plt,int y_axis)",
       "argsT": [
         {
           "name": "pOut",
@@ -1083,18 +1182,24 @@
         {
           "name": "plt",
           "type": "const ImVec2"
+        },
+        {
+          "name": "y_axis",
+          "type": "int"
         }
       ],
-      "argsoriginal": "(const ImVec2& plt)",
-      "call_args": "(plt)",
+      "argsoriginal": "(const ImVec2& plt,int y_axis=-1)",
+      "call_args": "(plt,y_axis)",
       "cimguiname": "igPlotToPixels",
-      "defaults": [],
+      "defaults": {
+        "y_axis": "-1"
+      },
       "funcname": "PlotToPixels",
-      "namespace": "ImGui",
+      "namespace": "ImPlot",
       "nonUDT": 1,
       "ov_cimguiname": "igPlotToPixels",
       "ret": "void",
-      "signature": "(const ImVec2)",
+      "signature": "(const ImVec2,int)",
       "stname": ""
     }
   ],
@@ -1107,14 +1212,14 @@
       "cimguiname": "igPopPlotClipRect",
       "defaults": [],
       "funcname": "PopPlotClipRect",
-      "namespace": "ImGui",
+      "namespace": "ImPlot",
       "ov_cimguiname": "igPopPlotClipRect",
       "ret": "void",
       "signature": "()",
       "stname": ""
     }
   ],
-  "igPopPlotColor": [
+  "igPopStyleColor": [
     {
       "args": "(int count)",
       "argsT": [
@@ -1125,19 +1230,19 @@
       ],
       "argsoriginal": "(int count=1)",
       "call_args": "(count)",
-      "cimguiname": "igPopPlotColor",
+      "cimguiname": "igPopStyleColor",
       "defaults": {
         "count": "1"
       },
-      "funcname": "PopPlotColor",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPopPlotColor",
+      "funcname": "PopStyleColor",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igPopStyleColor",
       "ret": "void",
       "signature": "(int)",
       "stname": ""
     }
   ],
-  "igPopPlotStyleVar": [
+  "igPopStyleVar": [
     {
       "args": "(int count)",
       "argsT": [
@@ -1148,13 +1253,13 @@
       ],
       "argsoriginal": "(int count=1)",
       "call_args": "(count)",
-      "cimguiname": "igPopPlotStyleVar",
+      "cimguiname": "igPopStyleVar",
       "defaults": {
         "count": "1"
       },
-      "funcname": "PopPlotStyleVar",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPopPlotStyleVar",
+      "funcname": "PopStyleVar",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igPopStyleVar",
       "ret": "void",
       "signature": "(int)",
       "stname": ""
@@ -1169,14 +1274,14 @@
       "cimguiname": "igPushPlotClipRect",
       "defaults": [],
       "funcname": "PushPlotClipRect",
-      "namespace": "ImGui",
+      "namespace": "ImPlot",
       "ov_cimguiname": "igPushPlotClipRect",
       "ret": "void",
       "signature": "()",
       "stname": ""
     }
   ],
-  "igPushPlotColor": [
+  "igPushStyleColor": [
     {
       "args": "(ImPlotCol idx,ImU32 col)",
       "argsT": [
@@ -1191,11 +1296,11 @@
       ],
       "argsoriginal": "(ImPlotCol idx,ImU32 col)",
       "call_args": "(idx,col)",
-      "cimguiname": "igPushPlotColor",
+      "cimguiname": "igPushStyleColor",
       "defaults": [],
-      "funcname": "PushPlotColor",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPushPlotColorU32",
+      "funcname": "PushStyleColor",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igPushStyleColorU32",
       "ret": "void",
       "signature": "(ImPlotCol,ImU32)",
       "stname": ""
@@ -1214,17 +1319,17 @@
       ],
       "argsoriginal": "(ImPlotCol idx,const ImVec4& col)",
       "call_args": "(idx,col)",
-      "cimguiname": "igPushPlotColor",
+      "cimguiname": "igPushStyleColor",
       "defaults": [],
-      "funcname": "PushPlotColor",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPushPlotColorVec4",
+      "funcname": "PushStyleColor",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igPushStyleColorVec4",
       "ret": "void",
       "signature": "(ImPlotCol,const ImVec4)",
       "stname": ""
     }
   ],
-  "igPushPlotStyleVar": [
+  "igPushStyleVar": [
     {
       "args": "(ImPlotStyleVar idx,float val)",
       "argsT": [
@@ -1239,11 +1344,11 @@
       ],
       "argsoriginal": "(ImPlotStyleVar idx,float val)",
       "call_args": "(idx,val)",
-      "cimguiname": "igPushPlotStyleVar",
+      "cimguiname": "igPushStyleVar",
       "defaults": [],
-      "funcname": "PushPlotStyleVar",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPushPlotStyleVarFloat",
+      "funcname": "PushStyleVar",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igPushStyleVarFloat",
       "ret": "void",
       "signature": "(ImPlotStyleVar,float)",
       "stname": ""
@@ -1262,33 +1367,33 @@
       ],
       "argsoriginal": "(ImPlotStyleVar idx,int val)",
       "call_args": "(idx,val)",
-      "cimguiname": "igPushPlotStyleVar",
+      "cimguiname": "igPushStyleVar",
       "defaults": [],
-      "funcname": "PushPlotStyleVar",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igPushPlotStyleVarInt",
+      "funcname": "PushStyleVar",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igPushStyleVarInt",
       "ret": "void",
       "signature": "(ImPlotStyleVar,int)",
       "stname": ""
     }
   ],
-  "igRestorePlotPalette": [
+  "igRestorePalette": [
     {
       "args": "()",
       "argsT": [],
       "argsoriginal": "()",
       "call_args": "()",
-      "cimguiname": "igRestorePlotPalette",
+      "cimguiname": "igRestorePalette",
       "defaults": [],
-      "funcname": "RestorePlotPalette",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igRestorePlotPalette",
+      "funcname": "RestorePalette",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igRestorePalette",
       "ret": "void",
       "signature": "()",
       "stname": ""
     }
   ],
-  "igSetNextPlotRange": [
+  "igSetNextPlotLimits": [
     {
       "args": "(float x_min,float x_max,float y_min,float y_max,ImGuiCond cond)",
       "argsT": [
@@ -1315,19 +1420,19 @@
       ],
       "argsoriginal": "(float x_min,float x_max,float y_min,float y_max,ImGuiCond cond=ImGuiCond_Once)",
       "call_args": "(x_min,x_max,y_min,y_max,cond)",
-      "cimguiname": "igSetNextPlotRange",
+      "cimguiname": "igSetNextPlotLimits",
       "defaults": {
         "cond": "ImGuiCond_Once"
       },
-      "funcname": "SetNextPlotRange",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igSetNextPlotRange",
+      "funcname": "SetNextPlotLimits",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igSetNextPlotLimits",
       "ret": "void",
       "signature": "(float,float,float,float,ImGuiCond)",
       "stname": ""
     }
   ],
-  "igSetNextPlotRangeX": [
+  "igSetNextPlotLimitsX": [
     {
       "args": "(float x_min,float x_max,ImGuiCond cond)",
       "argsT": [
@@ -1346,21 +1451,21 @@
       ],
       "argsoriginal": "(float x_min,float x_max,ImGuiCond cond=ImGuiCond_Once)",
       "call_args": "(x_min,x_max,cond)",
-      "cimguiname": "igSetNextPlotRangeX",
+      "cimguiname": "igSetNextPlotLimitsX",
       "defaults": {
         "cond": "ImGuiCond_Once"
       },
-      "funcname": "SetNextPlotRangeX",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igSetNextPlotRangeX",
+      "funcname": "SetNextPlotLimitsX",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igSetNextPlotLimitsX",
       "ret": "void",
       "signature": "(float,float,ImGuiCond)",
       "stname": ""
     }
   ],
-  "igSetNextPlotRangeY": [
+  "igSetNextPlotLimitsY": [
     {
-      "args": "(float y_min,float y_max,ImGuiCond cond)",
+      "args": "(float y_min,float y_max,ImGuiCond cond,int y_axis)",
       "argsT": [
         {
           "name": "y_min",
@@ -1373,23 +1478,28 @@
         {
           "name": "cond",
           "type": "ImGuiCond"
+        },
+        {
+          "name": "y_axis",
+          "type": "int"
         }
       ],
-      "argsoriginal": "(float y_min,float y_max,ImGuiCond cond=ImGuiCond_Once)",
-      "call_args": "(y_min,y_max,cond)",
-      "cimguiname": "igSetNextPlotRangeY",
+      "argsoriginal": "(float y_min,float y_max,ImGuiCond cond=ImGuiCond_Once,int y_axis=0)",
+      "call_args": "(y_min,y_max,cond,y_axis)",
+      "cimguiname": "igSetNextPlotLimitsY",
       "defaults": {
-        "cond": "ImGuiCond_Once"
+        "cond": "ImGuiCond_Once",
+        "y_axis": "0"
       },
-      "funcname": "SetNextPlotRangeY",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igSetNextPlotRangeY",
+      "funcname": "SetNextPlotLimitsY",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igSetNextPlotLimitsY",
       "ret": "void",
-      "signature": "(float,float,ImGuiCond)",
+      "signature": "(float,float,ImGuiCond,int)",
       "stname": ""
     }
   ],
-  "igSetPlotPalette": [
+  "igSetPalette": [
     {
       "args": "(const ImVec4* colors,int num_colors)",
       "argsT": [
@@ -1404,17 +1514,38 @@
       ],
       "argsoriginal": "(const ImVec4* colors,int num_colors)",
       "call_args": "(colors,num_colors)",
-      "cimguiname": "igSetPlotPalette",
+      "cimguiname": "igSetPalette",
       "defaults": [],
-      "funcname": "SetPlotPalette",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igSetPlotPalette",
+      "funcname": "SetPalette",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igSetPalette",
       "ret": "void",
       "signature": "(const ImVec4*,int)",
       "stname": ""
     }
   ],
-  "igShowImPlotDemoWindow": [
+  "igSetPlotYAxis": [
+    {
+      "args": "(int y_axis)",
+      "argsT": [
+        {
+          "name": "y_axis",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int y_axis)",
+      "call_args": "(y_axis)",
+      "cimguiname": "igSetPlotYAxis",
+      "defaults": [],
+      "funcname": "SetPlotYAxis",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igSetPlotYAxis",
+      "ret": "void",
+      "signature": "(int)",
+      "stname": ""
+    }
+  ],
+  "igShowDemoWindow": [
     {
       "args": "(bool* p_open)",
       "argsT": [
@@ -1425,15 +1556,55 @@
       ],
       "argsoriginal": "(bool* p_open=((void*)0))",
       "call_args": "(p_open)",
-      "cimguiname": "igShowImPlotDemoWindow",
+      "cimguiname": "igShowDemoWindow",
       "defaults": {
         "p_open": "((void*)0)"
       },
-      "funcname": "ShowImPlotDemoWindow",
-      "namespace": "ImGui",
-      "ov_cimguiname": "igShowImPlotDemoWindow",
+      "funcname": "ShowDemoWindow",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igShowDemoWindow",
       "ret": "void",
       "signature": "(bool*)",
+      "stname": ""
+    }
+  ],
+  "igText": [
+    {
+      "args": "(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset)",
+      "argsT": [
+        {
+          "name": "text",
+          "type": "const char*"
+        },
+        {
+          "name": "x",
+          "type": "float"
+        },
+        {
+          "name": "y",
+          "type": "float"
+        },
+        {
+          "name": "vertical",
+          "type": "bool"
+        },
+        {
+          "name": "pixel_offset",
+          "type": "const ImVec2"
+        }
+      ],
+      "argsoriginal": "(const char* text,float x,float y,bool vertical=false,const ImVec2& pixel_offset=ImVec2(0,0))",
+      "call_args": "(text,x,y,vertical,pixel_offset)",
+      "cimguiname": "igText",
+      "defaults": {
+        "pixel_offset": "ImVec2(0,0)",
+        "vertical": "false"
+      },
+      "funcname": "Text",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "igText",
+      "ret": "void",
+      "signature": "(const char*,float,float,bool,const ImVec2)",
       "stname": ""
     }
   ]

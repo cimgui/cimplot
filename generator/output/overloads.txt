@@ -1,28 +1,28 @@
 ----------------overloadings---------------------------
-igPlotErrorBars	3
-1	void	igPlotErrorBarsFloatPtrInt (const char*,const float*,const float*,const float*,int,int,int)
-2	void	igPlotErrorBarsFloatPtrFloatPtr (const char*,const float*,const float*,const float*,const float*,int,int,int)
-3	void	igPlotErrorBarsFnPtr (const char*,ImVec4(*)(void*,int),void*,int,int)
-igPlotBarH	3
-1	void	igPlotBarHFloatPtrInt (const char*,const float*,int,float,float,int,int)
-2	void	igPlotBarHFloatPtrFloatPtr (const char*,const float*,const float*,int,float,int,int)
-3	void	igPlotBarHFnPtr (const char*,ImVec2(*)(void*,int),void*,int,float,int)
-igPlotDigital	2
-1	void	igPlotDigitalFloatPtr (const char*,const float*,const float*,int,int,int)
-2	void	igPlotDigitalFnPtr (const char*,ImVec2(*)(void*,int),void*,int,int)
+igBar	3
+1	void	igBarFloatPtrInt (const char*,const float*,int,float,float,int,int)
+2	void	igBarFloatPtrFloatPtr (const char*,const float*,const float*,int,float,int,int)
+3	void	igBarFnPtr (const char*,ImVec2(*)(void*,int),void*,int,float,int)
+igDigital	2
+1	void	igDigitalFloatPtr (const char*,const float*,const float*,int,int,int)
+2	void	igDigitalFnPtr (const char*,ImVec2(*)(void*,int),void*,int,int)
 igPlot	4
 1	void	igPlotFloatPtrInt (const char*,const float*,int,int,int)
 2	void	igPlotFloatPtrFloatPtr (const char*,const float*,const float*,int,int,int)
 3	void	igPlotVec2Ptr (const char*,const ImVec2*,int,int)
 4	void	igPlotFnPtr (const char*,ImVec2(*)(void*,int),void*,int,int)
-igPlotBar	3
-1	void	igPlotBarFloatPtrInt (const char*,const float*,int,float,float,int,int)
-2	void	igPlotBarFloatPtrFloatPtr (const char*,const float*,const float*,int,float,int,int)
-3	void	igPlotBarFnPtr (const char*,ImVec2(*)(void*,int),void*,int,float,int)
-igPushPlotStyleVar	2
-1	void	igPushPlotStyleVarFloat (ImPlotStyleVar,float)
-2	void	igPushPlotStyleVarInt (ImPlotStyleVar,int)
-igPushPlotColor	2
-1	void	igPushPlotColorU32 (ImPlotCol,ImU32)
-2	void	igPushPlotColorVec4 (ImPlotCol,const ImVec4)
+igPushStyleVar	2
+1	void	igPushStyleVarFloat (ImPlotStyleVar,float)
+2	void	igPushStyleVarInt (ImPlotStyleVar,int)
+igErrorBars	3
+1	void	igErrorBarsFloatPtrInt (const char*,const float*,const float*,const float*,int,int,int)
+2	void	igErrorBarsFloatPtrFloatPtr (const char*,const float*,const float*,const float*,const float*,int,int,int)
+3	void	igErrorBarsFnPtr (const char*,ImVec4(*)(void*,int),void*,int,int)
+igPushStyleColor	2
+1	void	igPushStyleColorU32 (ImPlotCol,ImU32)
+2	void	igPushStyleColorVec4 (ImPlotCol,const ImVec4)
+igBarH	3
+1	void	igBarHFloatPtrInt (const char*,const float*,int,float,float,int,int)
+2	void	igBarHFloatPtrFloatPtr (const char*,const float*,const float*,int,float,int,int)
+3	void	igBarHFnPtr (const char*,ImVec2(*)(void*,int),void*,int,float,int)
 19 overloaded

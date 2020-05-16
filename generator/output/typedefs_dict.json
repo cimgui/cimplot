@@ -1,8 +1,9 @@
 {
-  "ImAxisFlags": "int",
-  "ImMarker": "int",
+  "ImPlotAxisFlags": "int",
   "ImPlotCol": "int",
   "ImPlotFlags": "int",
+  "ImPlotLimits": "struct ImPlotLimits",
+  "ImPlotMarker": "int",
   "ImPlotRange": "struct ImPlotRange",
   "ImPlotStyle": "struct ImPlotStyle",
   "ImPlotStyleVar": "int"
