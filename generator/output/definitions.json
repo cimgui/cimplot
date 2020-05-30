@@ -1,25 +1,29 @@
 {
   "ImPlotLimits_Contains": [
     {
-      "args": "(ImPlotLimits* self,const ImVec2 p)",
+      "args": "(ImPlotLimits* self,double x,double y)",
       "argsT": [
         {
           "name": "self",
           "type": "ImPlotLimits*"
         },
         {
-          "name": "p",
-          "type": "const ImVec2"
+          "name": "x",
+          "type": "double"
+        },
+        {
+          "name": "y",
+          "type": "double"
         }
       ],
-      "argsoriginal": "(const ImVec2& p)",
-      "call_args": "(p)",
+      "argsoriginal": "(double x,double y)",
+      "call_args": "(x,y)",
       "cimguiname": "ImPlotLimits_Contains",
       "defaults": [],
       "funcname": "Contains",
       "ov_cimguiname": "ImPlotLimits_Contains",
       "ret": "bool",
-      "signature": "(const ImVec2)const",
+      "signature": "(double,double)const",
       "stname": "ImPlotLimits"
     }
   ],
@@ -35,31 +39,6 @@
       "funcname": "ImPlotLimits",
       "ov_cimguiname": "ImPlotLimits_ImPlotLimits",
       "signature": "()",
-      "stname": "ImPlotLimits"
-    }
-  ],
-  "ImPlotLimits_Size": [
-    {
-      "args": "(ImVec2 *pOut,ImPlotLimits* self)",
-      "argsT": [
-        {
-          "name": "pOut",
-          "type": "ImVec2*"
-        },
-        {
-          "name": "self",
-          "type": "ImPlotLimits*"
-        }
-      ],
-      "argsoriginal": "()",
-      "call_args": "()",
-      "cimguiname": "ImPlotLimits_Size",
-      "defaults": [],
-      "funcname": "Size",
-      "nonUDT": 1,
-      "ov_cimguiname": "ImPlotLimits_Size",
-      "ret": "void",
-      "signature": "()const",
       "stname": "ImPlotLimits"
     }
   ],
@@ -82,9 +61,65 @@
       "stname": "ImPlotLimits"
     }
   ],
+  "ImPlotPoint_ImPlotPoint": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotPoint_ImPlotPoint",
+      "constructor": true,
+      "defaults": [],
+      "funcname": "ImPlotPoint",
+      "ov_cimguiname": "ImPlotPoint_ImPlotPointNil",
+      "signature": "()",
+      "stname": "ImPlotPoint"
+    },
+    {
+      "args": "(double _x,double _y)",
+      "argsT": [
+        {
+          "name": "_x",
+          "type": "double"
+        },
+        {
+          "name": "_y",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double _x,double _y)",
+      "call_args": "(_x,_y)",
+      "cimguiname": "ImPlotPoint_ImPlotPoint",
+      "constructor": true,
+      "defaults": [],
+      "funcname": "ImPlotPoint",
+      "ov_cimguiname": "ImPlotPoint_ImPlotPointdouble",
+      "signature": "(double,double)",
+      "stname": "ImPlotPoint"
+    }
+  ],
+  "ImPlotPoint_destroy": [
+    {
+      "args": "(ImPlotPoint* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotPoint*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotPoint_destroy",
+      "defaults": [],
+      "destructor": true,
+      "ov_cimguiname": "ImPlotPoint_destroy",
+      "ret": "void",
+      "signature": "(ImPlotPoint*)",
+      "stname": "ImPlotPoint"
+    }
+  ],
   "ImPlotRange_Contains": [
     {
-      "args": "(ImPlotRange* self,float value)",
+      "args": "(ImPlotRange* self,double value)",
       "argsT": [
         {
           "name": "self",
@@ -92,17 +127,17 @@
         },
         {
           "name": "value",
-          "type": "float"
+          "type": "double"
         }
       ],
-      "argsoriginal": "(float value)",
+      "argsoriginal": "(double value)",
       "call_args": "(value)",
       "cimguiname": "ImPlotRange_Contains",
       "defaults": [],
       "funcname": "Contains",
       "ov_cimguiname": "ImPlotRange_Contains",
       "ret": "bool",
-      "signature": "(float)const",
+      "signature": "(double)const",
       "stname": "ImPlotRange"
     }
   ],
@@ -136,7 +171,7 @@
       "defaults": [],
       "funcname": "Size",
       "ov_cimguiname": "ImPlotRange_Size",
-      "ret": "float",
+      "ret": "double",
       "signature": "()const",
       "stname": "ImPlotRange"
     }
@@ -194,284 +229,6 @@
       "stname": "ImPlotStyle"
     }
   ],
-  "ImPlot_Bar": [
-    {
-      "args": "(const char* label_id,const float* values,int count,float width,float shift,int offset,int stride)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "values",
-          "type": "const float*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "width",
-          "type": "float"
-        },
-        {
-          "name": "shift",
-          "type": "float"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        },
-        {
-          "name": "stride",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,const float* values,int count,float width=0.67f,float shift=0,int offset=0,int stride=sizeof(float))",
-      "call_args": "(label_id,values,count,width,shift,offset,stride)",
-      "cimguiname": "ImPlot_Bar",
-      "defaults": {
-        "offset": "0",
-        "shift": "0",
-        "stride": "sizeof(float)",
-        "width": "0.67f"
-      },
-      "funcname": "Bar",
-      "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_BarFloatPtrInt",
-      "ret": "void",
-      "signature": "(const char*,const float*,int,float,float,int,int)",
-      "stname": ""
-    },
-    {
-      "args": "(const char* label_id,const float* xs,const float* ys,int count,float width,int offset,int stride)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "xs",
-          "type": "const float*"
-        },
-        {
-          "name": "ys",
-          "type": "const float*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "width",
-          "type": "float"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        },
-        {
-          "name": "stride",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,float width,int offset=0,int stride=sizeof(float))",
-      "call_args": "(label_id,xs,ys,count,width,offset,stride)",
-      "cimguiname": "ImPlot_Bar",
-      "defaults": {
-        "offset": "0",
-        "stride": "sizeof(float)"
-      },
-      "funcname": "Bar",
-      "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_BarFloatPtrFloatPtr",
-      "ret": "void",
-      "signature": "(const char*,const float*,const float*,int,float,int,int)",
-      "stname": ""
-    },
-    {
-      "args": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float width,int offset)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "getter",
-          "ret": "ImVec2",
-          "signature": "(void* data,int idx)",
-          "type": "ImVec2(*)(void* data,int idx)"
-        },
-        {
-          "name": "data",
-          "type": "void*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "width",
-          "type": "float"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float width,int offset=0)",
-      "call_args": "(label_id,getter,data,count,width,offset)",
-      "cimguiname": "ImPlot_Bar",
-      "defaults": {
-        "offset": "0"
-      },
-      "funcname": "Bar",
-      "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_BarFnPtr",
-      "ret": "void",
-      "signature": "(const char*,ImVec2(*)(void*,int),void*,int,float,int)",
-      "stname": ""
-    }
-  ],
-  "ImPlot_BarH": [
-    {
-      "args": "(const char* label_id,const float* values,int count,float height,float shift,int offset,int stride)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "values",
-          "type": "const float*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "height",
-          "type": "float"
-        },
-        {
-          "name": "shift",
-          "type": "float"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        },
-        {
-          "name": "stride",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,const float* values,int count,float height=0.67f,float shift=0,int offset=0,int stride=sizeof(float))",
-      "call_args": "(label_id,values,count,height,shift,offset,stride)",
-      "cimguiname": "ImPlot_BarH",
-      "defaults": {
-        "height": "0.67f",
-        "offset": "0",
-        "shift": "0",
-        "stride": "sizeof(float)"
-      },
-      "funcname": "BarH",
-      "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_BarHFloatPtrInt",
-      "ret": "void",
-      "signature": "(const char*,const float*,int,float,float,int,int)",
-      "stname": ""
-    },
-    {
-      "args": "(const char* label_id,const float* xs,const float* ys,int count,float height,int offset,int stride)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "xs",
-          "type": "const float*"
-        },
-        {
-          "name": "ys",
-          "type": "const float*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "height",
-          "type": "float"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        },
-        {
-          "name": "stride",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,float height,int offset=0,int stride=sizeof(float))",
-      "call_args": "(label_id,xs,ys,count,height,offset,stride)",
-      "cimguiname": "ImPlot_BarH",
-      "defaults": {
-        "offset": "0",
-        "stride": "sizeof(float)"
-      },
-      "funcname": "BarH",
-      "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_BarHFloatPtrFloatPtr",
-      "ret": "void",
-      "signature": "(const char*,const float*,const float*,int,float,int,int)",
-      "stname": ""
-    },
-    {
-      "args": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float height,int offset)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "getter",
-          "ret": "ImVec2",
-          "signature": "(void* data,int idx)",
-          "type": "ImVec2(*)(void* data,int idx)"
-        },
-        {
-          "name": "data",
-          "type": "void*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "height",
-          "type": "float"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float height,int offset=0)",
-      "call_args": "(label_id,getter,data,count,height,offset)",
-      "cimguiname": "ImPlot_BarH",
-      "defaults": {
-        "offset": "0"
-      },
-      "funcname": "BarH",
-      "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_BarHFnPtr",
-      "ret": "void",
-      "signature": "(const char*,ImVec2(*)(void*,int),void*,int,float,int)",
-      "stname": ""
-    }
-  ],
   "ImPlot_BeginPlot": [
     {
       "args": "(const char* title_id,const char* x_label,const char* y_label,const ImVec2 size,ImPlotFlags flags,ImPlotAxisFlags x_flags,ImPlotAxisFlags y_flags,ImPlotAxisFlags y2_flags,ImPlotAxisFlags y3_flags)",
@@ -513,12 +270,12 @@
           "type": "ImPlotAxisFlags"
         }
       ],
-      "argsoriginal": "(const char* title_id,const char* x_label=((void*)0),const char* y_label=((void*)0),const ImVec2& size=ImVec2(-1,-1),ImPlotFlags flags=ImPlotFlags_Default,ImPlotAxisFlags x_flags=ImPlotAxisFlags_Default,ImPlotAxisFlags y_flags=ImPlotAxisFlags_Default,ImPlotAxisFlags y2_flags=ImPlotAxisFlags_Auxiliary,ImPlotAxisFlags y3_flags=ImPlotAxisFlags_Auxiliary)",
+      "argsoriginal": "(const char* title_id,const char* x_label=((void*)0),const char* y_label=((void*)0),const ImVec2& size=ImVec2(-1,0),ImPlotFlags flags=ImPlotFlags_Default,ImPlotAxisFlags x_flags=ImPlotAxisFlags_Default,ImPlotAxisFlags y_flags=ImPlotAxisFlags_Default,ImPlotAxisFlags y2_flags=ImPlotAxisFlags_Auxiliary,ImPlotAxisFlags y3_flags=ImPlotAxisFlags_Auxiliary)",
       "call_args": "(title_id,x_label,y_label,size,flags,x_flags,y_flags,y2_flags,y3_flags)",
       "cimguiname": "ImPlot_BeginPlot",
       "defaults": {
         "flags": "ImPlotFlags_Default",
-        "size": "ImVec2(-1,-1)",
+        "size": "ImVec2(-1,0)",
         "x_flags": "ImPlotAxisFlags_Default",
         "x_label": "((void*)0)",
         "y2_flags": "ImPlotAxisFlags_Auxiliary",
@@ -531,89 +288,6 @@
       "ov_cimguiname": "ImPlot_BeginPlot",
       "ret": "bool",
       "signature": "(const char*,const char*,const char*,const ImVec2,ImPlotFlags,ImPlotAxisFlags,ImPlotAxisFlags,ImPlotAxisFlags,ImPlotAxisFlags)",
-      "stname": ""
-    }
-  ],
-  "ImPlot_Digital": [
-    {
-      "args": "(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "xs",
-          "type": "const float*"
-        },
-        {
-          "name": "ys",
-          "type": "const float*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        },
-        {
-          "name": "stride",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,int offset=0,int stride=sizeof(float))",
-      "call_args": "(label_id,xs,ys,count,offset,stride)",
-      "cimguiname": "ImPlot_Digital",
-      "defaults": {
-        "offset": "0",
-        "stride": "sizeof(float)"
-      },
-      "funcname": "Digital",
-      "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_DigitalFloatPtr",
-      "ret": "void",
-      "signature": "(const char*,const float*,const float*,int,int,int)",
-      "stname": ""
-    },
-    {
-      "args": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "getter",
-          "ret": "ImVec2",
-          "signature": "(void* data,int idx)",
-          "type": "ImVec2(*)(void* data,int idx)"
-        },
-        {
-          "name": "data",
-          "type": "void*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset=0)",
-      "call_args": "(label_id,getter,data,count,offset)",
-      "cimguiname": "ImPlot_Digital",
-      "defaults": {
-        "offset": "0"
-      },
-      "funcname": "Digital",
-      "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_DigitalFnPtr",
-      "ret": "void",
-      "signature": "(const char*,ImVec2(*)(void*,int),void*,int,int)",
       "stname": ""
     }
   ],
@@ -630,143 +304,6 @@
       "ov_cimguiname": "ImPlot_EndPlot",
       "ret": "void",
       "signature": "()",
-      "stname": ""
-    }
-  ],
-  "ImPlot_ErrorBars": [
-    {
-      "args": "(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset,int stride)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "xs",
-          "type": "const float*"
-        },
-        {
-          "name": "ys",
-          "type": "const float*"
-        },
-        {
-          "name": "err",
-          "type": "const float*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        },
-        {
-          "name": "stride",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset=0,int stride=sizeof(float))",
-      "call_args": "(label_id,xs,ys,err,count,offset,stride)",
-      "cimguiname": "ImPlot_ErrorBars",
-      "defaults": {
-        "offset": "0",
-        "stride": "sizeof(float)"
-      },
-      "funcname": "ErrorBars",
-      "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_ErrorBarsFloatPtrInt",
-      "ret": "void",
-      "signature": "(const char*,const float*,const float*,const float*,int,int,int)",
-      "stname": ""
-    },
-    {
-      "args": "(const char* label_id,const float* xs,const float* ys,const float* neg,const float* pos,int count,int offset,int stride)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "xs",
-          "type": "const float*"
-        },
-        {
-          "name": "ys",
-          "type": "const float*"
-        },
-        {
-          "name": "neg",
-          "type": "const float*"
-        },
-        {
-          "name": "pos",
-          "type": "const float*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        },
-        {
-          "name": "stride",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,const float* neg,const float* pos,int count,int offset=0,int stride=sizeof(float))",
-      "call_args": "(label_id,xs,ys,neg,pos,count,offset,stride)",
-      "cimguiname": "ImPlot_ErrorBars",
-      "defaults": {
-        "offset": "0",
-        "stride": "sizeof(float)"
-      },
-      "funcname": "ErrorBars",
-      "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_ErrorBarsFloatPtrFloatPtr",
-      "ret": "void",
-      "signature": "(const char*,const float*,const float*,const float*,const float*,int,int,int)",
-      "stname": ""
-    },
-    {
-      "args": "(const char* label_id,ImVec4(*getter)(void* data,int idx),void* data,int count,int offset)",
-      "argsT": [
-        {
-          "name": "label_id",
-          "type": "const char*"
-        },
-        {
-          "name": "getter",
-          "ret": "ImVec4",
-          "signature": "(void* data,int idx)",
-          "type": "ImVec4(*)(void* data,int idx)"
-        },
-        {
-          "name": "data",
-          "type": "void*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "offset",
-          "type": "int"
-        }
-      ],
-      "argsoriginal": "(const char* label_id,ImVec4(*getter)(void* data,int idx),void* data,int count,int offset=0)",
-      "call_args": "(label_id,getter,data,count,offset)",
-      "cimguiname": "ImPlot_ErrorBars",
-      "defaults": {
-        "offset": "0"
-      },
-      "funcname": "ErrorBars",
-      "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_ErrorBarsFnPtr",
-      "ret": "void",
-      "signature": "(const char*,ImVec4(*)(void*,int),void*,int,int)",
       "stname": ""
     }
   ],
@@ -795,12 +332,8 @@
   ],
   "ImPlot_GetPlotMousePos": [
     {
-      "args": "(ImVec2 *pOut,int y_axis)",
+      "args": "(int y_axis)",
       "argsT": [
-        {
-          "name": "pOut",
-          "type": "ImVec2*"
-        },
         {
           "name": "y_axis",
           "type": "int"
@@ -814,9 +347,8 @@
       },
       "funcname": "GetPlotMousePos",
       "namespace": "ImPlot",
-      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetPlotMousePos",
-      "ret": "void",
+      "ret": "ImPlotPoint",
       "signature": "(int)",
       "stname": ""
     }
@@ -937,62 +469,10 @@
       "stname": ""
     }
   ],
-  "ImPlot_PieChart": [
-    {
-      "args": "(const char** label_ids,float* values,int count,const ImVec2 center,float radius,bool show_percents,float angle0)",
-      "argsT": [
-        {
-          "name": "label_ids",
-          "type": "const char**"
-        },
-        {
-          "name": "values",
-          "type": "float*"
-        },
-        {
-          "name": "count",
-          "type": "int"
-        },
-        {
-          "name": "center",
-          "type": "const ImVec2"
-        },
-        {
-          "name": "radius",
-          "type": "float"
-        },
-        {
-          "name": "show_percents",
-          "type": "bool"
-        },
-        {
-          "name": "angle0",
-          "type": "float"
-        }
-      ],
-      "argsoriginal": "(const char** label_ids,float* values,int count,const ImVec2& center,float radius,bool show_percents=true,float angle0=90)",
-      "call_args": "(label_ids,values,count,center,radius,show_percents,angle0)",
-      "cimguiname": "ImPlot_PieChart",
-      "defaults": {
-        "angle0": "90",
-        "show_percents": "true"
-      },
-      "funcname": "PieChart",
-      "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PieChart",
-      "ret": "void",
-      "signature": "(const char**,float*,int,const ImVec2,float,bool,float)",
-      "stname": ""
-    }
-  ],
   "ImPlot_PixelsToPlot": [
     {
-      "args": "(ImVec2 *pOut,const ImVec2 pix,int y_axis)",
+      "args": "(const ImVec2 pix,int y_axis)",
       "argsT": [
-        {
-          "name": "pOut",
-          "type": "ImVec2*"
-        },
         {
           "name": "pix",
           "type": "const ImVec2"
@@ -1010,14 +490,923 @@
       },
       "funcname": "PixelsToPlot",
       "namespace": "ImPlot",
-      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_PixelsToPlot",
-      "ret": "void",
+      "ret": "ImPlotPoint",
       "signature": "(const ImVec2,int)",
       "stname": ""
     }
   ],
-  "ImPlot_Plot": [
+  "ImPlot_PlotBars": [
+    {
+      "args": "(const char* label_id,const float* values,int count,float width,float shift,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "values",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "width",
+          "type": "float"
+        },
+        {
+          "name": "shift",
+          "type": "float"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* values,int count,float width=0.67f,float shift=0,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,values,count,width,shift,offset,stride)",
+      "cimguiname": "ImPlot_PlotBars",
+      "defaults": {
+        "offset": "0",
+        "shift": "0",
+        "stride": "sizeof(float)",
+        "width": "0.67f"
+      },
+      "funcname": "PlotBars",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotBarsFloatPtrIntFloat",
+      "ret": "void",
+      "signature": "(const char*,const float*,int,float,float,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const float* xs,const float* ys,int count,float width,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const float*"
+        },
+        {
+          "name": "ys",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "width",
+          "type": "float"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,float width,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,xs,ys,count,width,offset,stride)",
+      "cimguiname": "ImPlot_PlotBars",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "PlotBars",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotBarsFloatPtrFloatPtr",
+      "ret": "void",
+      "signature": "(const char*,const float*,const float*,int,float,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float width,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "getter",
+          "ret": "ImVec2",
+          "signature": "(void* data,int idx)",
+          "type": "ImVec2(*)(void* data,int idx)"
+        },
+        {
+          "name": "data",
+          "type": "void*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "width",
+          "type": "float"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float width,int offset=0)",
+      "call_args": "(label_id,getter,data,count,width,offset)",
+      "cimguiname": "ImPlot_PlotBars",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotBars",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotBarsFnVec2Ptr",
+      "ret": "void",
+      "signature": "(const char*,ImVec2(*)(void*,int),void*,int,float,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* values,int count,double width,double shift,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "values",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "width",
+          "type": "double"
+        },
+        {
+          "name": "shift",
+          "type": "double"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* values,int count,double width=0.67f,double shift=0,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,values,count,width,shift,offset,stride)",
+      "cimguiname": "ImPlot_PlotBars",
+      "defaults": {
+        "offset": "0",
+        "shift": "0",
+        "stride": "sizeof(double)",
+        "width": "0.67f"
+      },
+      "funcname": "PlotBars",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotBarsdoublePtrIntdouble",
+      "ret": "void",
+      "signature": "(const char*,const double*,int,double,double,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* xs,const double* ys,int count,double width,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const double*"
+        },
+        {
+          "name": "ys",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "width",
+          "type": "double"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* xs,const double* ys,int count,double width,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,xs,ys,count,width,offset,stride)",
+      "cimguiname": "ImPlot_PlotBars",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)"
+      },
+      "funcname": "PlotBars",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotBarsdoublePtrdoublePtr",
+      "ret": "void",
+      "signature": "(const char*,const double*,const double*,int,double,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,double width,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "getter",
+          "ret": "ImPlotPoint",
+          "signature": "(void* data,int idx)",
+          "type": "ImPlotPoint(*)(void* data,int idx)"
+        },
+        {
+          "name": "data",
+          "type": "void*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "width",
+          "type": "double"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,double width,int offset=0)",
+      "call_args": "(label_id,getter,data,count,width,offset)",
+      "cimguiname": "ImPlot_PlotBars",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotBars",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotBarsFnPlotPoIntPtr",
+      "ret": "void",
+      "signature": "(const char*,ImPlotPoint(*)(void*,int),void*,int,double,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_PlotBarsH": [
+    {
+      "args": "(const char* label_id,const float* values,int count,float height,float shift,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "values",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "height",
+          "type": "float"
+        },
+        {
+          "name": "shift",
+          "type": "float"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* values,int count,float height=0.67f,float shift=0,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,values,count,height,shift,offset,stride)",
+      "cimguiname": "ImPlot_PlotBarsH",
+      "defaults": {
+        "height": "0.67f",
+        "offset": "0",
+        "shift": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "PlotBarsH",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotBarsHFloatPtrIntFloat",
+      "ret": "void",
+      "signature": "(const char*,const float*,int,float,float,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const float* xs,const float* ys,int count,float height,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const float*"
+        },
+        {
+          "name": "ys",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "height",
+          "type": "float"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,float height,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,xs,ys,count,height,offset,stride)",
+      "cimguiname": "ImPlot_PlotBarsH",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "PlotBarsH",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotBarsHFloatPtrFloatPtr",
+      "ret": "void",
+      "signature": "(const char*,const float*,const float*,int,float,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float height,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "getter",
+          "ret": "ImVec2",
+          "signature": "(void* data,int idx)",
+          "type": "ImVec2(*)(void* data,int idx)"
+        },
+        {
+          "name": "data",
+          "type": "void*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "height",
+          "type": "float"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float height,int offset=0)",
+      "call_args": "(label_id,getter,data,count,height,offset)",
+      "cimguiname": "ImPlot_PlotBarsH",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotBarsH",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotBarsHFnVec2Ptr",
+      "ret": "void",
+      "signature": "(const char*,ImVec2(*)(void*,int),void*,int,float,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* values,int count,double height,double shift,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "values",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "height",
+          "type": "double"
+        },
+        {
+          "name": "shift",
+          "type": "double"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* values,int count,double height=0.67f,double shift=0,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,values,count,height,shift,offset,stride)",
+      "cimguiname": "ImPlot_PlotBarsH",
+      "defaults": {
+        "height": "0.67f",
+        "offset": "0",
+        "shift": "0",
+        "stride": "sizeof(double)"
+      },
+      "funcname": "PlotBarsH",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotBarsHdoublePtrIntdouble",
+      "ret": "void",
+      "signature": "(const char*,const double*,int,double,double,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* xs,const double* ys,int count,double height,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const double*"
+        },
+        {
+          "name": "ys",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "height",
+          "type": "double"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* xs,const double* ys,int count,double height,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,xs,ys,count,height,offset,stride)",
+      "cimguiname": "ImPlot_PlotBarsH",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)"
+      },
+      "funcname": "PlotBarsH",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotBarsHdoublePtrdoublePtr",
+      "ret": "void",
+      "signature": "(const char*,const double*,const double*,int,double,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,double height,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "getter",
+          "ret": "ImPlotPoint",
+          "signature": "(void* data,int idx)",
+          "type": "ImPlotPoint(*)(void* data,int idx)"
+        },
+        {
+          "name": "data",
+          "type": "void*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "height",
+          "type": "double"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,double height,int offset=0)",
+      "call_args": "(label_id,getter,data,count,height,offset)",
+      "cimguiname": "ImPlot_PlotBarsH",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotBarsH",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotBarsHFnPlotPoIntPtr",
+      "ret": "void",
+      "signature": "(const char*,ImPlotPoint(*)(void*,int),void*,int,double,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_PlotDigital": [
+    {
+      "args": "(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const float*"
+        },
+        {
+          "name": "ys",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,xs,ys,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotDigital",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "PlotDigital",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotDigitalFloatPtr",
+      "ret": "void",
+      "signature": "(const char*,const float*,const float*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "getter",
+          "ret": "ImVec2",
+          "signature": "(void* data,int idx)",
+          "type": "ImVec2(*)(void* data,int idx)"
+        },
+        {
+          "name": "data",
+          "type": "void*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset=0)",
+      "call_args": "(label_id,getter,data,count,offset)",
+      "cimguiname": "ImPlot_PlotDigital",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotDigital",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotDigitalFnVec2Ptr",
+      "ret": "void",
+      "signature": "(const char*,ImVec2(*)(void*,int),void*,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* xs,const double* ys,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const double*"
+        },
+        {
+          "name": "ys",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* xs,const double* ys,int count,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,xs,ys,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotDigital",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)"
+      },
+      "funcname": "PlotDigital",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotDigitaldoublePtr",
+      "ret": "void",
+      "signature": "(const char*,const double*,const double*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "getter",
+          "ret": "ImPlotPoint",
+          "signature": "(void* data,int idx)",
+          "type": "ImPlotPoint(*)(void* data,int idx)"
+        },
+        {
+          "name": "data",
+          "type": "void*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset=0)",
+      "call_args": "(label_id,getter,data,count,offset)",
+      "cimguiname": "ImPlot_PlotDigital",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotDigital",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotDigitalFnPlotPoIntPtr",
+      "ret": "void",
+      "signature": "(const char*,ImPlotPoint(*)(void*,int),void*,int,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_PlotErrorBars": [
+    {
+      "args": "(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const float*"
+        },
+        {
+          "name": "ys",
+          "type": "const float*"
+        },
+        {
+          "name": "err",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,xs,ys,err,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotErrorBars",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "PlotErrorBars",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotErrorBarsFloatPtrFloatPtrFloatPtrInt",
+      "ret": "void",
+      "signature": "(const char*,const float*,const float*,const float*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const float* xs,const float* ys,const float* neg,const float* pos,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const float*"
+        },
+        {
+          "name": "ys",
+          "type": "const float*"
+        },
+        {
+          "name": "neg",
+          "type": "const float*"
+        },
+        {
+          "name": "pos",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,const float* neg,const float* pos,int count,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,xs,ys,neg,pos,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotErrorBars",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "PlotErrorBars",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotErrorBarsFloatPtrFloatPtrFloatPtrFloatPtr",
+      "ret": "void",
+      "signature": "(const char*,const float*,const float*,const float*,const float*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* xs,const double* ys,const double* err,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const double*"
+        },
+        {
+          "name": "ys",
+          "type": "const double*"
+        },
+        {
+          "name": "err",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* xs,const double* ys,const double* err,int count,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,xs,ys,err,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotErrorBars",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)"
+      },
+      "funcname": "PlotErrorBars",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotErrorBarsdoublePtrdoublePtrdoublePtrInt",
+      "ret": "void",
+      "signature": "(const char*,const double*,const double*,const double*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* xs,const double* ys,const double* neg,const double* pos,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const double*"
+        },
+        {
+          "name": "ys",
+          "type": "const double*"
+        },
+        {
+          "name": "neg",
+          "type": "const double*"
+        },
+        {
+          "name": "pos",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* xs,const double* ys,const double* neg,const double* pos,int count,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,xs,ys,neg,pos,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotErrorBars",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)"
+      },
+      "funcname": "PlotErrorBars",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotErrorBarsdoublePtrdoublePtrdoublePtrdoublePtr",
+      "ret": "void",
+      "signature": "(const char*,const double*,const double*,const double*,const double*,int,int,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_PlotLine": [
     {
       "args": "(const char* label_id,const float* values,int count,int offset,int stride)",
       "argsT": [
@@ -1044,14 +1433,14 @@
       ],
       "argsoriginal": "(const char* label_id,const float* values,int count,int offset=0,int stride=sizeof(float))",
       "call_args": "(label_id,values,count,offset,stride)",
-      "cimguiname": "ImPlot_Plot",
+      "cimguiname": "ImPlot_PlotLine",
       "defaults": {
         "offset": "0",
         "stride": "sizeof(float)"
       },
-      "funcname": "Plot",
+      "funcname": "PlotLine",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotFloatPtrInt",
+      "ov_cimguiname": "ImPlot_PlotLineFloatPtrInt",
       "ret": "void",
       "signature": "(const char*,const float*,int,int,int)",
       "stname": ""
@@ -1086,14 +1475,14 @@
       ],
       "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,int offset=0,int stride=sizeof(float))",
       "call_args": "(label_id,xs,ys,count,offset,stride)",
-      "cimguiname": "ImPlot_Plot",
+      "cimguiname": "ImPlot_PlotLine",
       "defaults": {
         "offset": "0",
         "stride": "sizeof(float)"
       },
-      "funcname": "Plot",
+      "funcname": "PlotLine",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotFloatPtrFloatPtr",
+      "ov_cimguiname": "ImPlot_PlotLineFloatPtrFloatPtr",
       "ret": "void",
       "signature": "(const char*,const float*,const float*,int,int,int)",
       "stname": ""
@@ -1120,13 +1509,13 @@
       ],
       "argsoriginal": "(const char* label_id,const ImVec2* data,int count,int offset=0)",
       "call_args": "(label_id,data,count,offset)",
-      "cimguiname": "ImPlot_Plot",
+      "cimguiname": "ImPlot_PlotLine",
       "defaults": {
         "offset": "0"
       },
-      "funcname": "Plot",
+      "funcname": "PlotLine",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotVec2Ptr",
+      "ov_cimguiname": "ImPlot_PlotLineVec2Ptr",
       "ret": "void",
       "signature": "(const char*,const ImVec2*,int,int)",
       "stname": ""
@@ -1159,21 +1548,659 @@
       ],
       "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset=0)",
       "call_args": "(label_id,getter,data,count,offset)",
-      "cimguiname": "ImPlot_Plot",
+      "cimguiname": "ImPlot_PlotLine",
       "defaults": {
         "offset": "0"
       },
-      "funcname": "Plot",
+      "funcname": "PlotLine",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotFnPtr",
+      "ov_cimguiname": "ImPlot_PlotLineFnVec2Ptr",
       "ret": "void",
       "signature": "(const char*,ImVec2(*)(void*,int),void*,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* values,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "values",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* values,int count,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,values,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotLine",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)"
+      },
+      "funcname": "PlotLine",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotLinedoublePtrInt",
+      "ret": "void",
+      "signature": "(const char*,const double*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* xs,const double* ys,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const double*"
+        },
+        {
+          "name": "ys",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* xs,const double* ys,int count,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,xs,ys,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotLine",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)"
+      },
+      "funcname": "PlotLine",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotLinedoublePtrdoublePtr",
+      "ret": "void",
+      "signature": "(const char*,const double*,const double*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const ImPlotPoint* data,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "data",
+          "type": "const ImPlotPoint*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const ImPlotPoint* data,int count,int offset=0)",
+      "call_args": "(label_id,data,count,offset)",
+      "cimguiname": "ImPlot_PlotLine",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotLine",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotLinePlotPoIntPtr",
+      "ret": "void",
+      "signature": "(const char*,const ImPlotPoint*,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "getter",
+          "ret": "ImPlotPoint",
+          "signature": "(void* data,int idx)",
+          "type": "ImPlotPoint(*)(void* data,int idx)"
+        },
+        {
+          "name": "data",
+          "type": "void*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset=0)",
+      "call_args": "(label_id,getter,data,count,offset)",
+      "cimguiname": "ImPlot_PlotLine",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotLine",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotLineFnPlotPoIntPtr",
+      "ret": "void",
+      "signature": "(const char*,ImPlotPoint(*)(void*,int),void*,int,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_PlotPieChart": [
+    {
+      "args": "(const char** label_ids,float* values,int count,float x,float y,float radius,bool show_percents,float angle0)",
+      "argsT": [
+        {
+          "name": "label_ids",
+          "type": "const char**"
+        },
+        {
+          "name": "values",
+          "type": "float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "x",
+          "type": "float"
+        },
+        {
+          "name": "y",
+          "type": "float"
+        },
+        {
+          "name": "radius",
+          "type": "float"
+        },
+        {
+          "name": "show_percents",
+          "type": "bool"
+        },
+        {
+          "name": "angle0",
+          "type": "float"
+        }
+      ],
+      "argsoriginal": "(const char** label_ids,float* values,int count,float x,float y,float radius,bool show_percents=true,float angle0=90)",
+      "call_args": "(label_ids,values,count,x,y,radius,show_percents,angle0)",
+      "cimguiname": "ImPlot_PlotPieChart",
+      "defaults": {
+        "angle0": "90",
+        "show_percents": "true"
+      },
+      "funcname": "PlotPieChart",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotPieChartFloatPtr",
+      "ret": "void",
+      "signature": "(const char**,float*,int,float,float,float,bool,float)",
+      "stname": ""
+    },
+    {
+      "args": "(const char** label_ids,double* values,int count,double x,double y,double radius,bool show_percents,double angle0)",
+      "argsT": [
+        {
+          "name": "label_ids",
+          "type": "const char**"
+        },
+        {
+          "name": "values",
+          "type": "double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "x",
+          "type": "double"
+        },
+        {
+          "name": "y",
+          "type": "double"
+        },
+        {
+          "name": "radius",
+          "type": "double"
+        },
+        {
+          "name": "show_percents",
+          "type": "bool"
+        },
+        {
+          "name": "angle0",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(const char** label_ids,double* values,int count,double x,double y,double radius,bool show_percents=true,double angle0=90)",
+      "call_args": "(label_ids,values,count,x,y,radius,show_percents,angle0)",
+      "cimguiname": "ImPlot_PlotPieChart",
+      "defaults": {
+        "angle0": "90",
+        "show_percents": "true"
+      },
+      "funcname": "PlotPieChart",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotPieChartdoublePtr",
+      "ret": "void",
+      "signature": "(const char**,double*,int,double,double,double,bool,double)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_PlotScatter": [
+    {
+      "args": "(const char* label_id,const float* values,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "values",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* values,int count,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,values,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotScatter",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "PlotScatter",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotScatterFloatPtrInt",
+      "ret": "void",
+      "signature": "(const char*,const float*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const float*"
+        },
+        {
+          "name": "ys",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,xs,ys,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotScatter",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "PlotScatter",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotScatterFloatPtrFloatPtr",
+      "ret": "void",
+      "signature": "(const char*,const float*,const float*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const ImVec2* data,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "data",
+          "type": "const ImVec2*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const ImVec2* data,int count,int offset=0)",
+      "call_args": "(label_id,data,count,offset)",
+      "cimguiname": "ImPlot_PlotScatter",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotScatter",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotScatterVec2Ptr",
+      "ret": "void",
+      "signature": "(const char*,const ImVec2*,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "getter",
+          "ret": "ImVec2",
+          "signature": "(void* data,int idx)",
+          "type": "ImVec2(*)(void* data,int idx)"
+        },
+        {
+          "name": "data",
+          "type": "void*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset=0)",
+      "call_args": "(label_id,getter,data,count,offset)",
+      "cimguiname": "ImPlot_PlotScatter",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotScatter",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotScatterFnVec2Ptr",
+      "ret": "void",
+      "signature": "(const char*,ImVec2(*)(void*,int),void*,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* values,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "values",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* values,int count,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,values,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotScatter",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)"
+      },
+      "funcname": "PlotScatter",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotScatterdoublePtrInt",
+      "ret": "void",
+      "signature": "(const char*,const double*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* xs,const double* ys,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const double*"
+        },
+        {
+          "name": "ys",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* xs,const double* ys,int count,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,xs,ys,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotScatter",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)"
+      },
+      "funcname": "PlotScatter",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotScatterdoublePtrdoublePtr",
+      "ret": "void",
+      "signature": "(const char*,const double*,const double*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const ImPlotPoint* data,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "data",
+          "type": "const ImPlotPoint*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const ImPlotPoint* data,int count,int offset=0)",
+      "call_args": "(label_id,data,count,offset)",
+      "cimguiname": "ImPlot_PlotScatter",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotScatter",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotScatterPlotPoIntPtr",
+      "ret": "void",
+      "signature": "(const char*,const ImPlotPoint*,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "getter",
+          "ret": "ImPlotPoint",
+          "signature": "(void* data,int idx)",
+          "type": "ImPlotPoint(*)(void* data,int idx)"
+        },
+        {
+          "name": "data",
+          "type": "void*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset=0)",
+      "call_args": "(label_id,getter,data,count,offset)",
+      "cimguiname": "ImPlot_PlotScatter",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotScatter",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotScatterFnPlotPoIntPtr",
+      "ret": "void",
+      "signature": "(const char*,ImPlotPoint(*)(void*,int),void*,int,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_PlotText": [
+    {
+      "args": "(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset)",
+      "argsT": [
+        {
+          "name": "text",
+          "type": "const char*"
+        },
+        {
+          "name": "x",
+          "type": "float"
+        },
+        {
+          "name": "y",
+          "type": "float"
+        },
+        {
+          "name": "vertical",
+          "type": "bool"
+        },
+        {
+          "name": "pixel_offset",
+          "type": "const ImVec2"
+        }
+      ],
+      "argsoriginal": "(const char* text,float x,float y,bool vertical=false,const ImVec2& pixel_offset=ImVec2(0,0))",
+      "call_args": "(text,x,y,vertical,pixel_offset)",
+      "cimguiname": "ImPlot_PlotText",
+      "defaults": {
+        "pixel_offset": "ImVec2(0,0)",
+        "vertical": "false"
+      },
+      "funcname": "PlotText",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotTextFloat",
+      "ret": "void",
+      "signature": "(const char*,float,float,bool,const ImVec2)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* text,double x,double y,bool vertical,const ImVec2 pixel_offset)",
+      "argsT": [
+        {
+          "name": "text",
+          "type": "const char*"
+        },
+        {
+          "name": "x",
+          "type": "double"
+        },
+        {
+          "name": "y",
+          "type": "double"
+        },
+        {
+          "name": "vertical",
+          "type": "bool"
+        },
+        {
+          "name": "pixel_offset",
+          "type": "const ImVec2"
+        }
+      ],
+      "argsoriginal": "(const char* text,double x,double y,bool vertical=false,const ImVec2& pixel_offset=ImVec2(0,0))",
+      "call_args": "(text,x,y,vertical,pixel_offset)",
+      "cimguiname": "ImPlot_PlotText",
+      "defaults": {
+        "pixel_offset": "ImVec2(0,0)",
+        "vertical": "false"
+      },
+      "funcname": "PlotText",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotTextdouble",
+      "ret": "void",
+      "signature": "(const char*,double,double,bool,const ImVec2)",
       "stname": ""
     }
   ],
   "ImPlot_PlotToPixels": [
     {
-      "args": "(ImVec2 *pOut,const ImVec2 plt,int y_axis)",
+      "args": "(ImVec2 *pOut,const ImPlotPoint plt,int y_axis)",
       "argsT": [
         {
           "name": "pOut",
@@ -1181,14 +2208,14 @@
         },
         {
           "name": "plt",
-          "type": "const ImVec2"
+          "type": "const ImPlotPoint"
         },
         {
           "name": "y_axis",
           "type": "int"
         }
       ],
-      "argsoriginal": "(const ImVec2& plt,int y_axis=-1)",
+      "argsoriginal": "(const ImPlotPoint& plt,int y_axis=-1)",
       "call_args": "(plt,y_axis)",
       "cimguiname": "ImPlot_PlotToPixels",
       "defaults": {
@@ -1199,7 +2226,7 @@
       "nonUDT": 1,
       "ov_cimguiname": "ImPlot_PlotToPixels",
       "ret": "void",
-      "signature": "(const ImVec2,int)",
+      "signature": "(const ImPlotPoint,int)",
       "stname": ""
     }
   ],
@@ -1395,30 +2422,30 @@
   ],
   "ImPlot_SetNextPlotLimits": [
     {
-      "args": "(float x_min,float x_max,float y_min,float y_max,ImGuiCond cond)",
+      "args": "(double x_min,double x_max,double y_min,double y_max,ImGuiCond cond)",
       "argsT": [
         {
           "name": "x_min",
-          "type": "float"
+          "type": "double"
         },
         {
           "name": "x_max",
-          "type": "float"
+          "type": "double"
         },
         {
           "name": "y_min",
-          "type": "float"
+          "type": "double"
         },
         {
           "name": "y_max",
-          "type": "float"
+          "type": "double"
         },
         {
           "name": "cond",
           "type": "ImGuiCond"
         }
       ],
-      "argsoriginal": "(float x_min,float x_max,float y_min,float y_max,ImGuiCond cond=ImGuiCond_Once)",
+      "argsoriginal": "(double x_min,double x_max,double y_min,double y_max,ImGuiCond cond=ImGuiCond_Once)",
       "call_args": "(x_min,x_max,y_min,y_max,cond)",
       "cimguiname": "ImPlot_SetNextPlotLimits",
       "defaults": {
@@ -1428,28 +2455,28 @@
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_SetNextPlotLimits",
       "ret": "void",
-      "signature": "(float,float,float,float,ImGuiCond)",
+      "signature": "(double,double,double,double,ImGuiCond)",
       "stname": ""
     }
   ],
   "ImPlot_SetNextPlotLimitsX": [
     {
-      "args": "(float x_min,float x_max,ImGuiCond cond)",
+      "args": "(double x_min,double x_max,ImGuiCond cond)",
       "argsT": [
         {
           "name": "x_min",
-          "type": "float"
+          "type": "double"
         },
         {
           "name": "x_max",
-          "type": "float"
+          "type": "double"
         },
         {
           "name": "cond",
           "type": "ImGuiCond"
         }
       ],
-      "argsoriginal": "(float x_min,float x_max,ImGuiCond cond=ImGuiCond_Once)",
+      "argsoriginal": "(double x_min,double x_max,ImGuiCond cond=ImGuiCond_Once)",
       "call_args": "(x_min,x_max,cond)",
       "cimguiname": "ImPlot_SetNextPlotLimitsX",
       "defaults": {
@@ -1459,21 +2486,21 @@
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_SetNextPlotLimitsX",
       "ret": "void",
-      "signature": "(float,float,ImGuiCond)",
+      "signature": "(double,double,ImGuiCond)",
       "stname": ""
     }
   ],
   "ImPlot_SetNextPlotLimitsY": [
     {
-      "args": "(float y_min,float y_max,ImGuiCond cond,int y_axis)",
+      "args": "(double y_min,double y_max,ImGuiCond cond,int y_axis)",
       "argsT": [
         {
           "name": "y_min",
-          "type": "float"
+          "type": "double"
         },
         {
           "name": "y_max",
-          "type": "float"
+          "type": "double"
         },
         {
           "name": "cond",
@@ -1484,7 +2511,7 @@
           "type": "int"
         }
       ],
-      "argsoriginal": "(float y_min,float y_max,ImGuiCond cond=ImGuiCond_Once,int y_axis=0)",
+      "argsoriginal": "(double y_min,double y_max,ImGuiCond cond=ImGuiCond_Once,int y_axis=0)",
       "call_args": "(y_min,y_max,cond,y_axis)",
       "cimguiname": "ImPlot_SetNextPlotLimitsY",
       "defaults": {
@@ -1495,7 +2522,7 @@
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_SetNextPlotLimitsY",
       "ret": "void",
-      "signature": "(float,float,ImGuiCond,int)",
+      "signature": "(double,double,ImGuiCond,int)",
       "stname": ""
     }
   ],
@@ -1565,46 +2592,6 @@
       "ov_cimguiname": "ImPlot_ShowDemoWindow",
       "ret": "void",
       "signature": "(bool*)",
-      "stname": ""
-    }
-  ],
-  "ImPlot_Text": [
-    {
-      "args": "(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset)",
-      "argsT": [
-        {
-          "name": "text",
-          "type": "const char*"
-        },
-        {
-          "name": "x",
-          "type": "float"
-        },
-        {
-          "name": "y",
-          "type": "float"
-        },
-        {
-          "name": "vertical",
-          "type": "bool"
-        },
-        {
-          "name": "pixel_offset",
-          "type": "const ImVec2"
-        }
-      ],
-      "argsoriginal": "(const char* text,float x,float y,bool vertical=false,const ImVec2& pixel_offset=ImVec2(0,0))",
-      "call_args": "(text,x,y,vertical,pixel_offset)",
-      "cimguiname": "ImPlot_Text",
-      "defaults": {
-        "pixel_offset": "ImVec2(0,0)",
-        "vertical": "false"
-      },
-      "funcname": "Text",
-      "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_Text",
-      "ret": "void",
-      "signature": "(const char*,float,float,bool,const ImVec2)",
       "stname": ""
     }
   ]

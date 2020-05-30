@@ -4,6 +4,7 @@
   "ImPlotFlags": "int",
   "ImPlotLimits": "struct ImPlotLimits",
   "ImPlotMarker": "int",
+  "ImPlotPoint": "struct ImPlotPoint",
   "ImPlotRange": "struct ImPlotRange",
   "ImPlotStyle": "struct ImPlotStyle",
   "ImPlotStyleVar": "int"

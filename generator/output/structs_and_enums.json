@@ -317,14 +317,24 @@
         "type": "ImPlotRange"
       }
     ],
+    "ImPlotPoint": [
+      {
+        "name": "x",
+        "type": "double"
+      },
+      {
+        "name": "y",
+        "type": "double"
+      }
+    ],
     "ImPlotRange": [
       {
         "name": "Min",
-        "type": "float"
+        "type": "double"
       },
       {
         "name": "Max",
-        "type": "float"
+        "type": "double"
       }
     ],
     "ImPlotStyle": [

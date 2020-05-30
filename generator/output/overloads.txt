@@ -1,28 +1,59 @@
 ----------------overloadings---------------------------
-ImPlot_Plot	4
-1	void	ImPlot_PlotFloatPtrInt (const char*,const float*,int,int,int)
-2	void	ImPlot_PlotFloatPtrFloatPtr (const char*,const float*,const float*,int,int,int)
-3	void	ImPlot_PlotVec2Ptr (const char*,const ImVec2*,int,int)
-4	void	ImPlot_PlotFnPtr (const char*,ImVec2(*)(void*,int),void*,int,int)
-ImPlot_BarH	3
-1	void	ImPlot_BarHFloatPtrInt (const char*,const float*,int,float,float,int,int)
-2	void	ImPlot_BarHFloatPtrFloatPtr (const char*,const float*,const float*,int,float,int,int)
-3	void	ImPlot_BarHFnPtr (const char*,ImVec2(*)(void*,int),void*,int,float,int)
-ImPlot_ErrorBars	3
-1	void	ImPlot_ErrorBarsFloatPtrInt (const char*,const float*,const float*,const float*,int,int,int)
-2	void	ImPlot_ErrorBarsFloatPtrFloatPtr (const char*,const float*,const float*,const float*,const float*,int,int,int)
-3	void	ImPlot_ErrorBarsFnPtr (const char*,ImVec4(*)(void*,int),void*,int,int)
+ImPlot_PlotText	2
+1	void	ImPlot_PlotTextFloat (const char*,float,float,bool,const ImVec2)
+2	void	ImPlot_PlotTextdouble (const char*,double,double,bool,const ImVec2)
+ImPlot_PlotDigital	4
+1	void	ImPlot_PlotDigitalFloatPtr (const char*,const float*,const float*,int,int,int)
+2	void	ImPlot_PlotDigitalFnVec2Ptr (const char*,ImVec2(*)(void*,int),void*,int,int)
+3	void	ImPlot_PlotDigitaldoublePtr (const char*,const double*,const double*,int,int,int)
+4	void	ImPlot_PlotDigitalFnPlotPoIntPtr (const char*,ImPlotPoint(*)(void*,int),void*,int,int)
+ImPlot_PlotPieChart	2
+1	void	ImPlot_PlotPieChartFloatPtr (const char**,float*,int,float,float,float,bool,float)
+2	void	ImPlot_PlotPieChartdoublePtr (const char**,double*,int,double,double,double,bool,double)
+ImPlot_PlotLine	8
+1	void	ImPlot_PlotLineFloatPtrInt (const char*,const float*,int,int,int)
+2	void	ImPlot_PlotLineFloatPtrFloatPtr (const char*,const float*,const float*,int,int,int)
+3	void	ImPlot_PlotLineVec2Ptr (const char*,const ImVec2*,int,int)
+4	void	ImPlot_PlotLineFnVec2Ptr (const char*,ImVec2(*)(void*,int),void*,int,int)
+5	void	ImPlot_PlotLinedoublePtrInt (const char*,const double*,int,int,int)
+6	void	ImPlot_PlotLinedoublePtrdoublePtr (const char*,const double*,const double*,int,int,int)
+7	void	ImPlot_PlotLinePlotPoIntPtr (const char*,const ImPlotPoint*,int,int)
+8	void	ImPlot_PlotLineFnPlotPoIntPtr (const char*,ImPlotPoint(*)(void*,int),void*,int,int)
+ImPlot_PlotBars	6
+1	void	ImPlot_PlotBarsFloatPtrIntFloat (const char*,const float*,int,float,float,int,int)
+2	void	ImPlot_PlotBarsFloatPtrFloatPtr (const char*,const float*,const float*,int,float,int,int)
+3	void	ImPlot_PlotBarsFnVec2Ptr (const char*,ImVec2(*)(void*,int),void*,int,float,int)
+4	void	ImPlot_PlotBarsdoublePtrIntdouble (const char*,const double*,int,double,double,int,int)
+5	void	ImPlot_PlotBarsdoublePtrdoublePtr (const char*,const double*,const double*,int,double,int,int)
+6	void	ImPlot_PlotBarsFnPlotPoIntPtr (const char*,ImPlotPoint(*)(void*,int),void*,int,double,int)
+ImPlot_PlotScatter	8
+1	void	ImPlot_PlotScatterFloatPtrInt (const char*,const float*,int,int,int)
+2	void	ImPlot_PlotScatterFloatPtrFloatPtr (const char*,const float*,const float*,int,int,int)
+3	void	ImPlot_PlotScatterVec2Ptr (const char*,const ImVec2*,int,int)
+4	void	ImPlot_PlotScatterFnVec2Ptr (const char*,ImVec2(*)(void*,int),void*,int,int)
+5	void	ImPlot_PlotScatterdoublePtrInt (const char*,const double*,int,int,int)
+6	void	ImPlot_PlotScatterdoublePtrdoublePtr (const char*,const double*,const double*,int,int,int)
+7	void	ImPlot_PlotScatterPlotPoIntPtr (const char*,const ImPlotPoint*,int,int)
+8	void	ImPlot_PlotScatterFnPlotPoIntPtr (const char*,ImPlotPoint(*)(void*,int),void*,int,int)
+ImPlot_PlotErrorBars	4
+1	void	ImPlot_PlotErrorBarsFloatPtrFloatPtrFloatPtrInt (const char*,const float*,const float*,const float*,int,int,int)
+2	void	ImPlot_PlotErrorBarsFloatPtrFloatPtrFloatPtrFloatPtr (const char*,const float*,const float*,const float*,const float*,int,int,int)
+3	void	ImPlot_PlotErrorBarsdoublePtrdoublePtrdoublePtrInt (const char*,const double*,const double*,const double*,int,int,int)
+4	void	ImPlot_PlotErrorBarsdoublePtrdoublePtrdoublePtrdoublePtr (const char*,const double*,const double*,const double*,const double*,int,int,int)
+ImPlotPoint_ImPlotPoint	2
+1	nil	ImPlotPoint_ImPlotPointNil ()
+2	nil	ImPlotPoint_ImPlotPointdouble (double,double)
+ImPlot_PlotBarsH	6
+1	void	ImPlot_PlotBarsHFloatPtrIntFloat (const char*,const float*,int,float,float,int,int)
+2	void	ImPlot_PlotBarsHFloatPtrFloatPtr (const char*,const float*,const float*,int,float,int,int)
+3	void	ImPlot_PlotBarsHFnVec2Ptr (const char*,ImVec2(*)(void*,int),void*,int,float,int)
+4	void	ImPlot_PlotBarsHdoublePtrIntdouble (const char*,const double*,int,double,double,int,int)
+5	void	ImPlot_PlotBarsHdoublePtrdoublePtr (const char*,const double*,const double*,int,double,int,int)
+6	void	ImPlot_PlotBarsHFnPlotPoIntPtr (const char*,ImPlotPoint(*)(void*,int),void*,int,double,int)
 ImPlot_PushStyleVar	2
 1	void	ImPlot_PushStyleVarFloat (ImPlotStyleVar,float)
 2	void	ImPlot_PushStyleVarInt (ImPlotStyleVar,int)
-ImPlot_Bar	3
-1	void	ImPlot_BarFloatPtrInt (const char*,const float*,int,float,float,int,int)
-2	void	ImPlot_BarFloatPtrFloatPtr (const char*,const float*,const float*,int,float,int,int)
-3	void	ImPlot_BarFnPtr (const char*,ImVec2(*)(void*,int),void*,int,float,int)
-ImPlot_Digital	2
-1	void	ImPlot_DigitalFloatPtr (const char*,const float*,const float*,int,int,int)
-2	void	ImPlot_DigitalFnPtr (const char*,ImVec2(*)(void*,int),void*,int,int)
 ImPlot_PushStyleColor	2
 1	void	ImPlot_PushStyleColorU32 (ImPlotCol,ImU32)
 2	void	ImPlot_PushStyleColorVec4 (ImPlotCol,const ImVec4)
-19 overloaded
+46 overloaded
