@@ -1,6 +1,7 @@
 {
   "ImPlotAxisFlags": "int",
   "ImPlotCol": "int",
+  "ImPlotColormap": "int",
   "ImPlotFlags": "int",
   "ImPlotLimits": "struct ImPlotLimits",
   "ImPlotMarker": "int",

@@ -134,6 +134,63 @@
         "value": 14
       }
     ],
+    "ImPlotColormap_": [
+      {
+        "calc_value": 0,
+        "name": "ImPlotColormap_Default",
+        "value": "0"
+      },
+      {
+        "calc_value": 1,
+        "name": "ImPlotColormap_Dark",
+        "value": "1"
+      },
+      {
+        "calc_value": 2,
+        "name": "ImPlotColormap_Pastel",
+        "value": "2"
+      },
+      {
+        "calc_value": 3,
+        "name": "ImPlotColormap_Paired",
+        "value": "3"
+      },
+      {
+        "calc_value": 4,
+        "name": "ImPlotColormap_Viridis",
+        "value": "4"
+      },
+      {
+        "calc_value": 5,
+        "name": "ImPlotColormap_Plasma",
+        "value": "5"
+      },
+      {
+        "calc_value": 6,
+        "name": "ImPlotColormap_Hot",
+        "value": "6"
+      },
+      {
+        "calc_value": 7,
+        "name": "ImPlotColormap_Cool",
+        "value": "7"
+      },
+      {
+        "calc_value": 8,
+        "name": "ImPlotColormap_Pink",
+        "value": "8"
+      },
+      {
+        "calc_value": 9,
+        "name": "ImPlotColormap_Jet",
+        "value": "9"
+      },
+      {
+        "calc_value": 10,
+        "name": "ImPlotColormap_COUNT",
+        "value": 10
+      }
+    ],
     "ImPlotFlags_": [
       {
         "calc_value": 1,

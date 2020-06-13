@@ -51,6 +51,7 @@ typedef int ImPlotAxisFlags;
 typedef int ImPlotCol;
 typedef int ImPlotStyleVar;
 typedef int ImPlotMarker;
+typedef int ImPlotColormap;
 typedef enum {
     ImPlotFlags_MousePos = 1 << 0,
     ImPlotFlags_Legend = 1 << 1,
@@ -120,6 +121,19 @@ typedef enum {
     ImPlotMarker_Plus = 1 << 9,
     ImPlotMarker_Asterisk = 1 << 10,
 }ImPlotMarker_;
+typedef enum {
+    ImPlotColormap_Default = 0,
+    ImPlotColormap_Dark = 1,
+    ImPlotColormap_Pastel = 2,
+    ImPlotColormap_Paired = 3,
+    ImPlotColormap_Viridis = 4,
+    ImPlotColormap_Plasma = 5,
+    ImPlotColormap_Hot = 6,
+    ImPlotColormap_Cool = 7,
+    ImPlotColormap_Pink = 8,
+    ImPlotColormap_Jet = 9,
+    ImPlotColormap_COUNT
+}ImPlotColormap_;
 struct ImPlotPoint
 {
     double x, y;
@@ -159,50 +173,52 @@ CIMGUI_API bool ImPlotRange_Contains(ImPlotRange* self,double value);
 CIMGUI_API double ImPlotRange_Size(ImPlotRange* self);
 CIMGUI_API ImPlotLimits* ImPlotLimits_ImPlotLimits(void);
 CIMGUI_API void ImPlotLimits_destroy(ImPlotLimits* self);
-CIMGUI_API bool ImPlotLimits_Contains(ImPlotLimits* self,double x,double y);
+CIMGUI_API bool ImPlotLimits_ContainsPlotPoInt(ImPlotLimits* self,const ImPlotPoint p);
+CIMGUI_API bool ImPlotLimits_Containsdouble(ImPlotLimits* self,double x,double y);
 CIMGUI_API ImPlotStyle* ImPlotStyle_ImPlotStyle(void);
 CIMGUI_API void ImPlotStyle_destroy(ImPlotStyle* self);
 CIMGUI_API bool ImPlot_BeginPlot(const char* title_id,const char* x_label,const char* y_label,const ImVec2 size,ImPlotFlags flags,ImPlotAxisFlags x_flags,ImPlotAxisFlags y_flags,ImPlotAxisFlags y2_flags,ImPlotAxisFlags y3_flags);
 CIMGUI_API void ImPlot_EndPlot(void);
 CIMGUI_API void ImPlot_PlotLineFloatPtrInt(const char* label_id,const float* values,int count,int offset,int stride);
-CIMGUI_API void ImPlot_PlotLineFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride);
-CIMGUI_API void ImPlot_PlotLineVec2Ptr(const char* label_id,const ImVec2* data,int count,int offset);
-CIMGUI_API void ImPlot_PlotLineFnVec2Ptr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset);
-CIMGUI_API void ImPlot_PlotScatterFloatPtrInt(const char* label_id,const float* values,int count,int offset,int stride);
-CIMGUI_API void ImPlot_PlotScatterFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride);
-CIMGUI_API void ImPlot_PlotScatterVec2Ptr(const char* label_id,const ImVec2* data,int count,int offset);
-CIMGUI_API void ImPlot_PlotScatterFnVec2Ptr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset);
-CIMGUI_API void ImPlot_PlotBarsFloatPtrIntFloat(const char* label_id,const float* values,int count,float width,float shift,int offset,int stride);
-CIMGUI_API void ImPlot_PlotBarsFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,float width,int offset,int stride);
-CIMGUI_API void ImPlot_PlotBarsFnVec2Ptr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float width,int offset);
-CIMGUI_API void ImPlot_PlotBarsHFloatPtrIntFloat(const char* label_id,const float* values,int count,float height,float shift,int offset,int stride);
-CIMGUI_API void ImPlot_PlotBarsHFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,float height,int offset,int stride);
-CIMGUI_API void ImPlot_PlotBarsHFnVec2Ptr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,float height,int offset);
-CIMGUI_API void ImPlot_PlotErrorBarsFloatPtrFloatPtrFloatPtrInt(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset,int stride);
-CIMGUI_API void ImPlot_PlotErrorBarsFloatPtrFloatPtrFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,const float* neg,const float* pos,int count,int offset,int stride);
-CIMGUI_API void ImPlot_PlotPieChartFloatPtr(const char** label_ids,float* values,int count,float x,float y,float radius,bool show_percents,float angle0);
-CIMGUI_API void ImPlot_PlotDigitalFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride);
-CIMGUI_API void ImPlot_PlotDigitalFnVec2Ptr(const char* label_id,ImVec2(*getter)(void* data,int idx),void* data,int count,int offset);
-CIMGUI_API void ImPlot_PlotTextFloat(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset);
 CIMGUI_API void ImPlot_PlotLinedoublePtrInt(const char* label_id,const double* values,int count,int offset,int stride);
+CIMGUI_API void ImPlot_PlotLineFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride);
 CIMGUI_API void ImPlot_PlotLinedoublePtrdoublePtr(const char* label_id,const double* xs,const double* ys,int count,int offset,int stride);
+CIMGUI_API void ImPlot_PlotLineVec2Ptr(const char* label_id,const ImVec2* data,int count,int offset);
 CIMGUI_API void ImPlot_PlotLinePlotPoIntPtr(const char* label_id,const ImPlotPoint* data,int count,int offset);
 CIMGUI_API void ImPlot_PlotLineFnPlotPoIntPtr(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset);
+CIMGUI_API void ImPlot_PlotScatterFloatPtrInt(const char* label_id,const float* values,int count,int offset,int stride);
 CIMGUI_API void ImPlot_PlotScatterdoublePtrInt(const char* label_id,const double* values,int count,int offset,int stride);
+CIMGUI_API void ImPlot_PlotScatterFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride);
 CIMGUI_API void ImPlot_PlotScatterdoublePtrdoublePtr(const char* label_id,const double* xs,const double* ys,int count,int offset,int stride);
+CIMGUI_API void ImPlot_PlotScatterVec2Ptr(const char* label_id,const ImVec2* data,int count,int offset);
 CIMGUI_API void ImPlot_PlotScatterPlotPoIntPtr(const char* label_id,const ImPlotPoint* data,int count,int offset);
 CIMGUI_API void ImPlot_PlotScatterFnPlotPoIntPtr(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset);
+CIMGUI_API void ImPlot_PlotBarsFloatPtrIntFloat(const char* label_id,const float* values,int count,float width,float shift,int offset,int stride);
 CIMGUI_API void ImPlot_PlotBarsdoublePtrIntdouble(const char* label_id,const double* values,int count,double width,double shift,int offset,int stride);
+CIMGUI_API void ImPlot_PlotBarsFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,float width,int offset,int stride);
 CIMGUI_API void ImPlot_PlotBarsdoublePtrdoublePtr(const char* label_id,const double* xs,const double* ys,int count,double width,int offset,int stride);
 CIMGUI_API void ImPlot_PlotBarsFnPlotPoIntPtr(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,double width,int offset);
+CIMGUI_API void ImPlot_PlotBarsHFloatPtrIntFloat(const char* label_id,const float* values,int count,float height,float shift,int offset,int stride);
 CIMGUI_API void ImPlot_PlotBarsHdoublePtrIntdouble(const char* label_id,const double* values,int count,double height,double shift,int offset,int stride);
+CIMGUI_API void ImPlot_PlotBarsHFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,int count,float height,int offset,int stride);
 CIMGUI_API void ImPlot_PlotBarsHdoublePtrdoublePtr(const char* label_id,const double* xs,const double* ys,int count,double height,int offset,int stride);
 CIMGUI_API void ImPlot_PlotBarsHFnPlotPoIntPtr(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,double height,int offset);
+CIMGUI_API void ImPlot_PlotErrorBarsFloatPtrFloatPtrFloatPtrInt(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset,int stride);
 CIMGUI_API void ImPlot_PlotErrorBarsdoublePtrdoublePtrdoublePtrInt(const char* label_id,const double* xs,const double* ys,const double* err,int count,int offset,int stride);
+CIMGUI_API void ImPlot_PlotErrorBarsFloatPtrFloatPtrFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,const float* neg,const float* pos,int count,int offset,int stride);
 CIMGUI_API void ImPlot_PlotErrorBarsdoublePtrdoublePtrdoublePtrdoublePtr(const char* label_id,const double* xs,const double* ys,const double* neg,const double* pos,int count,int offset,int stride);
-CIMGUI_API void ImPlot_PlotPieChartdoublePtr(const char** label_ids,double* values,int count,double x,double y,double radius,bool show_percents,double angle0);
+CIMGUI_API void ImPlot_PlotErrorBarsHFloatPtrFloatPtrFloatPtrInt(const char* label_id,const float* xs,const float* ys,const float* err,int count,int offset,int stride);
+CIMGUI_API void ImPlot_PlotErrorBarsHdoublePtrdoublePtrdoublePtrInt(const char* label_id,const double* xs,const double* ys,const double* err,int count,int offset,int stride);
+CIMGUI_API void ImPlot_PlotErrorBarsHFloatPtrFloatPtrFloatPtrFloatPtr(const char* label_id,const float* xs,const float* ys,const float* neg,const float* pos,int count,int offset,int stride);
+CIMGUI_API void ImPlot_PlotErrorBarsHdoublePtrdoublePtrdoublePtrdoublePtr(const char* label_id,const double* xs,const double* ys,const double* neg,const double* pos,int count,int offset,int stride);
+CIMGUI_API void ImPlot_PlotPieChartFloatPtr(const char** label_ids,const float* values,int count,float x,float y,float radius,bool normalize,const char* label_fmt,float angle0);
+CIMGUI_API void ImPlot_PlotPieChartdoublePtr(const char** label_ids,const double* values,int count,double x,double y,double radius,bool normalize,const char* label_fmt,double angle0);
+CIMGUI_API void ImPlot_PlotHeatmapFloatPtr(const char* label_id,const float* values,int rows,int cols,float scale_min,float scale_max,const char* label_fmt,const ImPlotPoint bounds_min,const ImPlotPoint bounds_max);
+CIMGUI_API void ImPlot_PlotHeatmapdoublePtr(const char* label_id,const double* values,int rows,int cols,double scale_min,double scale_max,const char* label_fmt,const ImPlotPoint bounds_min,const ImPlotPoint bounds_max);
+CIMGUI_API void ImPlot_PlotDigitalFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride);
 CIMGUI_API void ImPlot_PlotDigitaldoublePtr(const char* label_id,const double* xs,const double* ys,int count,int offset,int stride);
 CIMGUI_API void ImPlot_PlotDigitalFnPlotPoIntPtr(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset);
+CIMGUI_API void ImPlot_PlotTextFloat(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset);
 CIMGUI_API void ImPlot_PlotTextdouble(const char* text,double x,double y,bool vertical,const ImVec2 pixel_offset);
 CIMGUI_API bool ImPlot_IsPlotHovered(void);
 CIMGUI_API ImPlotPoint ImPlot_GetPlotMousePos(int y_axis);
@@ -210,22 +226,30 @@ CIMGUI_API ImPlotLimits ImPlot_GetPlotLimits(int y_axis);
 CIMGUI_API bool ImPlot_IsPlotQueried(void);
 CIMGUI_API ImPlotLimits ImPlot_GetPlotQuery(int y_axis);
 CIMGUI_API ImPlotStyle* ImPlot_GetStyle(void);
-CIMGUI_API void ImPlot_SetPalette(const ImVec4* colors,int num_colors);
-CIMGUI_API void ImPlot_RestorePalette(void);
 CIMGUI_API void ImPlot_PushStyleColorU32(ImPlotCol idx,ImU32 col);
 CIMGUI_API void ImPlot_PushStyleColorVec4(ImPlotCol idx,const ImVec4 col);
 CIMGUI_API void ImPlot_PopStyleColor(int count);
 CIMGUI_API void ImPlot_PushStyleVarFloat(ImPlotStyleVar idx,float val);
 CIMGUI_API void ImPlot_PushStyleVarInt(ImPlotStyleVar idx,int val);
 CIMGUI_API void ImPlot_PopStyleVar(int count);
+CIMGUI_API void ImPlot_SetColormapPlotColormap(ImPlotColormap colormap,int samples);
+CIMGUI_API void ImPlot_SetColormapVec4Ptr(const ImVec4* colors,int num_colors);
+CIMGUI_API int ImPlot_GetColormapSize(void);
+CIMGUI_API void ImPlot_GetColormapColor(ImVec4 *pOut,int index);
+CIMGUI_API void ImPlot_LerpColormap(ImVec4 *pOut,float t);
 CIMGUI_API void ImPlot_SetNextPlotLimits(double x_min,double x_max,double y_min,double y_max,ImGuiCond cond);
 CIMGUI_API void ImPlot_SetNextPlotLimitsX(double x_min,double x_max,ImGuiCond cond);
 CIMGUI_API void ImPlot_SetNextPlotLimitsY(double y_min,double y_max,ImGuiCond cond,int y_axis);
+CIMGUI_API void ImPlot_SetNextPlotTicksXdoublePtr(const double* values,int n_ticks,const char** labels,bool show_default);
+CIMGUI_API void ImPlot_SetNextPlotTicksXdouble(double x_min,double x_max,int n_ticks,const char** labels,bool show_default);
+CIMGUI_API void ImPlot_SetNextPlotTicksYdoublePtr(const double* values,int n_ticks,const char** labels,bool show_default,int y_axis);
+CIMGUI_API void ImPlot_SetNextPlotTicksYdouble(double y_min,double y_max,int n_ticks,const char** labels,bool show_default,int y_axis);
 CIMGUI_API void ImPlot_SetPlotYAxis(int y_axis);
 CIMGUI_API void ImPlot_GetPlotPos(ImVec2 *pOut);
 CIMGUI_API void ImPlot_GetPlotSize(ImVec2 *pOut);
 CIMGUI_API ImPlotPoint ImPlot_PixelsToPlot(const ImVec2 pix,int y_axis);
 CIMGUI_API void ImPlot_PlotToPixels(ImVec2 *pOut,const ImPlotPoint plt,int y_axis);
+CIMGUI_API void ImPlot_ShowColormapScale(double scale_min,double scale_max,float height);
 CIMGUI_API void ImPlot_PushPlotClipRect(void);
 CIMGUI_API void ImPlot_PopPlotClipRect(void);
 CIMGUI_API void ImPlot_ShowDemoWindow(bool* p_open);
