@@ -373,8 +373,12 @@
   ],
   "ImPlot_GetPlotLimits": [
     {
-      "args": "(int y_axis)",
+      "args": "(ImPlotLimits *pOut,int y_axis)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotLimits*"
+        },
         {
           "name": "y_axis",
           "type": "int"
@@ -388,16 +392,21 @@
       },
       "funcname": "GetPlotLimits",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetPlotLimits",
-      "ret": "ImPlotLimits",
+      "ret": "void",
       "signature": "(int)",
       "stname": ""
     }
   ],
   "ImPlot_GetPlotMousePos": [
     {
-      "args": "(int y_axis)",
+      "args": "(ImPlotPoint *pOut,int y_axis)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotPoint*"
+        },
         {
           "name": "y_axis",
           "type": "int"
@@ -411,8 +420,9 @@
       },
       "funcname": "GetPlotMousePos",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetPlotMousePos",
-      "ret": "ImPlotPoint",
+      "ret": "void",
       "signature": "(int)",
       "stname": ""
     }
@@ -441,8 +451,12 @@
   ],
   "ImPlot_GetPlotQuery": [
     {
-      "args": "(int y_axis)",
+      "args": "(ImPlotLimits *pOut,int y_axis)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotLimits*"
+        },
         {
           "name": "y_axis",
           "type": "int"
@@ -456,8 +470,9 @@
       },
       "funcname": "GetPlotQuery",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetPlotQuery",
-      "ret": "ImPlotLimits",
+      "ret": "void",
       "signature": "(int)",
       "stname": ""
     }
@@ -561,8 +576,12 @@
   ],
   "ImPlot_PixelsToPlot": [
     {
-      "args": "(const ImVec2 pix,int y_axis)",
+      "args": "(ImPlotPoint *pOut,const ImVec2 pix,int y_axis)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotPoint*"
+        },
         {
           "name": "pix",
           "type": "const ImVec2"
@@ -580,8 +599,9 @@
       },
       "funcname": "PixelsToPlot",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_PixelsToPlot",
-      "ret": "ImPlotPoint",
+      "ret": "void",
       "signature": "(const ImVec2,int)",
       "stname": ""
     }

@@ -234,21 +234,21 @@ CIMGUI_API bool ImPlot_IsPlotHovered()
 {
     return ImPlot::IsPlotHovered();
 }
-CIMGUI_API ImPlotPoint ImPlot_GetPlotMousePos(int y_axis)
+CIMGUI_API void ImPlot_GetPlotMousePos(ImPlotPoint *pOut,int y_axis)
 {
-    return ImPlot::GetPlotMousePos(y_axis);
+    *pOut = ImPlot::GetPlotMousePos(y_axis);
 }
-CIMGUI_API ImPlotLimits ImPlot_GetPlotLimits(int y_axis)
+CIMGUI_API void ImPlot_GetPlotLimits(ImPlotLimits *pOut,int y_axis)
 {
-    return ImPlot::GetPlotLimits(y_axis);
+    *pOut = ImPlot::GetPlotLimits(y_axis);
 }
 CIMGUI_API bool ImPlot_IsPlotQueried()
 {
     return ImPlot::IsPlotQueried();
 }
-CIMGUI_API ImPlotLimits ImPlot_GetPlotQuery(int y_axis)
+CIMGUI_API void ImPlot_GetPlotQuery(ImPlotLimits *pOut,int y_axis)
 {
-    return ImPlot::GetPlotQuery(y_axis);
+    *pOut = ImPlot::GetPlotQuery(y_axis);
 }
 CIMGUI_API ImPlotStyle* ImPlot_GetStyle()
 {
@@ -338,9 +338,9 @@ CIMGUI_API void ImPlot_GetPlotSize(ImVec2 *pOut)
 {
     *pOut = ImPlot::GetPlotSize();
 }
-CIMGUI_API ImPlotPoint ImPlot_PixelsToPlot(const ImVec2 pix,int y_axis)
+CIMGUI_API void ImPlot_PixelsToPlot(ImPlotPoint *pOut,const ImVec2 pix,int y_axis)
 {
-    return ImPlot::PixelsToPlot(pix,y_axis);
+    *pOut = ImPlot::PixelsToPlot(pix,y_axis);
 }
 CIMGUI_API void ImPlot_PlotToPixels(ImVec2 *pOut,const ImPlotPoint plt,int y_axis)
 {

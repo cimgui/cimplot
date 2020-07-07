@@ -286,6 +286,7 @@ defs["enums"]["ImPlotStyleVar_"][9] = {}
 defs["enums"]["ImPlotStyleVar_"][9]["calc_value"] = 8
 defs["enums"]["ImPlotStyleVar_"][9]["name"] = "ImPlotStyleVar_COUNT"
 defs["enums"]["ImPlotStyleVar_"][9]["value"] = 8
+defs["locations"] = {}
 defs["structs"] = {}
 defs["structs"]["ImPlotLimits"] = {}
 defs["structs"]["ImPlotLimits"][1] = {}

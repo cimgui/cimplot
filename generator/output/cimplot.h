@@ -221,10 +221,10 @@ CIMGUI_API void ImPlot_PlotDigitalFnPlotPoIntPtr(const char* label_id,ImPlotPoin
 CIMGUI_API void ImPlot_PlotTextFloat(const char* text,float x,float y,bool vertical,const ImVec2 pixel_offset);
 CIMGUI_API void ImPlot_PlotTextdouble(const char* text,double x,double y,bool vertical,const ImVec2 pixel_offset);
 CIMGUI_API bool ImPlot_IsPlotHovered(void);
-CIMGUI_API ImPlotPoint ImPlot_GetPlotMousePos(int y_axis);
-CIMGUI_API ImPlotLimits ImPlot_GetPlotLimits(int y_axis);
+CIMGUI_API void ImPlot_GetPlotMousePos(ImPlotPoint *pOut,int y_axis);
+CIMGUI_API void ImPlot_GetPlotLimits(ImPlotLimits *pOut,int y_axis);
 CIMGUI_API bool ImPlot_IsPlotQueried(void);
-CIMGUI_API ImPlotLimits ImPlot_GetPlotQuery(int y_axis);
+CIMGUI_API void ImPlot_GetPlotQuery(ImPlotLimits *pOut,int y_axis);
 CIMGUI_API ImPlotStyle* ImPlot_GetStyle(void);
 CIMGUI_API void ImPlot_PushStyleColorU32(ImPlotCol idx,ImU32 col);
 CIMGUI_API void ImPlot_PushStyleColorVec4(ImPlotCol idx,const ImVec4 col);
@@ -247,7 +247,7 @@ CIMGUI_API void ImPlot_SetNextPlotTicksYdouble(double y_min,double y_max,int n_t
 CIMGUI_API void ImPlot_SetPlotYAxis(int y_axis);
 CIMGUI_API void ImPlot_GetPlotPos(ImVec2 *pOut);
 CIMGUI_API void ImPlot_GetPlotSize(ImVec2 *pOut);
-CIMGUI_API ImPlotPoint ImPlot_PixelsToPlot(const ImVec2 pix,int y_axis);
+CIMGUI_API void ImPlot_PixelsToPlot(ImPlotPoint *pOut,const ImVec2 pix,int y_axis);
 CIMGUI_API void ImPlot_PlotToPixels(ImVec2 *pOut,const ImPlotPoint plt,int y_axis);
 CIMGUI_API void ImPlot_ShowColormapScale(double scale_min,double scale_max,float height);
 CIMGUI_API void ImPlot_PushPlotClipRect(void);
