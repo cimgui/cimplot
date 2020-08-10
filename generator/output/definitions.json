@@ -1,4 +1,38 @@
 {
+  "ImPlotInputMap_ImPlotInputMap": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotInputMap_ImPlotInputMap",
+      "constructor": true,
+      "defaults": [],
+      "funcname": "ImPlotInputMap",
+      "ov_cimguiname": "ImPlotInputMap_ImPlotInputMap",
+      "signature": "()",
+      "stname": "ImPlotInputMap"
+    }
+  ],
+  "ImPlotInputMap_destroy": [
+    {
+      "args": "(ImPlotInputMap* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotInputMap*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotInputMap_destroy",
+      "defaults": [],
+      "destructor": true,
+      "ov_cimguiname": "ImPlotInputMap_destroy",
+      "ret": "void",
+      "signature": "(ImPlotInputMap*)",
+      "stname": "ImPlotInputMap"
+    }
+  ],
   "ImPlotLimits_Contains": [
     {
       "args": "(ImPlotLimits* self,const ImPlotPoint p)",
@@ -371,6 +405,23 @@
       "stname": ""
     }
   ],
+  "ImPlot_GetInputMap": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_GetInputMap",
+      "defaults": [],
+      "funcname": "GetInputMap",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetInputMap",
+      "ret": "ImPlotInputMap*",
+      "retref": "&",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
   "ImPlot_GetPlotLimits": [
     {
       "args": "(ImPlotLimits *pOut,int y_axis)",
@@ -516,6 +567,27 @@
       "stname": ""
     }
   ],
+  "ImPlot_IsLegendEntryHovered": [
+    {
+      "args": "(const char* label_id)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(const char* label_id)",
+      "call_args": "(label_id)",
+      "cimguiname": "ImPlot_IsLegendEntryHovered",
+      "defaults": [],
+      "funcname": "IsLegendEntryHovered",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_IsLegendEntryHovered",
+      "ret": "bool",
+      "signature": "(const char*)",
+      "stname": ""
+    }
+  ],
   "ImPlot_IsPlotHovered": [
     {
       "args": "()",
@@ -545,6 +617,45 @@
       "ov_cimguiname": "ImPlot_IsPlotQueried",
       "ret": "bool",
       "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_IsPlotXAxisHovered": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_IsPlotXAxisHovered",
+      "defaults": [],
+      "funcname": "IsPlotXAxisHovered",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_IsPlotXAxisHovered",
+      "ret": "bool",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_IsPlotYAxisHovered": [
+    {
+      "args": "(int y_axis)",
+      "argsT": [
+        {
+          "name": "y_axis",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int y_axis=0)",
+      "call_args": "(y_axis)",
+      "cimguiname": "ImPlot_IsPlotYAxisHovered",
+      "defaults": {
+        "y_axis": "0"
+      },
+      "funcname": "IsPlotYAxisHovered",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_IsPlotYAxisHovered",
+      "ret": "bool",
+      "signature": "(int)",
       "stname": ""
     }
   ],
@@ -2340,6 +2451,194 @@
       "ov_cimguiname": "ImPlot_PlotScatterFnPlotPoIntPtr",
       "ret": "void",
       "signature": "(const char*,ImPlotPoint(*)(void*,int),void*,int,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_PlotShaded": [
+    {
+      "args": "(const char* label_id,const float* xs,const float* ys1,const float* ys2,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const float*"
+        },
+        {
+          "name": "ys1",
+          "type": "const float*"
+        },
+        {
+          "name": "ys2",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* xs,const float* ys1,const float* ys2,int count,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,xs,ys1,ys2,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotShaded",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "PlotShaded",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotShadedFloatPtrFloatPtrFloatPtr",
+      "ret": "void",
+      "signature": "(const char*,const float*,const float*,const float*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* xs,const double* ys1,const double* ys2,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const double*"
+        },
+        {
+          "name": "ys1",
+          "type": "const double*"
+        },
+        {
+          "name": "ys2",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* xs,const double* ys1,const double* ys2,int count,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,xs,ys1,ys2,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotShaded",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)"
+      },
+      "funcname": "PlotShaded",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotShadeddoublePtrdoublePtrdoublePtr",
+      "ret": "void",
+      "signature": "(const char*,const double*,const double*,const double*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const float* xs,const float* ys,int count,float y_ref,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const float*"
+        },
+        {
+          "name": "ys",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "y_ref",
+          "type": "float"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,float y_ref=0,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,xs,ys,count,y_ref,offset,stride)",
+      "cimguiname": "ImPlot_PlotShaded",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)",
+        "y_ref": "0"
+      },
+      "funcname": "PlotShaded",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotShadedFloatPtrFloatPtrIntFloat",
+      "ret": "void",
+      "signature": "(const char*,const float*,const float*,int,float,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* xs,const double* ys,int count,double y_ref,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const double*"
+        },
+        {
+          "name": "ys",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "y_ref",
+          "type": "double"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* xs,const double* ys,int count,double y_ref=0,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,xs,ys,count,y_ref,offset,stride)",
+      "cimguiname": "ImPlot_PlotShaded",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)",
+        "y_ref": "0"
+      },
+      "funcname": "PlotShaded",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotShadeddoublePtrdoublePtrIntdouble",
+      "ret": "void",
+      "signature": "(const char*,const double*,const double*,int,double,int,int)",
       "stname": ""
     }
   ],

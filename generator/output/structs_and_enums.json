@@ -33,26 +33,21 @@
       },
       {
         "calc_value": 64,
-        "name": "ImPlotAxisFlags_Adaptive",
+        "name": "ImPlotAxisFlags_LogScale",
         "value": "1 << 6"
       },
       {
         "calc_value": 128,
-        "name": "ImPlotAxisFlags_LogScale",
+        "name": "ImPlotAxisFlags_Scientific",
         "value": "1 << 7"
       },
       {
-        "calc_value": 256,
-        "name": "ImPlotAxisFlags_Scientific",
-        "value": "1 << 8"
-      },
-      {
-        "calc_value": 71,
+        "calc_value": 7,
         "name": "ImPlotAxisFlags_Default",
-        "value": "ImPlotAxisFlags_GridLines | ImPlotAxisFlags_TickMarks | ImPlotAxisFlags_TickLabels | ImPlotAxisFlags_Adaptive"
+        "value": "ImPlotAxisFlags_GridLines | ImPlotAxisFlags_TickMarks | ImPlotAxisFlags_TickLabels"
       },
       {
-        "calc_value": 70,
+        "calc_value": 6,
         "name": "ImPlotAxisFlags_Auxiliary",
         "value": "ImPlotAxisFlags_Default & ~ImPlotAxisFlags_GridLines"
       }
@@ -229,33 +224,28 @@
       },
       {
         "calc_value": 128,
-        "name": "ImPlotFlags_CullData",
+        "name": "ImPlotFlags_AntiAliased",
         "value": "1 << 7"
       },
       {
         "calc_value": 256,
-        "name": "ImPlotFlags_AntiAliased",
+        "name": "ImPlotFlags_NoChild",
         "value": "1 << 8"
       },
       {
         "calc_value": 512,
-        "name": "ImPlotFlags_NoChild",
+        "name": "ImPlotFlags_YAxis2",
         "value": "1 << 9"
       },
       {
         "calc_value": 1024,
-        "name": "ImPlotFlags_YAxis2",
+        "name": "ImPlotFlags_YAxis3",
         "value": "1 << 10"
       },
       {
-        "calc_value": 2048,
-        "name": "ImPlotFlags_YAxis3",
-        "value": "1 << 11"
-      },
-      {
-        "calc_value": 175,
+        "calc_value": 47,
         "name": "ImPlotFlags_Default",
-        "value": "ImPlotFlags_MousePos | ImPlotFlags_Legend | ImPlotFlags_Highlight | ImPlotFlags_BoxSelect | ImPlotFlags_ContextMenu | ImPlotFlags_CullData"
+        "value": "ImPlotFlags_MousePos | ImPlotFlags_Legend | ImPlotFlags_Highlight | ImPlotFlags_BoxSelect | ImPlotFlags_ContextMenu"
       }
     ],
     "ImPlotMarker_": [
@@ -338,33 +328,88 @@
       },
       {
         "calc_value": 4,
-        "name": "ImPlotStyleVar_ErrorBarSize",
+        "name": "ImPlotStyleVar_FillAlpha",
         "value": 4
       },
       {
         "calc_value": 5,
-        "name": "ImPlotStyleVar_ErrorBarWeight",
+        "name": "ImPlotStyleVar_ErrorBarSize",
         "value": 5
       },
       {
         "calc_value": 6,
-        "name": "ImPlotStyleVar_DigitalBitHeight",
+        "name": "ImPlotStyleVar_ErrorBarWeight",
         "value": 6
       },
       {
         "calc_value": 7,
-        "name": "ImPlotStyleVar_DigitalBitGap",
+        "name": "ImPlotStyleVar_DigitalBitHeight",
         "value": 7
       },
       {
         "calc_value": 8,
-        "name": "ImPlotStyleVar_COUNT",
+        "name": "ImPlotStyleVar_DigitalBitGap",
         "value": 8
+      },
+      {
+        "calc_value": 9,
+        "name": "ImPlotStyleVar_COUNT",
+        "value": 9
       }
     ]
   },
   "locations": [],
   "structs": {
+    "ImPlotInputMap": [
+      {
+        "name": "PanButton",
+        "type": "ImGuiMouseButton"
+      },
+      {
+        "name": "PanMod",
+        "type": "ImGuiKeyModFlags"
+      },
+      {
+        "name": "FitButton",
+        "type": "ImGuiMouseButton"
+      },
+      {
+        "name": "ContextMenuButton",
+        "type": "ImGuiMouseButton"
+      },
+      {
+        "name": "BoxSelectButton",
+        "type": "ImGuiMouseButton"
+      },
+      {
+        "name": "BoxSelectMod",
+        "type": "ImGuiKeyModFlags"
+      },
+      {
+        "name": "BoxSelectCancelButton",
+        "type": "ImGuiMouseButton"
+      },
+      {
+        "name": "QueryButton",
+        "type": "ImGuiMouseButton"
+      },
+      {
+        "name": "QueryMod",
+        "type": "ImGuiKeyModFlags"
+      },
+      {
+        "name": "QueryToggleMod",
+        "type": "ImGuiKeyModFlags"
+      },
+      {
+        "name": "HorizontalMod",
+        "type": "ImGuiKeyModFlags"
+      },
+      {
+        "name": "VerticalMod",
+        "type": "ImGuiKeyModFlags"
+      }
+    ],
     "ImPlotLimits": [
       {
         "name": "X",
@@ -410,6 +455,10 @@
       },
       {
         "name": "MarkerWeight",
+        "type": "float"
+      },
+      {
+        "name": "FillAlpha",
         "type": "float"
       },
       {

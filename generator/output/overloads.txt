@@ -50,6 +50,11 @@ ImPlot_SetNextPlotTicksY	2
 ImPlot_SetNextPlotTicksX	2
 1	void	ImPlot_SetNextPlotTicksXdoublePtr (const double*,int,const char**,bool)
 2	void	ImPlot_SetNextPlotTicksXdouble (double,double,int,const char**,bool)
+ImPlot_PlotShaded	4
+1	void	ImPlot_PlotShadedFloatPtrFloatPtrFloatPtr (const char*,const float*,const float*,const float*,int,int,int)
+2	void	ImPlot_PlotShadeddoublePtrdoublePtrdoublePtr (const char*,const double*,const double*,const double*,int,int,int)
+3	void	ImPlot_PlotShadedFloatPtrFloatPtrIntFloat (const char*,const float*,const float*,int,float,int,int)
+4	void	ImPlot_PlotShadeddoublePtrdoublePtrIntdouble (const char*,const double*,const double*,int,double,int,int)
 ImPlotPoint_ImPlotPoint	2
 1	nil	ImPlotPoint_ImPlotPointNil ()
 2	nil	ImPlotPoint_ImPlotPointdouble (double,double)
@@ -59,16 +64,16 @@ ImPlot_PushStyleVar	2
 ImPlot_SetColormap	2
 1	void	ImPlot_SetColormapPlotColormap (ImPlotColormap,int)
 2	void	ImPlot_SetColormapVec4Ptr (const ImVec4*,int)
-ImPlotLimits_Contains	2
-1	bool	ImPlotLimits_ContainsPlotPoInt (const ImPlotPoint)const
-2	bool	ImPlotLimits_Containsdouble (double,double)const
 ImPlot_PlotHeatmap	2
 1	void	ImPlot_PlotHeatmapFloatPtr (const char*,const float*,int,int,float,float,const char*,const ImPlotPoint,const ImPlotPoint)
 2	void	ImPlot_PlotHeatmapdoublePtr (const char*,const double*,int,int,double,double,const char*,const ImPlotPoint,const ImPlotPoint)
+ImPlotLimits_Contains	2
+1	bool	ImPlotLimits_ContainsPlotPoInt (const ImPlotPoint)const
+2	bool	ImPlotLimits_Containsdouble (double,double)const
 ImPlot_PlotBarsH	5
 1	void	ImPlot_PlotBarsHFloatPtrIntFloat (const char*,const float*,int,float,float,int,int)
 2	void	ImPlot_PlotBarsHdoublePtrIntdouble (const char*,const double*,int,double,double,int,int)
 3	void	ImPlot_PlotBarsHFloatPtrFloatPtr (const char*,const float*,const float*,int,float,int,int)
 4	void	ImPlot_PlotBarsHdoublePtrdoublePtr (const char*,const double*,const double*,int,double,int,int)
 5	void	ImPlot_PlotBarsHFnPlotPoIntPtr (const char*,ImPlotPoint(*)(void*,int),void*,int,double,int)
-55 overloaded
+59 overloaded
