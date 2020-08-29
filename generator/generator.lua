@@ -86,7 +86,7 @@ local function cimgui_generation(parser,name)
 
     local hstrfile = read_data("./"..name.."_template.h")
 
-	local outpre,outpost = parser:gen_structs_and_enums()
+	local outpre,outpost = parser.structs_and_enums[1], parser.structs_and_enums[2]
 
 	local cstructsstr = outpre..outpost 
 
