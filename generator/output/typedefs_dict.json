@@ -2,6 +2,7 @@
   "ImPlotAxisFlags": "int",
   "ImPlotCol": "int",
   "ImPlotColormap": "int",
+  "ImPlotContext": "struct ImPlotContext",
   "ImPlotFlags": "int",
   "ImPlotInputMap": "struct ImPlotInputMap",
   "ImPlotLimits": "struct ImPlotLimits",

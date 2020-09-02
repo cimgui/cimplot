@@ -83,40 +83,6 @@
       "stname": "ImPlotLimits"
     }
   ],
-  "ImPlotLimits_ImPlotLimits": [
-    {
-      "args": "()",
-      "argsT": [],
-      "argsoriginal": "()",
-      "call_args": "()",
-      "cimguiname": "ImPlotLimits_ImPlotLimits",
-      "constructor": true,
-      "defaults": [],
-      "funcname": "ImPlotLimits",
-      "ov_cimguiname": "ImPlotLimits_ImPlotLimits",
-      "signature": "()",
-      "stname": "ImPlotLimits"
-    }
-  ],
-  "ImPlotLimits_destroy": [
-    {
-      "args": "(ImPlotLimits* self)",
-      "argsT": [
-        {
-          "name": "self",
-          "type": "ImPlotLimits*"
-        }
-      ],
-      "call_args": "(self)",
-      "cimguiname": "ImPlotLimits_destroy",
-      "defaults": [],
-      "destructor": true,
-      "ov_cimguiname": "ImPlotLimits_destroy",
-      "ret": "void",
-      "signature": "(ImPlotLimits*)",
-      "stname": "ImPlotLimits"
-    }
-  ],
   "ImPlotPoint_ImPlotPoint": [
     {
       "args": "()",
@@ -207,8 +173,30 @@
       "constructor": true,
       "defaults": [],
       "funcname": "ImPlotRange",
-      "ov_cimguiname": "ImPlotRange_ImPlotRange",
+      "ov_cimguiname": "ImPlotRange_ImPlotRangeNil",
       "signature": "()",
+      "stname": "ImPlotRange"
+    },
+    {
+      "args": "(double _min,double _max)",
+      "argsT": [
+        {
+          "name": "_min",
+          "type": "double"
+        },
+        {
+          "name": "_max",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double _min,double _max)",
+      "call_args": "(_min,_max)",
+      "cimguiname": "ImPlotRange_ImPlotRange",
+      "constructor": true,
+      "defaults": [],
+      "funcname": "ImPlotRange",
+      "ov_cimguiname": "ImPlotRange_ImPlotRangedouble",
+      "signature": "(double,double)",
       "stname": "ImPlotRange"
     }
   ],
@@ -285,6 +273,60 @@
       "stname": "ImPlotStyle"
     }
   ],
+  "ImPlot_BeginLegendDragDropSource": [
+    {
+      "args": "(const char* label_id,ImGuiDragDropFlags flags)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "flags",
+          "type": "ImGuiDragDropFlags"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImGuiDragDropFlags flags=0)",
+      "call_args": "(label_id,flags)",
+      "cimguiname": "ImPlot_BeginLegendDragDropSource",
+      "defaults": {
+        "flags": "0"
+      },
+      "funcname": "BeginLegendDragDropSource",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_BeginLegendDragDropSource",
+      "ret": "bool",
+      "signature": "(const char*,ImGuiDragDropFlags)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_BeginLegendPopup": [
+    {
+      "args": "(const char* label_id,ImGuiMouseButton mouse_button)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "mouse_button",
+          "type": "ImGuiMouseButton"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImGuiMouseButton mouse_button=1)",
+      "call_args": "(label_id,mouse_button)",
+      "cimguiname": "ImPlot_BeginLegendPopup",
+      "defaults": {
+        "mouse_button": "1"
+      },
+      "funcname": "BeginLegendPopup",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_BeginLegendPopup",
+      "ret": "bool",
+      "signature": "(const char*,ImGuiMouseButton)",
+      "stname": ""
+    }
+  ],
   "ImPlot_BeginPlot": [
     {
       "args": "(const char* title_id,const char* x_label,const char* y_label,const ImVec2 size,ImPlotFlags flags,ImPlotAxisFlags x_flags,ImPlotAxisFlags y_flags,ImPlotAxisFlags y2_flags,ImPlotAxisFlags y3_flags)",
@@ -347,6 +389,77 @@
       "stname": ""
     }
   ],
+  "ImPlot_CreateContext": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_CreateContext",
+      "defaults": [],
+      "funcname": "CreateContext",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_CreateContext",
+      "ret": "ImPlotContext*",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_DestroyContext": [
+    {
+      "args": "(ImPlotContext* ctx)",
+      "argsT": [
+        {
+          "name": "ctx",
+          "type": "ImPlotContext*"
+        }
+      ],
+      "argsoriginal": "(ImPlotContext* ctx=((void*)0))",
+      "call_args": "(ctx)",
+      "cimguiname": "ImPlot_DestroyContext",
+      "defaults": {
+        "ctx": "((void*)0)"
+      },
+      "funcname": "DestroyContext",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_DestroyContext",
+      "ret": "void",
+      "signature": "(ImPlotContext*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_EndLegendDragDropSource": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_EndLegendDragDropSource",
+      "defaults": [],
+      "funcname": "EndLegendDragDropSource",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_EndLegendDragDropSource",
+      "ret": "void",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_EndLegendPopup": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_EndLegendPopup",
+      "defaults": [],
+      "funcname": "EndLegendPopup",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_EndLegendPopup",
+      "ret": "void",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
   "ImPlot_EndPlot": [
     {
       "args": "()",
@@ -360,6 +473,44 @@
       "ov_cimguiname": "ImPlot_EndPlot",
       "ret": "void",
       "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_FitNextPlotAxes": [
+    {
+      "args": "(bool x,bool y,bool y2,bool y3)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "bool"
+        },
+        {
+          "name": "y",
+          "type": "bool"
+        },
+        {
+          "name": "y2",
+          "type": "bool"
+        },
+        {
+          "name": "y3",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(bool x=true,bool y=true,bool y2=true,bool y3=true)",
+      "call_args": "(x,y,y2,y3)",
+      "cimguiname": "ImPlot_FitNextPlotAxes",
+      "defaults": {
+        "x": "true",
+        "y": "true",
+        "y2": "true",
+        "y3": "true"
+      },
+      "funcname": "FitNextPlotAxes",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FitNextPlotAxes",
+      "ret": "void",
+      "signature": "(bool,bool,bool,bool)",
       "stname": ""
     }
   ],
@@ -389,6 +540,27 @@
       "stname": ""
     }
   ],
+  "ImPlot_GetColormapName": [
+    {
+      "args": "(ImPlotColormap colormap)",
+      "argsT": [
+        {
+          "name": "colormap",
+          "type": "ImPlotColormap"
+        }
+      ],
+      "argsoriginal": "(ImPlotColormap colormap)",
+      "call_args": "(colormap)",
+      "cimguiname": "ImPlot_GetColormapName",
+      "defaults": [],
+      "funcname": "GetColormapName",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetColormapName",
+      "ret": "const char*",
+      "signature": "(ImPlotColormap)",
+      "stname": ""
+    }
+  ],
   "ImPlot_GetColormapSize": [
     {
       "args": "()",
@@ -401,6 +573,22 @@
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_GetColormapSize",
       "ret": "int",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetCurrentContext": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_GetCurrentContext",
+      "defaults": [],
+      "funcname": "GetCurrentContext",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetCurrentContext",
+      "ret": "ImPlotContext*",
       "signature": "()",
       "stname": ""
     }
@@ -418,6 +606,22 @@
       "ov_cimguiname": "ImPlot_GetInputMap",
       "ret": "ImPlotInputMap*",
       "retref": "&",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetPlotDrawList": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_GetPlotDrawList",
+      "defaults": [],
+      "funcname": "GetPlotDrawList",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetPlotDrawList",
+      "ret": "ImDrawList*",
       "signature": "()",
       "stname": ""
     }
@@ -567,6 +771,27 @@
       "stname": ""
     }
   ],
+  "ImPlot_GetStyleColorName": [
+    {
+      "args": "(ImPlotCol color)",
+      "argsT": [
+        {
+          "name": "color",
+          "type": "ImPlotCol"
+        }
+      ],
+      "argsoriginal": "(ImPlotCol color)",
+      "call_args": "(color)",
+      "cimguiname": "ImPlot_GetStyleColorName",
+      "defaults": [],
+      "funcname": "GetStyleColorName",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetStyleColorName",
+      "ret": "const char*",
+      "signature": "(ImPlotCol)",
+      "stname": ""
+    }
+  ],
   "ImPlot_IsLegendEntryHovered": [
     {
       "args": "(const char* label_id)",
@@ -685,6 +910,28 @@
       "stname": ""
     }
   ],
+  "ImPlot_NextColormapColor": [
+    {
+      "args": "(ImVec4 *pOut)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec4*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_NextColormapColor",
+      "defaults": [],
+      "funcname": "NextColormapColor",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "ImPlot_NextColormapColor",
+      "ret": "void",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
   "ImPlot_PixelsToPlot": [
     {
       "args": "(ImPlotPoint *pOut,const ImVec2 pix,int y_axis)",
@@ -711,9 +958,43 @@
       "funcname": "PixelsToPlot",
       "namespace": "ImPlot",
       "nonUDT": 1,
-      "ov_cimguiname": "ImPlot_PixelsToPlot",
+      "ov_cimguiname": "ImPlot_PixelsToPlotVec2",
       "ret": "void",
       "signature": "(const ImVec2,int)",
+      "stname": ""
+    },
+    {
+      "args": "(ImPlotPoint *pOut,float x,float y,int y_axis)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotPoint*"
+        },
+        {
+          "name": "x",
+          "type": "float"
+        },
+        {
+          "name": "y",
+          "type": "float"
+        },
+        {
+          "name": "y_axis",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(float x,float y,int y_axis=-1)",
+      "call_args": "(x,y,y_axis)",
+      "cimguiname": "ImPlot_PixelsToPlot",
+      "defaults": {
+        "y_axis": "-1"
+      },
+      "funcname": "PixelsToPlot",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "ImPlot_PixelsToPlotFloat",
+      "ret": "void",
+      "signature": "(float,float,int)",
       "stname": ""
     }
   ],
@@ -2456,27 +2737,23 @@
   ],
   "ImPlot_PlotShaded": [
     {
-      "args": "(const char* label_id,const float* xs,const float* ys1,const float* ys2,int count,int offset,int stride)",
+      "args": "(const char* label_id,const float* values,int count,float y_ref,int offset,int stride)",
       "argsT": [
         {
           "name": "label_id",
           "type": "const char*"
         },
         {
-          "name": "xs",
-          "type": "const float*"
-        },
-        {
-          "name": "ys1",
-          "type": "const float*"
-        },
-        {
-          "name": "ys2",
+          "name": "values",
           "type": "const float*"
         },
         {
           "name": "count",
           "type": "int"
+        },
+        {
+          "name": "y_ref",
+          "type": "float"
         },
         {
           "name": "offset",
@@ -2487,42 +2764,39 @@
           "type": "int"
         }
       ],
-      "argsoriginal": "(const char* label_id,const float* xs,const float* ys1,const float* ys2,int count,int offset=0,int stride=sizeof(float))",
-      "call_args": "(label_id,xs,ys1,ys2,count,offset,stride)",
+      "argsoriginal": "(const char* label_id,const float* values,int count,float y_ref=0,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,values,count,y_ref,offset,stride)",
       "cimguiname": "ImPlot_PlotShaded",
       "defaults": {
         "offset": "0",
-        "stride": "sizeof(float)"
+        "stride": "sizeof(float)",
+        "y_ref": "0"
       },
       "funcname": "PlotShaded",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedFloatPtrFloatPtrFloatPtr",
+      "ov_cimguiname": "ImPlot_PlotShadedFloatPtrIntFloat",
       "ret": "void",
-      "signature": "(const char*,const float*,const float*,const float*,int,int,int)",
+      "signature": "(const char*,const float*,int,float,int,int)",
       "stname": ""
     },
     {
-      "args": "(const char* label_id,const double* xs,const double* ys1,const double* ys2,int count,int offset,int stride)",
+      "args": "(const char* label_id,const double* values,int count,double y_ref,int offset,int stride)",
       "argsT": [
         {
           "name": "label_id",
           "type": "const char*"
         },
         {
-          "name": "xs",
-          "type": "const double*"
-        },
-        {
-          "name": "ys1",
-          "type": "const double*"
-        },
-        {
-          "name": "ys2",
+          "name": "values",
           "type": "const double*"
         },
         {
           "name": "count",
           "type": "int"
+        },
+        {
+          "name": "y_ref",
+          "type": "double"
         },
         {
           "name": "offset",
@@ -2533,18 +2807,19 @@
           "type": "int"
         }
       ],
-      "argsoriginal": "(const char* label_id,const double* xs,const double* ys1,const double* ys2,int count,int offset=0,int stride=sizeof(double))",
-      "call_args": "(label_id,xs,ys1,ys2,count,offset,stride)",
+      "argsoriginal": "(const char* label_id,const double* values,int count,double y_ref=0,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,values,count,y_ref,offset,stride)",
       "cimguiname": "ImPlot_PlotShaded",
       "defaults": {
         "offset": "0",
-        "stride": "sizeof(double)"
+        "stride": "sizeof(double)",
+        "y_ref": "0"
       },
       "funcname": "PlotShaded",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadeddoublePtrdoublePtrdoublePtr",
+      "ov_cimguiname": "ImPlot_PlotShadeddoublePtrIntdouble",
       "ret": "void",
-      "signature": "(const char*,const double*,const double*,const double*,int,int,int)",
+      "signature": "(const char*,const double*,int,double,int,int)",
       "stname": ""
     },
     {
@@ -2637,6 +2912,329 @@
       "funcname": "PlotShaded",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PlotShadeddoublePtrdoublePtrIntdouble",
+      "ret": "void",
+      "signature": "(const char*,const double*,const double*,int,double,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const float* xs,const float* ys1,const float* ys2,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const float*"
+        },
+        {
+          "name": "ys1",
+          "type": "const float*"
+        },
+        {
+          "name": "ys2",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* xs,const float* ys1,const float* ys2,int count,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,xs,ys1,ys2,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotShaded",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "PlotShaded",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotShadedFloatPtrFloatPtrFloatPtr",
+      "ret": "void",
+      "signature": "(const char*,const float*,const float*,const float*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* xs,const double* ys1,const double* ys2,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const double*"
+        },
+        {
+          "name": "ys1",
+          "type": "const double*"
+        },
+        {
+          "name": "ys2",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* xs,const double* ys1,const double* ys2,int count,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,xs,ys1,ys2,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotShaded",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)"
+      },
+      "funcname": "PlotShaded",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotShadeddoublePtrdoublePtrdoublePtr",
+      "ret": "void",
+      "signature": "(const char*,const double*,const double*,const double*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,ImPlotPoint(*getter1)(void* data,int idx),void* data1,ImPlotPoint(*getter2)(void* data,int idx),void* data2,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "getter1",
+          "ret": "ImPlotPoint",
+          "signature": "(void* data,int idx)",
+          "type": "ImPlotPoint(*)(void* data,int idx)"
+        },
+        {
+          "name": "data1",
+          "type": "void*"
+        },
+        {
+          "name": "getter2",
+          "ret": "ImPlotPoint",
+          "signature": "(void* data,int idx)",
+          "type": "ImPlotPoint(*)(void* data,int idx)"
+        },
+        {
+          "name": "data2",
+          "type": "void*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImPlotPoint(*getter1)(void* data,int idx),void* data1,ImPlotPoint(*getter2)(void* data,int idx),void* data2,int count,int offset=0)",
+      "call_args": "(label_id,getter1,data1,getter2,data2,count,offset)",
+      "cimguiname": "ImPlot_PlotShaded",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotShaded",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotShadedFnPlotPoIntPtr",
+      "ret": "void",
+      "signature": "(const char*,ImPlotPoint(*)(void*,int),void*,ImPlotPoint(*)(void*,int),void*,int,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_PlotStems": [
+    {
+      "args": "(const char* label_id,const float* values,int count,float y_ref,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "values",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "y_ref",
+          "type": "float"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* values,int count,float y_ref=0,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,values,count,y_ref,offset,stride)",
+      "cimguiname": "ImPlot_PlotStems",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)",
+        "y_ref": "0"
+      },
+      "funcname": "PlotStems",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotStemsFloatPtrIntFloat",
+      "ret": "void",
+      "signature": "(const char*,const float*,int,float,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* values,int count,double y_ref,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "values",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "y_ref",
+          "type": "double"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* values,int count,double y_ref=0,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,values,count,y_ref,offset,stride)",
+      "cimguiname": "ImPlot_PlotStems",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)",
+        "y_ref": "0"
+      },
+      "funcname": "PlotStems",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotStemsdoublePtrIntdouble",
+      "ret": "void",
+      "signature": "(const char*,const double*,int,double,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const float* xs,const float* ys,int count,float y_ref,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const float*"
+        },
+        {
+          "name": "ys",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "y_ref",
+          "type": "float"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,float y_ref=0,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,xs,ys,count,y_ref,offset,stride)",
+      "cimguiname": "ImPlot_PlotStems",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)",
+        "y_ref": "0"
+      },
+      "funcname": "PlotStems",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotStemsFloatPtrFloatPtr",
+      "ret": "void",
+      "signature": "(const char*,const float*,const float*,int,float,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* xs,const double* ys,int count,double y_ref,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const double*"
+        },
+        {
+          "name": "ys",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "y_ref",
+          "type": "double"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* xs,const double* ys,int count,double y_ref=0,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,xs,ys,count,y_ref,offset,stride)",
+      "cimguiname": "ImPlot_PlotStems",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)",
+        "y_ref": "0"
+      },
+      "funcname": "PlotStems",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotStemsdoublePtrdoublePtr",
       "ret": "void",
       "signature": "(const char*,const double*,const double*,int,double,int,int)",
       "stname": ""
@@ -2746,9 +3344,66 @@
       "funcname": "PlotToPixels",
       "namespace": "ImPlot",
       "nonUDT": 1,
-      "ov_cimguiname": "ImPlot_PlotToPixels",
+      "ov_cimguiname": "ImPlot_PlotToPixelsPlotPoInt",
       "ret": "void",
       "signature": "(const ImPlotPoint,int)",
+      "stname": ""
+    },
+    {
+      "args": "(ImVec2 *pOut,double x,double y,int y_axis)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        },
+        {
+          "name": "x",
+          "type": "double"
+        },
+        {
+          "name": "y",
+          "type": "double"
+        },
+        {
+          "name": "y_axis",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(double x,double y,int y_axis=-1)",
+      "call_args": "(x,y,y_axis)",
+      "cimguiname": "ImPlot_PlotToPixels",
+      "defaults": {
+        "y_axis": "-1"
+      },
+      "funcname": "PlotToPixels",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "ImPlot_PlotToPixelsdouble",
+      "ret": "void",
+      "signature": "(double,double,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_PopColormap": [
+    {
+      "args": "(int count)",
+      "argsT": [
+        {
+          "name": "count",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int count=1)",
+      "call_args": "(count)",
+      "cimguiname": "ImPlot_PopColormap",
+      "defaults": {
+        "count": "1"
+      },
+      "funcname": "PopColormap",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PopColormap",
+      "ret": "void",
+      "signature": "(int)",
       "stname": ""
     }
   ],
@@ -2811,6 +3466,50 @@
       "ov_cimguiname": "ImPlot_PopStyleVar",
       "ret": "void",
       "signature": "(int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_PushColormap": [
+    {
+      "args": "(ImPlotColormap colormap)",
+      "argsT": [
+        {
+          "name": "colormap",
+          "type": "ImPlotColormap"
+        }
+      ],
+      "argsoriginal": "(ImPlotColormap colormap)",
+      "call_args": "(colormap)",
+      "cimguiname": "ImPlot_PushColormap",
+      "defaults": [],
+      "funcname": "PushColormap",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PushColormapPlotColormap",
+      "ret": "void",
+      "signature": "(ImPlotColormap)",
+      "stname": ""
+    },
+    {
+      "args": "(const ImVec4* colormap,int size)",
+      "argsT": [
+        {
+          "name": "colormap",
+          "type": "const ImVec4*"
+        },
+        {
+          "name": "size",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImVec4* colormap,int size)",
+      "call_args": "(colormap,size)",
+      "cimguiname": "ImPlot_PushColormap",
+      "defaults": [],
+      "funcname": "PushColormap",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PushColormapVec4Ptr",
+      "ret": "void",
+      "signature": "(const ImVec4*,int)",
       "stname": ""
     }
   ],
@@ -2924,9 +3623,55 @@
       "ret": "void",
       "signature": "(ImPlotStyleVar,int)",
       "stname": ""
+    },
+    {
+      "args": "(ImPlotStyleVar idx,const ImVec2 val)",
+      "argsT": [
+        {
+          "name": "idx",
+          "type": "ImPlotStyleVar"
+        },
+        {
+          "name": "val",
+          "type": "const ImVec2"
+        }
+      ],
+      "argsoriginal": "(ImPlotStyleVar idx,const ImVec2& val)",
+      "call_args": "(idx,val)",
+      "cimguiname": "ImPlot_PushStyleVar",
+      "defaults": [],
+      "funcname": "PushStyleVar",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PushStyleVarVec2",
+      "ret": "void",
+      "signature": "(ImPlotStyleVar,const ImVec2)",
+      "stname": ""
     }
   ],
   "ImPlot_SetColormap": [
+    {
+      "args": "(const ImVec4* colormap,int size)",
+      "argsT": [
+        {
+          "name": "colormap",
+          "type": "const ImVec4*"
+        },
+        {
+          "name": "size",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImVec4* colormap,int size)",
+      "call_args": "(colormap,size)",
+      "cimguiname": "ImPlot_SetColormap",
+      "defaults": [],
+      "funcname": "SetColormap",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_SetColormapVec4Ptr",
+      "ret": "void",
+      "signature": "(const ImVec4*,int)",
+      "stname": ""
+    },
     {
       "args": "(ImPlotColormap colormap,int samples)",
       "argsT": [
@@ -2951,28 +3696,158 @@
       "ret": "void",
       "signature": "(ImPlotColormap,int)",
       "stname": ""
-    },
+    }
+  ],
+  "ImPlot_SetCurrentContext": [
     {
-      "args": "(const ImVec4* colors,int num_colors)",
+      "args": "(ImPlotContext* ctx)",
       "argsT": [
         {
-          "name": "colors",
-          "type": "const ImVec4*"
-        },
-        {
-          "name": "num_colors",
-          "type": "int"
+          "name": "ctx",
+          "type": "ImPlotContext*"
         }
       ],
-      "argsoriginal": "(const ImVec4* colors,int num_colors)",
-      "call_args": "(colors,num_colors)",
-      "cimguiname": "ImPlot_SetColormap",
+      "argsoriginal": "(ImPlotContext* ctx)",
+      "call_args": "(ctx)",
+      "cimguiname": "ImPlot_SetCurrentContext",
       "defaults": [],
-      "funcname": "SetColormap",
+      "funcname": "SetCurrentContext",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_SetColormapVec4Ptr",
+      "ov_cimguiname": "ImPlot_SetCurrentContext",
       "ret": "void",
-      "signature": "(const ImVec4*,int)",
+      "signature": "(ImPlotContext*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_SetNextErrorBarStyle": [
+    {
+      "args": "(const ImVec4 col,float size,float weight)",
+      "argsT": [
+        {
+          "name": "col",
+          "type": "const ImVec4"
+        },
+        {
+          "name": "size",
+          "type": "float"
+        },
+        {
+          "name": "weight",
+          "type": "float"
+        }
+      ],
+      "argsoriginal": "(const ImVec4& col=ImVec4(0,0,0,-1),float size=-1,float weight=-1)",
+      "call_args": "(col,size,weight)",
+      "cimguiname": "ImPlot_SetNextErrorBarStyle",
+      "defaults": {
+        "col": "ImVec4(0,0,0,-1)",
+        "size": "-1",
+        "weight": "-1"
+      },
+      "funcname": "SetNextErrorBarStyle",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_SetNextErrorBarStyle",
+      "ret": "void",
+      "signature": "(const ImVec4,float,float)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_SetNextFillStyle": [
+    {
+      "args": "(const ImVec4 col,float alpha_mod)",
+      "argsT": [
+        {
+          "name": "col",
+          "type": "const ImVec4"
+        },
+        {
+          "name": "alpha_mod",
+          "type": "float"
+        }
+      ],
+      "argsoriginal": "(const ImVec4& col=ImVec4(0,0,0,-1),float alpha_mod=-1)",
+      "call_args": "(col,alpha_mod)",
+      "cimguiname": "ImPlot_SetNextFillStyle",
+      "defaults": {
+        "alpha_mod": "-1",
+        "col": "ImVec4(0,0,0,-1)"
+      },
+      "funcname": "SetNextFillStyle",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_SetNextFillStyle",
+      "ret": "void",
+      "signature": "(const ImVec4,float)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_SetNextLineStyle": [
+    {
+      "args": "(const ImVec4 col,float weight)",
+      "argsT": [
+        {
+          "name": "col",
+          "type": "const ImVec4"
+        },
+        {
+          "name": "weight",
+          "type": "float"
+        }
+      ],
+      "argsoriginal": "(const ImVec4& col=ImVec4(0,0,0,-1),float weight=-1)",
+      "call_args": "(col,weight)",
+      "cimguiname": "ImPlot_SetNextLineStyle",
+      "defaults": {
+        "col": "ImVec4(0,0,0,-1)",
+        "weight": "-1"
+      },
+      "funcname": "SetNextLineStyle",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_SetNextLineStyle",
+      "ret": "void",
+      "signature": "(const ImVec4,float)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_SetNextMarkerStyle": [
+    {
+      "args": "(ImPlotMarker marker,float size,const ImVec4 fill,float weight,const ImVec4 outline)",
+      "argsT": [
+        {
+          "name": "marker",
+          "type": "ImPlotMarker"
+        },
+        {
+          "name": "size",
+          "type": "float"
+        },
+        {
+          "name": "fill",
+          "type": "const ImVec4"
+        },
+        {
+          "name": "weight",
+          "type": "float"
+        },
+        {
+          "name": "outline",
+          "type": "const ImVec4"
+        }
+      ],
+      "argsoriginal": "(ImPlotMarker marker=-1,float size=-1,const ImVec4& fill=ImVec4(0,0,0,-1),float weight=-1,const ImVec4& outline=ImVec4(0,0,0,-1))",
+      "call_args": "(marker,size,fill,weight,outline)",
+      "cimguiname": "ImPlot_SetNextMarkerStyle",
+      "defaults": {
+        "fill": "ImVec4(0,0,0,-1)",
+        "marker": "-1",
+        "outline": "ImVec4(0,0,0,-1)",
+        "size": "-1",
+        "weight": "-1"
+      },
+      "funcname": "SetNextMarkerStyle",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_SetNextMarkerStyle",
+      "ret": "void",
+      "signature": "(ImPlotMarker,float,const ImVec4,float,const ImVec4)",
       "stname": ""
     }
   ],
@@ -3310,6 +4185,158 @@
       "ov_cimguiname": "ImPlot_ShowDemoWindow",
       "ret": "void",
       "signature": "(bool*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ShowStyleEditor": [
+    {
+      "args": "(ImPlotStyle* ref)",
+      "argsT": [
+        {
+          "name": "ref",
+          "type": "ImPlotStyle*"
+        }
+      ],
+      "argsoriginal": "(ImPlotStyle* ref=((void*)0))",
+      "call_args": "(ref)",
+      "cimguiname": "ImPlot_ShowStyleEditor",
+      "defaults": {
+        "ref": "((void*)0)"
+      },
+      "funcname": "ShowStyleEditor",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_ShowStyleEditor",
+      "ret": "void",
+      "signature": "(ImPlotStyle*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ShowStyleSelector": [
+    {
+      "args": "(const char* label)",
+      "argsT": [
+        {
+          "name": "label",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(const char* label)",
+      "call_args": "(label)",
+      "cimguiname": "ImPlot_ShowStyleSelector",
+      "defaults": [],
+      "funcname": "ShowStyleSelector",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_ShowStyleSelector",
+      "ret": "bool",
+      "signature": "(const char*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ShowUserGuide": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_ShowUserGuide",
+      "defaults": [],
+      "funcname": "ShowUserGuide",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_ShowUserGuide",
+      "ret": "void",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_StyleColorsAuto": [
+    {
+      "args": "(ImPlotStyle* dst)",
+      "argsT": [
+        {
+          "name": "dst",
+          "type": "ImPlotStyle*"
+        }
+      ],
+      "argsoriginal": "(ImPlotStyle* dst=((void*)0))",
+      "call_args": "(dst)",
+      "cimguiname": "ImPlot_StyleColorsAuto",
+      "defaults": {
+        "dst": "((void*)0)"
+      },
+      "funcname": "StyleColorsAuto",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_StyleColorsAuto",
+      "ret": "void",
+      "signature": "(ImPlotStyle*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_StyleColorsClassic": [
+    {
+      "args": "(ImPlotStyle* dst)",
+      "argsT": [
+        {
+          "name": "dst",
+          "type": "ImPlotStyle*"
+        }
+      ],
+      "argsoriginal": "(ImPlotStyle* dst=((void*)0))",
+      "call_args": "(dst)",
+      "cimguiname": "ImPlot_StyleColorsClassic",
+      "defaults": {
+        "dst": "((void*)0)"
+      },
+      "funcname": "StyleColorsClassic",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_StyleColorsClassic",
+      "ret": "void",
+      "signature": "(ImPlotStyle*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_StyleColorsDark": [
+    {
+      "args": "(ImPlotStyle* dst)",
+      "argsT": [
+        {
+          "name": "dst",
+          "type": "ImPlotStyle*"
+        }
+      ],
+      "argsoriginal": "(ImPlotStyle* dst=((void*)0))",
+      "call_args": "(dst)",
+      "cimguiname": "ImPlot_StyleColorsDark",
+      "defaults": {
+        "dst": "((void*)0)"
+      },
+      "funcname": "StyleColorsDark",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_StyleColorsDark",
+      "ret": "void",
+      "signature": "(ImPlotStyle*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_StyleColorsLight": [
+    {
+      "args": "(ImPlotStyle* dst)",
+      "argsT": [
+        {
+          "name": "dst",
+          "type": "ImPlotStyle*"
+        }
+      ],
+      "argsoriginal": "(ImPlotStyle* dst=((void*)0))",
+      "call_args": "(dst)",
+      "cimguiname": "ImPlot_StyleColorsLight",
+      "defaults": {
+        "dst": "((void*)0)"
+      },
+      "funcname": "StyleColorsLight",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_StyleColorsLight",
+      "ret": "void",
+      "signature": "(ImPlotStyle*)",
       "stname": ""
     }
   ]

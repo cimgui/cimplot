@@ -2,6 +2,7 @@ local defs = {}
 defs["ImPlotAxisFlags"] = "int"
 defs["ImPlotCol"] = "int"
 defs["ImPlotColormap"] = "int"
+defs["ImPlotContext"] = "struct ImPlotContext"
 defs["ImPlotFlags"] = "int"
 defs["ImPlotInputMap"] = "struct ImPlotInputMap"
 defs["ImPlotLimits"] = "struct ImPlotLimits"
