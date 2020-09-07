@@ -135,6 +135,9 @@ local function parseImGuiHeader(header,names)
 	parser.cname_overloads = cimgui_overloads
 	parser.manuals = cimgui_manuals
 	parser.UDTs = {"ImVec2","ImVec4","ImColor","ImRect","ImPlotPoint","ImPlotLimits"}
+	--this list will expand all templated functions
+	parser.ftemplate_list = {}
+	parser.ftemplate_list.T = {"float", "double", "ImS8", "ImU8", "ImS16", "ImU16", "ImS32", "ImU32", "ImS64", "ImU64"}
 	
 	local include_cmd = COMPILER=="cl" and [[ /I ]] or [[ -I ]]
 	local extra_includes = include_cmd.." ../../cimgui/imgui "
