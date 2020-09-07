@@ -6,9 +6,6 @@ ImPlot_PlotDigital	3
 1	void	ImPlot_PlotDigitalFloatPtr (const char*,const float*,const float*,int,int,int)
 2	void	ImPlot_PlotDigitaldoublePtr (const char*,const double*,const double*,int,int,int)
 3	void	ImPlot_PlotDigitalFnPlotPoIntPtr (const char*,ImPlotPoint(*)(void*,int),void*,int,int)
-ImPlot_PlotPieChart	2
-1	void	ImPlot_PlotPieChartFloatPtr (const char**,const float*,int,float,float,float,bool,const char*,float)
-2	void	ImPlot_PlotPieChartdoublePtr (const char**,const double*,int,double,double,double,bool,const char*,double)
 ImPlot_PlotStems	4
 1	void	ImPlot_PlotStemsFloatPtrIntFloat (const char*,const float*,int,float,int,int)
 2	void	ImPlot_PlotStemsdoublePtrIntdouble (const char*,const double*,int,double,int,int)
@@ -97,4 +94,7 @@ ImPlot_PlotErrorBarsH	4
 2	void	ImPlot_PlotErrorBarsHdoublePtrdoublePtrdoublePtrInt (const char*,const double*,const double*,const double*,int,int,int)
 3	void	ImPlot_PlotErrorBarsHFloatPtrFloatPtrFloatPtrFloatPtr (const char*,const float*,const float*,const float*,const float*,int,int,int)
 4	void	ImPlot_PlotErrorBarsHdoublePtrdoublePtrdoublePtrdoublePtr (const char*,const double*,const double*,const double*,const double*,int,int,int)
+ImPlot_PlotPieChart	2
+1	void	ImPlot_PlotPieChartFloatPtr (const char**,const float*,int,float,float,float,bool,const char*,float)
+2	void	ImPlot_PlotPieChartdoublePtr (const char**,const double*,int,double,double,double,bool,const char*,double)
 75 overloaded

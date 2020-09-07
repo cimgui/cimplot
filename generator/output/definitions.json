@@ -368,17 +368,17 @@
           "type": "ImPlotAxisFlags"
         }
       ],
-      "argsoriginal": "(const char* title_id,const char* x_label=((void*)0),const char* y_label=((void*)0),const ImVec2& size=ImVec2(-1,0),ImPlotFlags flags=ImPlotFlags_Default,ImPlotAxisFlags x_flags=ImPlotAxisFlags_Default,ImPlotAxisFlags y_flags=ImPlotAxisFlags_Default,ImPlotAxisFlags y2_flags=ImPlotAxisFlags_Auxiliary,ImPlotAxisFlags y3_flags=ImPlotAxisFlags_Auxiliary)",
+      "argsoriginal": "(const char* title_id,const char* x_label=((void*)0),const char* y_label=((void*)0),const ImVec2& size=ImVec2(-1,0),ImPlotFlags flags=ImPlotFlags_None,ImPlotAxisFlags x_flags=ImPlotAxisFlags_None,ImPlotAxisFlags y_flags=ImPlotAxisFlags_None,ImPlotAxisFlags y2_flags=ImPlotAxisFlags_NoGridLines,ImPlotAxisFlags y3_flags=ImPlotAxisFlags_NoGridLines)",
       "call_args": "(title_id,x_label,y_label,size,flags,x_flags,y_flags,y2_flags,y3_flags)",
       "cimguiname": "ImPlot_BeginPlot",
       "defaults": {
-        "flags": "ImPlotFlags_Default",
+        "flags": "ImPlotFlags_None",
         "size": "ImVec2(-1,0)",
-        "x_flags": "ImPlotAxisFlags_Default",
+        "x_flags": "ImPlotAxisFlags_None",
         "x_label": "((void*)0)",
-        "y2_flags": "ImPlotAxisFlags_Auxiliary",
-        "y3_flags": "ImPlotAxisFlags_Auxiliary",
-        "y_flags": "ImPlotAxisFlags_Default",
+        "y2_flags": "ImPlotAxisFlags_NoGridLines",
+        "y3_flags": "ImPlotAxisFlags_NoGridLines",
+        "y_flags": "ImPlotAxisFlags_None",
         "y_label": "((void*)0)"
       },
       "funcname": "BeginPlot",
@@ -607,6 +607,27 @@
       "ret": "ImPlotInputMap*",
       "retref": "&",
       "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetMarkerName": [
+    {
+      "args": "(ImPlotMarker marker)",
+      "argsT": [
+        {
+          "name": "marker",
+          "type": "ImPlotMarker"
+        }
+      ],
+      "argsoriginal": "(ImPlotMarker marker)",
+      "call_args": "(marker)",
+      "cimguiname": "ImPlot_GetMarkerName",
+      "defaults": [],
+      "funcname": "GetMarkerName",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetMarkerName",
+      "ret": "const char*",
+      "signature": "(ImPlotMarker)",
       "stname": ""
     }
   ],
@@ -907,6 +928,60 @@
       "ov_cimguiname": "ImPlot_LerpColormap",
       "ret": "void",
       "signature": "(float)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_LinkNextPlotLimits": [
+    {
+      "args": "(double* xmin,double* xmax,double* ymin,double* ymax,double* ymin2,double* ymax2,double* ymin3,double* ymax3)",
+      "argsT": [
+        {
+          "name": "xmin",
+          "type": "double*"
+        },
+        {
+          "name": "xmax",
+          "type": "double*"
+        },
+        {
+          "name": "ymin",
+          "type": "double*"
+        },
+        {
+          "name": "ymax",
+          "type": "double*"
+        },
+        {
+          "name": "ymin2",
+          "type": "double*"
+        },
+        {
+          "name": "ymax2",
+          "type": "double*"
+        },
+        {
+          "name": "ymin3",
+          "type": "double*"
+        },
+        {
+          "name": "ymax3",
+          "type": "double*"
+        }
+      ],
+      "argsoriginal": "(double* xmin,double* xmax,double* ymin,double* ymax,double* ymin2=((void*)0),double* ymax2=((void*)0),double* ymin3=((void*)0),double* ymax3=((void*)0))",
+      "call_args": "(xmin,xmax,ymin,ymax,ymin2,ymax2,ymin3,ymax3)",
+      "cimguiname": "ImPlot_LinkNextPlotLimits",
+      "defaults": {
+        "ymax2": "((void*)0)",
+        "ymax3": "((void*)0)",
+        "ymin2": "((void*)0)",
+        "ymin3": "((void*)0)"
+      },
+      "funcname": "LinkNextPlotLimits",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_LinkNextPlotLimits",
+      "ret": "void",
+      "signature": "(double*,double*,double*,double*,double*,double*,double*,double*)",
       "stname": ""
     }
   ],
@@ -3853,22 +3928,22 @@
   ],
   "ImPlot_SetNextPlotLimits": [
     {
-      "args": "(double x_min,double x_max,double y_min,double y_max,ImGuiCond cond)",
+      "args": "(double xmin,double xmax,double ymin,double ymax,ImGuiCond cond)",
       "argsT": [
         {
-          "name": "x_min",
+          "name": "xmin",
           "type": "double"
         },
         {
-          "name": "x_max",
+          "name": "xmax",
           "type": "double"
         },
         {
-          "name": "y_min",
+          "name": "ymin",
           "type": "double"
         },
         {
-          "name": "y_max",
+          "name": "ymax",
           "type": "double"
         },
         {
@@ -3876,8 +3951,8 @@
           "type": "ImGuiCond"
         }
       ],
-      "argsoriginal": "(double x_min,double x_max,double y_min,double y_max,ImGuiCond cond=ImGuiCond_Once)",
-      "call_args": "(x_min,x_max,y_min,y_max,cond)",
+      "argsoriginal": "(double xmin,double xmax,double ymin,double ymax,ImGuiCond cond=ImGuiCond_Once)",
+      "call_args": "(xmin,xmax,ymin,ymax,cond)",
       "cimguiname": "ImPlot_SetNextPlotLimits",
       "defaults": {
         "cond": "ImGuiCond_Once"
@@ -3892,14 +3967,14 @@
   ],
   "ImPlot_SetNextPlotLimitsX": [
     {
-      "args": "(double x_min,double x_max,ImGuiCond cond)",
+      "args": "(double xmin,double xmax,ImGuiCond cond)",
       "argsT": [
         {
-          "name": "x_min",
+          "name": "xmin",
           "type": "double"
         },
         {
-          "name": "x_max",
+          "name": "xmax",
           "type": "double"
         },
         {
@@ -3907,8 +3982,8 @@
           "type": "ImGuiCond"
         }
       ],
-      "argsoriginal": "(double x_min,double x_max,ImGuiCond cond=ImGuiCond_Once)",
-      "call_args": "(x_min,x_max,cond)",
+      "argsoriginal": "(double xmin,double xmax,ImGuiCond cond=ImGuiCond_Once)",
+      "call_args": "(xmin,xmax,cond)",
       "cimguiname": "ImPlot_SetNextPlotLimitsX",
       "defaults": {
         "cond": "ImGuiCond_Once"
@@ -3923,14 +3998,14 @@
   ],
   "ImPlot_SetNextPlotLimitsY": [
     {
-      "args": "(double y_min,double y_max,ImGuiCond cond,int y_axis)",
+      "args": "(double ymin,double ymax,ImGuiCond cond,int y_axis)",
       "argsT": [
         {
-          "name": "y_min",
+          "name": "ymin",
           "type": "double"
         },
         {
-          "name": "y_max",
+          "name": "ymax",
           "type": "double"
         },
         {
@@ -3942,8 +4017,8 @@
           "type": "int"
         }
       ],
-      "argsoriginal": "(double y_min,double y_max,ImGuiCond cond=ImGuiCond_Once,int y_axis=0)",
-      "call_args": "(y_min,y_max,cond,y_axis)",
+      "argsoriginal": "(double ymin,double ymax,ImGuiCond cond=ImGuiCond_Once,int y_axis=0)",
+      "call_args": "(ymin,ymax,cond,y_axis)",
       "cimguiname": "ImPlot_SetNextPlotLimitsY",
       "defaults": {
         "cond": "ImGuiCond_Once",

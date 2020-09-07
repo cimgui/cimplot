@@ -2,49 +2,59 @@
   "enums": {
     "ImPlotAxisFlags_": [
       {
+        "calc_value": 0,
+        "name": "ImPlotAxisFlags_None",
+        "value": "0"
+      },
+      {
         "calc_value": 1,
-        "name": "ImPlotAxisFlags_GridLines",
+        "name": "ImPlotAxisFlags_NoGridLines",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
-        "name": "ImPlotAxisFlags_TickMarks",
+        "name": "ImPlotAxisFlags_NoTickMarks",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
-        "name": "ImPlotAxisFlags_TickLabels",
+        "name": "ImPlotAxisFlags_NoTickLabels",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
-        "name": "ImPlotAxisFlags_Invert",
+        "name": "ImPlotAxisFlags_LogScale",
         "value": "1 << 3"
       },
       {
         "calc_value": 16,
-        "name": "ImPlotAxisFlags_LockMin",
+        "name": "ImPlotAxisFlags_Time",
         "value": "1 << 4"
       },
       {
         "calc_value": 32,
-        "name": "ImPlotAxisFlags_LockMax",
+        "name": "ImPlotAxisFlags_Invert",
         "value": "1 << 5"
       },
       {
         "calc_value": 64,
-        "name": "ImPlotAxisFlags_LogScale",
+        "name": "ImPlotAxisFlags_LockMin",
         "value": "1 << 6"
       },
       {
-        "calc_value": 7,
-        "name": "ImPlotAxisFlags_Default",
-        "value": "ImPlotAxisFlags_GridLines | ImPlotAxisFlags_TickMarks | ImPlotAxisFlags_TickLabels"
+        "calc_value": 128,
+        "name": "ImPlotAxisFlags_LockMax",
+        "value": "1 << 7"
       },
       {
-        "calc_value": 6,
-        "name": "ImPlotAxisFlags_Auxiliary",
-        "value": "ImPlotAxisFlags_TickMarks | ImPlotAxisFlags_TickLabels"
+        "calc_value": 192,
+        "name": "ImPlotAxisFlags_Lock",
+        "value": "ImPlotAxisFlags_LockMin | ImPlotAxisFlags_LockMax"
+      },
+      {
+        "calc_value": 7,
+        "name": "ImPlotAxisFlags_NoDecorations",
+        "value": "ImPlotAxisFlags_NoGridLines | ImPlotAxisFlags_NoTickMarks | ImPlotAxisFlags_NoTickLabels"
       }
     ],
     "ImPlotCol_": [
@@ -238,64 +248,69 @@
     ],
     "ImPlotFlags_": [
       {
+        "calc_value": 0,
+        "name": "ImPlotFlags_None",
+        "value": "0"
+      },
+      {
         "calc_value": 1,
-        "name": "ImPlotFlags_MousePos",
+        "name": "ImPlotFlags_NoLegend",
         "value": "1 << 0"
       },
       {
         "calc_value": 2,
-        "name": "ImPlotFlags_Legend",
+        "name": "ImPlotFlags_NoMenus",
         "value": "1 << 1"
       },
       {
         "calc_value": 4,
-        "name": "ImPlotFlags_Highlight",
+        "name": "ImPlotFlags_NoBoxSelect",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
-        "name": "ImPlotFlags_BoxSelect",
+        "name": "ImPlotFlags_NoMousePos",
         "value": "1 << 3"
       },
       {
         "calc_value": 16,
-        "name": "ImPlotFlags_Query",
+        "name": "ImPlotFlags_NoHighlight",
         "value": "1 << 4"
       },
       {
         "calc_value": 32,
-        "name": "ImPlotFlags_ContextMenu",
+        "name": "ImPlotFlags_NoChild",
         "value": "1 << 5"
       },
       {
         "calc_value": 64,
-        "name": "ImPlotFlags_Crosshairs",
+        "name": "ImPlotFlags_YAxis2",
         "value": "1 << 6"
       },
       {
         "calc_value": 128,
-        "name": "ImPlotFlags_AntiAliased",
+        "name": "ImPlotFlags_YAxis3",
         "value": "1 << 7"
       },
       {
         "calc_value": 256,
-        "name": "ImPlotFlags_NoChild",
+        "name": "ImPlotFlags_Query",
         "value": "1 << 8"
       },
       {
         "calc_value": 512,
-        "name": "ImPlotFlags_YAxis2",
+        "name": "ImPlotFlags_Crosshairs",
         "value": "1 << 9"
       },
       {
         "calc_value": 1024,
-        "name": "ImPlotFlags_YAxis3",
+        "name": "ImPlotFlags_AntiAliased",
         "value": "1 << 10"
       },
       {
-        "calc_value": 47,
-        "name": "ImPlotFlags_Default",
-        "value": "ImPlotFlags_MousePos | ImPlotFlags_Legend | ImPlotFlags_Highlight | ImPlotFlags_BoxSelect | ImPlotFlags_ContextMenu"
+        "calc_value": 15,
+        "name": "ImPlotFlags_CanvasOnly",
+        "value": "ImPlotFlags_NoLegend | ImPlotFlags_NoMenus | ImPlotFlags_NoBoxSelect | ImPlotFlags_NoMousePos"
       }
     ],
     "ImPlotMarker_": [
@@ -567,7 +582,7 @@
       },
       {
         "name": "Marker",
-        "type": "ImPlotMarker"
+        "type": "int"
       },
       {
         "name": "MarkerSize",
@@ -596,10 +611,6 @@
       {
         "name": "DigitalBitGap",
         "type": "float"
-      },
-      {
-        "name": "AntiAliasedLines",
-        "type": "bool"
       },
       {
         "name": "PlotBorderSize",
@@ -657,6 +668,14 @@
         "name": "Colors[ImPlotCol_COUNT]",
         "size": 24,
         "type": "ImVec4"
+      },
+      {
+        "name": "AntiAliasedLines",
+        "type": "bool"
+      },
+      {
+        "name": "UseLocalTime",
+        "type": "bool"
       }
     ]
   }
