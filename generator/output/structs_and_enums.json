@@ -493,7 +493,19 @@
       }
     ]
   },
-  "locations": [],
+  "locations": {
+    "ImPlotAxisFlags_": "implot:72",
+    "ImPlotCol_": "implot:87",
+    "ImPlotColormap_": "implot:163",
+    "ImPlotFlags_": "implot:55",
+    "ImPlotInputMap": "implot:242",
+    "ImPlotLimits": "implot:201",
+    "ImPlotMarker_": "implot:147",
+    "ImPlotPoint": "implot:179",
+    "ImPlotRange": "implot:192",
+    "ImPlotStyle": "implot:208",
+    "ImPlotStyleVar_": "implot:118"
+  },
   "structs": {
     "ImPlotInputMap": [
       {
