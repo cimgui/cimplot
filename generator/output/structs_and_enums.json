@@ -61,127 +61,127 @@
       {
         "calc_value": 0,
         "name": "ImPlotCol_Line",
-        "value": 0
+        "value": "0"
       },
       {
         "calc_value": 1,
         "name": "ImPlotCol_Fill",
-        "value": 1
+        "value": "1"
       },
       {
         "calc_value": 2,
         "name": "ImPlotCol_MarkerOutline",
-        "value": 2
+        "value": "2"
       },
       {
         "calc_value": 3,
         "name": "ImPlotCol_MarkerFill",
-        "value": 3
+        "value": "3"
       },
       {
         "calc_value": 4,
         "name": "ImPlotCol_ErrorBar",
-        "value": 4
+        "value": "4"
       },
       {
         "calc_value": 5,
         "name": "ImPlotCol_FrameBg",
-        "value": 5
+        "value": "5"
       },
       {
         "calc_value": 6,
         "name": "ImPlotCol_PlotBg",
-        "value": 6
+        "value": "6"
       },
       {
         "calc_value": 7,
         "name": "ImPlotCol_PlotBorder",
-        "value": 7
+        "value": "7"
       },
       {
         "calc_value": 8,
         "name": "ImPlotCol_LegendBg",
-        "value": 8
+        "value": "8"
       },
       {
         "calc_value": 9,
         "name": "ImPlotCol_LegendBorder",
-        "value": 9
+        "value": "9"
       },
       {
         "calc_value": 10,
         "name": "ImPlotCol_LegendText",
-        "value": 10
+        "value": "10"
       },
       {
         "calc_value": 11,
         "name": "ImPlotCol_TitleText",
-        "value": 11
+        "value": "11"
       },
       {
         "calc_value": 12,
         "name": "ImPlotCol_InlayText",
-        "value": 12
+        "value": "12"
       },
       {
         "calc_value": 13,
         "name": "ImPlotCol_XAxis",
-        "value": 13
+        "value": "13"
       },
       {
         "calc_value": 14,
         "name": "ImPlotCol_XAxisGrid",
-        "value": 14
+        "value": "14"
       },
       {
         "calc_value": 15,
         "name": "ImPlotCol_YAxis",
-        "value": 15
+        "value": "15"
       },
       {
         "calc_value": 16,
         "name": "ImPlotCol_YAxisGrid",
-        "value": 16
+        "value": "16"
       },
       {
         "calc_value": 17,
         "name": "ImPlotCol_YAxis2",
-        "value": 17
+        "value": "17"
       },
       {
         "calc_value": 18,
         "name": "ImPlotCol_YAxisGrid2",
-        "value": 18
+        "value": "18"
       },
       {
         "calc_value": 19,
         "name": "ImPlotCol_YAxis3",
-        "value": 19
+        "value": "19"
       },
       {
         "calc_value": 20,
         "name": "ImPlotCol_YAxisGrid3",
-        "value": 20
+        "value": "20"
       },
       {
         "calc_value": 21,
         "name": "ImPlotCol_Selection",
-        "value": 21
+        "value": "21"
       },
       {
         "calc_value": 22,
         "name": "ImPlotCol_Query",
-        "value": 22
+        "value": "22"
       },
       {
         "calc_value": 23,
         "name": "ImPlotCol_Crosshairs",
-        "value": 23
+        "value": "23"
       },
       {
         "calc_value": 24,
         "name": "ImPlotCol_COUNT",
-        "value": 24
+        "value": "24"
       }
     ],
     "ImPlotColormap_": [
@@ -243,7 +243,7 @@
       {
         "calc_value": 11,
         "name": "ImPlotColormap_COUNT",
-        "value": 11
+        "value": "11"
       }
     ],
     "ImPlotFlags_": [
@@ -322,174 +322,174 @@
       {
         "calc_value": 0,
         "name": "ImPlotMarker_Circle",
-        "value": 0
+        "value": "0"
       },
       {
         "calc_value": 1,
         "name": "ImPlotMarker_Square",
-        "value": 1
+        "value": "1"
       },
       {
         "calc_value": 2,
         "name": "ImPlotMarker_Diamond",
-        "value": 2
+        "value": "2"
       },
       {
         "calc_value": 3,
         "name": "ImPlotMarker_Up",
-        "value": 3
+        "value": "3"
       },
       {
         "calc_value": 4,
         "name": "ImPlotMarker_Down",
-        "value": 4
+        "value": "4"
       },
       {
         "calc_value": 5,
         "name": "ImPlotMarker_Left",
-        "value": 5
+        "value": "5"
       },
       {
         "calc_value": 6,
         "name": "ImPlotMarker_Right",
-        "value": 6
+        "value": "6"
       },
       {
         "calc_value": 7,
         "name": "ImPlotMarker_Cross",
-        "value": 7
+        "value": "7"
       },
       {
         "calc_value": 8,
         "name": "ImPlotMarker_Plus",
-        "value": 8
+        "value": "8"
       },
       {
         "calc_value": 9,
         "name": "ImPlotMarker_Asterisk",
-        "value": 9
+        "value": "9"
       },
       {
         "calc_value": 10,
         "name": "ImPlotMarker_COUNT",
-        "value": 10
+        "value": "10"
       }
     ],
     "ImPlotStyleVar_": [
       {
         "calc_value": 0,
         "name": "ImPlotStyleVar_LineWeight",
-        "value": 0
+        "value": "0"
       },
       {
         "calc_value": 1,
         "name": "ImPlotStyleVar_Marker",
-        "value": 1
+        "value": "1"
       },
       {
         "calc_value": 2,
         "name": "ImPlotStyleVar_MarkerSize",
-        "value": 2
+        "value": "2"
       },
       {
         "calc_value": 3,
         "name": "ImPlotStyleVar_MarkerWeight",
-        "value": 3
+        "value": "3"
       },
       {
         "calc_value": 4,
         "name": "ImPlotStyleVar_FillAlpha",
-        "value": 4
+        "value": "4"
       },
       {
         "calc_value": 5,
         "name": "ImPlotStyleVar_ErrorBarSize",
-        "value": 5
+        "value": "5"
       },
       {
         "calc_value": 6,
         "name": "ImPlotStyleVar_ErrorBarWeight",
-        "value": 6
+        "value": "6"
       },
       {
         "calc_value": 7,
         "name": "ImPlotStyleVar_DigitalBitHeight",
-        "value": 7
+        "value": "7"
       },
       {
         "calc_value": 8,
         "name": "ImPlotStyleVar_DigitalBitGap",
-        "value": 8
+        "value": "8"
       },
       {
         "calc_value": 9,
         "name": "ImPlotStyleVar_PlotBorderSize",
-        "value": 9
+        "value": "9"
       },
       {
         "calc_value": 10,
         "name": "ImPlotStyleVar_MinorAlpha",
-        "value": 10
+        "value": "10"
       },
       {
         "calc_value": 11,
         "name": "ImPlotStyleVar_MajorTickLen",
-        "value": 11
+        "value": "11"
       },
       {
         "calc_value": 12,
         "name": "ImPlotStyleVar_MinorTickLen",
-        "value": 12
+        "value": "12"
       },
       {
         "calc_value": 13,
         "name": "ImPlotStyleVar_MajorTickSize",
-        "value": 13
+        "value": "13"
       },
       {
         "calc_value": 14,
         "name": "ImPlotStyleVar_MinorTickSize",
-        "value": 14
+        "value": "14"
       },
       {
         "calc_value": 15,
         "name": "ImPlotStyleVar_MajorGridSize",
-        "value": 15
+        "value": "15"
       },
       {
         "calc_value": 16,
         "name": "ImPlotStyleVar_MinorGridSize",
-        "value": 16
+        "value": "16"
       },
       {
         "calc_value": 17,
         "name": "ImPlotStyleVar_PlotPadding",
-        "value": 17
+        "value": "17"
       },
       {
         "calc_value": 18,
         "name": "ImPlotStyleVar_LabelPadding",
-        "value": 18
+        "value": "18"
       },
       {
         "calc_value": 19,
         "name": "ImPlotStyleVar_LegendPadding",
-        "value": 19
+        "value": "19"
       },
       {
         "calc_value": 20,
         "name": "ImPlotStyleVar_InfoPadding",
-        "value": 20
+        "value": "20"
       },
       {
         "calc_value": 21,
         "name": "ImPlotStyleVar_PlotMinSize",
-        "value": 21
+        "value": "21"
       },
       {
         "calc_value": 22,
         "name": "ImPlotStyleVar_COUNT",
-        "value": 22
+        "value": "22"
       }
     ]
   },

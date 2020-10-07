@@ -174,7 +174,8 @@ local function json_prepare(defs)
 end
 ---[[
 local json = require"json"
-save_data("./output/definitions.json",json.encode(json_prepare(parser1.defsT)))
+local json_opts = {dict_on_empty={defaults=true}}
+save_data("./output/definitions.json",json.encode(json_prepare(parser1.defsT),json_opts))
 save_data("./output/structs_and_enums.json",json.encode(structs_and_enums_table))
 save_data("./output/typedefs_dict.json",json.encode(parser1.typedefs_dict))
 --]]
