@@ -483,28 +483,33 @@
       },
       {
         "calc_value": 21,
-        "name": "ImPlotStyleVar_PlotMinSize",
+        "name": "ImPlotStyleVar_AnnotationPadding",
         "value": "21"
       },
       {
         "calc_value": 22,
-        "name": "ImPlotStyleVar_COUNT",
+        "name": "ImPlotStyleVar_PlotMinSize",
         "value": "22"
+      },
+      {
+        "calc_value": 23,
+        "name": "ImPlotStyleVar_COUNT",
+        "value": "23"
       }
     ]
   },
   "locations": {
-    "ImPlotAxisFlags_": "implot:72",
-    "ImPlotCol_": "implot:87",
-    "ImPlotColormap_": "implot:163",
-    "ImPlotFlags_": "implot:55",
-    "ImPlotInputMap": "implot:242",
-    "ImPlotLimits": "implot:201",
-    "ImPlotMarker_": "implot:147",
-    "ImPlotPoint": "implot:179",
-    "ImPlotRange": "implot:192",
-    "ImPlotStyle": "implot:208",
-    "ImPlotStyleVar_": "implot:118"
+    "ImPlotAxisFlags_": "implot:80",
+    "ImPlotCol_": "implot:95",
+    "ImPlotColormap_": "implot:172",
+    "ImPlotFlags_": "implot:63",
+    "ImPlotInputMap": "implot:254",
+    "ImPlotLimits": "implot:211",
+    "ImPlotMarker_": "implot:156",
+    "ImPlotPoint": "implot:188",
+    "ImPlotRange": "implot:202",
+    "ImPlotStyle": "implot:218",
+    "ImPlotStyleVar_": "implot:126"
   },
   "structs": {
     "ImPlotInputMap": [
@@ -673,6 +678,10 @@
         "type": "ImVec2"
       },
       {
+        "name": "AnnotationPadding",
+        "type": "ImVec2"
+      },
+      {
         "name": "PlotMinSize",
         "type": "ImVec2"
       },
@@ -687,6 +696,10 @@
       },
       {
         "name": "UseLocalTime",
+        "type": "bool"
+      },
+      {
+        "name": "Use24HourClock",
         "type": "bool"
       }
     ]
