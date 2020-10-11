@@ -448,7 +448,6 @@ CIMGUI_API void ImPlot_PlotDigitalS32Ptr(const char* label_id,const ImS32* xs,co
 CIMGUI_API void ImPlot_PlotDigitalU32Ptr(const char* label_id,const ImU32* xs,const ImU32* ys,int count,int offset,int stride);
 CIMGUI_API void ImPlot_PlotDigitalS64Ptr(const char* label_id,const ImS64* xs,const ImS64* ys,int count,int offset,int stride);
 CIMGUI_API void ImPlot_PlotDigitalU64Ptr(const char* label_id,const ImU64* xs,const ImU64* ys,int count,int offset,int stride);
-CIMGUI_API void ImPlot_PlotDigitalG(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset);
 CIMGUI_API void ImPlot_PlotImage(const char* label_id,ImTextureID user_texture_id,const ImPlotPoint bounds_min,const ImPlotPoint bounds_max,const ImVec2 uv0,const ImVec2 uv1,const ImVec4 tint_col);
 CIMGUI_API void ImPlot_PlotText(const char* text,double x,double y,bool vertical,const ImVec2 pix_offset);
 CIMGUI_API void ImPlot_SetNextPlotLimits(double xmin,double xmax,double ymin,double ymax,ImGuiCond cond);
@@ -475,6 +474,14 @@ CIMGUI_API void ImPlot_GetPlotMousePos(ImPlotPoint *pOut,int y_axis);
 CIMGUI_API void ImPlot_GetPlotLimits(ImPlotLimits *pOut,int y_axis);
 CIMGUI_API bool ImPlot_IsPlotQueried(void);
 CIMGUI_API void ImPlot_GetPlotQuery(ImPlotLimits *pOut,int y_axis);
+CIMGUI_API void ImPlot_AnnotateStr(double x,double y,const ImVec2 pix_offset,const char* fmt,...);
+CIMGUI_API void ImPlot_AnnotateVec4(double x,double y,const ImVec2 pix_offset,const ImVec4 color,const char* fmt,...);
+CIMGUI_API void ImPlot_AnnotateClampedStr(double x,double y,const ImVec2 pix_offset,const char* fmt,...);
+CIMGUI_API void ImPlot_AnnotateClampedVec4(double x,double y,const ImVec2 pix_offset,const ImVec4 color,const char* fmt,...);
+CIMGUI_API void ImPlot_AnnotateVStr(double x,double y,const ImVec2 pix_offset,const char* fmt,va_list args);
+CIMGUI_API void ImPlot_AnnotateVVec4(double x,double y,const ImVec2 pix_offset,const ImVec4 color,const char* fmt,va_list args);
+CIMGUI_API void ImPlot_AnnotateClampedVStr(double x,double y,const ImVec2 pix_offset,const char* fmt,va_list args);
+CIMGUI_API void ImPlot_AnnotateClampedVVec4(double x,double y,const ImVec2 pix_offset,const ImVec4 color,const char* fmt,va_list args);
 CIMGUI_API bool ImPlot_DragLineX(const char* id,double* x_value,bool show_label,const ImVec4 col,float thickness);
 CIMGUI_API bool ImPlot_DragLineY(const char* id,double* y_value,bool show_label,const ImVec4 col,float thickness);
 CIMGUI_API bool ImPlot_DragPoint(const char* id,double* x,double* y,bool show_label,const ImVec4 col,float radius);
@@ -518,12 +525,20 @@ CIMGUI_API ImDrawList* ImPlot_GetPlotDrawList(void);
 CIMGUI_API void ImPlot_PushPlotClipRect(void);
 CIMGUI_API void ImPlot_PopPlotClipRect(void);
 CIMGUI_API bool ImPlot_ShowStyleSelector(const char* label);
+CIMGUI_API bool ImPlot_ShowColormapSelector(const char* label);
 CIMGUI_API void ImPlot_ShowStyleEditor(ImPlotStyle* ref);
 CIMGUI_API void ImPlot_ShowUserGuide(void);
 CIMGUI_API void ImPlot_SetImGuiContext(ImGuiContext* ctx);
 CIMGUI_API void ImPlot_ShowDemoWindow(bool* p_open);
 
 
+//ImPlotPoint getters manually wrapped
+CIMGUI_API void ImPlot_PlotLineG(const char* label_id,ImPlotPoint*(*getter)(void* data,int idx),void* data,int count,int offset);
+CIMGUI_API  void ImPlot_PlotScatterG(const char* label_id, ImPlotPoint* (*getter)(void* data, int idx), void* data, int count, int offset);
+CIMGUI_API void ImPlot_PlotShadedG(const char* label_id, ImPlotPoint* (*getter1)(void* data, int idx), void* data1, ImPlotPoint* (*getter2)(void* data, int idx), void* data2, int count, int offset);
+CIMGUI_API void ImPlot_PlotBarsG(const char* label_id, ImPlotPoint* (*getter)(void* data, int idx), void* data, int count, double width, int offset);
+CIMGUI_API void ImPlot_PlotBarsHG(const char* label_id, ImPlotPoint* (*getter)(void* data, int idx), void* data, int count, double height,  int offset);
+CIMGUI_API void ImPlot_PlotDigitalG(const char* label_id, ImPlotPoint* (*getter)(void* data, int idx), void* data, int count, int offset);
 
 #endif //CIMGUIPLOT_INCLUDED
 

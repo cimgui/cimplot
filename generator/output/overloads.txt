@@ -15,6 +15,12 @@ ImPlot_Annotate	2
 ImPlot_AnnotateClamped	2
 1	void	ImPlot_AnnotateClampedStr (double,double,const ImVec2,const char*,...)
 2	void	ImPlot_AnnotateClampedVec4 (double,double,const ImVec2,const ImVec4,const char*,...)
+ImPlot_AnnotateClampedV	2
+1	void	ImPlot_AnnotateClampedVStr (double,double,const ImVec2,const char*,va_list)
+2	void	ImPlot_AnnotateClampedVVec4 (double,double,const ImVec2,const ImVec4,const char*,va_list)
+ImPlot_AnnotateV	2
+1	void	ImPlot_AnnotateVStr (double,double,const ImVec2,const char*,va_list)
+2	void	ImPlot_AnnotateVVec4 (double,double,const ImVec2,const ImVec4,const char*,va_list)
 ImPlot_PixelsToPlot	2
 1	ImPlotPoint	ImPlot_PixelsToPlotVec2 (const ImVec2,int)
 2	ImPlotPoint	ImPlot_PixelsToPlotFloat (float,float,int)
@@ -251,4 +257,4 @@ ImPlot_SetNextPlotTicksX	2
 ImPlot_SetNextPlotTicksY	2
 1	void	ImPlot_SetNextPlotTicksYdoublePtr (const double*,int,const char* const[],bool,int)
 2	void	ImPlot_SetNextPlotTicksYdouble (double,double,int,const char* const[],bool,int)
-228 overloaded
+232 overloaded

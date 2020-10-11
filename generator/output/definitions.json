@@ -338,7 +338,6 @@
       "ov_cimguiname": "ImPlot_AnnotateStr",
       "ret": "void",
       "signature": "(double,double,const ImVec2,const char*,...)",
-      "skipped": true,
       "stname": ""
     },
     {
@@ -380,7 +379,6 @@
       "ov_cimguiname": "ImPlot_AnnotateVec4",
       "ret": "void",
       "signature": "(double,double,const ImVec2,const ImVec4,const char*,...)",
-      "skipped": true,
       "stname": ""
     }
   ],
@@ -420,7 +418,6 @@
       "ov_cimguiname": "ImPlot_AnnotateClampedStr",
       "ret": "void",
       "signature": "(double,double,const ImVec2,const char*,...)",
-      "skipped": true,
       "stname": ""
     },
     {
@@ -462,7 +459,162 @@
       "ov_cimguiname": "ImPlot_AnnotateClampedVec4",
       "ret": "void",
       "signature": "(double,double,const ImVec2,const ImVec4,const char*,...)",
-      "skipped": true,
+      "stname": ""
+    }
+  ],
+  "ImPlot_AnnotateClampedV": [
+    {
+      "args": "(double x,double y,const ImVec2 pix_offset,const char* fmt,va_list args)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "double"
+        },
+        {
+          "name": "y",
+          "type": "double"
+        },
+        {
+          "name": "pix_offset",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "fmt",
+          "type": "const char*"
+        },
+        {
+          "name": "args",
+          "type": "va_list"
+        }
+      ],
+      "argsoriginal": "(double x,double y,const ImVec2& pix_offset,const char* fmt,va_list args)",
+      "call_args": "(x,y,pix_offset,fmt,args)",
+      "cimguiname": "ImPlot_AnnotateClampedV",
+      "defaults": {},
+      "funcname": "AnnotateClampedV",
+      "location": "implot:477",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_AnnotateClampedVStr",
+      "ret": "void",
+      "signature": "(double,double,const ImVec2,const char*,va_list)",
+      "stname": ""
+    },
+    {
+      "args": "(double x,double y,const ImVec2 pix_offset,const ImVec4 color,const char* fmt,va_list args)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "double"
+        },
+        {
+          "name": "y",
+          "type": "double"
+        },
+        {
+          "name": "pix_offset",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "color",
+          "type": "const ImVec4"
+        },
+        {
+          "name": "fmt",
+          "type": "const char*"
+        },
+        {
+          "name": "args",
+          "type": "va_list"
+        }
+      ],
+      "argsoriginal": "(double x,double y,const ImVec2& pix_offset,const ImVec4& color,const char* fmt,va_list args)",
+      "call_args": "(x,y,pix_offset,color,fmt,args)",
+      "cimguiname": "ImPlot_AnnotateClampedV",
+      "defaults": {},
+      "funcname": "AnnotateClampedV",
+      "location": "implot:478",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_AnnotateClampedVVec4",
+      "ret": "void",
+      "signature": "(double,double,const ImVec2,const ImVec4,const char*,va_list)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_AnnotateV": [
+    {
+      "args": "(double x,double y,const ImVec2 pix_offset,const char* fmt,va_list args)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "double"
+        },
+        {
+          "name": "y",
+          "type": "double"
+        },
+        {
+          "name": "pix_offset",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "fmt",
+          "type": "const char*"
+        },
+        {
+          "name": "args",
+          "type": "va_list"
+        }
+      ],
+      "argsoriginal": "(double x,double y,const ImVec2& pix_offset,const char* fmt,va_list args)",
+      "call_args": "(x,y,pix_offset,fmt,args)",
+      "cimguiname": "ImPlot_AnnotateV",
+      "defaults": {},
+      "funcname": "AnnotateV",
+      "location": "implot:474",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_AnnotateVStr",
+      "ret": "void",
+      "signature": "(double,double,const ImVec2,const char*,va_list)",
+      "stname": ""
+    },
+    {
+      "args": "(double x,double y,const ImVec2 pix_offset,const ImVec4 color,const char* fmt,va_list args)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "double"
+        },
+        {
+          "name": "y",
+          "type": "double"
+        },
+        {
+          "name": "pix_offset",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "color",
+          "type": "const ImVec4"
+        },
+        {
+          "name": "fmt",
+          "type": "const char*"
+        },
+        {
+          "name": "args",
+          "type": "va_list"
+        }
+      ],
+      "argsoriginal": "(double x,double y,const ImVec2& pix_offset,const ImVec4& color,const char* fmt,va_list args)",
+      "call_args": "(x,y,pix_offset,color,fmt,args)",
+      "cimguiname": "ImPlot_AnnotateV",
+      "defaults": {},
+      "funcname": "AnnotateV",
+      "location": "implot:475",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_AnnotateVVec4",
+      "ret": "void",
+      "signature": "(double,double,const ImVec2,const ImVec4,const char*,va_list)",
       "stname": ""
     }
   ],
@@ -486,7 +638,7 @@
         "flags": "0"
       },
       "funcname": "BeginLegendDragDropSource",
-      "location": "implot:488",
+      "location": "implot:495",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_BeginLegendDragDropSource",
       "ret": "bool",
@@ -514,7 +666,7 @@
         "mouse_button": "1"
       },
       "funcname": "BeginLegendPopup",
-      "location": "implot:492",
+      "location": "implot:499",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_BeginLegendPopup",
       "ret": "bool",
@@ -660,7 +812,7 @@
         "thickness": "1"
       },
       "funcname": "DragLineX",
-      "location": "implot:475",
+      "location": "implot:482",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_DragLineX",
       "ret": "bool",
@@ -702,7 +854,7 @@
         "thickness": "1"
       },
       "funcname": "DragLineY",
-      "location": "implot:477",
+      "location": "implot:484",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_DragLineY",
       "ret": "bool",
@@ -748,7 +900,7 @@
         "show_label": "true"
       },
       "funcname": "DragPoint",
-      "location": "implot:479",
+      "location": "implot:486",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_DragPoint",
       "ret": "bool",
@@ -765,7 +917,7 @@
       "cimguiname": "ImPlot_EndLegendDragDropSource",
       "defaults": {},
       "funcname": "EndLegendDragDropSource",
-      "location": "implot:490",
+      "location": "implot:497",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_EndLegendDragDropSource",
       "ret": "void",
@@ -782,7 +934,7 @@
       "cimguiname": "ImPlot_EndLegendPopup",
       "defaults": {},
       "funcname": "EndLegendPopup",
-      "location": "implot:494",
+      "location": "implot:501",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_EndLegendPopup",
       "ret": "void",
@@ -864,7 +1016,7 @@
       "cimguiname": "ImPlot_GetColormapColor",
       "defaults": {},
       "funcname": "GetColormapColor",
-      "location": "implot:581",
+      "location": "implot:588",
       "namespace": "ImPlot",
       "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetColormapColor",
@@ -887,7 +1039,7 @@
       "cimguiname": "ImPlot_GetColormapName",
       "defaults": {},
       "funcname": "GetColormapName",
-      "location": "implot:591",
+      "location": "implot:598",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_GetColormapName",
       "ret": "const char*",
@@ -904,7 +1056,7 @@
       "cimguiname": "ImPlot_GetColormapSize",
       "defaults": {},
       "funcname": "GetColormapSize",
-      "location": "implot:579",
+      "location": "implot:586",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_GetColormapSize",
       "ret": "int",
@@ -938,7 +1090,7 @@
       "cimguiname": "ImPlot_GetInputMap",
       "defaults": {},
       "funcname": "GetInputMap",
-      "location": "implot:598",
+      "location": "implot:605",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_GetInputMap",
       "ret": "ImPlotInputMap*",
@@ -961,7 +1113,7 @@
       "cimguiname": "ImPlot_GetLastItemColor",
       "defaults": {},
       "funcname": "GetLastItemColor",
-      "location": "implot:546",
+      "location": "implot:553",
       "namespace": "ImPlot",
       "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetLastItemColor",
@@ -984,7 +1136,7 @@
       "cimguiname": "ImPlot_GetMarkerName",
       "defaults": {},
       "funcname": "GetMarkerName",
-      "location": "implot:551",
+      "location": "implot:558",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_GetMarkerName",
       "ret": "const char*",
@@ -1001,7 +1153,7 @@
       "cimguiname": "ImPlot_GetPlotDrawList",
       "defaults": {},
       "funcname": "GetPlotDrawList",
-      "location": "implot:601",
+      "location": "implot:608",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_GetPlotDrawList",
       "ret": "ImDrawList*",
@@ -1151,7 +1303,7 @@
       "cimguiname": "ImPlot_GetStyle",
       "defaults": {},
       "funcname": "GetStyle",
-      "location": "implot:501",
+      "location": "implot:508",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_GetStyle",
       "ret": "ImPlotStyle*",
@@ -1174,7 +1326,7 @@
       "cimguiname": "ImPlot_GetStyleColorName",
       "defaults": {},
       "funcname": "GetStyleColorName",
-      "location": "implot:549",
+      "location": "implot:556",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_GetStyleColorName",
       "ret": "const char*",
@@ -1225,7 +1377,7 @@
       "cimguiname": "ImPlot_IsLegendEntryHovered",
       "defaults": {},
       "funcname": "IsLegendEntryHovered",
-      "location": "implot:486",
+      "location": "implot:493",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_IsLegendEntryHovered",
       "ret": "bool",
@@ -1326,7 +1478,7 @@
       "cimguiname": "ImPlot_LerpColormap",
       "defaults": {},
       "funcname": "LerpColormap",
-      "location": "implot:583",
+      "location": "implot:590",
       "namespace": "ImPlot",
       "nonUDT": 1,
       "ov_cimguiname": "ImPlot_LerpColormap",
@@ -1404,7 +1556,7 @@
       "cimguiname": "ImPlot_NextColormapColor",
       "defaults": {},
       "funcname": "NextColormapColor",
-      "location": "implot:585",
+      "location": "implot:592",
       "namespace": "ImPlot",
       "nonUDT": 1,
       "ov_cimguiname": "ImPlot_NextColormapColor",
@@ -2482,11 +2634,11 @@
       },
       "funcname": "PlotBarsG",
       "location": "implot:370",
+      "manual": true,
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PlotBarsG",
       "ret": "void",
       "signature": "(const char*,ImPlotPoint(*)(void*,int),void*,int,double,int)",
-      "skipped": true,
       "stname": ""
     }
   ],
@@ -3491,11 +3643,11 @@
       },
       "funcname": "PlotBarsHG",
       "location": "implot:375",
+      "manual": true,
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PlotBarsHG",
       "ret": "void",
       "signature": "(const char*,ImPlotPoint(*)(void*,int),void*,int,double,int)",
-      "skipped": true,
       "stname": ""
     }
   ],
@@ -3966,6 +4118,7 @@
       },
       "funcname": "PlotDigitalG",
       "location": "implot:397",
+      "manual": true,
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PlotDigitalG",
       "ret": "void",
@@ -7506,11 +7659,11 @@
       },
       "funcname": "PlotLineG",
       "location": "implot:354",
+      "manual": true,
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PlotLineG",
       "ret": "void",
       "signature": "(const char*,ImPlotPoint(*)(void*,int),void*,int,int)",
-      "skipped": true,
       "stname": ""
     }
   ],
@@ -9033,11 +9186,11 @@
       },
       "funcname": "PlotScatterG",
       "location": "implot:359",
+      "manual": true,
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PlotScatterG",
       "ret": "void",
       "signature": "(const char*,ImPlotPoint(*)(void*,int),void*,int,int)",
-      "skipped": true,
       "stname": ""
     }
   ],
@@ -10578,11 +10731,11 @@
       },
       "funcname": "PlotShadedG",
       "location": "implot:365",
+      "manual": true,
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PlotShadedG",
       "ret": "void",
       "signature": "(const char*,ImPlotPoint(*)(void*,int),void*,ImPlotPoint(*)(void*,int),void*,int,int)",
-      "skipped": true,
       "stname": ""
     }
   ],
@@ -11733,7 +11886,7 @@
         "count": "1"
       },
       "funcname": "PopColormap",
-      "location": "implot:571",
+      "location": "implot:578",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PopColormap",
       "ret": "void",
@@ -11750,7 +11903,7 @@
       "cimguiname": "ImPlot_PopPlotClipRect",
       "defaults": {},
       "funcname": "PopPlotClipRect",
-      "location": "implot:605",
+      "location": "implot:612",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PopPlotClipRect",
       "ret": "void",
@@ -11774,7 +11927,7 @@
         "count": "1"
       },
       "funcname": "PopStyleColor",
-      "location": "implot:520",
+      "location": "implot:527",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PopStyleColor",
       "ret": "void",
@@ -11798,7 +11951,7 @@
         "count": "1"
       },
       "funcname": "PopStyleVar",
-      "location": "implot:529",
+      "location": "implot:536",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PopStyleVar",
       "ret": "void",
@@ -11820,7 +11973,7 @@
       "cimguiname": "ImPlot_PushColormap",
       "defaults": {},
       "funcname": "PushColormap",
-      "location": "implot:567",
+      "location": "implot:574",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PushColormapPlotColormap",
       "ret": "void",
@@ -11844,7 +11997,7 @@
       "cimguiname": "ImPlot_PushColormap",
       "defaults": {},
       "funcname": "PushColormap",
-      "location": "implot:569",
+      "location": "implot:576",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PushColormapVec4Ptr",
       "ret": "void",
@@ -11861,7 +12014,7 @@
       "cimguiname": "ImPlot_PushPlotClipRect",
       "defaults": {},
       "funcname": "PushPlotClipRect",
-      "location": "implot:603",
+      "location": "implot:610",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PushPlotClipRect",
       "ret": "void",
@@ -11887,7 +12040,7 @@
       "cimguiname": "ImPlot_PushStyleColor",
       "defaults": {},
       "funcname": "PushStyleColor",
-      "location": "implot:517",
+      "location": "implot:524",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PushStyleColorU32",
       "ret": "void",
@@ -11911,7 +12064,7 @@
       "cimguiname": "ImPlot_PushStyleColor",
       "defaults": {},
       "funcname": "PushStyleColor",
-      "location": "implot:518",
+      "location": "implot:525",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PushStyleColorVec4",
       "ret": "void",
@@ -11937,7 +12090,7 @@
       "cimguiname": "ImPlot_PushStyleVar",
       "defaults": {},
       "funcname": "PushStyleVar",
-      "location": "implot:523",
+      "location": "implot:530",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PushStyleVarFloat",
       "ret": "void",
@@ -11961,7 +12114,7 @@
       "cimguiname": "ImPlot_PushStyleVar",
       "defaults": {},
       "funcname": "PushStyleVar",
-      "location": "implot:525",
+      "location": "implot:532",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PushStyleVarInt",
       "ret": "void",
@@ -11985,7 +12138,7 @@
       "cimguiname": "ImPlot_PushStyleVar",
       "defaults": {},
       "funcname": "PushStyleVar",
-      "location": "implot:527",
+      "location": "implot:534",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_PushStyleVarVec2",
       "ret": "void",
@@ -12011,7 +12164,7 @@
       "cimguiname": "ImPlot_SetColormap",
       "defaults": {},
       "funcname": "SetColormap",
-      "location": "implot:574",
+      "location": "implot:581",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_SetColormapVec4Ptr",
       "ret": "void",
@@ -12037,7 +12190,7 @@
         "samples": "0"
       },
       "funcname": "SetColormap",
-      "location": "implot:576",
+      "location": "implot:583",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_SetColormapPlotColormap",
       "ret": "void",
@@ -12081,7 +12234,7 @@
       "cimguiname": "ImPlot_SetImGuiContext",
       "defaults": {},
       "funcname": "SetImGuiContext",
-      "location": "implot:618",
+      "location": "implot:627",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_SetImGuiContext",
       "ret": "void",
@@ -12115,7 +12268,7 @@
         "weight": "-1"
       },
       "funcname": "SetNextErrorBarStyle",
-      "location": "implot:543",
+      "location": "implot:550",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_SetNextErrorBarStyle",
       "ret": "void",
@@ -12144,7 +12297,7 @@
         "col": "ImVec4(0,0,0,-1)"
       },
       "funcname": "SetNextFillStyle",
-      "location": "implot:539",
+      "location": "implot:546",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_SetNextFillStyle",
       "ret": "void",
@@ -12173,7 +12326,7 @@
         "weight": "-1"
       },
       "funcname": "SetNextLineStyle",
-      "location": "implot:537",
+      "location": "implot:544",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_SetNextLineStyle",
       "ret": "void",
@@ -12217,7 +12370,7 @@
         "weight": "-1"
       },
       "funcname": "SetNextMarkerStyle",
-      "location": "implot:541",
+      "location": "implot:548",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_SetNextMarkerStyle",
       "ret": "void",
@@ -12540,11 +12693,33 @@
       "cimguiname": "ImPlot_ShowColormapScale",
       "defaults": {},
       "funcname": "ShowColormapScale",
-      "location": "implot:588",
+      "location": "implot:595",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_ShowColormapScale",
       "ret": "void",
       "signature": "(double,double,float)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ShowColormapSelector": [
+    {
+      "args": "(const char* label)",
+      "argsT": [
+        {
+          "name": "label",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(const char* label)",
+      "call_args": "(label)",
+      "cimguiname": "ImPlot_ShowColormapSelector",
+      "defaults": {},
+      "funcname": "ShowColormapSelector",
+      "location": "implot:617",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_ShowColormapSelector",
+      "ret": "bool",
+      "signature": "(const char*)",
       "stname": ""
     }
   ],
@@ -12564,7 +12739,7 @@
         "p_open": "((void*)0)"
       },
       "funcname": "ShowDemoWindow",
-      "location": "implot:625",
+      "location": "implot:634",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_ShowDemoWindow",
       "ret": "void",
@@ -12588,7 +12763,7 @@
         "ref": "((void*)0)"
       },
       "funcname": "ShowStyleEditor",
-      "location": "implot:610",
+      "location": "implot:619",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_ShowStyleEditor",
       "ret": "void",
@@ -12610,7 +12785,7 @@
       "cimguiname": "ImPlot_ShowStyleSelector",
       "defaults": {},
       "funcname": "ShowStyleSelector",
-      "location": "implot:608",
+      "location": "implot:615",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_ShowStyleSelector",
       "ret": "bool",
@@ -12627,7 +12802,7 @@
       "cimguiname": "ImPlot_ShowUserGuide",
       "defaults": {},
       "funcname": "ShowUserGuide",
-      "location": "implot:612",
+      "location": "implot:621",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_ShowUserGuide",
       "ret": "void",
@@ -12651,7 +12826,7 @@
         "dst": "((void*)0)"
       },
       "funcname": "StyleColorsAuto",
-      "location": "implot:504",
+      "location": "implot:511",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_StyleColorsAuto",
       "ret": "void",
@@ -12675,7 +12850,7 @@
         "dst": "((void*)0)"
       },
       "funcname": "StyleColorsClassic",
-      "location": "implot:506",
+      "location": "implot:513",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_StyleColorsClassic",
       "ret": "void",
@@ -12699,7 +12874,7 @@
         "dst": "((void*)0)"
       },
       "funcname": "StyleColorsDark",
-      "location": "implot:508",
+      "location": "implot:515",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_StyleColorsDark",
       "ret": "void",
@@ -12723,7 +12898,7 @@
         "dst": "((void*)0)"
       },
       "funcname": "StyleColorsLight",
-      "location": "implot:510",
+      "location": "implot:517",
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_StyleColorsLight",
       "ret": "void",

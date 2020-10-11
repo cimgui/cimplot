@@ -890,10 +890,6 @@ CIMGUI_API void ImPlot_PlotDigitalU64Ptr(const char* label_id,const ImU64* xs,co
 {
     return ImPlot::PlotDigital(label_id,xs,ys,count,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotDigitalG(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset)
-{
-    return ImPlot::PlotDigitalG(label_id,getter,data,count,offset);
-}
 CIMGUI_API void ImPlot_PlotImage(const char* label_id,ImTextureID user_texture_id,const ImPlotPoint bounds_min,const ImPlotPoint bounds_max,const ImVec2 uv0,const ImVec2 uv1,const ImVec4 tint_col)
 {
     return ImPlot::PlotImage(label_id,user_texture_id,bounds_min,bounds_max,uv0,uv1,tint_col);
@@ -997,6 +993,50 @@ CIMGUI_API bool ImPlot_IsPlotQueried()
 CIMGUI_API void ImPlot_GetPlotQuery(ImPlotLimits *pOut,int y_axis)
 {
     *pOut = ImPlot::GetPlotQuery(y_axis);
+}
+CIMGUI_API void ImPlot_AnnotateStr(double x,double y,const ImVec2 pix_offset,const char* fmt,...)
+{
+    va_list args;
+    va_start(args, fmt);
+    ImPlot::AnnotateV(x,y,pix_offset,fmt,args);
+    va_end(args);
+}
+CIMGUI_API void ImPlot_AnnotateVec4(double x,double y,const ImVec2 pix_offset,const ImVec4 color,const char* fmt,...)
+{
+    va_list args;
+    va_start(args, fmt);
+    ImPlot::AnnotateV(x,y,pix_offset,color,fmt,args);
+    va_end(args);
+}
+CIMGUI_API void ImPlot_AnnotateClampedStr(double x,double y,const ImVec2 pix_offset,const char* fmt,...)
+{
+    va_list args;
+    va_start(args, fmt);
+    ImPlot::AnnotateClampedV(x,y,pix_offset,fmt,args);
+    va_end(args);
+}
+CIMGUI_API void ImPlot_AnnotateClampedVec4(double x,double y,const ImVec2 pix_offset,const ImVec4 color,const char* fmt,...)
+{
+    va_list args;
+    va_start(args, fmt);
+    ImPlot::AnnotateClampedV(x,y,pix_offset,color,fmt,args);
+    va_end(args);
+}
+CIMGUI_API void ImPlot_AnnotateVStr(double x,double y,const ImVec2 pix_offset,const char* fmt,va_list args)
+{
+    return ImPlot::AnnotateV(x,y,pix_offset,fmt,args);
+}
+CIMGUI_API void ImPlot_AnnotateVVec4(double x,double y,const ImVec2 pix_offset,const ImVec4 color,const char* fmt,va_list args)
+{
+    return ImPlot::AnnotateV(x,y,pix_offset,color,fmt,args);
+}
+CIMGUI_API void ImPlot_AnnotateClampedVStr(double x,double y,const ImVec2 pix_offset,const char* fmt,va_list args)
+{
+    return ImPlot::AnnotateClampedV(x,y,pix_offset,fmt,args);
+}
+CIMGUI_API void ImPlot_AnnotateClampedVVec4(double x,double y,const ImVec2 pix_offset,const ImVec4 color,const char* fmt,va_list args)
+{
+    return ImPlot::AnnotateClampedV(x,y,pix_offset,color,fmt,args);
 }
 CIMGUI_API bool ImPlot_DragLineX(const char* id,double* x_value,bool show_label,const ImVec4 col,float thickness)
 {
@@ -1170,6 +1210,10 @@ CIMGUI_API bool ImPlot_ShowStyleSelector(const char* label)
 {
     return ImPlot::ShowStyleSelector(label);
 }
+CIMGUI_API bool ImPlot_ShowColormapSelector(const char* label)
+{
+    return ImPlot::ShowColormapSelector(label);
+}
 CIMGUI_API void ImPlot_ShowStyleEditor(ImPlotStyle* ref)
 {
     return ImPlot::ShowStyleEditor(ref);
@@ -1188,4 +1232,55 @@ CIMGUI_API void ImPlot_ShowDemoWindow(bool* p_open)
 }
 
 
+//ImPlotPoint getters manually wrapped
+ImPlotPoint *(*getter_funcX)(void* data, int idx);
+ImPlotPoint *(*getter_funcX2)(void* data, int idx);
 
+ImPlotPoint Wrapper(void* data, int idx)
+{
+	ImPlotPoint *pp = getter_funcX(data, idx);
+	return *pp;
+}
+
+ImPlotPoint Wrapper2(void* data, int idx)
+{
+	ImPlotPoint *pp = getter_funcX2(data, idx);
+	return *pp;
+}
+
+CIMGUI_API void ImPlot_PlotLineG(const char* label_id,ImPlotPoint*(*getter)(void* data,int idx),void* data,int count,int offset)
+{
+    getter_funcX = getter;
+	ImPlot::PlotLineG(label_id,Wrapper,data,count,offset);
+}
+
+CIMGUI_API  void ImPlot_PlotScatterG(const char* label_id, ImPlotPoint *(*getter)(void* data, int idx), void* data, int count, int offset)
+{
+	getter_funcX = getter;
+	ImPlot::PlotScatterG(label_id, Wrapper, data, count, offset);
+}
+
+CIMGUI_API void ImPlot_PlotShadedG(const char* label_id, ImPlotPoint* (*getter1)(void* data, int idx), void* data1, ImPlotPoint* (*getter2)(void* data, int idx), void* data2, int count, int offset)
+{
+	getter_funcX = getter1;
+	getter_funcX2 = getter2;
+	ImPlot::PlotShadedG(label_id, Wrapper, data1, Wrapper2, data2, count, offset);
+}
+
+CIMGUI_API void ImPlot_PlotBarsG(const char* label_id, ImPlotPoint* (*getter)(void* data, int idx), void* data, int count, double width, int offset)
+{
+	getter_funcX = getter;
+	ImPlot::PlotBarsG(label_id, Wrapper, data, count, width, offset);
+}
+
+CIMGUI_API void ImPlot_PlotBarsHG(const char* label_id, ImPlotPoint* (*getter)(void* data, int idx), void* data, int count, double height,  int offset)
+{
+	getter_funcX = getter;
+	ImPlot::PlotBarsHG(label_id, Wrapper, data, count, height, offset);
+}
+
+CIMGUI_API void ImPlot_PlotDigitalG(const char* label_id, ImPlotPoint* (*getter)(void* data, int idx), void* data, int count, int offset)
+{
+	getter_funcX = getter;
+	ImPlot::PlotDigitalG(label_id, Wrapper, data, count, offset);
+}

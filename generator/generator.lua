@@ -43,15 +43,16 @@ print("HAVE_COMPILER",HAVE_COMPILER)
 --------------------------------------------------------------------------
 --this table has the functions to be skipped in generation
 --------------------------------------------------------------------------
-local cimgui_skipped = {
+local cimgui_manuals = {
      ImPlot_PlotLineG = true,
 	 ImPlot_PlotScatterG = true,
 	 ImPlot_PlotShadedG = true,
 	 ImPlot_PlotBarsG = true,
 	 ImPlot_PlotBarsHG = true,
-	 ImPlot_PlotBarsHG = true,
-	 ImPlot_Annotate = true,
-	 ImPlot_AnnotateClamped = true
+	 ImPlot_PlotDigitalG = true,
+}
+local cimgui_skipped = {
+	 --ImPlot_AnnotateClamped = true
 }
 --------------------------------------------------------------------------
 --this table is a dictionary to force a naming of function overloading (instead of algorythmic generated)
@@ -139,6 +140,7 @@ local function parseImGuiHeader(header,names)
 		return pre..funcname
 	end
 	parser.cname_overloads = cimgui_overloads
+	parser.manuals = cimgui_manuals
 	parser.skipped = cimgui_skipped
 	parser.UDTs = {"ImVec2","ImVec4","ImColor","ImRect","ImPlotPoint","ImPlotLimits"}
 	--this list will expand all templated functions
