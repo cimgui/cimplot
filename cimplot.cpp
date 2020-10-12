@@ -1008,6 +1008,14 @@ CIMGUI_API void ImPlot_AnnotateVec4(double x,double y,const ImVec2 pix_offset,co
     ImPlot::AnnotateV(x,y,pix_offset,color,fmt,args);
     va_end(args);
 }
+CIMGUI_API void ImPlot_AnnotateVStr(double x,double y,const ImVec2 pix_offset,const char* fmt,va_list args)
+{
+    return ImPlot::AnnotateV(x,y,pix_offset,fmt,args);
+}
+CIMGUI_API void ImPlot_AnnotateVVec4(double x,double y,const ImVec2 pix_offset,const ImVec4 color,const char* fmt,va_list args)
+{
+    return ImPlot::AnnotateV(x,y,pix_offset,color,fmt,args);
+}
 CIMGUI_API void ImPlot_AnnotateClampedStr(double x,double y,const ImVec2 pix_offset,const char* fmt,...)
 {
     va_list args;
@@ -1021,14 +1029,6 @@ CIMGUI_API void ImPlot_AnnotateClampedVec4(double x,double y,const ImVec2 pix_of
     va_start(args, fmt);
     ImPlot::AnnotateClampedV(x,y,pix_offset,color,fmt,args);
     va_end(args);
-}
-CIMGUI_API void ImPlot_AnnotateVStr(double x,double y,const ImVec2 pix_offset,const char* fmt,va_list args)
-{
-    return ImPlot::AnnotateV(x,y,pix_offset,fmt,args);
-}
-CIMGUI_API void ImPlot_AnnotateVVec4(double x,double y,const ImVec2 pix_offset,const ImVec4 color,const char* fmt,va_list args)
-{
-    return ImPlot::AnnotateV(x,y,pix_offset,color,fmt,args);
 }
 CIMGUI_API void ImPlot_AnnotateClampedVStr(double x,double y,const ImVec2 pix_offset,const char* fmt,va_list args)
 {
@@ -1232,7 +1232,7 @@ CIMGUI_API void ImPlot_ShowDemoWindow(bool* p_open)
 }
 
 
-//ImPlotPoint getters manually wrapped
+//ImPlotPoint getters manually wrapped for taking getters returning ImPlotPoint*
 ImPlotPoint *(*getter_funcX)(void* data, int idx);
 ImPlotPoint *(*getter_funcX2)(void* data, int idx);
 
