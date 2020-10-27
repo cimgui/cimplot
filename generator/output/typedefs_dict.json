@@ -6,9 +6,12 @@
   "ImPlotFlags": "int",
   "ImPlotInputMap": "struct ImPlotInputMap",
   "ImPlotLimits": "struct ImPlotLimits",
+  "ImPlotLocation": "int",
   "ImPlotMarker": "int",
+  "ImPlotOrientation": "int",
   "ImPlotPoint": "struct ImPlotPoint",
   "ImPlotRange": "struct ImPlotRange",
   "ImPlotStyle": "struct ImPlotStyle",
-  "ImPlotStyleVar": "int"
+  "ImPlotStyleVar": "int",
+  "ImPlotYAxis": "int"
 }
