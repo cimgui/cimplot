@@ -604,6 +604,7 @@
       }
     ]
   },
+  "enumtypes": [],
   "locations": {
     "ImPlotAxisFlags_": "implot:85",
     "ImPlotCol_": "implot:100",

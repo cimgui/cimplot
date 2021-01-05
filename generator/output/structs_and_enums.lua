@@ -477,6 +477,7 @@ defs["enums"]["ImPlotYAxis_"][3] = {}
 defs["enums"]["ImPlotYAxis_"][3]["calc_value"] = 2
 defs["enums"]["ImPlotYAxis_"][3]["name"] = "ImPlotYAxis_3"
 defs["enums"]["ImPlotYAxis_"][3]["value"] = "2"
+defs["enumtypes"] = {}
 defs["locations"] = {}
 defs["locations"]["ImPlotAxisFlags_"] = "implot:85"
 defs["locations"]["ImPlotCol_"] = "implot:100"
