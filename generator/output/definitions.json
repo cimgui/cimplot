@@ -9266,7 +9266,7 @@
       "funcname": "PlotShaded",
       "location": "implot:407",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedFloatPtrIntdoubledoubleInt",
+      "ov_cimguiname": "ImPlot_PlotShadedFloatPtrInt",
       "ret": "void",
       "signature": "(const char*,const float*,int,double,double,double,int,int)",
       "stname": ""
@@ -9320,7 +9320,7 @@
       "funcname": "PlotShaded",
       "location": "implot:407",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadeddoublePtrIntdoubledoubleInt",
+      "ov_cimguiname": "ImPlot_PlotShadeddoublePtrInt",
       "ret": "void",
       "signature": "(const char*,const double*,int,double,double,double,int,int)",
       "stname": ""
@@ -9374,7 +9374,7 @@
       "funcname": "PlotShaded",
       "location": "implot:407",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedS8PtrIntdoubledoubleInt",
+      "ov_cimguiname": "ImPlot_PlotShadedS8PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImS8*,int,double,double,double,int,int)",
       "stname": ""
@@ -9428,7 +9428,7 @@
       "funcname": "PlotShaded",
       "location": "implot:407",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedU8PtrIntdoubledoubleInt",
+      "ov_cimguiname": "ImPlot_PlotShadedU8PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImU8*,int,double,double,double,int,int)",
       "stname": ""
@@ -9482,7 +9482,7 @@
       "funcname": "PlotShaded",
       "location": "implot:407",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedS16PtrIntdoubledoubleInt",
+      "ov_cimguiname": "ImPlot_PlotShadedS16PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImS16*,int,double,double,double,int,int)",
       "stname": ""
@@ -9536,7 +9536,7 @@
       "funcname": "PlotShaded",
       "location": "implot:407",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedU16PtrIntdoubledoubleInt",
+      "ov_cimguiname": "ImPlot_PlotShadedU16PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImU16*,int,double,double,double,int,int)",
       "stname": ""
@@ -9590,7 +9590,7 @@
       "funcname": "PlotShaded",
       "location": "implot:407",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedS32PtrIntdoubledoubleInt",
+      "ov_cimguiname": "ImPlot_PlotShadedS32PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImS32*,int,double,double,double,int,int)",
       "stname": ""
@@ -9644,7 +9644,7 @@
       "funcname": "PlotShaded",
       "location": "implot:407",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedU32PtrIntdoubledoubleInt",
+      "ov_cimguiname": "ImPlot_PlotShadedU32PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImU32*,int,double,double,double,int,int)",
       "stname": ""
@@ -9698,7 +9698,7 @@
       "funcname": "PlotShaded",
       "location": "implot:407",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedS64PtrIntdoubledoubleInt",
+      "ov_cimguiname": "ImPlot_PlotShadedS64PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImS64*,int,double,double,double,int,int)",
       "stname": ""
@@ -9752,7 +9752,7 @@
       "funcname": "PlotShaded",
       "location": "implot:407",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedU64PtrIntdoubledoubleInt",
+      "ov_cimguiname": "ImPlot_PlotShadedU64PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImU64*,int,double,double,double,int,int)",
       "stname": ""
@@ -9800,7 +9800,7 @@
       "funcname": "PlotShaded",
       "location": "implot:408",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedFloatPtrFloatPtrIntInt",
+      "ov_cimguiname": "ImPlot_PlotShadedFloatPtrFloatPtrInt",
       "ret": "void",
       "signature": "(const char*,const float*,const float*,int,double,int,int)",
       "stname": ""
@@ -9848,7 +9848,7 @@
       "funcname": "PlotShaded",
       "location": "implot:408",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadeddoublePtrdoublePtrIntInt",
+      "ov_cimguiname": "ImPlot_PlotShadeddoublePtrdoublePtrInt",
       "ret": "void",
       "signature": "(const char*,const double*,const double*,int,double,int,int)",
       "stname": ""
@@ -9896,7 +9896,7 @@
       "funcname": "PlotShaded",
       "location": "implot:408",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedS8PtrS8PtrIntInt",
+      "ov_cimguiname": "ImPlot_PlotShadedS8PtrS8PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImS8*,const ImS8*,int,double,int,int)",
       "stname": ""
@@ -9944,7 +9944,7 @@
       "funcname": "PlotShaded",
       "location": "implot:408",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedU8PtrU8PtrIntInt",
+      "ov_cimguiname": "ImPlot_PlotShadedU8PtrU8PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImU8*,const ImU8*,int,double,int,int)",
       "stname": ""
@@ -9992,7 +9992,7 @@
       "funcname": "PlotShaded",
       "location": "implot:408",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedS16PtrS16PtrIntInt",
+      "ov_cimguiname": "ImPlot_PlotShadedS16PtrS16PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImS16*,const ImS16*,int,double,int,int)",
       "stname": ""
@@ -10040,7 +10040,7 @@
       "funcname": "PlotShaded",
       "location": "implot:408",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedU16PtrU16PtrIntInt",
+      "ov_cimguiname": "ImPlot_PlotShadedU16PtrU16PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImU16*,const ImU16*,int,double,int,int)",
       "stname": ""
@@ -10088,7 +10088,7 @@
       "funcname": "PlotShaded",
       "location": "implot:408",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedS32PtrS32PtrIntInt",
+      "ov_cimguiname": "ImPlot_PlotShadedS32PtrS32PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImS32*,const ImS32*,int,double,int,int)",
       "stname": ""
@@ -10136,7 +10136,7 @@
       "funcname": "PlotShaded",
       "location": "implot:408",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedU32PtrU32PtrIntInt",
+      "ov_cimguiname": "ImPlot_PlotShadedU32PtrU32PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImU32*,const ImU32*,int,double,int,int)",
       "stname": ""
@@ -10184,7 +10184,7 @@
       "funcname": "PlotShaded",
       "location": "implot:408",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedS64PtrS64PtrIntInt",
+      "ov_cimguiname": "ImPlot_PlotShadedS64PtrS64PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImS64*,const ImS64*,int,double,int,int)",
       "stname": ""
@@ -10232,7 +10232,7 @@
       "funcname": "PlotShaded",
       "location": "implot:408",
       "namespace": "ImPlot",
-      "ov_cimguiname": "ImPlot_PlotShadedU64PtrU64PtrIntInt",
+      "ov_cimguiname": "ImPlot_PlotShadedU64PtrU64PtrInt",
       "ret": "void",
       "signature": "(const char*,const ImU64*,const ImU64*,int,double,int,int)",
       "stname": ""

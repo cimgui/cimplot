@@ -334,83 +334,83 @@ CIMGUI_API void ImPlot_PlotStairsG(const char* label_id,ImPlotPoint(*getter)(voi
 {
     return ImPlot::PlotStairsG(label_id,getter,data,count,offset);
 }
-CIMGUI_API void ImPlot_PlotShadedFloatPtrIntdoubledoubleInt(const char* label_id,const float* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedFloatPtrInt(const char* label_id,const float* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,values,count,y_ref,xscale,x0,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadeddoublePtrIntdoubledoubleInt(const char* label_id,const double* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadeddoublePtrInt(const char* label_id,const double* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,values,count,y_ref,xscale,x0,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedS8PtrIntdoubledoubleInt(const char* label_id,const ImS8* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedS8PtrInt(const char* label_id,const ImS8* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,values,count,y_ref,xscale,x0,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedU8PtrIntdoubledoubleInt(const char* label_id,const ImU8* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedU8PtrInt(const char* label_id,const ImU8* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,values,count,y_ref,xscale,x0,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedS16PtrIntdoubledoubleInt(const char* label_id,const ImS16* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedS16PtrInt(const char* label_id,const ImS16* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,values,count,y_ref,xscale,x0,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedU16PtrIntdoubledoubleInt(const char* label_id,const ImU16* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedU16PtrInt(const char* label_id,const ImU16* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,values,count,y_ref,xscale,x0,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedS32PtrIntdoubledoubleInt(const char* label_id,const ImS32* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedS32PtrInt(const char* label_id,const ImS32* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,values,count,y_ref,xscale,x0,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedU32PtrIntdoubledoubleInt(const char* label_id,const ImU32* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedU32PtrInt(const char* label_id,const ImU32* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,values,count,y_ref,xscale,x0,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedS64PtrIntdoubledoubleInt(const char* label_id,const ImS64* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedS64PtrInt(const char* label_id,const ImS64* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,values,count,y_ref,xscale,x0,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedU64PtrIntdoubledoubleInt(const char* label_id,const ImU64* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedU64PtrInt(const char* label_id,const ImU64* values,int count,double y_ref,double xscale,double x0,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,values,count,y_ref,xscale,x0,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedFloatPtrFloatPtrIntInt(const char* label_id,const float* xs,const float* ys,int count,double y_ref,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedFloatPtrFloatPtrInt(const char* label_id,const float* xs,const float* ys,int count,double y_ref,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,xs,ys,count,y_ref,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadeddoublePtrdoublePtrIntInt(const char* label_id,const double* xs,const double* ys,int count,double y_ref,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadeddoublePtrdoublePtrInt(const char* label_id,const double* xs,const double* ys,int count,double y_ref,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,xs,ys,count,y_ref,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedS8PtrS8PtrIntInt(const char* label_id,const ImS8* xs,const ImS8* ys,int count,double y_ref,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedS8PtrS8PtrInt(const char* label_id,const ImS8* xs,const ImS8* ys,int count,double y_ref,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,xs,ys,count,y_ref,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedU8PtrU8PtrIntInt(const char* label_id,const ImU8* xs,const ImU8* ys,int count,double y_ref,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedU8PtrU8PtrInt(const char* label_id,const ImU8* xs,const ImU8* ys,int count,double y_ref,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,xs,ys,count,y_ref,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedS16PtrS16PtrIntInt(const char* label_id,const ImS16* xs,const ImS16* ys,int count,double y_ref,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedS16PtrS16PtrInt(const char* label_id,const ImS16* xs,const ImS16* ys,int count,double y_ref,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,xs,ys,count,y_ref,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedU16PtrU16PtrIntInt(const char* label_id,const ImU16* xs,const ImU16* ys,int count,double y_ref,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedU16PtrU16PtrInt(const char* label_id,const ImU16* xs,const ImU16* ys,int count,double y_ref,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,xs,ys,count,y_ref,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedS32PtrS32PtrIntInt(const char* label_id,const ImS32* xs,const ImS32* ys,int count,double y_ref,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedS32PtrS32PtrInt(const char* label_id,const ImS32* xs,const ImS32* ys,int count,double y_ref,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,xs,ys,count,y_ref,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedU32PtrU32PtrIntInt(const char* label_id,const ImU32* xs,const ImU32* ys,int count,double y_ref,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedU32PtrU32PtrInt(const char* label_id,const ImU32* xs,const ImU32* ys,int count,double y_ref,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,xs,ys,count,y_ref,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedS64PtrS64PtrIntInt(const char* label_id,const ImS64* xs,const ImS64* ys,int count,double y_ref,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedS64PtrS64PtrInt(const char* label_id,const ImS64* xs,const ImS64* ys,int count,double y_ref,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,xs,ys,count,y_ref,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotShadedU64PtrU64PtrIntInt(const char* label_id,const ImU64* xs,const ImU64* ys,int count,double y_ref,int offset,int stride)
+CIMGUI_API void ImPlot_PlotShadedU64PtrU64PtrInt(const char* label_id,const ImU64* xs,const ImU64* ys,int count,double y_ref,int offset,int stride)
 {
     return ImPlot::PlotShaded(label_id,xs,ys,count,y_ref,offset,stride);
 }
