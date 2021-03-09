@@ -1,7 +1,7 @@
 
 #include "./implot/implot.h"
+#include "./implot/implot_internal.h"
 #include "cimplot.h"
-
 
 
 #include "auto_funcs.cpp"

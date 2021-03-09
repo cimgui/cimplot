@@ -3,8 +3,8 @@
 //with implot_internal.h api
 
 #include "./implot/implot.h"
+#include "./implot/implot_internal.h"
 #include "cimplot.h"
-
 
 
 CIMGUI_API ImPlotPoint* ImPlotPoint_ImPlotPointNil(void)
