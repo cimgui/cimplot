@@ -13,7 +13,7 @@ set PATH=%PATH%;C:\anima;C:\mingws\i686-7.2.0-release-posix-dwarf-rt_v5-rev1\min
 :: set PATH=%PATH%;C:\luaGL\sources\luajit-master\luajit-master\bin\mingw32;C:\mingw32\bin;
 ::process  files
 :: arg[1] compiler name gcc, clang or cl
-luajit ./generator.lua gcc 
+luajit ./generator.lua gcc internal
 
 ::leave console open
 cmd /k

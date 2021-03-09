@@ -1,4 +1,800 @@
 {
+  "ImBufferWriter_ImBufferWriter": [
+    {
+      "args": "(char* buffer,int size)",
+      "argsT": [
+        {
+          "name": "buffer",
+          "type": "char*"
+        },
+        {
+          "name": "size",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(char* buffer,int size)",
+      "call_args": "(buffer,size)",
+      "cimguiname": "ImBufferWriter_ImBufferWriter",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "ImBufferWriter",
+      "location": "implot_internal:131",
+      "ov_cimguiname": "ImBufferWriter_ImBufferWriter",
+      "signature": "(char*,int)",
+      "stname": "ImBufferWriter"
+    }
+  ],
+  "ImBufferWriter_Write": [
+    {
+      "args": "(ImBufferWriter* self,const char* fmt,...)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImBufferWriter*"
+        },
+        {
+          "name": "fmt",
+          "type": "const char*"
+        },
+        {
+          "name": "...",
+          "type": "..."
+        }
+      ],
+      "argsoriginal": "(const char* fmt,...)",
+      "call_args": "(fmt,...)",
+      "cimguiname": "ImBufferWriter_Write",
+      "defaults": {},
+      "funcname": "Write",
+      "isvararg": "...)",
+      "location": "implot_internal:137",
+      "ov_cimguiname": "ImBufferWriter_Write",
+      "ret": "void",
+      "signature": "(const char*,...)",
+      "stname": "ImBufferWriter"
+    }
+  ],
+  "ImBufferWriter_WriteV": [
+    {
+      "args": "(ImBufferWriter* self,const char* fmt,va_list args)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImBufferWriter*"
+        },
+        {
+          "name": "fmt",
+          "type": "const char*"
+        },
+        {
+          "name": "args",
+          "type": "va_list"
+        }
+      ],
+      "argsoriginal": "(const char* fmt,va_list args)",
+      "call_args": "(fmt,args)",
+      "cimguiname": "ImBufferWriter_WriteV",
+      "defaults": {},
+      "funcname": "WriteV",
+      "location": "implot_internal:144",
+      "ov_cimguiname": "ImBufferWriter_WriteV",
+      "ret": "void",
+      "signature": "(const char*,va_list)",
+      "stname": "ImBufferWriter"
+    }
+  ],
+  "ImBufferWriter_destroy": [
+    {
+      "args": "(ImBufferWriter* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImBufferWriter*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImBufferWriter_destroy",
+      "defaults": {},
+      "destructor": true,
+      "ov_cimguiname": "ImBufferWriter_destroy",
+      "ret": "void",
+      "signature": "(ImBufferWriter*)",
+      "stname": "ImBufferWriter"
+    }
+  ],
+  "ImOffsetCalculator_ImOffsetCalculator": [
+    {
+      "args": "(const int* sizes)",
+      "argsT": [
+        {
+          "name": "sizes",
+          "type": "const int*"
+        }
+      ],
+      "argsoriginal": "(const int* sizes)",
+      "call_args": "(sizes)",
+      "cimguiname": "ImOffsetCalculator_ImOffsetCalculator",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "ImOffsetCalculator",
+      "location": "implot_internal:116",
+      "ov_cimguiname": "ImOffsetCalculator_ImOffsetCalculator",
+      "signature": "(const int*)",
+      "stname": "ImOffsetCalculator",
+      "templated": true
+    }
+  ],
+  "ImOffsetCalculator_destroy": [
+    {
+      "args": "(ImOffsetCalculator* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImOffsetCalculator*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImOffsetCalculator_destroy",
+      "defaults": {},
+      "destructor": true,
+      "ov_cimguiname": "ImOffsetCalculator_destroy",
+      "ret": "void",
+      "signature": "(ImOffsetCalculator*)",
+      "stname": "ImOffsetCalculator",
+      "templated": true
+    }
+  ],
+  "ImPlotAnnotationCollection_Append": [
+    {
+      "args": "(ImPlotAnnotationCollection* self,const ImVec2 pos,const ImVec2 off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,...)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAnnotationCollection*"
+        },
+        {
+          "name": "pos",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "off",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "bg",
+          "type": "ImU32"
+        },
+        {
+          "name": "fg",
+          "type": "ImU32"
+        },
+        {
+          "name": "clamp",
+          "type": "bool"
+        },
+        {
+          "name": "fmt",
+          "type": "const char*"
+        },
+        {
+          "name": "...",
+          "type": "..."
+        }
+      ],
+      "argsoriginal": "(const ImVec2& pos,const ImVec2& off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,...)",
+      "call_args": "(pos,off,bg,fg,clamp,fmt,...)",
+      "cimguiname": "ImPlotAnnotationCollection_Append",
+      "defaults": {},
+      "funcname": "Append",
+      "isvararg": "...)",
+      "location": "implot_internal:305",
+      "ov_cimguiname": "ImPlotAnnotationCollection_Append",
+      "ret": "void",
+      "signature": "(const ImVec2,const ImVec2,ImU32,ImU32,bool,const char*,...)",
+      "stname": "ImPlotAnnotationCollection"
+    }
+  ],
+  "ImPlotAnnotationCollection_AppendV": [
+    {
+      "args": "(ImPlotAnnotationCollection* self,const ImVec2 pos,const ImVec2 off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,va_list args)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAnnotationCollection*"
+        },
+        {
+          "name": "pos",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "off",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "bg",
+          "type": "ImU32"
+        },
+        {
+          "name": "fg",
+          "type": "ImU32"
+        },
+        {
+          "name": "clamp",
+          "type": "bool"
+        },
+        {
+          "name": "fmt",
+          "type": "const char*"
+        },
+        {
+          "name": "args",
+          "type": "va_list"
+        }
+      ],
+      "argsoriginal": "(const ImVec2& pos,const ImVec2& off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,va_list args)",
+      "call_args": "(pos,off,bg,fg,clamp,fmt,args)",
+      "cimguiname": "ImPlotAnnotationCollection_AppendV",
+      "defaults": {},
+      "funcname": "AppendV",
+      "location": "implot_internal:292",
+      "ov_cimguiname": "ImPlotAnnotationCollection_AppendV",
+      "ret": "void",
+      "signature": "(const ImVec2,const ImVec2,ImU32,ImU32,bool,const char*,va_list)",
+      "stname": "ImPlotAnnotationCollection"
+    }
+  ],
+  "ImPlotAnnotationCollection_GetText": [
+    {
+      "args": "(ImPlotAnnotationCollection* self,int idx)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAnnotationCollection*"
+        },
+        {
+          "name": "idx",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int idx)",
+      "call_args": "(idx)",
+      "cimguiname": "ImPlotAnnotationCollection_GetText",
+      "defaults": {},
+      "funcname": "GetText",
+      "location": "implot_internal:312",
+      "ov_cimguiname": "ImPlotAnnotationCollection_GetText",
+      "ret": "const char*",
+      "signature": "(int)",
+      "stname": "ImPlotAnnotationCollection"
+    }
+  ],
+  "ImPlotAnnotationCollection_ImPlotAnnotationCollection": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotAnnotationCollection_ImPlotAnnotationCollection",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "ImPlotAnnotationCollection",
+      "location": "implot_internal:290",
+      "ov_cimguiname": "ImPlotAnnotationCollection_ImPlotAnnotationCollection",
+      "signature": "()",
+      "stname": "ImPlotAnnotationCollection"
+    }
+  ],
+  "ImPlotAnnotationCollection_Reset": [
+    {
+      "args": "(ImPlotAnnotationCollection* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAnnotationCollection*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotAnnotationCollection_Reset",
+      "defaults": {},
+      "funcname": "Reset",
+      "location": "implot_internal:316",
+      "ov_cimguiname": "ImPlotAnnotationCollection_Reset",
+      "ret": "void",
+      "signature": "()",
+      "stname": "ImPlotAnnotationCollection"
+    }
+  ],
+  "ImPlotAnnotationCollection_destroy": [
+    {
+      "args": "(ImPlotAnnotationCollection* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAnnotationCollection*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotAnnotationCollection_destroy",
+      "defaults": {},
+      "destructor": true,
+      "ov_cimguiname": "ImPlotAnnotationCollection_destroy",
+      "ret": "void",
+      "signature": "(ImPlotAnnotationCollection*)",
+      "stname": "ImPlotAnnotationCollection"
+    }
+  ],
+  "ImPlotAxis_Constrain": [
+    {
+      "args": "(ImPlotAxis* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotAxis_Constrain",
+      "defaults": {},
+      "funcname": "Constrain",
+      "location": "implot_internal:471",
+      "ov_cimguiname": "ImPlotAxis_Constrain",
+      "ret": "void",
+      "signature": "()",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_GetAspect": [
+    {
+      "args": "(ImPlotAxis* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotAxis_GetAspect",
+      "defaults": {},
+      "funcname": "GetAspect",
+      "location": "implot_internal:469",
+      "ov_cimguiname": "ImPlotAxis_GetAspect",
+      "ret": "double",
+      "signature": "()const",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_ImPlotAxis": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotAxis_ImPlotAxis",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "ImPlotAxis",
+      "location": "implot_internal:406",
+      "ov_cimguiname": "ImPlotAxis_ImPlotAxis",
+      "signature": "()",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_IsAlwaysLocked": [
+    {
+      "args": "(ImPlotAxis* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotAxis_IsAlwaysLocked",
+      "defaults": {},
+      "funcname": "IsAlwaysLocked",
+      "location": "implot_internal:488",
+      "ov_cimguiname": "ImPlotAxis_IsAlwaysLocked",
+      "ret": "bool",
+      "signature": "()const",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_IsInverted": [
+    {
+      "args": "(ImPlotAxis* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotAxis_IsInverted",
+      "defaults": {},
+      "funcname": "IsInverted",
+      "location": "implot_internal:487",
+      "ov_cimguiname": "ImPlotAxis_IsInverted",
+      "ret": "bool",
+      "signature": "()const",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_IsLabeled": [
+    {
+      "args": "(ImPlotAxis* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotAxis_IsLabeled",
+      "defaults": {},
+      "funcname": "IsLabeled",
+      "location": "implot_internal:486",
+      "ov_cimguiname": "ImPlotAxis_IsLabeled",
+      "ret": "bool",
+      "signature": "()const",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_IsLocked": [
+    {
+      "args": "(ImPlotAxis* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotAxis_IsLocked",
+      "defaults": {},
+      "funcname": "IsLocked",
+      "location": "implot_internal:491",
+      "ov_cimguiname": "ImPlotAxis_IsLocked",
+      "ret": "bool",
+      "signature": "()const",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_IsLockedMax": [
+    {
+      "args": "(ImPlotAxis* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotAxis_IsLockedMax",
+      "defaults": {},
+      "funcname": "IsLockedMax",
+      "location": "implot_internal:490",
+      "ov_cimguiname": "ImPlotAxis_IsLockedMax",
+      "ret": "bool",
+      "signature": "()const",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_IsLockedMin": [
+    {
+      "args": "(ImPlotAxis* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotAxis_IsLockedMin",
+      "defaults": {},
+      "funcname": "IsLockedMin",
+      "location": "implot_internal:489",
+      "ov_cimguiname": "ImPlotAxis_IsLockedMin",
+      "ret": "bool",
+      "signature": "()const",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_IsLog": [
+    {
+      "args": "(ImPlotAxis* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotAxis_IsLog",
+      "defaults": {},
+      "funcname": "IsLog",
+      "location": "implot_internal:493",
+      "ov_cimguiname": "ImPlotAxis_IsLog",
+      "ret": "bool",
+      "signature": "()const",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_IsTime": [
+    {
+      "args": "(ImPlotAxis* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotAxis_IsTime",
+      "defaults": {},
+      "funcname": "IsTime",
+      "location": "implot_internal:492",
+      "ov_cimguiname": "ImPlotAxis_IsTime",
+      "ret": "bool",
+      "signature": "()const",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_SetAspect": [
+    {
+      "args": "(ImPlotAxis* self,double unit_per_pix)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        },
+        {
+          "name": "unit_per_pix",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double unit_per_pix)",
+      "call_args": "(unit_per_pix)",
+      "cimguiname": "ImPlotAxis_SetAspect",
+      "defaults": {},
+      "funcname": "SetAspect",
+      "location": "implot_internal:456",
+      "ov_cimguiname": "ImPlotAxis_SetAspect",
+      "ret": "void",
+      "signature": "(double)",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_SetMax": [
+    {
+      "args": "(ImPlotAxis* self,double _max)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        },
+        {
+          "name": "_max",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double _max)",
+      "call_args": "(_max)",
+      "cimguiname": "ImPlotAxis_SetMax",
+      "defaults": {},
+      "funcname": "SetMax",
+      "location": "implot_internal:431",
+      "ov_cimguiname": "ImPlotAxis_SetMax",
+      "ret": "bool",
+      "signature": "(double)",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_SetMin": [
+    {
+      "args": "(ImPlotAxis* self,double _min)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        },
+        {
+          "name": "_min",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double _min)",
+      "call_args": "(_min)",
+      "cimguiname": "ImPlotAxis_SetMin",
+      "defaults": {},
+      "funcname": "SetMin",
+      "location": "implot_internal:418",
+      "ov_cimguiname": "ImPlotAxis_SetMin",
+      "ret": "bool",
+      "signature": "(double)",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_SetRange": [
+    {
+      "args": "(ImPlotAxis* self,double _min,double _max)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        },
+        {
+          "name": "_min",
+          "type": "double"
+        },
+        {
+          "name": "_max",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double _min,double _max)",
+      "call_args": "(_min,_max)",
+      "cimguiname": "ImPlotAxis_SetRange",
+      "defaults": {},
+      "funcname": "SetRange",
+      "location": "implot_internal:444",
+      "ov_cimguiname": "ImPlotAxis_SetRangedouble",
+      "ret": "void",
+      "signature": "(double,double)",
+      "stname": "ImPlotAxis"
+    },
+    {
+      "args": "(ImPlotAxis* self,const ImPlotRange range)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        },
+        {
+          "name": "range",
+          "type": "const ImPlotRange"
+        }
+      ],
+      "argsoriginal": "(const ImPlotRange& range)",
+      "call_args": "(range)",
+      "cimguiname": "ImPlotAxis_SetRange",
+      "defaults": {},
+      "funcname": "SetRange",
+      "location": "implot_internal:452",
+      "ov_cimguiname": "ImPlotAxis_SetRangePlotRange",
+      "ret": "void",
+      "signature": "(const ImPlotRange)",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotAxis_destroy": [
+    {
+      "args": "(ImPlotAxis* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotAxis_destroy",
+      "defaults": {},
+      "destructor": true,
+      "ov_cimguiname": "ImPlotAxis_destroy",
+      "ret": "void",
+      "signature": "(ImPlotAxis*)",
+      "stname": "ImPlotAxis"
+    }
+  ],
+  "ImPlotColormapMod_ImPlotColormapMod": [
+    {
+      "args": "(const ImVec4* colormap,int colormap_size)",
+      "argsT": [
+        {
+          "name": "colormap",
+          "type": "const ImVec4*"
+        },
+        {
+          "name": "colormap_size",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImVec4* colormap,int colormap_size)",
+      "call_args": "(colormap,colormap_size)",
+      "cimguiname": "ImPlotColormapMod_ImPlotColormapMod",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "ImPlotColormapMod",
+      "location": "implot_internal:256",
+      "ov_cimguiname": "ImPlotColormapMod_ImPlotColormapMod",
+      "signature": "(const ImVec4*,int)",
+      "stname": "ImPlotColormapMod"
+    }
+  ],
+  "ImPlotColormapMod_destroy": [
+    {
+      "args": "(ImPlotColormapMod* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotColormapMod*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotColormapMod_destroy",
+      "defaults": {},
+      "destructor": true,
+      "ov_cimguiname": "ImPlotColormapMod_destroy",
+      "ret": "void",
+      "signature": "(ImPlotColormapMod*)",
+      "stname": "ImPlotColormapMod"
+    }
+  ],
+  "ImPlotDateTimeFmt_ImPlotDateTimeFmt": [
+    {
+      "args": "(ImPlotDateFmt date_fmt,ImPlotTimeFmt time_fmt,bool use_24_hr_clk,bool use_iso_8601)",
+      "argsT": [
+        {
+          "name": "date_fmt",
+          "type": "ImPlotDateFmt"
+        },
+        {
+          "name": "time_fmt",
+          "type": "ImPlotTimeFmt"
+        },
+        {
+          "name": "use_24_hr_clk",
+          "type": "bool"
+        },
+        {
+          "name": "use_iso_8601",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(ImPlotDateFmt date_fmt,ImPlotTimeFmt time_fmt,bool use_24_hr_clk=false,bool use_iso_8601=false)",
+      "call_args": "(date_fmt,time_fmt,use_24_hr_clk,use_iso_8601)",
+      "cimguiname": "ImPlotDateTimeFmt_ImPlotDateTimeFmt",
+      "constructor": true,
+      "defaults": {
+        "use_24_hr_clk": "false",
+        "use_iso_8601": "false"
+      },
+      "funcname": "ImPlotDateTimeFmt",
+      "location": "implot_internal:216",
+      "ov_cimguiname": "ImPlotDateTimeFmt_ImPlotDateTimeFmt",
+      "signature": "(ImPlotDateFmt,ImPlotTimeFmt,bool,bool)",
+      "stname": "ImPlotDateTimeFmt"
+    }
+  ],
+  "ImPlotDateTimeFmt_destroy": [
+    {
+      "args": "(ImPlotDateTimeFmt* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotDateTimeFmt*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotDateTimeFmt_destroy",
+      "defaults": {},
+      "destructor": true,
+      "ov_cimguiname": "ImPlotDateTimeFmt_destroy",
+      "ret": "void",
+      "signature": "(ImPlotDateTimeFmt*)",
+      "stname": "ImPlotDateTimeFmt"
+    }
+  ],
   "ImPlotInputMap_ImPlotInputMap": [
     {
       "args": "()",
@@ -32,6 +828,64 @@
       "ret": "void",
       "signature": "(ImPlotInputMap*)",
       "stname": "ImPlotInputMap"
+    }
+  ],
+  "ImPlotItem_ImPlotItem": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotItem_ImPlotItem",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "ImPlotItem",
+      "location": "implot_internal:506",
+      "ov_cimguiname": "ImPlotItem_ImPlotItem",
+      "signature": "()",
+      "stname": "ImPlotItem"
+    }
+  ],
+  "ImPlotItem_destroy": [
+    {
+      "args": "(ImPlotItem* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotItem*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotItem_destroy",
+      "defaults": {},
+      "destructor": true,
+      "location": "implot_internal:515",
+      "ov_cimguiname": "ImPlotItem_destroy",
+      "realdestructor": true,
+      "ret": "void",
+      "signature": "(ImPlotItem*)",
+      "stname": "ImPlotItem"
+    }
+  ],
+  "ImPlotLegendData_Reset": [
+    {
+      "args": "(ImPlotLegendData* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotLegendData*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotLegendData_Reset",
+      "defaults": {},
+      "funcname": "Reset",
+      "location": "implot_internal:523",
+      "ov_cimguiname": "ImPlotLegendData_Reset",
+      "ret": "void",
+      "signature": "()",
+      "stname": "ImPlotLegendData"
     }
   ],
   "ImPlotLimits_Contains": [
@@ -84,6 +938,319 @@
       "ret": "bool",
       "signature": "(double,double)const",
       "stname": "ImPlotLimits"
+    }
+  ],
+  "ImPlotNextItemData_ImPlotNextItemData": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotNextItemData_ImPlotNextItemData",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "ImPlotNextItemData",
+      "location": "implot_internal:632",
+      "ov_cimguiname": "ImPlotNextItemData_ImPlotNextItemData",
+      "signature": "()",
+      "stname": "ImPlotNextItemData"
+    }
+  ],
+  "ImPlotNextItemData_Reset": [
+    {
+      "args": "(ImPlotNextItemData* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotNextItemData*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotNextItemData_Reset",
+      "defaults": {},
+      "funcname": "Reset",
+      "location": "implot_internal:633",
+      "ov_cimguiname": "ImPlotNextItemData_Reset",
+      "ret": "void",
+      "signature": "()",
+      "stname": "ImPlotNextItemData"
+    }
+  ],
+  "ImPlotNextItemData_destroy": [
+    {
+      "args": "(ImPlotNextItemData* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotNextItemData*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotNextItemData_destroy",
+      "defaults": {},
+      "destructor": true,
+      "ov_cimguiname": "ImPlotNextItemData_destroy",
+      "ret": "void",
+      "signature": "(ImPlotNextItemData*)",
+      "stname": "ImPlotNextItemData"
+    }
+  ],
+  "ImPlotNextPlotData_ImPlotNextPlotData": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotNextPlotData_ImPlotNextPlotData",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "ImPlotNextPlotData",
+      "location": "implot_internal:596",
+      "ov_cimguiname": "ImPlotNextPlotData_ImPlotNextPlotData",
+      "signature": "()",
+      "stname": "ImPlotNextPlotData"
+    }
+  ],
+  "ImPlotNextPlotData_Reset": [
+    {
+      "args": "(ImPlotNextPlotData* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotNextPlotData*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotNextPlotData_Reset",
+      "defaults": {},
+      "funcname": "Reset",
+      "location": "implot_internal:598",
+      "ov_cimguiname": "ImPlotNextPlotData_Reset",
+      "ret": "void",
+      "signature": "()",
+      "stname": "ImPlotNextPlotData"
+    }
+  ],
+  "ImPlotNextPlotData_destroy": [
+    {
+      "args": "(ImPlotNextPlotData* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotNextPlotData*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotNextPlotData_destroy",
+      "defaults": {},
+      "destructor": true,
+      "ov_cimguiname": "ImPlotNextPlotData_destroy",
+      "ret": "void",
+      "signature": "(ImPlotNextPlotData*)",
+      "stname": "ImPlotNextPlotData"
+    }
+  ],
+  "ImPlotPlot_GetLegendCount": [
+    {
+      "args": "(ImPlotPlot* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotPlot*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotPlot_GetLegendCount",
+      "defaults": {},
+      "funcname": "GetLegendCount",
+      "location": "implot_internal:571",
+      "ov_cimguiname": "ImPlotPlot_GetLegendCount",
+      "ret": "int",
+      "signature": "()const",
+      "stname": "ImPlotPlot"
+    }
+  ],
+  "ImPlotPlot_GetLegendItem": [
+    {
+      "args": "(ImPlotPlot* self,int i)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotPlot*"
+        },
+        {
+          "name": "i",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int i)",
+      "call_args": "(i)",
+      "cimguiname": "ImPlotPlot_GetLegendItem",
+      "defaults": {},
+      "funcname": "GetLegendItem",
+      "location": "implot_internal:572",
+      "ov_cimguiname": "ImPlotPlot_GetLegendItem",
+      "ret": "ImPlotItem*",
+      "signature": "(int)",
+      "stname": "ImPlotPlot"
+    }
+  ],
+  "ImPlotPlot_GetLegendLabel": [
+    {
+      "args": "(ImPlotPlot* self,int i)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotPlot*"
+        },
+        {
+          "name": "i",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int i)",
+      "call_args": "(i)",
+      "cimguiname": "ImPlotPlot_GetLegendLabel",
+      "defaults": {},
+      "funcname": "GetLegendLabel",
+      "location": "implot_internal:573",
+      "ov_cimguiname": "ImPlotPlot_GetLegendLabel",
+      "ret": "const char*",
+      "signature": "(int)",
+      "stname": "ImPlotPlot"
+    }
+  ],
+  "ImPlotPlot_ImPlotPlot": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotPlot_ImPlotPlot",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "ImPlotPlot",
+      "location": "implot_internal:558",
+      "ov_cimguiname": "ImPlotPlot_ImPlotPlot",
+      "signature": "()",
+      "stname": "ImPlotPlot"
+    }
+  ],
+  "ImPlotPlot_IsLocked": [
+    {
+      "args": "(ImPlotPlot* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotPlot*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotPlot_IsLocked",
+      "defaults": {},
+      "funcname": "IsLocked",
+      "location": "implot_internal:575",
+      "ov_cimguiname": "ImPlotPlot_IsLocked",
+      "ret": "bool",
+      "signature": "()const",
+      "stname": "ImPlotPlot"
+    }
+  ],
+  "ImPlotPlot_destroy": [
+    {
+      "args": "(ImPlotPlot* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotPlot*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotPlot_destroy",
+      "defaults": {},
+      "destructor": true,
+      "ov_cimguiname": "ImPlotPlot_destroy",
+      "ret": "void",
+      "signature": "(ImPlotPlot*)",
+      "stname": "ImPlotPlot"
+    }
+  ],
+  "ImPlotPointArray_Size": [
+    {
+      "args": "(ImPlotPointArray* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotPointArray*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotPointArray_Size",
+      "defaults": {},
+      "funcname": "Size",
+      "location": "implot_internal:156",
+      "ov_cimguiname": "ImPlotPointArray_Size",
+      "ret": "int",
+      "signature": "()",
+      "stname": "ImPlotPointArray",
+      "templated": true
+    }
+  ],
+  "ImPlotPointError_ImPlotPointError": [
+    {
+      "args": "(double x,double y,double neg,double pos)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "double"
+        },
+        {
+          "name": "y",
+          "type": "double"
+        },
+        {
+          "name": "neg",
+          "type": "double"
+        },
+        {
+          "name": "pos",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double x,double y,double neg,double pos)",
+      "call_args": "(x,y,neg,pos)",
+      "cimguiname": "ImPlotPointError_ImPlotPointError",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "ImPlotPointError",
+      "location": "implot_internal:268",
+      "ov_cimguiname": "ImPlotPointError_ImPlotPointError",
+      "signature": "(double,double,double,double)",
+      "stname": "ImPlotPointError"
+    }
+  ],
+  "ImPlotPointError_destroy": [
+    {
+      "args": "(ImPlotPointError* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotPointError*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotPointError_destroy",
+      "defaults": {},
+      "destructor": true,
+      "ov_cimguiname": "ImPlotPointError_destroy",
+      "ret": "void",
+      "signature": "(ImPlotPointError*)",
+      "stname": "ImPlotPointError"
     }
   ],
   "ImPlotPoint_ImPlotPoint": [
@@ -300,6 +1467,523 @@
       "ret": "void",
       "signature": "(ImPlotStyle*)",
       "stname": "ImPlotStyle"
+    }
+  ],
+  "ImPlotTickCollection_Append": [
+    {
+      "args": "(ImPlotTickCollection* self,const ImPlotTick tick)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotTickCollection*"
+        },
+        {
+          "name": "tick",
+          "type": "const ImPlotTick"
+        }
+      ],
+      "argsoriginal": "(const ImPlotTick& tick)",
+      "call_args": "(tick)",
+      "cimguiname": "ImPlotTickCollection_Append",
+      "defaults": {},
+      "funcname": "Append",
+      "location": "implot_internal:355",
+      "ov_cimguiname": "ImPlotTickCollection_AppendPlotTick",
+      "ret": "void",
+      "signature": "(const ImPlotTick)",
+      "stname": "ImPlotTickCollection"
+    },
+    {
+      "args": "(ImPlotTickCollection* self,double value,bool major,bool show_label,void(*labeler)(ImPlotTick& tick,ImGuiTextBuffer& buf))",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotTickCollection*"
+        },
+        {
+          "name": "value",
+          "type": "double"
+        },
+        {
+          "name": "major",
+          "type": "bool"
+        },
+        {
+          "name": "show_label",
+          "type": "bool"
+        },
+        {
+          "name": "labeler",
+          "ret": "void",
+          "signature": "(ImPlotTick& tick,ImGuiTextBuffer& buf)",
+          "type": "void(*)(ImPlotTick& tick,ImGuiTextBuffer& buf)"
+        }
+      ],
+      "argsoriginal": "(double value,bool major,bool show_label,void(*labeler)(ImPlotTick& tick,ImGuiTextBuffer& buf))",
+      "call_args": "(value,major,show_label,labeler)",
+      "cimguiname": "ImPlotTickCollection_Append",
+      "defaults": {},
+      "funcname": "Append",
+      "location": "implot_internal:366",
+      "ov_cimguiname": "ImPlotTickCollection_Appenddouble",
+      "ret": "void",
+      "signature": "(double,bool,bool,void(*)(ImPlotTick&,ImGuiTextBuffer&))",
+      "stname": "ImPlotTickCollection"
+    }
+  ],
+  "ImPlotTickCollection_GetText": [
+    {
+      "args": "(ImPlotTickCollection* self,int idx)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotTickCollection*"
+        },
+        {
+          "name": "idx",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int idx)",
+      "call_args": "(idx)",
+      "cimguiname": "ImPlotTickCollection_GetText",
+      "defaults": {},
+      "funcname": "GetText",
+      "location": "implot_internal:373",
+      "ov_cimguiname": "ImPlotTickCollection_GetText",
+      "ret": "const char*",
+      "signature": "(int)",
+      "stname": "ImPlotTickCollection"
+    }
+  ],
+  "ImPlotTickCollection_ImPlotTickCollection": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotTickCollection_ImPlotTickCollection",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "ImPlotTickCollection",
+      "location": "implot_internal:353",
+      "ov_cimguiname": "ImPlotTickCollection_ImPlotTickCollection",
+      "signature": "()",
+      "stname": "ImPlotTickCollection"
+    }
+  ],
+  "ImPlotTickCollection_Reset": [
+    {
+      "args": "(ImPlotTickCollection* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotTickCollection*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotTickCollection_Reset",
+      "defaults": {},
+      "funcname": "Reset",
+      "location": "implot_internal:377",
+      "ov_cimguiname": "ImPlotTickCollection_Reset",
+      "ret": "void",
+      "signature": "()",
+      "stname": "ImPlotTickCollection"
+    }
+  ],
+  "ImPlotTickCollection_destroy": [
+    {
+      "args": "(ImPlotTickCollection* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotTickCollection*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotTickCollection_destroy",
+      "defaults": {},
+      "destructor": true,
+      "ov_cimguiname": "ImPlotTickCollection_destroy",
+      "ret": "void",
+      "signature": "(ImPlotTickCollection*)",
+      "stname": "ImPlotTickCollection"
+    }
+  ],
+  "ImPlotTick_ImPlotTick": [
+    {
+      "args": "(double value,bool major,bool show_label)",
+      "argsT": [
+        {
+          "name": "value",
+          "type": "double"
+        },
+        {
+          "name": "major",
+          "type": "bool"
+        },
+        {
+          "name": "show_label",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(double value,bool major,bool show_label)",
+      "call_args": "(value,major,show_label)",
+      "cimguiname": "ImPlotTick_ImPlotTick",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "ImPlotTick",
+      "location": "implot_internal:334",
+      "ov_cimguiname": "ImPlotTick_ImPlotTick",
+      "signature": "(double,bool,bool)",
+      "stname": "ImPlotTick"
+    }
+  ],
+  "ImPlotTick_destroy": [
+    {
+      "args": "(ImPlotTick* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotTick*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotTick_destroy",
+      "defaults": {},
+      "destructor": true,
+      "ov_cimguiname": "ImPlotTick_destroy",
+      "ret": "void",
+      "signature": "(ImPlotTick*)",
+      "stname": "ImPlotTick"
+    }
+  ],
+  "ImPlotTime_FromDouble": [
+    {
+      "args": "(double t)",
+      "argsT": [
+        {
+          "name": "t",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double t)",
+      "call_args": "(t)",
+      "cimguiname": "ImPlotTime_FromDouble",
+      "defaults": {},
+      "funcname": "FromDouble",
+      "is_static_function": true,
+      "location": "implot_internal:236",
+      "ov_cimguiname": "ImPlotTime_FromDouble",
+      "ret": "ImPlotTime",
+      "signature": "(double)",
+      "stname": "ImPlotTime"
+    }
+  ],
+  "ImPlotTime_ImPlotTime": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotTime_ImPlotTime",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "ImPlotTime",
+      "location": "implot_internal:232",
+      "ov_cimguiname": "ImPlotTime_ImPlotTimeNil",
+      "signature": "()",
+      "stname": "ImPlotTime"
+    },
+    {
+      "args": "(time_t s,int us)",
+      "argsT": [
+        {
+          "name": "s",
+          "type": "time_t"
+        },
+        {
+          "name": "us",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(time_t s,int us=0)",
+      "call_args": "(s,us)",
+      "cimguiname": "ImPlotTime_ImPlotTime",
+      "constructor": true,
+      "defaults": {
+        "us": "0"
+      },
+      "funcname": "ImPlotTime",
+      "location": "implot_internal:233",
+      "ov_cimguiname": "ImPlotTime_ImPlotTimetime_t",
+      "signature": "(time_t,int)",
+      "stname": "ImPlotTime"
+    }
+  ],
+  "ImPlotTime_RollOver": [
+    {
+      "args": "(ImPlotTime* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotTime*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotTime_RollOver",
+      "defaults": {},
+      "funcname": "RollOver",
+      "location": "implot_internal:234",
+      "ov_cimguiname": "ImPlotTime_RollOver",
+      "ret": "void",
+      "signature": "()",
+      "stname": "ImPlotTime"
+    }
+  ],
+  "ImPlotTime_ToDouble": [
+    {
+      "args": "(ImPlotTime* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotTime*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlotTime_ToDouble",
+      "defaults": {},
+      "funcname": "ToDouble",
+      "location": "implot_internal:235",
+      "ov_cimguiname": "ImPlotTime_ToDouble",
+      "ret": "double",
+      "signature": "()const",
+      "stname": "ImPlotTime"
+    }
+  ],
+  "ImPlotTime_destroy": [
+    {
+      "args": "(ImPlotTime* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotTime*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "ImPlotTime_destroy",
+      "defaults": {},
+      "destructor": true,
+      "ov_cimguiname": "ImPlotTime_destroy",
+      "ret": "void",
+      "signature": "(ImPlotTime*)",
+      "stname": "ImPlotTime"
+    }
+  ],
+  "ImPlot_AddTextVertical": [
+    {
+      "args": "(ImDrawList* DrawList,ImVec2 pos,ImU32 col,const char* text_begin,const char* text_end)",
+      "argsT": [
+        {
+          "name": "DrawList",
+          "type": "ImDrawList*"
+        },
+        {
+          "name": "pos",
+          "type": "ImVec2"
+        },
+        {
+          "name": "col",
+          "type": "ImU32"
+        },
+        {
+          "name": "text_begin",
+          "type": "const char*"
+        },
+        {
+          "name": "text_end",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(ImDrawList* DrawList,ImVec2 pos,ImU32 col,const char* text_begin,const char* text_end=((void*)0))",
+      "call_args": "(DrawList,pos,col,text_begin,text_end)",
+      "cimguiname": "ImPlot_AddTextVertical",
+      "defaults": {
+        "text_end": "((void*)0)"
+      },
+      "funcname": "AddTextVertical",
+      "location": "implot_internal:842",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_AddTextVertical",
+      "ret": "void",
+      "signature": "(ImDrawList*,ImVec2,ImU32,const char*,const char*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_AddTicksCustom": [
+    {
+      "args": "(const double* values,const char* const labels[],int n,ImPlotTickCollection* ticks)",
+      "argsT": [
+        {
+          "name": "values",
+          "type": "const double*"
+        },
+        {
+          "name": "labels",
+          "type": "const char* const[]"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        },
+        {
+          "name": "ticks",
+          "reftoptr": true,
+          "type": "ImPlotTickCollection*"
+        }
+      ],
+      "argsoriginal": "(const double* values,const char* const labels[],int n,ImPlotTickCollection& ticks)",
+      "call_args": "(values,labels,n,*ticks)",
+      "cimguiname": "ImPlot_AddTicksCustom",
+      "defaults": {},
+      "funcname": "AddTicksCustom",
+      "location": "implot_internal:811",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_AddTicksCustom",
+      "ret": "void",
+      "signature": "(const double*,const char* const[],int,ImPlotTickCollection*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_AddTicksDefault": [
+    {
+      "args": "(const ImPlotRange range,int nMajor,int nMinor,ImPlotTickCollection* ticks)",
+      "argsT": [
+        {
+          "name": "range",
+          "type": "const ImPlotRange"
+        },
+        {
+          "name": "nMajor",
+          "type": "int"
+        },
+        {
+          "name": "nMinor",
+          "type": "int"
+        },
+        {
+          "name": "ticks",
+          "reftoptr": true,
+          "type": "ImPlotTickCollection*"
+        }
+      ],
+      "argsoriginal": "(const ImPlotRange& range,int nMajor,int nMinor,ImPlotTickCollection& ticks)",
+      "call_args": "(range,nMajor,nMinor,*ticks)",
+      "cimguiname": "ImPlot_AddTicksDefault",
+      "defaults": {},
+      "funcname": "AddTicksDefault",
+      "location": "implot_internal:805",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_AddTicksDefault",
+      "ret": "void",
+      "signature": "(const ImPlotRange,int,int,ImPlotTickCollection*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_AddTicksLogarithmic": [
+    {
+      "args": "(const ImPlotRange range,int nMajor,ImPlotTickCollection* ticks)",
+      "argsT": [
+        {
+          "name": "range",
+          "type": "const ImPlotRange"
+        },
+        {
+          "name": "nMajor",
+          "type": "int"
+        },
+        {
+          "name": "ticks",
+          "reftoptr": true,
+          "type": "ImPlotTickCollection*"
+        }
+      ],
+      "argsoriginal": "(const ImPlotRange& range,int nMajor,ImPlotTickCollection& ticks)",
+      "call_args": "(range,nMajor,*ticks)",
+      "cimguiname": "ImPlot_AddTicksLogarithmic",
+      "defaults": {},
+      "funcname": "AddTicksLogarithmic",
+      "location": "implot_internal:807",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_AddTicksLogarithmic",
+      "ret": "void",
+      "signature": "(const ImPlotRange,int,ImPlotTickCollection*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_AddTicksTime": [
+    {
+      "args": "(const ImPlotRange range,float plot_width,ImPlotTickCollection* ticks)",
+      "argsT": [
+        {
+          "name": "range",
+          "type": "const ImPlotRange"
+        },
+        {
+          "name": "plot_width",
+          "type": "float"
+        },
+        {
+          "name": "ticks",
+          "reftoptr": true,
+          "type": "ImPlotTickCollection*"
+        }
+      ],
+      "argsoriginal": "(const ImPlotRange& range,float plot_width,ImPlotTickCollection& ticks)",
+      "call_args": "(range,plot_width,*ticks)",
+      "cimguiname": "ImPlot_AddTicksTime",
+      "defaults": {},
+      "funcname": "AddTicksTime",
+      "location": "implot_internal:809",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_AddTicksTime",
+      "ret": "void",
+      "signature": "(const ImPlotRange,float,ImPlotTickCollection*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_AddTime": [
+    {
+      "args": "(const ImPlotTime t,ImPlotTimeUnit unit,int count)",
+      "argsT": [
+        {
+          "name": "t",
+          "type": "const ImPlotTime"
+        },
+        {
+          "name": "unit",
+          "type": "ImPlotTimeUnit"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImPlotTime& t,ImPlotTimeUnit unit,int count)",
+      "call_args": "(t,unit,count)",
+      "cimguiname": "ImPlot_AddTime",
+      "defaults": {},
+      "funcname": "AddTime",
+      "location": "implot_internal:928",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_AddTime",
+      "ret": "ImPlotTime",
+      "signature": "(const ImPlotTime,ImPlotTimeUnit,int)",
+      "stname": ""
     }
   ],
   "ImPlot_Annotate": [
@@ -618,6 +2302,34 @@
       "stname": ""
     }
   ],
+  "ImPlot_BeginItem": [
+    {
+      "args": "(const char* label_id,ImPlotCol recolor_from)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "recolor_from",
+          "type": "ImPlotCol"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImPlotCol recolor_from=-1)",
+      "call_args": "(label_id,recolor_from)",
+      "cimguiname": "ImPlot_BeginItem",
+      "defaults": {
+        "recolor_from": "-1"
+      },
+      "funcname": "BeginItem",
+      "location": "implot_internal:736",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_BeginItem",
+      "ret": "bool",
+      "signature": "(const char*,ImPlotCol)",
+      "stname": ""
+    }
+  ],
   "ImPlot_BeginLegendDragDropSource": [
     {
       "args": "(const char* label_id,ImGuiDragDropFlags flags)",
@@ -734,6 +2446,219 @@
       "ov_cimguiname": "ImPlot_BeginPlot",
       "ret": "bool",
       "signature": "(const char*,const char*,const char*,const ImVec2,ImPlotFlags,ImPlotAxisFlags,ImPlotAxisFlags,ImPlotAxisFlags,ImPlotAxisFlags)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_BustItemCache": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_BustItemCache",
+      "defaults": {},
+      "funcname": "BustItemCache",
+      "location": "implot_internal:747",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_BustItemCache",
+      "ret": "void",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_BustPlotCache": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_BustPlotCache",
+      "defaults": {},
+      "funcname": "BustPlotCache",
+      "location": "implot_internal:726",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_BustPlotCache",
+      "ret": "void",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_CalcLegendSize": [
+    {
+      "args": "(ImVec2 *pOut,ImPlotPlot* plot,const ImVec2 pad,const ImVec2 spacing,ImPlotOrientation orientation)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        },
+        {
+          "name": "plot",
+          "type": "ImPlotPlot*"
+        },
+        {
+          "name": "pad",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "spacing",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "orientation",
+          "type": "ImPlotOrientation"
+        }
+      ],
+      "argsoriginal": "(ImPlotPlot& plot,const ImVec2& pad,const ImVec2& spacing,ImPlotOrientation orientation)",
+      "call_args": "(*plot,pad,spacing,orientation)",
+      "cimguiname": "ImPlot_CalcLegendSize",
+      "defaults": {},
+      "funcname": "CalcLegendSize",
+      "location": "implot_internal:787",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "ImPlot_CalcLegendSize",
+      "ret": "void",
+      "signature": "(ImPlotPlot*,const ImVec2,const ImVec2,ImPlotOrientation)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_CalcTextColor": [
+    {
+      "args": "(const ImVec4 bg)",
+      "argsT": [
+        {
+          "name": "bg",
+          "type": "const ImVec4"
+        }
+      ],
+      "argsoriginal": "(const ImVec4& bg)",
+      "call_args": "(bg)",
+      "cimguiname": "ImPlot_CalcTextColor",
+      "defaults": {},
+      "funcname": "CalcTextColor",
+      "location": "implot_internal:846",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_CalcTextColor",
+      "ret": "ImU32",
+      "signature": "(const ImVec4)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_CalcTextSizeVertical": [
+    {
+      "args": "(ImVec2 *pOut,const char* text)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        },
+        {
+          "name": "text",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(const char* text)",
+      "call_args": "(text)",
+      "cimguiname": "ImPlot_CalcTextSizeVertical",
+      "defaults": {},
+      "funcname": "CalcTextSizeVertical",
+      "location": "implot_internal:844",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "ImPlot_CalcTextSizeVertical",
+      "ret": "void",
+      "signature": "(const char*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_CeilTime": [
+    {
+      "args": "(const ImPlotTime t,ImPlotTimeUnit unit)",
+      "argsT": [
+        {
+          "name": "t",
+          "type": "const ImPlotTime"
+        },
+        {
+          "name": "unit",
+          "type": "ImPlotTimeUnit"
+        }
+      ],
+      "argsoriginal": "(const ImPlotTime& t,ImPlotTimeUnit unit)",
+      "call_args": "(t,unit)",
+      "cimguiname": "ImPlot_CeilTime",
+      "defaults": {},
+      "funcname": "CeilTime",
+      "location": "implot_internal:932",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_CeilTime",
+      "ret": "ImPlotTime",
+      "signature": "(const ImPlotTime,ImPlotTimeUnit)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ClampLabelPos": [
+    {
+      "args": "(ImVec2 *pOut,ImVec2 pos,const ImVec2 size,const ImVec2 Min,const ImVec2 Max)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        },
+        {
+          "name": "pos",
+          "type": "ImVec2"
+        },
+        {
+          "name": "size",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "Min",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "Max",
+          "type": "const ImVec2"
+        }
+      ],
+      "argsoriginal": "(ImVec2 pos,const ImVec2& size,const ImVec2& Min,const ImVec2& Max)",
+      "call_args": "(pos,size,Min,Max)",
+      "cimguiname": "ImPlot_ClampLabelPos",
+      "defaults": {},
+      "funcname": "ClampLabelPos",
+      "location": "implot_internal:849",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "ImPlot_ClampLabelPos",
+      "ret": "void",
+      "signature": "(ImVec2,const ImVec2,const ImVec2,const ImVec2)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_CombineDateTime": [
+    {
+      "args": "(const ImPlotTime date_part,const ImPlotTime time_part)",
+      "argsT": [
+        {
+          "name": "date_part",
+          "type": "const ImPlotTime"
+        },
+        {
+          "name": "time_part",
+          "type": "const ImPlotTime"
+        }
+      ],
+      "argsoriginal": "(const ImPlotTime& date_part,const ImPlotTime& time_part)",
+      "call_args": "(date_part,time_part)",
+      "cimguiname": "ImPlot_CombineDateTime",
+      "defaults": {},
+      "funcname": "CombineDateTime",
+      "location": "implot_internal:936",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_CombineDateTime",
+      "ret": "ImPlotTime",
+      "signature": "(const ImPlotTime,const ImPlotTime)",
       "stname": ""
     }
   ],
@@ -908,6 +2833,23 @@
       "stname": ""
     }
   ],
+  "ImPlot_EndItem": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_EndItem",
+      "defaults": {},
+      "funcname": "EndItem",
+      "location": "implot_internal:738",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_EndItem",
+      "ret": "void",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
   "ImPlot_EndLegendDragDropSource": [
     {
       "args": "()",
@@ -959,6 +2901,338 @@
       "stname": ""
     }
   ],
+  "ImPlot_FillRange": [
+    {
+      "args": "(ImVector_float* buffer,int n,float vmin,float vmax)",
+      "argsT": [
+        {
+          "name": "buffer",
+          "reftoptr": true,
+          "type": "ImVector_float*"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        },
+        {
+          "name": "vmin",
+          "type": "float"
+        },
+        {
+          "name": "vmax",
+          "type": "float"
+        }
+      ],
+      "argsoriginal": "(ImVector<float>& buffer,int n,float vmin,float vmax)",
+      "call_args": "(*buffer,n,vmin,vmax)",
+      "cimguiname": "ImPlot_FillRange",
+      "defaults": {},
+      "funcname": "FillRange",
+      "location": "implot_internal:878",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FillRangeVector_FloatPtr",
+      "ret": "void",
+      "signature": "(ImVector_float*,int,float,float)",
+      "stname": ""
+    },
+    {
+      "args": "(ImVector_double* buffer,int n,double vmin,double vmax)",
+      "argsT": [
+        {
+          "name": "buffer",
+          "reftoptr": true,
+          "type": "ImVector_double*"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        },
+        {
+          "name": "vmin",
+          "type": "double"
+        },
+        {
+          "name": "vmax",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(ImVector<double>& buffer,int n,double vmin,double vmax)",
+      "call_args": "(*buffer,n,vmin,vmax)",
+      "cimguiname": "ImPlot_FillRange",
+      "defaults": {},
+      "funcname": "FillRange",
+      "location": "implot_internal:878",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FillRangeVector_doublePtr",
+      "ret": "void",
+      "signature": "(ImVector_double*,int,double,double)",
+      "stname": ""
+    },
+    {
+      "args": "(ImVector_ImS8* buffer,int n,ImS8 vmin,ImS8 vmax)",
+      "argsT": [
+        {
+          "name": "buffer",
+          "reftoptr": true,
+          "type": "ImVector_ImS8*"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        },
+        {
+          "name": "vmin",
+          "type": "ImS8"
+        },
+        {
+          "name": "vmax",
+          "type": "ImS8"
+        }
+      ],
+      "argsoriginal": "(ImVector<ImS8>& buffer,int n,ImS8 vmin,ImS8 vmax)",
+      "call_args": "(*buffer,n,vmin,vmax)",
+      "cimguiname": "ImPlot_FillRange",
+      "defaults": {},
+      "funcname": "FillRange",
+      "location": "implot_internal:878",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FillRangeVector_S8Ptr",
+      "ret": "void",
+      "signature": "(ImVector_ImS8*,int,ImS8,ImS8)",
+      "stname": ""
+    },
+    {
+      "args": "(ImVector_ImU8* buffer,int n,ImU8 vmin,ImU8 vmax)",
+      "argsT": [
+        {
+          "name": "buffer",
+          "reftoptr": true,
+          "type": "ImVector_ImU8*"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        },
+        {
+          "name": "vmin",
+          "type": "ImU8"
+        },
+        {
+          "name": "vmax",
+          "type": "ImU8"
+        }
+      ],
+      "argsoriginal": "(ImVector<ImU8>& buffer,int n,ImU8 vmin,ImU8 vmax)",
+      "call_args": "(*buffer,n,vmin,vmax)",
+      "cimguiname": "ImPlot_FillRange",
+      "defaults": {},
+      "funcname": "FillRange",
+      "location": "implot_internal:878",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FillRangeVector_U8Ptr",
+      "ret": "void",
+      "signature": "(ImVector_ImU8*,int,ImU8,ImU8)",
+      "stname": ""
+    },
+    {
+      "args": "(ImVector_ImS16* buffer,int n,ImS16 vmin,ImS16 vmax)",
+      "argsT": [
+        {
+          "name": "buffer",
+          "reftoptr": true,
+          "type": "ImVector_ImS16*"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        },
+        {
+          "name": "vmin",
+          "type": "ImS16"
+        },
+        {
+          "name": "vmax",
+          "type": "ImS16"
+        }
+      ],
+      "argsoriginal": "(ImVector<ImS16>& buffer,int n,ImS16 vmin,ImS16 vmax)",
+      "call_args": "(*buffer,n,vmin,vmax)",
+      "cimguiname": "ImPlot_FillRange",
+      "defaults": {},
+      "funcname": "FillRange",
+      "location": "implot_internal:878",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FillRangeVector_S16Ptr",
+      "ret": "void",
+      "signature": "(ImVector_ImS16*,int,ImS16,ImS16)",
+      "stname": ""
+    },
+    {
+      "args": "(ImVector_ImU16* buffer,int n,ImU16 vmin,ImU16 vmax)",
+      "argsT": [
+        {
+          "name": "buffer",
+          "reftoptr": true,
+          "type": "ImVector_ImU16*"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        },
+        {
+          "name": "vmin",
+          "type": "ImU16"
+        },
+        {
+          "name": "vmax",
+          "type": "ImU16"
+        }
+      ],
+      "argsoriginal": "(ImVector<ImU16>& buffer,int n,ImU16 vmin,ImU16 vmax)",
+      "call_args": "(*buffer,n,vmin,vmax)",
+      "cimguiname": "ImPlot_FillRange",
+      "defaults": {},
+      "funcname": "FillRange",
+      "location": "implot_internal:878",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FillRangeVector_U16Ptr",
+      "ret": "void",
+      "signature": "(ImVector_ImU16*,int,ImU16,ImU16)",
+      "stname": ""
+    },
+    {
+      "args": "(ImVector_ImS32* buffer,int n,ImS32 vmin,ImS32 vmax)",
+      "argsT": [
+        {
+          "name": "buffer",
+          "reftoptr": true,
+          "type": "ImVector_ImS32*"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        },
+        {
+          "name": "vmin",
+          "type": "ImS32"
+        },
+        {
+          "name": "vmax",
+          "type": "ImS32"
+        }
+      ],
+      "argsoriginal": "(ImVector<ImS32>& buffer,int n,ImS32 vmin,ImS32 vmax)",
+      "call_args": "(*buffer,n,vmin,vmax)",
+      "cimguiname": "ImPlot_FillRange",
+      "defaults": {},
+      "funcname": "FillRange",
+      "location": "implot_internal:878",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FillRangeVector_S32Ptr",
+      "ret": "void",
+      "signature": "(ImVector_ImS32*,int,ImS32,ImS32)",
+      "stname": ""
+    },
+    {
+      "args": "(ImVector_ImU32* buffer,int n,ImU32 vmin,ImU32 vmax)",
+      "argsT": [
+        {
+          "name": "buffer",
+          "reftoptr": true,
+          "type": "ImVector_ImU32*"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        },
+        {
+          "name": "vmin",
+          "type": "ImU32"
+        },
+        {
+          "name": "vmax",
+          "type": "ImU32"
+        }
+      ],
+      "argsoriginal": "(ImVector<ImU32>& buffer,int n,ImU32 vmin,ImU32 vmax)",
+      "call_args": "(*buffer,n,vmin,vmax)",
+      "cimguiname": "ImPlot_FillRange",
+      "defaults": {},
+      "funcname": "FillRange",
+      "location": "implot_internal:878",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FillRangeVector_U32Ptr",
+      "ret": "void",
+      "signature": "(ImVector_ImU32*,int,ImU32,ImU32)",
+      "stname": ""
+    },
+    {
+      "args": "(ImVector_ImS64* buffer,int n,ImS64 vmin,ImS64 vmax)",
+      "argsT": [
+        {
+          "name": "buffer",
+          "reftoptr": true,
+          "type": "ImVector_ImS64*"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        },
+        {
+          "name": "vmin",
+          "type": "ImS64"
+        },
+        {
+          "name": "vmax",
+          "type": "ImS64"
+        }
+      ],
+      "argsoriginal": "(ImVector<ImS64>& buffer,int n,ImS64 vmin,ImS64 vmax)",
+      "call_args": "(*buffer,n,vmin,vmax)",
+      "cimguiname": "ImPlot_FillRange",
+      "defaults": {},
+      "funcname": "FillRange",
+      "location": "implot_internal:878",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FillRangeVector_S64Ptr",
+      "ret": "void",
+      "signature": "(ImVector_ImS64*,int,ImS64,ImS64)",
+      "stname": ""
+    },
+    {
+      "args": "(ImVector_ImU64* buffer,int n,ImU64 vmin,ImU64 vmax)",
+      "argsT": [
+        {
+          "name": "buffer",
+          "reftoptr": true,
+          "type": "ImVector_ImU64*"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        },
+        {
+          "name": "vmin",
+          "type": "ImU64"
+        },
+        {
+          "name": "vmax",
+          "type": "ImU64"
+        }
+      ],
+      "argsoriginal": "(ImVector<ImU64>& buffer,int n,ImU64 vmin,ImU64 vmax)",
+      "call_args": "(*buffer,n,vmin,vmax)",
+      "cimguiname": "ImPlot_FillRange",
+      "defaults": {},
+      "funcname": "FillRange",
+      "location": "implot_internal:878",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FillRangeVector_U64Ptr",
+      "ret": "void",
+      "signature": "(ImVector_ImU64*,int,ImU64,ImU64)",
+      "stname": ""
+    }
+  ],
   "ImPlot_FitNextPlotAxes": [
     {
       "args": "(bool x,bool y,bool y2,bool y3)",
@@ -995,6 +3269,234 @@
       "ov_cimguiname": "ImPlot_FitNextPlotAxes",
       "ret": "void",
       "signature": "(bool,bool,bool,bool)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_FitPoint": [
+    {
+      "args": "(const ImPlotPoint p)",
+      "argsT": [
+        {
+          "name": "p",
+          "type": "const ImPlotPoint"
+        }
+      ],
+      "argsoriginal": "(const ImPlotPoint& p)",
+      "call_args": "(p)",
+      "cimguiname": "ImPlot_FitPoint",
+      "defaults": {},
+      "funcname": "FitPoint",
+      "location": "implot_internal:766",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FitPoint",
+      "ret": "void",
+      "signature": "(const ImPlotPoint)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_FitThisFrame": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_FitThisFrame",
+      "defaults": {},
+      "funcname": "FitThisFrame",
+      "location": "implot_internal:764",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FitThisFrame",
+      "ret": "bool",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_FloorTime": [
+    {
+      "args": "(const ImPlotTime t,ImPlotTimeUnit unit)",
+      "argsT": [
+        {
+          "name": "t",
+          "type": "const ImPlotTime"
+        },
+        {
+          "name": "unit",
+          "type": "ImPlotTimeUnit"
+        }
+      ],
+      "argsoriginal": "(const ImPlotTime& t,ImPlotTimeUnit unit)",
+      "call_args": "(t,unit)",
+      "cimguiname": "ImPlot_FloorTime",
+      "defaults": {},
+      "funcname": "FloorTime",
+      "location": "implot_internal:930",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FloorTime",
+      "ret": "ImPlotTime",
+      "signature": "(const ImPlotTime,ImPlotTimeUnit)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_FormatDate": [
+    {
+      "args": "(const ImPlotTime t,char* buffer,int size,ImPlotDateFmt fmt,bool use_iso_8601)",
+      "argsT": [
+        {
+          "name": "t",
+          "type": "const ImPlotTime"
+        },
+        {
+          "name": "buffer",
+          "type": "char*"
+        },
+        {
+          "name": "size",
+          "type": "int"
+        },
+        {
+          "name": "fmt",
+          "type": "ImPlotDateFmt"
+        },
+        {
+          "name": "use_iso_8601",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(const ImPlotTime& t,char* buffer,int size,ImPlotDateFmt fmt,bool use_iso_8601)",
+      "call_args": "(t,buffer,size,fmt,use_iso_8601)",
+      "cimguiname": "ImPlot_FormatDate",
+      "defaults": {},
+      "funcname": "FormatDate",
+      "location": "implot_internal:941",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FormatDate",
+      "ret": "int",
+      "signature": "(const ImPlotTime,char*,int,ImPlotDateFmt,bool)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_FormatDateTime": [
+    {
+      "args": "(const ImPlotTime t,char* buffer,int size,ImPlotDateTimeFmt fmt)",
+      "argsT": [
+        {
+          "name": "t",
+          "type": "const ImPlotTime"
+        },
+        {
+          "name": "buffer",
+          "type": "char*"
+        },
+        {
+          "name": "size",
+          "type": "int"
+        },
+        {
+          "name": "fmt",
+          "type": "ImPlotDateTimeFmt"
+        }
+      ],
+      "argsoriginal": "(const ImPlotTime& t,char* buffer,int size,ImPlotDateTimeFmt fmt)",
+      "call_args": "(t,buffer,size,fmt)",
+      "cimguiname": "ImPlot_FormatDateTime",
+      "defaults": {},
+      "funcname": "FormatDateTime",
+      "location": "implot_internal:943",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FormatDateTime",
+      "ret": "int",
+      "signature": "(const ImPlotTime,char*,int,ImPlotDateTimeFmt)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_FormatTime": [
+    {
+      "args": "(const ImPlotTime t,char* buffer,int size,ImPlotTimeFmt fmt,bool use_24_hr_clk)",
+      "argsT": [
+        {
+          "name": "t",
+          "type": "const ImPlotTime"
+        },
+        {
+          "name": "buffer",
+          "type": "char*"
+        },
+        {
+          "name": "size",
+          "type": "int"
+        },
+        {
+          "name": "fmt",
+          "type": "ImPlotTimeFmt"
+        },
+        {
+          "name": "use_24_hr_clk",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(const ImPlotTime& t,char* buffer,int size,ImPlotTimeFmt fmt,bool use_24_hr_clk)",
+      "call_args": "(t,buffer,size,fmt,use_24_hr_clk)",
+      "cimguiname": "ImPlot_FormatTime",
+      "defaults": {},
+      "funcname": "FormatTime",
+      "location": "implot_internal:939",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_FormatTime",
+      "ret": "int",
+      "signature": "(const ImPlotTime,char*,int,ImPlotTimeFmt,bool)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetAutoColor": [
+    {
+      "args": "(ImVec4 *pOut,ImPlotCol idx)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec4*"
+        },
+        {
+          "name": "idx",
+          "type": "ImPlotCol"
+        }
+      ],
+      "argsoriginal": "(ImPlotCol idx)",
+      "call_args": "(idx)",
+      "cimguiname": "ImPlot_GetAutoColor",
+      "defaults": {},
+      "funcname": "GetAutoColor",
+      "location": "implot_internal:828",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "ImPlot_GetAutoColor",
+      "ret": "void",
+      "signature": "(ImPlotCol)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetColormap": [
+    {
+      "args": "(ImPlotColormap colormap,int* size_out)",
+      "argsT": [
+        {
+          "name": "colormap",
+          "type": "ImPlotColormap"
+        },
+        {
+          "name": "size_out",
+          "type": "int*"
+        }
+      ],
+      "argsoriginal": "(ImPlotColormap colormap,int* size_out)",
+      "call_args": "(colormap,size_out)",
+      "cimguiname": "ImPlot_GetColormap",
+      "defaults": {},
+      "funcname": "GetColormap",
+      "location": "implot_internal:835",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetColormap",
+      "ret": "const ImVec4*",
+      "signature": "(ImPlotColormap,int*)",
       "stname": ""
     }
   ],
@@ -1081,6 +3583,126 @@
       "stname": ""
     }
   ],
+  "ImPlot_GetCurrentItem": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_GetCurrentItem",
+      "defaults": {},
+      "funcname": "GetCurrentItem",
+      "location": "implot_internal:745",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetCurrentItem",
+      "ret": "ImPlotItem*",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetCurrentPlot": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_GetCurrentPlot",
+      "defaults": {},
+      "funcname": "GetCurrentPlot",
+      "location": "implot_internal:724",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetCurrentPlot",
+      "ret": "ImPlotPlot*",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetCurrentScale": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_GetCurrentScale",
+      "defaults": {},
+      "funcname": "GetCurrentScale",
+      "location": "implot_internal:761",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetCurrentScale",
+      "ret": "ImPlotScale",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetCurrentYAxis": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_GetCurrentYAxis",
+      "defaults": {},
+      "funcname": "GetCurrentYAxis",
+      "location": "implot_internal:754",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetCurrentYAxis",
+      "ret": "int",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetDaysInMonth": [
+    {
+      "args": "(int year,int month)",
+      "argsT": [
+        {
+          "name": "year",
+          "type": "int"
+        },
+        {
+          "name": "month",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int year,int month)",
+      "call_args": "(year,month)",
+      "cimguiname": "ImPlot_GetDaysInMonth",
+      "defaults": {},
+      "funcname": "GetDaysInMonth",
+      "location": "implot_internal:903",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetDaysInMonth",
+      "ret": "int",
+      "signature": "(int,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetGmtTime": [
+    {
+      "args": "(const ImPlotTime t,tm* ptm)",
+      "argsT": [
+        {
+          "name": "t",
+          "type": "const ImPlotTime"
+        },
+        {
+          "name": "ptm",
+          "type": "tm*"
+        }
+      ],
+      "argsoriginal": "(const ImPlotTime& t,tm* ptm)",
+      "call_args": "(t,ptm)",
+      "cimguiname": "ImPlot_GetGmtTime",
+      "defaults": {},
+      "funcname": "GetGmtTime",
+      "location": "implot_internal:911",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetGmtTime",
+      "ret": "tm*",
+      "signature": "(const ImPlotTime,tm*)",
+      "stname": ""
+    }
+  ],
   "ImPlot_GetInputMap": [
     {
       "args": "()",
@@ -1094,6 +3716,46 @@
       "namespace": "ImPlot",
       "ov_cimguiname": "ImPlot_GetInputMap",
       "ret": "ImPlotInputMap*",
+      "retref": "&",
+      "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetItem": [
+    {
+      "args": "(const char* label_id)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(const char* label_id)",
+      "call_args": "(label_id)",
+      "cimguiname": "ImPlot_GetItem",
+      "defaults": {},
+      "funcname": "GetItem",
+      "location": "implot_internal:743",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetItem",
+      "ret": "ImPlotItem*",
+      "signature": "(const char*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetItemData": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_GetItemData",
+      "defaults": {},
+      "funcname": "GetItemData",
+      "location": "implot_internal:821",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetItemData",
+      "ret": "const ImPlotNextItemData*",
       "retref": "&",
       "signature": "()",
       "stname": ""
@@ -1122,6 +3784,73 @@
       "stname": ""
     }
   ],
+  "ImPlot_GetLocTime": [
+    {
+      "args": "(const ImPlotTime t,tm* ptm)",
+      "argsT": [
+        {
+          "name": "t",
+          "type": "const ImPlotTime"
+        },
+        {
+          "name": "ptm",
+          "type": "tm*"
+        }
+      ],
+      "argsoriginal": "(const ImPlotTime& t,tm* ptm)",
+      "call_args": "(t,ptm)",
+      "cimguiname": "ImPlot_GetLocTime",
+      "defaults": {},
+      "funcname": "GetLocTime",
+      "location": "implot_internal:916",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetLocTime",
+      "ret": "tm*",
+      "signature": "(const ImPlotTime,tm*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetLocationPos": [
+    {
+      "args": "(ImVec2 *pOut,const ImRect outer_rect,const ImVec2 inner_size,ImPlotLocation location,const ImVec2 pad)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        },
+        {
+          "name": "outer_rect",
+          "type": "const ImRect"
+        },
+        {
+          "name": "inner_size",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "location",
+          "type": "ImPlotLocation"
+        },
+        {
+          "name": "pad",
+          "type": "const ImVec2"
+        }
+      ],
+      "argsoriginal": "(const ImRect& outer_rect,const ImVec2& inner_size,ImPlotLocation location,const ImVec2& pad=ImVec2(0,0))",
+      "call_args": "(outer_rect,inner_size,location,pad)",
+      "cimguiname": "ImPlot_GetLocationPos",
+      "defaults": {
+        "pad": "ImVec2(0,0)"
+      },
+      "funcname": "GetLocationPos",
+      "location": "implot_internal:785",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "ImPlot_GetLocationPos",
+      "ret": "void",
+      "signature": "(const ImRect,const ImVec2,ImPlotLocation,const ImVec2)",
+      "stname": ""
+    }
+  ],
   "ImPlot_GetMarkerName": [
     {
       "args": "(ImPlotMarker idx)",
@@ -1141,6 +3870,28 @@
       "ov_cimguiname": "ImPlot_GetMarkerName",
       "ret": "const char*",
       "signature": "(ImPlotMarker)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetPlot": [
+    {
+      "args": "(const char* title)",
+      "argsT": [
+        {
+          "name": "title",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(const char* title)",
+      "call_args": "(title)",
+      "cimguiname": "ImPlot_GetPlot",
+      "defaults": {},
+      "funcname": "GetPlot",
+      "location": "implot_internal:722",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetPlot",
+      "ret": "ImPlotPlot*",
+      "signature": "(const char*)",
       "stname": ""
     }
   ],
@@ -1334,6 +4085,77 @@
       "stname": ""
     }
   ],
+  "ImPlot_GetStyleColorU32": [
+    {
+      "args": "(ImPlotCol idx)",
+      "argsT": [
+        {
+          "name": "idx",
+          "type": "ImPlotCol"
+        }
+      ],
+      "argsoriginal": "(ImPlotCol idx)",
+      "call_args": "(idx)",
+      "cimguiname": "ImPlot_GetStyleColorU32",
+      "defaults": {},
+      "funcname": "GetStyleColorU32",
+      "location": "implot_internal:832",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetStyleColorU32",
+      "ret": "ImU32",
+      "signature": "(ImPlotCol)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetStyleColorVec4": [
+    {
+      "args": "(ImVec4 *pOut,ImPlotCol idx)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec4*"
+        },
+        {
+          "name": "idx",
+          "type": "ImPlotCol"
+        }
+      ],
+      "argsoriginal": "(ImPlotCol idx)",
+      "call_args": "(idx)",
+      "cimguiname": "ImPlot_GetStyleColorVec4",
+      "defaults": {},
+      "funcname": "GetStyleColorVec4",
+      "location": "implot_internal:831",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "ImPlot_GetStyleColorVec4",
+      "ret": "void",
+      "signature": "(ImPlotCol)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_GetYear": [
+    {
+      "args": "(const ImPlotTime t)",
+      "argsT": [
+        {
+          "name": "t",
+          "type": "const ImPlotTime"
+        }
+      ],
+      "argsoriginal": "(const ImPlotTime& t)",
+      "call_args": "(t)",
+      "cimguiname": "ImPlot_GetYear",
+      "defaults": {},
+      "funcname": "GetYear",
+      "location": "implot_internal:925",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_GetYear",
+      "ret": "int",
+      "signature": "(const ImPlotTime)",
+      "stname": ""
+    }
+  ],
   "ImPlot_HideNextItem": [
     {
       "args": "(bool hidden,ImGuiCond cond)",
@@ -1360,6 +4182,684 @@
       "ov_cimguiname": "ImPlot_HideNextItem",
       "ret": "void",
       "signature": "(bool,ImGuiCond)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ImAlmostEqual": [
+    {
+      "args": "(double v1,double v2,int ulp)",
+      "argsT": [
+        {
+          "name": "v1",
+          "type": "double"
+        },
+        {
+          "name": "v2",
+          "type": "double"
+        },
+        {
+          "name": "ulp",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(double v1,double v2,int ulp=2)",
+      "call_args": "(v1,v2,ulp)",
+      "cimguiname": "ImPlot_ImAlmostEqual",
+      "defaults": {
+        "ulp": "2"
+      },
+      "funcname": "ImAlmostEqual",
+      "location": "implot_internal:111",
+      "ov_cimguiname": "ImPlot_ImAlmostEqual",
+      "ret": "bool",
+      "signature": "(double,double,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ImConstrainInf": [
+    {
+      "args": "(double val)",
+      "argsT": [
+        {
+          "name": "val",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double val)",
+      "call_args": "(val)",
+      "cimguiname": "ImPlot_ImConstrainInf",
+      "defaults": {},
+      "funcname": "ImConstrainInf",
+      "location": "implot_internal:105",
+      "ov_cimguiname": "ImPlot_ImConstrainInf",
+      "ret": "double",
+      "signature": "(double)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ImConstrainLog": [
+    {
+      "args": "(double val)",
+      "argsT": [
+        {
+          "name": "val",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double val)",
+      "call_args": "(val)",
+      "cimguiname": "ImPlot_ImConstrainLog",
+      "defaults": {},
+      "funcname": "ImConstrainLog",
+      "location": "implot_internal:107",
+      "ov_cimguiname": "ImPlot_ImConstrainLog",
+      "ret": "double",
+      "signature": "(double)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ImConstrainNan": [
+    {
+      "args": "(double val)",
+      "argsT": [
+        {
+          "name": "val",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double val)",
+      "call_args": "(val)",
+      "cimguiname": "ImPlot_ImConstrainNan",
+      "defaults": {},
+      "funcname": "ImConstrainNan",
+      "location": "implot_internal:103",
+      "ov_cimguiname": "ImPlot_ImConstrainNan",
+      "ret": "double",
+      "signature": "(double)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ImConstrainTime": [
+    {
+      "args": "(double val)",
+      "argsT": [
+        {
+          "name": "val",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double val)",
+      "call_args": "(val)",
+      "cimguiname": "ImPlot_ImConstrainTime",
+      "defaults": {},
+      "funcname": "ImConstrainTime",
+      "location": "implot_internal:109",
+      "ov_cimguiname": "ImPlot_ImConstrainTime",
+      "ret": "double",
+      "signature": "(double)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ImLog10": [
+    {
+      "args": "(float x)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "float"
+        }
+      ],
+      "argsoriginal": "(float x)",
+      "call_args": "(x)",
+      "cimguiname": "ImPlot_ImLog10",
+      "defaults": {},
+      "funcname": "ImLog10",
+      "location": "implot_internal:87",
+      "ov_cimguiname": "ImPlot_ImLog10Float",
+      "ret": "float",
+      "signature": "(float)",
+      "stname": ""
+    },
+    {
+      "args": "(double x)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double x)",
+      "call_args": "(x)",
+      "cimguiname": "ImPlot_ImLog10",
+      "defaults": {},
+      "funcname": "ImLog10",
+      "location": "implot_internal:88",
+      "ov_cimguiname": "ImPlot_ImLog10double",
+      "ret": "double",
+      "signature": "(double)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ImNanOrInf": [
+    {
+      "args": "(double val)",
+      "argsT": [
+        {
+          "name": "val",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double val)",
+      "call_args": "(val)",
+      "cimguiname": "ImPlot_ImNanOrInf",
+      "defaults": {},
+      "funcname": "ImNanOrInf",
+      "location": "implot_internal:101",
+      "ov_cimguiname": "ImPlot_ImNanOrInf",
+      "ret": "bool",
+      "signature": "(double)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ImPosMod": [
+    {
+      "args": "(int l,int r)",
+      "argsT": [
+        {
+          "name": "l",
+          "type": "int"
+        },
+        {
+          "name": "r",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int l,int r)",
+      "call_args": "(l,r)",
+      "cimguiname": "ImPlot_ImPosMod",
+      "defaults": {},
+      "funcname": "ImPosMod",
+      "location": "implot_internal:99",
+      "ov_cimguiname": "ImPlot_ImPosMod",
+      "ret": "int",
+      "signature": "(int,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ImRemap": [
+    {
+      "args": "(float x,float x0,float x1,float y0,float y1)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "float"
+        },
+        {
+          "name": "x0",
+          "type": "float"
+        },
+        {
+          "name": "x1",
+          "type": "float"
+        },
+        {
+          "name": "y0",
+          "type": "float"
+        },
+        {
+          "name": "y1",
+          "type": "float"
+        }
+      ],
+      "argsoriginal": "(float x,float x0,float x1,float y0,float y1)",
+      "call_args": "(x,x0,x1,y0,y1)",
+      "cimguiname": "ImPlot_ImRemap",
+      "defaults": {},
+      "funcname": "ImRemap",
+      "location": "implot_internal:96",
+      "ov_cimguiname": "ImPlot_ImRemapFloat",
+      "ret": "float",
+      "signature": "(float,float,float,float,float)",
+      "stname": ""
+    },
+    {
+      "args": "(double x,double x0,double x1,double y0,double y1)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "double"
+        },
+        {
+          "name": "x0",
+          "type": "double"
+        },
+        {
+          "name": "x1",
+          "type": "double"
+        },
+        {
+          "name": "y0",
+          "type": "double"
+        },
+        {
+          "name": "y1",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double x,double x0,double x1,double y0,double y1)",
+      "call_args": "(x,x0,x1,y0,y1)",
+      "cimguiname": "ImPlot_ImRemap",
+      "defaults": {},
+      "funcname": "ImRemap",
+      "location": "implot_internal:96",
+      "ov_cimguiname": "ImPlot_ImRemapdouble",
+      "ret": "double",
+      "signature": "(double,double,double,double,double)",
+      "stname": ""
+    },
+    {
+      "args": "(ImS8 x,ImS8 x0,ImS8 x1,ImS8 y0,ImS8 y1)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "ImS8"
+        },
+        {
+          "name": "x0",
+          "type": "ImS8"
+        },
+        {
+          "name": "x1",
+          "type": "ImS8"
+        },
+        {
+          "name": "y0",
+          "type": "ImS8"
+        },
+        {
+          "name": "y1",
+          "type": "ImS8"
+        }
+      ],
+      "argsoriginal": "(ImS8 x,ImS8 x0,ImS8 x1,ImS8 y0,ImS8 y1)",
+      "call_args": "(x,x0,x1,y0,y1)",
+      "cimguiname": "ImPlot_ImRemap",
+      "defaults": {},
+      "funcname": "ImRemap",
+      "location": "implot_internal:96",
+      "ov_cimguiname": "ImPlot_ImRemapS8",
+      "ret": "ImS8",
+      "signature": "(ImS8,ImS8,ImS8,ImS8,ImS8)",
+      "stname": ""
+    },
+    {
+      "args": "(ImU8 x,ImU8 x0,ImU8 x1,ImU8 y0,ImU8 y1)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "ImU8"
+        },
+        {
+          "name": "x0",
+          "type": "ImU8"
+        },
+        {
+          "name": "x1",
+          "type": "ImU8"
+        },
+        {
+          "name": "y0",
+          "type": "ImU8"
+        },
+        {
+          "name": "y1",
+          "type": "ImU8"
+        }
+      ],
+      "argsoriginal": "(ImU8 x,ImU8 x0,ImU8 x1,ImU8 y0,ImU8 y1)",
+      "call_args": "(x,x0,x1,y0,y1)",
+      "cimguiname": "ImPlot_ImRemap",
+      "defaults": {},
+      "funcname": "ImRemap",
+      "location": "implot_internal:96",
+      "ov_cimguiname": "ImPlot_ImRemapU8",
+      "ret": "ImU8",
+      "signature": "(ImU8,ImU8,ImU8,ImU8,ImU8)",
+      "stname": ""
+    },
+    {
+      "args": "(ImS16 x,ImS16 x0,ImS16 x1,ImS16 y0,ImS16 y1)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "ImS16"
+        },
+        {
+          "name": "x0",
+          "type": "ImS16"
+        },
+        {
+          "name": "x1",
+          "type": "ImS16"
+        },
+        {
+          "name": "y0",
+          "type": "ImS16"
+        },
+        {
+          "name": "y1",
+          "type": "ImS16"
+        }
+      ],
+      "argsoriginal": "(ImS16 x,ImS16 x0,ImS16 x1,ImS16 y0,ImS16 y1)",
+      "call_args": "(x,x0,x1,y0,y1)",
+      "cimguiname": "ImPlot_ImRemap",
+      "defaults": {},
+      "funcname": "ImRemap",
+      "location": "implot_internal:96",
+      "ov_cimguiname": "ImPlot_ImRemapS16",
+      "ret": "ImS16",
+      "signature": "(ImS16,ImS16,ImS16,ImS16,ImS16)",
+      "stname": ""
+    },
+    {
+      "args": "(ImU16 x,ImU16 x0,ImU16 x1,ImU16 y0,ImU16 y1)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "ImU16"
+        },
+        {
+          "name": "x0",
+          "type": "ImU16"
+        },
+        {
+          "name": "x1",
+          "type": "ImU16"
+        },
+        {
+          "name": "y0",
+          "type": "ImU16"
+        },
+        {
+          "name": "y1",
+          "type": "ImU16"
+        }
+      ],
+      "argsoriginal": "(ImU16 x,ImU16 x0,ImU16 x1,ImU16 y0,ImU16 y1)",
+      "call_args": "(x,x0,x1,y0,y1)",
+      "cimguiname": "ImPlot_ImRemap",
+      "defaults": {},
+      "funcname": "ImRemap",
+      "location": "implot_internal:96",
+      "ov_cimguiname": "ImPlot_ImRemapU16",
+      "ret": "ImU16",
+      "signature": "(ImU16,ImU16,ImU16,ImU16,ImU16)",
+      "stname": ""
+    },
+    {
+      "args": "(ImS32 x,ImS32 x0,ImS32 x1,ImS32 y0,ImS32 y1)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "ImS32"
+        },
+        {
+          "name": "x0",
+          "type": "ImS32"
+        },
+        {
+          "name": "x1",
+          "type": "ImS32"
+        },
+        {
+          "name": "y0",
+          "type": "ImS32"
+        },
+        {
+          "name": "y1",
+          "type": "ImS32"
+        }
+      ],
+      "argsoriginal": "(ImS32 x,ImS32 x0,ImS32 x1,ImS32 y0,ImS32 y1)",
+      "call_args": "(x,x0,x1,y0,y1)",
+      "cimguiname": "ImPlot_ImRemap",
+      "defaults": {},
+      "funcname": "ImRemap",
+      "location": "implot_internal:96",
+      "ov_cimguiname": "ImPlot_ImRemapS32",
+      "ret": "ImS32",
+      "signature": "(ImS32,ImS32,ImS32,ImS32,ImS32)",
+      "stname": ""
+    },
+    {
+      "args": "(ImU32 x,ImU32 x0,ImU32 x1,ImU32 y0,ImU32 y1)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "ImU32"
+        },
+        {
+          "name": "x0",
+          "type": "ImU32"
+        },
+        {
+          "name": "x1",
+          "type": "ImU32"
+        },
+        {
+          "name": "y0",
+          "type": "ImU32"
+        },
+        {
+          "name": "y1",
+          "type": "ImU32"
+        }
+      ],
+      "argsoriginal": "(ImU32 x,ImU32 x0,ImU32 x1,ImU32 y0,ImU32 y1)",
+      "call_args": "(x,x0,x1,y0,y1)",
+      "cimguiname": "ImPlot_ImRemap",
+      "defaults": {},
+      "funcname": "ImRemap",
+      "location": "implot_internal:96",
+      "ov_cimguiname": "ImPlot_ImRemapU32",
+      "ret": "ImU32",
+      "signature": "(ImU32,ImU32,ImU32,ImU32,ImU32)",
+      "stname": ""
+    },
+    {
+      "args": "(ImS64 x,ImS64 x0,ImS64 x1,ImS64 y0,ImS64 y1)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "ImS64"
+        },
+        {
+          "name": "x0",
+          "type": "ImS64"
+        },
+        {
+          "name": "x1",
+          "type": "ImS64"
+        },
+        {
+          "name": "y0",
+          "type": "ImS64"
+        },
+        {
+          "name": "y1",
+          "type": "ImS64"
+        }
+      ],
+      "argsoriginal": "(ImS64 x,ImS64 x0,ImS64 x1,ImS64 y0,ImS64 y1)",
+      "call_args": "(x,x0,x1,y0,y1)",
+      "cimguiname": "ImPlot_ImRemap",
+      "defaults": {},
+      "funcname": "ImRemap",
+      "location": "implot_internal:96",
+      "ov_cimguiname": "ImPlot_ImRemapS64",
+      "ret": "ImS64",
+      "signature": "(ImS64,ImS64,ImS64,ImS64,ImS64)",
+      "stname": ""
+    },
+    {
+      "args": "(ImU64 x,ImU64 x0,ImU64 x1,ImU64 y0,ImU64 y1)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "ImU64"
+        },
+        {
+          "name": "x0",
+          "type": "ImU64"
+        },
+        {
+          "name": "x1",
+          "type": "ImU64"
+        },
+        {
+          "name": "y0",
+          "type": "ImU64"
+        },
+        {
+          "name": "y1",
+          "type": "ImU64"
+        }
+      ],
+      "argsoriginal": "(ImU64 x,ImU64 x0,ImU64 x1,ImU64 y0,ImU64 y1)",
+      "call_args": "(x,x0,x1,y0,y1)",
+      "cimguiname": "ImPlot_ImRemap",
+      "defaults": {},
+      "funcname": "ImRemap",
+      "location": "implot_internal:96",
+      "ov_cimguiname": "ImPlot_ImRemapU64",
+      "ret": "ImU64",
+      "signature": "(ImU64,ImU64,ImU64,ImU64,ImU64)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_Initialize": [
+    {
+      "args": "(ImPlotContext* ctx)",
+      "argsT": [
+        {
+          "name": "ctx",
+          "type": "ImPlotContext*"
+        }
+      ],
+      "argsoriginal": "(ImPlotContext* ctx)",
+      "call_args": "(ctx)",
+      "cimguiname": "ImPlot_Initialize",
+      "defaults": {},
+      "funcname": "Initialize",
+      "location": "implot_internal:713",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_Initialize",
+      "ret": "void",
+      "signature": "(ImPlotContext*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_Intersection": [
+    {
+      "args": "(ImVec2 *pOut,const ImVec2 a1,const ImVec2 a2,const ImVec2 b1,const ImVec2 b2)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec2*"
+        },
+        {
+          "name": "a1",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "a2",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "b1",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "b2",
+          "type": "const ImVec2"
+        }
+      ],
+      "argsoriginal": "(const ImVec2& a1,const ImVec2& a2,const ImVec2& b1,const ImVec2& b2)",
+      "call_args": "(a1,a2,b1,b2)",
+      "cimguiname": "ImPlot_Intersection",
+      "defaults": {},
+      "funcname": "Intersection",
+      "location": "implot_internal:871",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "ImPlot_Intersection",
+      "ret": "void",
+      "signature": "(const ImVec2,const ImVec2,const ImVec2,const ImVec2)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_IsColorAuto": [
+    {
+      "args": "(const ImVec4 col)",
+      "argsT": [
+        {
+          "name": "col",
+          "type": "const ImVec4"
+        }
+      ],
+      "argsoriginal": "(const ImVec4& col)",
+      "call_args": "(col)",
+      "cimguiname": "ImPlot_IsColorAuto",
+      "defaults": {},
+      "funcname": "IsColorAuto",
+      "location": "implot_internal:824",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_IsColorAutoVec4",
+      "ret": "bool",
+      "signature": "(const ImVec4)",
+      "stname": ""
+    },
+    {
+      "args": "(ImPlotCol idx)",
+      "argsT": [
+        {
+          "name": "idx",
+          "type": "ImPlotCol"
+        }
+      ],
+      "argsoriginal": "(ImPlotCol idx)",
+      "call_args": "(idx)",
+      "cimguiname": "ImPlot_IsColorAuto",
+      "defaults": {},
+      "funcname": "IsColorAuto",
+      "location": "implot_internal:826",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_IsColorAutoPlotCol",
+      "ret": "bool",
+      "signature": "(ImPlotCol)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_IsLeapYear": [
+    {
+      "args": "(int year)",
+      "argsT": [
+        {
+          "name": "year",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int year)",
+      "call_args": "(year)",
+      "cimguiname": "ImPlot_IsLeapYear",
+      "defaults": {},
+      "funcname": "IsLeapYear",
+      "location": "implot_internal:899",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_IsLeapYear",
+      "ret": "bool",
+      "signature": "(int)",
       "stname": ""
     }
   ],
@@ -1460,6 +4960,136 @@
       "stname": ""
     }
   ],
+  "ImPlot_LabelAxisValue": [
+    {
+      "args": "(const ImPlotAxis axis,const ImPlotTickCollection ticks,double value,char* buff,int size)",
+      "argsT": [
+        {
+          "name": "axis",
+          "type": "const ImPlotAxis"
+        },
+        {
+          "name": "ticks",
+          "type": "const ImPlotTickCollection"
+        },
+        {
+          "name": "value",
+          "type": "double"
+        },
+        {
+          "name": "buff",
+          "type": "char*"
+        },
+        {
+          "name": "size",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImPlotAxis& axis,const ImPlotTickCollection& ticks,double value,char* buff,int size)",
+      "call_args": "(axis,ticks,value,buff,size)",
+      "cimguiname": "ImPlot_LabelAxisValue",
+      "defaults": {},
+      "funcname": "LabelAxisValue",
+      "location": "implot_internal:814",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_LabelAxisValue",
+      "ret": "int",
+      "signature": "(const ImPlotAxis,const ImPlotTickCollection,double,char*,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_LabelTickDefault": [
+    {
+      "args": "(ImPlotTick* tick,ImGuiTextBuffer* buffer)",
+      "argsT": [
+        {
+          "name": "tick",
+          "reftoptr": true,
+          "type": "ImPlotTick*"
+        },
+        {
+          "name": "buffer",
+          "reftoptr": true,
+          "type": "ImGuiTextBuffer*"
+        }
+      ],
+      "argsoriginal": "(ImPlotTick& tick,ImGuiTextBuffer& buffer)",
+      "call_args": "(*tick,*buffer)",
+      "cimguiname": "ImPlot_LabelTickDefault",
+      "defaults": {},
+      "funcname": "LabelTickDefault",
+      "location": "implot_internal:798",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_LabelTickDefault",
+      "ret": "void",
+      "signature": "(ImPlotTick*,ImGuiTextBuffer*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_LabelTickScientific": [
+    {
+      "args": "(ImPlotTick* tick,ImGuiTextBuffer* buffer)",
+      "argsT": [
+        {
+          "name": "tick",
+          "reftoptr": true,
+          "type": "ImPlotTick*"
+        },
+        {
+          "name": "buffer",
+          "reftoptr": true,
+          "type": "ImGuiTextBuffer*"
+        }
+      ],
+      "argsoriginal": "(ImPlotTick& tick,ImGuiTextBuffer& buffer)",
+      "call_args": "(*tick,*buffer)",
+      "cimguiname": "ImPlot_LabelTickScientific",
+      "defaults": {},
+      "funcname": "LabelTickScientific",
+      "location": "implot_internal:800",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_LabelTickScientific",
+      "ret": "void",
+      "signature": "(ImPlotTick*,ImGuiTextBuffer*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_LabelTickTime": [
+    {
+      "args": "(ImPlotTick* tick,ImGuiTextBuffer* buffer,const ImPlotTime t,ImPlotDateTimeFmt fmt)",
+      "argsT": [
+        {
+          "name": "tick",
+          "reftoptr": true,
+          "type": "ImPlotTick*"
+        },
+        {
+          "name": "buffer",
+          "reftoptr": true,
+          "type": "ImGuiTextBuffer*"
+        },
+        {
+          "name": "t",
+          "type": "const ImPlotTime"
+        },
+        {
+          "name": "fmt",
+          "type": "ImPlotDateTimeFmt"
+        }
+      ],
+      "argsoriginal": "(ImPlotTick& tick,ImGuiTextBuffer& buffer,const ImPlotTime& t,ImPlotDateTimeFmt fmt)",
+      "call_args": "(*tick,*buffer,t,fmt)",
+      "cimguiname": "ImPlot_LabelTickTime",
+      "defaults": {},
+      "funcname": "LabelTickTime",
+      "location": "implot_internal:802",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_LabelTickTime",
+      "ret": "void",
+      "signature": "(ImPlotTick*,ImGuiTextBuffer*,const ImPlotTime,ImPlotDateTimeFmt)",
+      "stname": ""
+    }
+  ],
   "ImPlot_LerpColormap": [
     {
       "args": "(ImVec4 *pOut,float t)",
@@ -1481,9 +5111,42 @@
       "location": "implot:644",
       "namespace": "ImPlot",
       "nonUDT": 1,
-      "ov_cimguiname": "ImPlot_LerpColormap",
+      "ov_cimguiname": "ImPlot_LerpColormapFloat",
       "ret": "void",
       "signature": "(float)",
+      "stname": ""
+    },
+    {
+      "args": "(ImVec4 *pOut,const ImVec4* colormap,int size,float t)",
+      "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImVec4*"
+        },
+        {
+          "name": "colormap",
+          "type": "const ImVec4*"
+        },
+        {
+          "name": "size",
+          "type": "int"
+        },
+        {
+          "name": "t",
+          "type": "float"
+        }
+      ],
+      "argsoriginal": "(const ImVec4* colormap,int size,float t)",
+      "call_args": "(colormap,size,t)",
+      "cimguiname": "ImPlot_LerpColormap",
+      "defaults": {},
+      "funcname": "LerpColormap",
+      "location": "implot_internal:837",
+      "namespace": "ImPlot",
+      "nonUDT": 1,
+      "ov_cimguiname": "ImPlot_LerpColormapVec4Ptr",
+      "ret": "void",
+      "signature": "(const ImVec4*,int,float)",
       "stname": ""
     }
   ],
@@ -1542,6 +5205,103 @@
       "stname": ""
     }
   ],
+  "ImPlot_MakeTime": [
+    {
+      "args": "(int year,int month,int day,int hour,int min,int sec,int us)",
+      "argsT": [
+        {
+          "name": "year",
+          "type": "int"
+        },
+        {
+          "name": "month",
+          "type": "int"
+        },
+        {
+          "name": "day",
+          "type": "int"
+        },
+        {
+          "name": "hour",
+          "type": "int"
+        },
+        {
+          "name": "min",
+          "type": "int"
+        },
+        {
+          "name": "sec",
+          "type": "int"
+        },
+        {
+          "name": "us",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int year,int month=0,int day=1,int hour=0,int min=0,int sec=0,int us=0)",
+      "call_args": "(year,month,day,hour,min,sec,us)",
+      "cimguiname": "ImPlot_MakeTime",
+      "defaults": {
+        "day": "1",
+        "hour": "0",
+        "min": "0",
+        "month": "0",
+        "sec": "0",
+        "us": "0"
+      },
+      "funcname": "MakeTime",
+      "location": "implot_internal:923",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_MakeTime",
+      "ret": "ImPlotTime",
+      "signature": "(int,int,int,int,int,int,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_MkGmtTime": [
+    {
+      "args": "(struct tm* ptm)",
+      "argsT": [
+        {
+          "name": "ptm",
+          "type": "struct tm*"
+        }
+      ],
+      "argsoriginal": "(struct tm* ptm)",
+      "call_args": "(ptm)",
+      "cimguiname": "ImPlot_MkGmtTime",
+      "defaults": {},
+      "funcname": "MkGmtTime",
+      "location": "implot_internal:909",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_MkGmtTime",
+      "ret": "ImPlotTime",
+      "signature": "(struct tm*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_MkLocTime": [
+    {
+      "args": "(struct tm* ptm)",
+      "argsT": [
+        {
+          "name": "ptm",
+          "type": "struct tm*"
+        }
+      ],
+      "argsoriginal": "(struct tm* ptm)",
+      "call_args": "(ptm)",
+      "cimguiname": "ImPlot_MkLocTime",
+      "defaults": {},
+      "funcname": "MkLocTime",
+      "location": "implot_internal:914",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_MkLocTime",
+      "ret": "ImPlotTime",
+      "signature": "(struct tm*)",
+      "stname": ""
+    }
+  ],
   "ImPlot_NextColormapColor": [
     {
       "args": "(ImVec4 *pOut)",
@@ -1562,6 +5322,438 @@
       "ov_cimguiname": "ImPlot_NextColormapColor",
       "ret": "void",
       "signature": "()",
+      "stname": ""
+    }
+  ],
+  "ImPlot_NiceNum": [
+    {
+      "args": "(double x,bool round)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "double"
+        },
+        {
+          "name": "round",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(double x,bool round)",
+      "call_args": "(x,round)",
+      "cimguiname": "ImPlot_NiceNum",
+      "defaults": {},
+      "funcname": "NiceNum",
+      "location": "implot_internal:862",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_NiceNum",
+      "ret": "double",
+      "signature": "(double,bool)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_OffsetAndStride": [
+    {
+      "args": "(const float* data,int idx,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "data",
+          "type": "const float*"
+        },
+        {
+          "name": "idx",
+          "type": "int"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const float* data,int idx,int count,int offset,int stride)",
+      "call_args": "(data,idx,count,offset,stride)",
+      "cimguiname": "ImPlot_OffsetAndStride",
+      "defaults": {},
+      "funcname": "OffsetAndStride",
+      "location": "implot_internal:888",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_OffsetAndStrideFloatPtr",
+      "ret": "float",
+      "signature": "(const float*,int,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const double* data,int idx,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "data",
+          "type": "const double*"
+        },
+        {
+          "name": "idx",
+          "type": "int"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const double* data,int idx,int count,int offset,int stride)",
+      "call_args": "(data,idx,count,offset,stride)",
+      "cimguiname": "ImPlot_OffsetAndStride",
+      "defaults": {},
+      "funcname": "OffsetAndStride",
+      "location": "implot_internal:888",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_OffsetAndStridedoublePtr",
+      "ret": "double",
+      "signature": "(const double*,int,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const ImS8* data,int idx,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "data",
+          "type": "const ImS8*"
+        },
+        {
+          "name": "idx",
+          "type": "int"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImS8* data,int idx,int count,int offset,int stride)",
+      "call_args": "(data,idx,count,offset,stride)",
+      "cimguiname": "ImPlot_OffsetAndStride",
+      "defaults": {},
+      "funcname": "OffsetAndStride",
+      "location": "implot_internal:888",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_OffsetAndStrideS8Ptr",
+      "ret": "ImS8",
+      "signature": "(const ImS8*,int,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const ImU8* data,int idx,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "data",
+          "type": "const ImU8*"
+        },
+        {
+          "name": "idx",
+          "type": "int"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImU8* data,int idx,int count,int offset,int stride)",
+      "call_args": "(data,idx,count,offset,stride)",
+      "cimguiname": "ImPlot_OffsetAndStride",
+      "defaults": {},
+      "funcname": "OffsetAndStride",
+      "location": "implot_internal:888",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_OffsetAndStrideU8Ptr",
+      "ret": "ImU8",
+      "signature": "(const ImU8*,int,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const ImS16* data,int idx,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "data",
+          "type": "const ImS16*"
+        },
+        {
+          "name": "idx",
+          "type": "int"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImS16* data,int idx,int count,int offset,int stride)",
+      "call_args": "(data,idx,count,offset,stride)",
+      "cimguiname": "ImPlot_OffsetAndStride",
+      "defaults": {},
+      "funcname": "OffsetAndStride",
+      "location": "implot_internal:888",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_OffsetAndStrideS16Ptr",
+      "ret": "ImS16",
+      "signature": "(const ImS16*,int,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const ImU16* data,int idx,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "data",
+          "type": "const ImU16*"
+        },
+        {
+          "name": "idx",
+          "type": "int"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImU16* data,int idx,int count,int offset,int stride)",
+      "call_args": "(data,idx,count,offset,stride)",
+      "cimguiname": "ImPlot_OffsetAndStride",
+      "defaults": {},
+      "funcname": "OffsetAndStride",
+      "location": "implot_internal:888",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_OffsetAndStrideU16Ptr",
+      "ret": "ImU16",
+      "signature": "(const ImU16*,int,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const ImS32* data,int idx,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "data",
+          "type": "const ImS32*"
+        },
+        {
+          "name": "idx",
+          "type": "int"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImS32* data,int idx,int count,int offset,int stride)",
+      "call_args": "(data,idx,count,offset,stride)",
+      "cimguiname": "ImPlot_OffsetAndStride",
+      "defaults": {},
+      "funcname": "OffsetAndStride",
+      "location": "implot_internal:888",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_OffsetAndStrideS32Ptr",
+      "ret": "ImS32",
+      "signature": "(const ImS32*,int,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const ImU32* data,int idx,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "data",
+          "type": "const ImU32*"
+        },
+        {
+          "name": "idx",
+          "type": "int"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImU32* data,int idx,int count,int offset,int stride)",
+      "call_args": "(data,idx,count,offset,stride)",
+      "cimguiname": "ImPlot_OffsetAndStride",
+      "defaults": {},
+      "funcname": "OffsetAndStride",
+      "location": "implot_internal:888",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_OffsetAndStrideU32Ptr",
+      "ret": "ImU32",
+      "signature": "(const ImU32*,int,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const ImS64* data,int idx,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "data",
+          "type": "const ImS64*"
+        },
+        {
+          "name": "idx",
+          "type": "int"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImS64* data,int idx,int count,int offset,int stride)",
+      "call_args": "(data,idx,count,offset,stride)",
+      "cimguiname": "ImPlot_OffsetAndStride",
+      "defaults": {},
+      "funcname": "OffsetAndStride",
+      "location": "implot_internal:888",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_OffsetAndStrideS64Ptr",
+      "ret": "ImS64",
+      "signature": "(const ImS64*,int,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const ImU64* data,int idx,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "data",
+          "type": "const ImU64*"
+        },
+        {
+          "name": "idx",
+          "type": "int"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImU64* data,int idx,int count,int offset,int stride)",
+      "call_args": "(data,idx,count,offset,stride)",
+      "cimguiname": "ImPlot_OffsetAndStride",
+      "defaults": {},
+      "funcname": "OffsetAndStride",
+      "location": "implot_internal:888",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_OffsetAndStrideU64Ptr",
+      "ret": "ImU64",
+      "signature": "(const ImU64*,int,int,int,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_OrderOfMagnitude": [
+    {
+      "args": "(double val)",
+      "argsT": [
+        {
+          "name": "val",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double val)",
+      "call_args": "(val)",
+      "cimguiname": "ImPlot_OrderOfMagnitude",
+      "defaults": {},
+      "funcname": "OrderOfMagnitude",
+      "location": "implot_internal:864",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_OrderOfMagnitude",
+      "ret": "int",
+      "signature": "(double)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_OrderToPrecision": [
+    {
+      "args": "(int order)",
+      "argsT": [
+        {
+          "name": "order",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(int order)",
+      "call_args": "(order)",
+      "cimguiname": "ImPlot_OrderToPrecision",
+      "defaults": {},
+      "funcname": "OrderToPrecision",
+      "location": "implot_internal:866",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_OrderToPrecision",
+      "ret": "int",
+      "signature": "(int)",
       "stname": ""
     }
   ],
@@ -8251,6 +12443,134 @@
       "stname": ""
     }
   ],
+  "ImPlot_PlotRects": [
+    {
+      "args": "(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const float*"
+        },
+        {
+          "name": "ys",
+          "type": "const float*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const float* xs,const float* ys,int count,int offset=0,int stride=sizeof(float))",
+      "call_args": "(label_id,xs,ys,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotRects",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(float)"
+      },
+      "funcname": "PlotRects",
+      "location": "implot_internal:960",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotRectsFloatPtr",
+      "ret": "void",
+      "signature": "(const char*,const float*,const float*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,const double* xs,const double* ys,int count,int offset,int stride)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "xs",
+          "type": "const double*"
+        },
+        {
+          "name": "ys",
+          "type": "const double*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        },
+        {
+          "name": "stride",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,const double* xs,const double* ys,int count,int offset=0,int stride=sizeof(double))",
+      "call_args": "(label_id,xs,ys,count,offset,stride)",
+      "cimguiname": "ImPlot_PlotRects",
+      "defaults": {
+        "offset": "0",
+        "stride": "sizeof(double)"
+      },
+      "funcname": "PlotRects",
+      "location": "implot_internal:961",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotRectsdoublePtr",
+      "ret": "void",
+      "signature": "(const char*,const double*,const double*,int,int,int)",
+      "stname": ""
+    },
+    {
+      "args": "(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "getter",
+          "ret": "ImPlotPoint",
+          "signature": "(void* data,int idx)",
+          "type": "ImPlotPoint(*)(void* data,int idx)"
+        },
+        {
+          "name": "data",
+          "type": "void*"
+        },
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "offset",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset=0)",
+      "call_args": "(label_id,getter,data,count,offset)",
+      "cimguiname": "ImPlot_PlotRects",
+      "defaults": {
+        "offset": "0"
+      },
+      "funcname": "PlotRects",
+      "location": "implot_internal:962",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PlotRectsFnPlotPoIntPtr",
+      "ret": "void",
+      "signature": "(const char*,ImPlotPoint(*)(void*,int),void*,int,int)",
+      "stname": ""
+    }
+  ],
   "ImPlot_PlotScatter": [
     {
       "args": "(const char* label_id,const float* values,int count,double xscale,double x0,int offset,int stride)",
@@ -12945,6 +17265,51 @@
       "stname": ""
     }
   ],
+  "ImPlot_Precision": [
+    {
+      "args": "(double val)",
+      "argsT": [
+        {
+          "name": "val",
+          "type": "double"
+        }
+      ],
+      "argsoriginal": "(double val)",
+      "call_args": "(val)",
+      "cimguiname": "ImPlot_Precision",
+      "defaults": {},
+      "funcname": "Precision",
+      "location": "implot_internal:868",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_Precision",
+      "ret": "int",
+      "signature": "(double)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_PullLinkedAxis": [
+    {
+      "args": "(ImPlotAxis* axis)",
+      "argsT": [
+        {
+          "name": "axis",
+          "reftoptr": true,
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "argsoriginal": "(ImPlotAxis& axis)",
+      "call_args": "(*axis)",
+      "cimguiname": "ImPlot_PullLinkedAxis",
+      "defaults": {},
+      "funcname": "PullLinkedAxis",
+      "location": "implot_internal:775",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PullLinkedAxis",
+      "ret": "void",
+      "signature": "(ImPlotAxis*)",
+      "stname": ""
+    }
+  ],
   "ImPlot_PushColormap": [
     {
       "args": "(ImPlotColormap colormap)",
@@ -12988,6 +17353,29 @@
       "ov_cimguiname": "ImPlot_PushColormapVec4Ptr",
       "ret": "void",
       "signature": "(const ImVec4*,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_PushLinkedAxis": [
+    {
+      "args": "(ImPlotAxis* axis)",
+      "argsT": [
+        {
+          "name": "axis",
+          "reftoptr": true,
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "argsoriginal": "(ImPlotAxis& axis)",
+      "call_args": "(*axis)",
+      "cimguiname": "ImPlot_PushLinkedAxis",
+      "defaults": {},
+      "funcname": "PushLinkedAxis",
+      "location": "implot_internal:773",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_PushLinkedAxis",
+      "ret": "void",
+      "signature": "(ImPlotAxis*)",
       "stname": ""
     }
   ],
@@ -13129,6 +17517,142 @@
       "ov_cimguiname": "ImPlot_PushStyleVarVec2",
       "ret": "void",
       "signature": "(ImPlotStyleVar,const ImVec2)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_RangesOverlap": [
+    {
+      "args": "(const ImPlotRange r1,const ImPlotRange r2)",
+      "argsT": [
+        {
+          "name": "r1",
+          "type": "const ImPlotRange"
+        },
+        {
+          "name": "r2",
+          "type": "const ImPlotRange"
+        }
+      ],
+      "argsoriginal": "(const ImPlotRange& r1,const ImPlotRange& r2)",
+      "call_args": "(r1,r2)",
+      "cimguiname": "ImPlot_RangesOverlap",
+      "defaults": {},
+      "funcname": "RangesOverlap",
+      "location": "implot_internal:769",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_RangesOverlap",
+      "ret": "bool",
+      "signature": "(const ImPlotRange,const ImPlotRange)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_RegisterOrGetItem": [
+    {
+      "args": "(const char* label_id,bool* just_created)",
+      "argsT": [
+        {
+          "name": "label_id",
+          "type": "const char*"
+        },
+        {
+          "name": "just_created",
+          "type": "bool*"
+        }
+      ],
+      "argsoriginal": "(const char* label_id,bool* just_created=((void*)0))",
+      "call_args": "(label_id,just_created)",
+      "cimguiname": "ImPlot_RegisterOrGetItem",
+      "defaults": {
+        "just_created": "((void*)0)"
+      },
+      "funcname": "RegisterOrGetItem",
+      "location": "implot_internal:741",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_RegisterOrGetItem",
+      "ret": "ImPlotItem*",
+      "signature": "(const char*,bool*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ResampleColormap": [
+    {
+      "args": "(const ImVec4* colormap_in,int size_in,ImVec4* colormap_out,int size_out)",
+      "argsT": [
+        {
+          "name": "colormap_in",
+          "type": "const ImVec4*"
+        },
+        {
+          "name": "size_in",
+          "type": "int"
+        },
+        {
+          "name": "colormap_out",
+          "type": "ImVec4*"
+        },
+        {
+          "name": "size_out",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(const ImVec4* colormap_in,int size_in,ImVec4* colormap_out,int size_out)",
+      "call_args": "(colormap_in,size_in,colormap_out,size_out)",
+      "cimguiname": "ImPlot_ResampleColormap",
+      "defaults": {},
+      "funcname": "ResampleColormap",
+      "location": "implot_internal:839",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_ResampleColormap",
+      "ret": "void",
+      "signature": "(const ImVec4*,int,ImVec4*,int)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_Reset": [
+    {
+      "args": "(ImPlotContext* ctx)",
+      "argsT": [
+        {
+          "name": "ctx",
+          "type": "ImPlotContext*"
+        }
+      ],
+      "argsoriginal": "(ImPlotContext* ctx)",
+      "call_args": "(ctx)",
+      "cimguiname": "ImPlot_Reset",
+      "defaults": {},
+      "funcname": "Reset",
+      "location": "implot_internal:715",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_Reset",
+      "ret": "void",
+      "signature": "(ImPlotContext*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_RoundTime": [
+    {
+      "args": "(const ImPlotTime t,ImPlotTimeUnit unit)",
+      "argsT": [
+        {
+          "name": "t",
+          "type": "const ImPlotTime"
+        },
+        {
+          "name": "unit",
+          "type": "ImPlotTimeUnit"
+        }
+      ],
+      "argsoriginal": "(const ImPlotTime& t,ImPlotTimeUnit unit)",
+      "call_args": "(t,unit)",
+      "cimguiname": "ImPlot_RoundTime",
+      "defaults": {},
+      "funcname": "RoundTime",
+      "location": "implot_internal:934",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_RoundTime",
+      "ret": "ImPlotTime",
+      "signature": "(const ImPlotTime,ImPlotTimeUnit)",
       "stname": ""
     }
   ],
@@ -13712,6 +18236,77 @@
       "stname": ""
     }
   ],
+  "ImPlot_ShowAltLegend": [
+    {
+      "args": "(const char* title_id,ImPlotOrientation orientation,const ImVec2 size,bool interactable)",
+      "argsT": [
+        {
+          "name": "title_id",
+          "type": "const char*"
+        },
+        {
+          "name": "orientation",
+          "type": "ImPlotOrientation"
+        },
+        {
+          "name": "size",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "interactable",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(const char* title_id,ImPlotOrientation orientation=ImPlotOrientation_Vertical,const ImVec2 size=ImVec2(0,0),bool interactable=true)",
+      "call_args": "(title_id,orientation,size,interactable)",
+      "cimguiname": "ImPlot_ShowAltLegend",
+      "defaults": {
+        "interactable": "true",
+        "orientation": "ImPlotOrientation_Vertical",
+        "size": "ImVec2(0,0)"
+      },
+      "funcname": "ShowAltLegend",
+      "location": "implot_internal:791",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_ShowAltLegend",
+      "ret": "void",
+      "signature": "(const char*,ImPlotOrientation,const ImVec2,bool)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ShowAxisContextMenu": [
+    {
+      "args": "(ImPlotAxis* axis,ImPlotAxis* equal_axis,bool time_allowed)",
+      "argsT": [
+        {
+          "name": "axis",
+          "reftoptr": true,
+          "type": "ImPlotAxis*"
+        },
+        {
+          "name": "equal_axis",
+          "type": "ImPlotAxis*"
+        },
+        {
+          "name": "time_allowed",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(ImPlotAxis& axis,ImPlotAxis* equal_axis,bool time_allowed=false)",
+      "call_args": "(*axis,equal_axis,time_allowed)",
+      "cimguiname": "ImPlot_ShowAxisContextMenu",
+      "defaults": {
+        "time_allowed": "false"
+      },
+      "funcname": "ShowAxisContextMenu",
+      "location": "implot_internal:778",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_ShowAxisContextMenu",
+      "ret": "void",
+      "signature": "(ImPlotAxis*,ImPlotAxis*,bool)",
+      "stname": ""
+    }
+  ],
   "ImPlot_ShowColormapScale": [
     {
       "args": "(double scale_min,double scale_max,float height)",
@@ -13764,6 +18359,47 @@
       "stname": ""
     }
   ],
+  "ImPlot_ShowDatePicker": [
+    {
+      "args": "(const char* id,int* level,ImPlotTime* t,const ImPlotTime* t1,const ImPlotTime* t2)",
+      "argsT": [
+        {
+          "name": "id",
+          "type": "const char*"
+        },
+        {
+          "name": "level",
+          "type": "int*"
+        },
+        {
+          "name": "t",
+          "type": "ImPlotTime*"
+        },
+        {
+          "name": "t1",
+          "type": "const ImPlotTime*"
+        },
+        {
+          "name": "t2",
+          "type": "const ImPlotTime*"
+        }
+      ],
+      "argsoriginal": "(const char* id,int* level,ImPlotTime* t,const ImPlotTime* t1=((void*)0),const ImPlotTime* t2=((void*)0))",
+      "call_args": "(id,level,t,t1,t2)",
+      "cimguiname": "ImPlot_ShowDatePicker",
+      "defaults": {
+        "t1": "((void*)0)",
+        "t2": "((void*)0)"
+      },
+      "funcname": "ShowDatePicker",
+      "location": "implot_internal:949",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_ShowDatePicker",
+      "ret": "bool",
+      "signature": "(const char*,int*,ImPlotTime*,const ImPlotTime*,const ImPlotTime*)",
+      "stname": ""
+    }
+  ],
   "ImPlot_ShowDemoWindow": [
     {
       "args": "(bool* p_open)",
@@ -13788,6 +18424,54 @@
       "stname": ""
     }
   ],
+  "ImPlot_ShowLegendEntries": [
+    {
+      "args": "(ImPlotPlot* plot,const ImRect legend_bb,bool interactable,const ImVec2 pad,const ImVec2 spacing,ImPlotOrientation orientation,ImDrawList* DrawList)",
+      "argsT": [
+        {
+          "name": "plot",
+          "reftoptr": true,
+          "type": "ImPlotPlot*"
+        },
+        {
+          "name": "legend_bb",
+          "type": "const ImRect"
+        },
+        {
+          "name": "interactable",
+          "type": "bool"
+        },
+        {
+          "name": "pad",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "spacing",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "orientation",
+          "type": "ImPlotOrientation"
+        },
+        {
+          "name": "DrawList",
+          "reftoptr": true,
+          "type": "ImDrawList*"
+        }
+      ],
+      "argsoriginal": "(ImPlotPlot& plot,const ImRect& legend_bb,bool interactable,const ImVec2& pad,const ImVec2& spacing,ImPlotOrientation orientation,ImDrawList& DrawList)",
+      "call_args": "(*plot,legend_bb,interactable,pad,spacing,orientation,*DrawList)",
+      "cimguiname": "ImPlot_ShowLegendEntries",
+      "defaults": {},
+      "funcname": "ShowLegendEntries",
+      "location": "implot_internal:789",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_ShowLegendEntries",
+      "ret": "void",
+      "signature": "(ImPlotPlot*,const ImRect,bool,const ImVec2,const ImVec2,ImPlotOrientation,ImDrawList*)",
+      "stname": ""
+    }
+  ],
   "ImPlot_ShowMetricsWindow": [
     {
       "args": "(bool* p_popen)",
@@ -13809,6 +18493,29 @@
       "ov_cimguiname": "ImPlot_ShowMetricsWindow",
       "ret": "void",
       "signature": "(bool*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ShowPlotContextMenu": [
+    {
+      "args": "(ImPlotPlot* plot)",
+      "argsT": [
+        {
+          "name": "plot",
+          "reftoptr": true,
+          "type": "ImPlotPlot*"
+        }
+      ],
+      "argsoriginal": "(ImPlotPlot& plot)",
+      "call_args": "(*plot)",
+      "cimguiname": "ImPlot_ShowPlotContextMenu",
+      "defaults": {},
+      "funcname": "ShowPlotContextMenu",
+      "location": "implot_internal:729",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_ShowPlotContextMenu",
+      "ret": "void",
+      "signature": "(ImPlotPlot*)",
       "stname": ""
     }
   ],
@@ -13855,6 +18562,32 @@
       "ov_cimguiname": "ImPlot_ShowStyleSelector",
       "ret": "bool",
       "signature": "(const char*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_ShowTimePicker": [
+    {
+      "args": "(const char* id,ImPlotTime* t)",
+      "argsT": [
+        {
+          "name": "id",
+          "type": "const char*"
+        },
+        {
+          "name": "t",
+          "type": "ImPlotTime*"
+        }
+      ],
+      "argsoriginal": "(const char* id,ImPlotTime* t)",
+      "call_args": "(id,t)",
+      "cimguiname": "ImPlot_ShowTimePicker",
+      "defaults": {},
+      "funcname": "ShowTimePicker",
+      "location": "implot_internal:952",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_ShowTimePicker",
+      "ret": "bool",
+      "signature": "(const char*,ImPlotTime*)",
       "stname": ""
     }
   ],
@@ -13968,6 +18701,49 @@
       "ov_cimguiname": "ImPlot_StyleColorsLight",
       "ret": "void",
       "signature": "(ImPlotStyle*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_UpdateAxisColors": [
+    {
+      "args": "(int axis_flag,ImPlotAxis* axis)",
+      "argsT": [
+        {
+          "name": "axis_flag",
+          "type": "int"
+        },
+        {
+          "name": "axis",
+          "type": "ImPlotAxis*"
+        }
+      ],
+      "argsoriginal": "(int axis_flag,ImPlotAxis* axis)",
+      "call_args": "(axis_flag,axis)",
+      "cimguiname": "ImPlot_UpdateAxisColors",
+      "defaults": {},
+      "funcname": "UpdateAxisColors",
+      "location": "implot_internal:756",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_UpdateAxisColors",
+      "ret": "void",
+      "signature": "(int,ImPlotAxis*)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_UpdateTransformCache": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "ImPlot_UpdateTransformCache",
+      "defaults": {},
+      "funcname": "UpdateTransformCache",
+      "location": "implot_internal:759",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_UpdateTransformCache",
+      "ret": "void",
+      "signature": "()",
       "stname": ""
     }
   ]

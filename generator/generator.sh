@@ -11,4 +11,4 @@
 
 #process  files
 # arg[1] compiler name gcc, clang, or cl
-luajit ./generator.lua gcc
+luajit ./generator.lua gcc internal
