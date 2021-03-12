@@ -92,6 +92,46 @@ local serializeTableF = cpp2ffi.serializeTableF
 local func_header_generate = cpp2ffi.func_header_generate
 local func_implementation = cpp2ffi.func_implementation
 
+----------custom ImVector templates (from cimgui, but removed need to separate pool as ImGuiStorage already declared in cimgui)
+local table_do_sorted = cpp2ffi.table_do_sorted
+local function generate_templates(code,templates)
+    -- already declared in imgui
+    -- table.insert(code,"\n"..[[typedef struct ImVector{int Size;int Capacity;void* Data;} ImVector;]].."\n")
+	--skip ImVector already in cimgui
+	local ImVectorSkipped = {
+		float = true,
+		ImU32 = true,
+		ImGuiColorMod = true,
+		ImGuiStyleMod = true,
+	}
+	table_do_sorted(templates , function (ttype, v)
+		if ttype == "ImVector" then
+			table_do_sorted(v, function(te,newte)
+                if not ImVectorSkipped[te] then -- these are already declared in imgui
+				    table.insert(code,"typedef struct ImVector_"..newte.." {int Size;int Capacity;"..te.."* Data;} ImVector_"..newte..";\n")
+                end
+			end)
+		elseif ttype == "ImPool" then
+			--declare ImGuiStorage
+			table_do_sorted(v, function(te, newte)
+				table.insert(code,"typedef struct ImVector_"..newte.." {int Size;int Capacity;"..te.."* Data;} ImVector_"..newte..";\n")
+				table.insert(code,"typedef struct ImPool_"..newte.." {ImVector_"..te.." Buf;ImGuiStorage Map;ImPoolIdx FreeIdx;} ImPool_"..newte..";\n")
+			end)
+		elseif ttype == "ImChunkStream" then
+			table_do_sorted(v, function(te,newte)
+				table.insert(code,"typedef struct ImVector_"..newte.." {int Size;int Capacity;"..te.."* Data;} ImVector_"..newte..";\n")
+				table.insert(code,"typedef struct ImChunkStream_"..newte.." {ImVector_"..te.." Buf;} ImChunkStream_"..newte..";\n")
+			end)
+		elseif ttype == "ImSpan" then
+			table_do_sorted(v, function(te,newte)
+				table.insert(code,"typedef struct ImSpan_"..newte.." {"..te.."* Data;" ..te.."* DataEnd;} ImSpan_"..newte..";\n")
+			end)
+		else
+			print("generate_templates ttype not done",ttype)
+			error"generate templates"
+		end
+	end)
+end
 
 --generate cimgui.cpp cimgui.h 
 local function cimgui_generation(parser,name)
@@ -100,7 +140,15 @@ local function cimgui_generation(parser,name)
 
 	local outpre,outpost = parser.structs_and_enums[1], parser.structs_and_enums[2]
 
-	local cstructsstr = outpre..outpost 
+	cpp2ffi.prtable(parser.templates)
+	cpp2ffi.prtable(parser.typenames)
+
+	local outtab = {}
+    generate_templates(outtab, parser.templates)
+
+
+	--local cstructsstr = outpre..outpost 
+	local cstructsstr = outpre.."\n"..table.concat(outtab,"")..outpost 
 
     hstrfile = hstrfile:gsub([[#include "imgui_structs%.h"]],cstructsstr)
     local cfuncsstr = func_header_generate(parser)
@@ -141,7 +189,8 @@ local function parseImGuiHeader(header,names)
 	local parser = cpp2ffi.Parser()
 	parser.getCname = function(stname,funcname,namespace)
 		--local pre = (stname == "") and "ImPlot_" or stname.."_"
-		local pre = (stname == "") and (namespace and (namespace=="ImGui" and "ig" or namespace.."_") or "ig") or stname.."_"
+		--local pre = (stname == "") and (namespace and (namespace=="ImGui" and "ig" or namespace.."_") or "ig") or stname.."_"
+		local pre = (stname == "") and (namespace and (namespace=="ImGui" and "ig" or namespace.."_") or "ImPlot_") or stname.."_"
 		return pre..funcname
 	end
 	parser.cname_overloads = cimgui_overloads
@@ -152,10 +201,7 @@ local function parseImGuiHeader(header,names)
 	parser.ftemplate_list = {}
 	parser.ftemplate_list.T = {"float", "double", "ImS8", "ImU8", "ImS16", "ImU16", "ImS32", "ImU32", "ImS64", "ImU64"}
 	
-	local include_cmd = COMPILER=="cl" and [[ /I ]] or [[ -I ]]
-	local extra_includes = include_cmd.." ../../cimgui/imgui "
-	
-	parser:take_lines(CPRE..extra_includes..header, names, COMPILER)
+	parser:take_lines(CPRE..header, names, COMPILER)
 	
 	return parser
 end
