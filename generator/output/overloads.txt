@@ -1,4 +1,7 @@
 ----------------overloadings---------------------------
+ImPlotAxis_SetRange	2
+1	void	ImPlotAxis_SetRangedouble (double,double)
+2	void	ImPlotAxis_SetRangePlotRange (const ImPlotRange)
 ImPlotLimits_Contains	2
 1	bool	ImPlotLimits_ContainsPlotPoInt (const ImPlotPoint)const
 2	bool	ImPlotLimits_Containsdouble (double,double)const
@@ -9,6 +12,12 @@ ImPlotPoint_ImPlotPoint	3
 ImPlotRange_ImPlotRange	2
 1	nil	ImPlotRange_ImPlotRangeNil ()
 2	nil	ImPlotRange_ImPlotRangedouble (double,double)
+ImPlotTickCollection_Append	2
+1	void	ImPlotTickCollection_AppendPlotTick (const ImPlotTick)
+2	void	ImPlotTickCollection_Appenddouble (double,bool,bool,void(*)(ImPlotTick&,ImGuiTextBuffer&))
+ImPlotTime_ImPlotTime	2
+1	nil	ImPlotTime_ImPlotTimeNil ()
+2	nil	ImPlotTime_ImPlotTimetime_t (time_t,int)
 ImPlot_Annotate	2
 1	void	ImPlot_AnnotateStr (double,double,const ImVec2,const char*,...)
 2	void	ImPlot_AnnotateVec4 (double,double,const ImVec2,const ImVec4,const char*,...)
@@ -21,6 +30,51 @@ ImPlot_AnnotateClampedV	2
 ImPlot_AnnotateV	2
 1	void	ImPlot_AnnotateVStr (double,double,const ImVec2,const char*,va_list)
 2	void	ImPlot_AnnotateVVec4 (double,double,const ImVec2,const ImVec4,const char*,va_list)
+ImPlot_FillRange	10
+1	void	ImPlot_FillRangeVector_FloatPtr (ImVector_float*,int,float,float)
+2	void	ImPlot_FillRangeVector_doublePtr (ImVector_double*,int,double,double)
+3	void	ImPlot_FillRangeVector_S8Ptr (ImVector_ImS8*,int,ImS8,ImS8)
+4	void	ImPlot_FillRangeVector_U8Ptr (ImVector_ImU8*,int,ImU8,ImU8)
+5	void	ImPlot_FillRangeVector_S16Ptr (ImVector_ImS16*,int,ImS16,ImS16)
+6	void	ImPlot_FillRangeVector_U16Ptr (ImVector_ImU16*,int,ImU16,ImU16)
+7	void	ImPlot_FillRangeVector_S32Ptr (ImVector_ImS32*,int,ImS32,ImS32)
+8	void	ImPlot_FillRangeVector_U32Ptr (ImVector_ImU32*,int,ImU32,ImU32)
+9	void	ImPlot_FillRangeVector_S64Ptr (ImVector_ImS64*,int,ImS64,ImS64)
+10	void	ImPlot_FillRangeVector_U64Ptr (ImVector_ImU64*,int,ImU64,ImU64)
+ImPlot_ImLog10	2
+1	float	ImPlot_ImLog10Float (float)
+2	double	ImPlot_ImLog10double (double)
+ImPlot_ImRemap	10
+1	float	ImPlot_ImRemapFloat (float,float,float,float,float)
+2	double	ImPlot_ImRemapdouble (double,double,double,double,double)
+3	ImS8	ImPlot_ImRemapS8 (ImS8,ImS8,ImS8,ImS8,ImS8)
+4	ImU8	ImPlot_ImRemapU8 (ImU8,ImU8,ImU8,ImU8,ImU8)
+5	ImS16	ImPlot_ImRemapS16 (ImS16,ImS16,ImS16,ImS16,ImS16)
+6	ImU16	ImPlot_ImRemapU16 (ImU16,ImU16,ImU16,ImU16,ImU16)
+7	ImS32	ImPlot_ImRemapS32 (ImS32,ImS32,ImS32,ImS32,ImS32)
+8	ImU32	ImPlot_ImRemapU32 (ImU32,ImU32,ImU32,ImU32,ImU32)
+9	ImS64	ImPlot_ImRemapS64 (ImS64,ImS64,ImS64,ImS64,ImS64)
+10	ImU64	ImPlot_ImRemapU64 (ImU64,ImU64,ImU64,ImU64,ImU64)
+ImPlot_IsColorAuto	2
+1	bool	ImPlot_IsColorAutoVec4 (const ImVec4)
+2	bool	ImPlot_IsColorAutoPlotCol (ImPlotCol)
+ImPlot_ItemIcon	2
+1	void	ImPlot_ItemIconVec4 (const ImVec4)
+2	void	ImPlot_ItemIconU32 (ImU32)
+ImPlot_LerpColormap	2
+1	ImVec4	ImPlot_LerpColormapFloat (float)
+2	ImVec4	ImPlot_LerpColormapVec4Ptr (const ImVec4*,int,float)
+ImPlot_OffsetAndStride	10
+1	float	ImPlot_OffsetAndStrideFloatPtr (const float*,int,int,int,int)
+2	double	ImPlot_OffsetAndStridedoublePtr (const double*,int,int,int,int)
+3	ImS8	ImPlot_OffsetAndStrideS8Ptr (const ImS8*,int,int,int,int)
+4	ImU8	ImPlot_OffsetAndStrideU8Ptr (const ImU8*,int,int,int,int)
+5	ImS16	ImPlot_OffsetAndStrideS16Ptr (const ImS16*,int,int,int,int)
+6	ImU16	ImPlot_OffsetAndStrideU16Ptr (const ImU16*,int,int,int,int)
+7	ImS32	ImPlot_OffsetAndStrideS32Ptr (const ImS32*,int,int,int,int)
+8	ImU32	ImPlot_OffsetAndStrideU32Ptr (const ImU32*,int,int,int,int)
+9	ImS64	ImPlot_OffsetAndStrideS64Ptr (const ImS64*,int,int,int,int)
+10	ImU64	ImPlot_OffsetAndStrideU64Ptr (const ImU64*,int,int,int,int)
 ImPlot_PixelsToPlot	2
 1	ImPlotPoint	ImPlot_PixelsToPlotVec2 (const ImVec2,ImPlotYAxis)
 2	ImPlotPoint	ImPlot_PixelsToPlotFloat (float,float,ImPlotYAxis)
@@ -119,6 +173,17 @@ ImPlot_PlotErrorBarsH	20
 18	void	ImPlot_PlotErrorBarsHU32PtrU32PtrU32PtrU32Ptr (const char*,const ImU32*,const ImU32*,const ImU32*,const ImU32*,int,int,int)
 19	void	ImPlot_PlotErrorBarsHS64PtrS64PtrS64PtrS64Ptr (const char*,const ImS64*,const ImS64*,const ImS64*,const ImS64*,int,int,int)
 20	void	ImPlot_PlotErrorBarsHU64PtrU64PtrU64PtrU64Ptr (const char*,const ImU64*,const ImU64*,const ImU64*,const ImU64*,int,int,int)
+ImPlot_PlotHLines	10
+1	void	ImPlot_PlotHLinesFloatPtr (const char*,const float*,int,int,int)
+2	void	ImPlot_PlotHLinesdoublePtr (const char*,const double*,int,int,int)
+3	void	ImPlot_PlotHLinesS8Ptr (const char*,const ImS8*,int,int,int)
+4	void	ImPlot_PlotHLinesU8Ptr (const char*,const ImU8*,int,int,int)
+5	void	ImPlot_PlotHLinesS16Ptr (const char*,const ImS16*,int,int,int)
+6	void	ImPlot_PlotHLinesU16Ptr (const char*,const ImU16*,int,int,int)
+7	void	ImPlot_PlotHLinesS32Ptr (const char*,const ImS32*,int,int,int)
+8	void	ImPlot_PlotHLinesU32Ptr (const char*,const ImU32*,int,int,int)
+9	void	ImPlot_PlotHLinesS64Ptr (const char*,const ImS64*,int,int,int)
+10	void	ImPlot_PlotHLinesU64Ptr (const char*,const ImU64*,int,int,int)
 ImPlot_PlotHeatmap	10
 1	void	ImPlot_PlotHeatmapFloatPtr (const char*,const float*,int,int,double,double,const char*,const ImPlotPoint,const ImPlotPoint)
 2	void	ImPlot_PlotHeatmapdoublePtr (const char*,const double*,int,int,double,double,const char*,const ImPlotPoint,const ImPlotPoint)
@@ -162,6 +227,10 @@ ImPlot_PlotPieChart	10
 8	void	ImPlot_PlotPieChartU32Ptr (const char* const[],const ImU32*,int,double,double,double,bool,const char*,double)
 9	void	ImPlot_PlotPieChartS64Ptr (const char* const[],const ImS64*,int,double,double,double,bool,const char*,double)
 10	void	ImPlot_PlotPieChartU64Ptr (const char* const[],const ImU64*,int,double,double,double,bool,const char*,double)
+ImPlot_PlotRects	3
+1	void	ImPlot_PlotRectsFloatPtr (const char*,const float*,const float*,int,int,int)
+2	void	ImPlot_PlotRectsdoublePtr (const char*,const double*,const double*,int,int,int)
+3	void	ImPlot_PlotRectsFnPlotPoIntPtr (const char*,ImPlotPoint(*)(void*,int),void*,int,int)
 ImPlot_PlotScatter	20
 1	void	ImPlot_PlotScatterFloatPtrInt (const char*,const float*,int,double,double,int,int)
 2	void	ImPlot_PlotScatterdoublePtrInt (const char*,const double*,int,double,double,int,int)
@@ -259,6 +328,17 @@ ImPlot_PlotStems	20
 ImPlot_PlotToPixels	2
 1	ImVec2	ImPlot_PlotToPixelsPlotPoInt (const ImPlotPoint,ImPlotYAxis)
 2	ImVec2	ImPlot_PlotToPixelsdouble (double,double,ImPlotYAxis)
+ImPlot_PlotVLines	10
+1	void	ImPlot_PlotVLinesFloatPtr (const char*,const float*,int,int,int)
+2	void	ImPlot_PlotVLinesdoublePtr (const char*,const double*,int,int,int)
+3	void	ImPlot_PlotVLinesS8Ptr (const char*,const ImS8*,int,int,int)
+4	void	ImPlot_PlotVLinesU8Ptr (const char*,const ImU8*,int,int,int)
+5	void	ImPlot_PlotVLinesS16Ptr (const char*,const ImS16*,int,int,int)
+6	void	ImPlot_PlotVLinesU16Ptr (const char*,const ImU16*,int,int,int)
+7	void	ImPlot_PlotVLinesS32Ptr (const char*,const ImS32*,int,int,int)
+8	void	ImPlot_PlotVLinesU32Ptr (const char*,const ImU32*,int,int,int)
+9	void	ImPlot_PlotVLinesS64Ptr (const char*,const ImS64*,int,int,int)
+10	void	ImPlot_PlotVLinesU64Ptr (const char*,const ImU64*,int,int,int)
 ImPlot_PushColormap	2
 1	void	ImPlot_PushColormapPlotColormap (ImPlotColormap)
 2	void	ImPlot_PushColormapVec4Ptr (const ImVec4*,int)
@@ -278,4 +358,4 @@ ImPlot_SetNextPlotTicksX	2
 ImPlot_SetNextPlotTicksY	2
 1	void	ImPlot_SetNextPlotTicksYdoublePtr (const double*,int,const char* const[],bool,ImPlotYAxis)
 2	void	ImPlot_SetNextPlotTicksYdouble (double,double,int,const char* const[],bool,ImPlotYAxis)
-252 overloaded
+319 overloaded
