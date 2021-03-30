@@ -37,6 +37,8 @@ typedef unsigned __int64 ImU64;
 //typedef unsigned long long ImU64;
 #endif
 
+#include "./implot/implot.h"
+#include "./implot/implot_internal.h"
 
 #ifdef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 #include "imgui_structs.h"
