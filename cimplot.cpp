@@ -2,7 +2,8 @@
 //based on implot.h file version 0.9 WIP from implot https://github.com/epezent/implot
 //with implot_internal.h api
 
-
+#include "./implot/implot.h"
+#include "./implot/implot_internal.h"
 #include "cimplot.h"
 
 
