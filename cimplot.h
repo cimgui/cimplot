@@ -12,7 +12,7 @@ typedef struct ImPlotTickCollection ImPlotTickCollection;
 typedef struct ImPlotAnnotationCollection ImPlotAnnotationCollection;
 typedef struct ImPlotAnnotation ImPlotAnnotation;
 typedef struct ImPlotPointError ImPlotPointError;
-typedef struct ImPlotColormapMod ImPlotColormapMod;
+typedef struct ImPlotColormapData ImPlotColormapData;
 typedef struct ImPlotTime ImPlotTime;
 typedef struct ImPlotDateTimeFmt ImPlotDateTimeFmt;
 typedef struct ImPlotInputMap ImPlotInputMap;
@@ -22,7 +22,6 @@ typedef struct ImPlotPlot ImPlotPlot;
 typedef struct ImPlotLegendData ImPlotLegendData;
 typedef struct ImPlotItem ImPlotItem;
 typedef struct ImPlotAxisColor ImPlotAxisColor;
-typedef struct ImPlotAxisState ImPlotAxisState;
 typedef struct ImPlotAxis ImPlotAxis;
 typedef struct ImPlotTick ImPlotTick;
 typedef struct ImPlotStyle ImPlotStyle;
@@ -41,9 +40,9 @@ typedef int ImPlotColormap;
 typedef int ImPlotLocation;
 typedef int ImPlotOrientation;
 typedef int ImPlotYAxis;
+typedef int ImPlotBin;
 struct ImPlotTick;
 struct ImPlotAxis;
-struct ImPlotAxisState;
 struct ImPlotAxisColor;
 struct ImPlotItem;
 struct ImPlotLegendData;
@@ -59,7 +58,7 @@ typedef struct ImPool_ImPlotItem {ImVector_ImPlotItem Buf;ImGuiStorage Map;ImPoo
 typedef struct ImVector_ImPlotPlot {int Size;int Capacity;ImPlotPlot* Data;} ImVector_ImPlotPlot;
 typedef struct ImPool_ImPlotPlot {ImVector_ImPlotPlot Buf;ImGuiStorage Map;ImPoolIdx FreeIdx;} ImPool_ImPlotPlot;
 typedef struct ImVector_ImPlotAnnotation {int Size;int Capacity;ImPlotAnnotation* Data;} ImVector_ImPlotAnnotation;
-typedef struct ImVector_ImPlotColormapMod {int Size;int Capacity;ImPlotColormapMod* Data;} ImVector_ImPlotColormapMod;
+typedef struct ImVector_ImPlotColormap {int Size;int Capacity;ImPlotColormap* Data;} ImVector_ImPlotColormap;
 typedef struct ImVector_ImPlotTick {int Size;int Capacity;ImPlotTick* Data;} ImVector_ImPlotTick;
 typedef struct ImVector_ImS16 {int Size;int Capacity;ImS16* Data;} ImVector_ImS16;
 typedef struct ImVector_ImS32 {int Size;int Capacity;ImS32* Data;} ImVector_ImS32;
@@ -68,6 +67,7 @@ typedef struct ImVector_ImS8 {int Size;int Capacity;ImS8* Data;} ImVector_ImS8;
 typedef struct ImVector_ImU16 {int Size;int Capacity;ImU16* Data;} ImVector_ImU16;
 typedef struct ImVector_ImU64 {int Size;int Capacity;ImU64* Data;} ImVector_ImU64;
 typedef struct ImVector_ImU8 {int Size;int Capacity;ImU8* Data;} ImVector_ImU8;
+typedef struct ImVector_bool {int Size;int Capacity;bool* Data;} ImVector_bool;
 typedef struct ImVector_double {int Size;int Capacity;double* Data;} ImVector_double;
 typedef struct ImVector_int {int Size;int Capacity;int* Data;} ImVector_int;
 
@@ -97,8 +97,9 @@ typedef enum {
     ImPlotAxisFlags_LogScale = 1 << 4,
     ImPlotAxisFlags_Time = 1 << 5,
     ImPlotAxisFlags_Invert = 1 << 6,
-    ImPlotAxisFlags_LockMin = 1 << 7,
-    ImPlotAxisFlags_LockMax = 1 << 8,
+    ImPlotAxisFlags_AutoFit = 1 << 7,
+    ImPlotAxisFlags_LockMin = 1 << 8,
+    ImPlotAxisFlags_LockMax = 1 << 9,
     ImPlotAxisFlags_Lock = ImPlotAxisFlags_LockMin | ImPlotAxisFlags_LockMax,
     ImPlotAxisFlags_NoDecorations = ImPlotAxisFlags_NoLabel | ImPlotAxisFlags_NoGridLines | ImPlotAxisFlags_NoTickMarks | ImPlotAxisFlags_NoTickLabels
 }ImPlotAxisFlags_;
@@ -174,18 +175,22 @@ typedef enum {
     ImPlotMarker_COUNT
 }ImPlotMarker_;
 typedef enum {
-    ImPlotColormap_Default = 0,
-    ImPlotColormap_Deep = 1,
-    ImPlotColormap_Dark = 2,
-    ImPlotColormap_Pastel = 3,
-    ImPlotColormap_Paired = 4,
-    ImPlotColormap_Viridis = 5,
-    ImPlotColormap_Plasma = 6,
-    ImPlotColormap_Hot = 7,
-    ImPlotColormap_Cool = 8,
-    ImPlotColormap_Pink = 9,
-    ImPlotColormap_Jet = 10,
-    ImPlotColormap_COUNT
+    ImPlotColormap_Deep = 0,
+    ImPlotColormap_Dark = 1,
+    ImPlotColormap_Pastel = 2,
+    ImPlotColormap_Paired = 3,
+    ImPlotColormap_Viridis = 4,
+    ImPlotColormap_Plasma = 5,
+    ImPlotColormap_Hot = 6,
+    ImPlotColormap_Cool = 7,
+    ImPlotColormap_Pink = 8,
+    ImPlotColormap_Jet = 9,
+    ImPlotColormap_Twilight = 10,
+    ImPlotColormap_RdBu = 11,
+    ImPlotColormap_BrBG = 12,
+    ImPlotColormap_PiYG = 13,
+    ImPlotColormap_Spectral = 14,
+    ImPlotColormap_Greys = 15,
 }ImPlotColormap_;
 typedef enum {
     ImPlotLocation_Center = 0,
@@ -207,6 +212,12 @@ typedef enum {
     ImPlotYAxis_2 = 1,
     ImPlotYAxis_3 = 2
 }ImPlotYAxis_;
+typedef enum {
+    ImPlotBin_Sqrt = -1,
+    ImPlotBin_Sturges = -2,
+    ImPlotBin_Rice = -3,
+    ImPlotBin_Scott = -4,
+}ImPlotBin_;
 struct ImPlotPoint
 {
     double x, y;
@@ -249,6 +260,7 @@ struct ImPlotStyle
     ImVec2 PlotDefaultSize;
     ImVec2 PlotMinSize;
     ImVec4 Colors[ImPlotCol_COUNT];
+    ImPlotColormap Colormap;
     bool AntiAliasedLines;
     bool UseLocalTime;
     bool UseISO8601;
@@ -323,10 +335,19 @@ struct ImPlotTime
     time_t S;
     int Us;
 };
-struct ImPlotColormapMod
+struct ImPlotColormapData
 {
-    const ImVec4* Colormap;
-    int ColormapSize;
+    ImVector_ImU32 Keys;
+    ImVector_int KeyCounts;
+    ImVector_int KeyOffsets;
+    ImVector_ImU32 Tables;
+    ImVector_int TableSizes;
+    ImVector_int TableOffsets;
+    ImGuiTextBuffer Text;
+    ImVector_int TextOffsets;
+    ImVector_bool Quals;
+    ImGuiStorage Map;
+    int Count;
 };
 struct ImPlotPointError
 {
@@ -390,7 +411,7 @@ struct ImPlotAxis
 struct ImPlotItem
 {
     ImGuiID ID;
-    ImVec4 Color;
+    ImU32 Color;
     int NameOffset;
     bool Show;
     bool LegendHovered;
@@ -499,10 +520,10 @@ struct ImPlotContext
     ImPlotStyle Style;
     ImVector_ImGuiColorMod ColorModifiers;
     ImVector_ImGuiStyleMod StyleModifiers;
-    const ImVec4* Colormap;
-    int ColormapSize;
-    ImVector_ImPlotColormapMod ColormapModifiers;
+    ImPlotColormapData ColormapData;
+    ImVector_ImPlotColormap ColormapModifiers;
     tm Tm;
+    ImVector_double Temp1, Temp2;
     int VisibleItemCount;
     int DigitalPlotItemCnt;
     int DigitalPlotOffset;
@@ -521,7 +542,7 @@ typedef ImPool<ImPlotPlot> ImPool_ImPlotPlot;
 typedef ImVector<ImGuiColorMod> ImVector_ImGuiColorMod;
 typedef ImVector<ImGuiStyleMod> ImVector_ImGuiStyleMod;
 typedef ImVector<ImPlotAnnotation> ImVector_ImPlotAnnotation;
-typedef ImVector<ImPlotColormapMod> ImVector_ImPlotColormapMod;
+typedef ImVector<ImPlotColormap> ImVector_ImPlotColormap;
 typedef ImVector<ImPlotTick> ImVector_ImPlotTick;
 typedef ImVector<ImS16> ImVector_ImS16;
 typedef ImVector<ImS32> ImVector_ImS32;
@@ -531,6 +552,7 @@ typedef ImVector<ImU16> ImVector_ImU16;
 typedef ImVector<ImU32> ImVector_ImU32;
 typedef ImVector<ImU64> ImVector_ImU64;
 typedef ImVector<ImU8> ImVector_ImU8;
+typedef ImVector<bool> ImVector_bool;
 typedef ImVector<double> ImVector_double;
 typedef ImVector<float> ImVector_float;
 typedef ImVector<int> ImVector_int;
@@ -544,14 +566,20 @@ CIMGUI_API void ImPlotRange_destroy(ImPlotRange* self);
 CIMGUI_API ImPlotRange* ImPlotRange_ImPlotRangedouble(double _min,double _max);
 CIMGUI_API bool ImPlotRange_Contains(ImPlotRange* self,double value);
 CIMGUI_API double ImPlotRange_Size(ImPlotRange* self);
+CIMGUI_API ImPlotLimits* ImPlotLimits_ImPlotLimitsNil(void);
+CIMGUI_API void ImPlotLimits_destroy(ImPlotLimits* self);
+CIMGUI_API ImPlotLimits* ImPlotLimits_ImPlotLimitsdouble(double x_min,double x_max,double y_min,double y_max);
 CIMGUI_API bool ImPlotLimits_ContainsPlotPoInt(ImPlotLimits* self,const ImPlotPoint p);
 CIMGUI_API bool ImPlotLimits_Containsdouble(ImPlotLimits* self,double x,double y);
+CIMGUI_API void ImPlotLimits_Min(ImPlotPoint *pOut,ImPlotLimits* self);
+CIMGUI_API void ImPlotLimits_Max(ImPlotPoint *pOut,ImPlotLimits* self);
 CIMGUI_API ImPlotStyle* ImPlotStyle_ImPlotStyle(void);
 CIMGUI_API void ImPlotStyle_destroy(ImPlotStyle* self);
 CIMGUI_API ImPlotContext* ImPlot_CreateContext(void);
 CIMGUI_API void ImPlot_DestroyContext(ImPlotContext* ctx);
 CIMGUI_API ImPlotContext* ImPlot_GetCurrentContext(void);
 CIMGUI_API void ImPlot_SetCurrentContext(ImPlotContext* ctx);
+CIMGUI_API void ImPlot_SetImGuiContext(ImGuiContext* ctx);
 CIMGUI_API bool ImPlot_BeginPlot(const char* title_id,const char* x_label,const char* y_label,const ImVec2 size,ImPlotFlags flags,ImPlotAxisFlags x_flags,ImPlotAxisFlags y_flags,ImPlotAxisFlags y2_flags,ImPlotAxisFlags y3_flags,const char* y2_label,const char* y3_label);
 CIMGUI_API void ImPlot_EndPlot(void);
 CIMGUI_API void ImPlot_PlotLineFloatPtrInt(const char* label_id,const float* values,int count,double xscale,double x0,int offset,int stride);
@@ -785,6 +813,26 @@ CIMGUI_API void ImPlot_PlotHeatmapS32Ptr(const char* label_id,const ImS32* value
 CIMGUI_API void ImPlot_PlotHeatmapU32Ptr(const char* label_id,const ImU32* values,int rows,int cols,double scale_min,double scale_max,const char* label_fmt,const ImPlotPoint bounds_min,const ImPlotPoint bounds_max);
 CIMGUI_API void ImPlot_PlotHeatmapS64Ptr(const char* label_id,const ImS64* values,int rows,int cols,double scale_min,double scale_max,const char* label_fmt,const ImPlotPoint bounds_min,const ImPlotPoint bounds_max);
 CIMGUI_API void ImPlot_PlotHeatmapU64Ptr(const char* label_id,const ImU64* values,int rows,int cols,double scale_min,double scale_max,const char* label_fmt,const ImPlotPoint bounds_min,const ImPlotPoint bounds_max);
+CIMGUI_API double ImPlot_PlotHistogramFloatPtr(const char* label_id,const float* values,int count,int bins,bool cumulative,bool density,ImPlotRange range,bool outliers,double bar_scale);
+CIMGUI_API double ImPlot_PlotHistogramdoublePtr(const char* label_id,const double* values,int count,int bins,bool cumulative,bool density,ImPlotRange range,bool outliers,double bar_scale);
+CIMGUI_API double ImPlot_PlotHistogramS8Ptr(const char* label_id,const ImS8* values,int count,int bins,bool cumulative,bool density,ImPlotRange range,bool outliers,double bar_scale);
+CIMGUI_API double ImPlot_PlotHistogramU8Ptr(const char* label_id,const ImU8* values,int count,int bins,bool cumulative,bool density,ImPlotRange range,bool outliers,double bar_scale);
+CIMGUI_API double ImPlot_PlotHistogramS16Ptr(const char* label_id,const ImS16* values,int count,int bins,bool cumulative,bool density,ImPlotRange range,bool outliers,double bar_scale);
+CIMGUI_API double ImPlot_PlotHistogramU16Ptr(const char* label_id,const ImU16* values,int count,int bins,bool cumulative,bool density,ImPlotRange range,bool outliers,double bar_scale);
+CIMGUI_API double ImPlot_PlotHistogramS32Ptr(const char* label_id,const ImS32* values,int count,int bins,bool cumulative,bool density,ImPlotRange range,bool outliers,double bar_scale);
+CIMGUI_API double ImPlot_PlotHistogramU32Ptr(const char* label_id,const ImU32* values,int count,int bins,bool cumulative,bool density,ImPlotRange range,bool outliers,double bar_scale);
+CIMGUI_API double ImPlot_PlotHistogramS64Ptr(const char* label_id,const ImS64* values,int count,int bins,bool cumulative,bool density,ImPlotRange range,bool outliers,double bar_scale);
+CIMGUI_API double ImPlot_PlotHistogramU64Ptr(const char* label_id,const ImU64* values,int count,int bins,bool cumulative,bool density,ImPlotRange range,bool outliers,double bar_scale);
+CIMGUI_API double ImPlot_PlotHistogram2DFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int x_bins,int y_bins,bool density,ImPlotLimits range,bool outliers);
+CIMGUI_API double ImPlot_PlotHistogram2DdoublePtr(const char* label_id,const double* xs,const double* ys,int count,int x_bins,int y_bins,bool density,ImPlotLimits range,bool outliers);
+CIMGUI_API double ImPlot_PlotHistogram2DS8Ptr(const char* label_id,const ImS8* xs,const ImS8* ys,int count,int x_bins,int y_bins,bool density,ImPlotLimits range,bool outliers);
+CIMGUI_API double ImPlot_PlotHistogram2DU8Ptr(const char* label_id,const ImU8* xs,const ImU8* ys,int count,int x_bins,int y_bins,bool density,ImPlotLimits range,bool outliers);
+CIMGUI_API double ImPlot_PlotHistogram2DS16Ptr(const char* label_id,const ImS16* xs,const ImS16* ys,int count,int x_bins,int y_bins,bool density,ImPlotLimits range,bool outliers);
+CIMGUI_API double ImPlot_PlotHistogram2DU16Ptr(const char* label_id,const ImU16* xs,const ImU16* ys,int count,int x_bins,int y_bins,bool density,ImPlotLimits range,bool outliers);
+CIMGUI_API double ImPlot_PlotHistogram2DS32Ptr(const char* label_id,const ImS32* xs,const ImS32* ys,int count,int x_bins,int y_bins,bool density,ImPlotLimits range,bool outliers);
+CIMGUI_API double ImPlot_PlotHistogram2DU32Ptr(const char* label_id,const ImU32* xs,const ImU32* ys,int count,int x_bins,int y_bins,bool density,ImPlotLimits range,bool outliers);
+CIMGUI_API double ImPlot_PlotHistogram2DS64Ptr(const char* label_id,const ImS64* xs,const ImS64* ys,int count,int x_bins,int y_bins,bool density,ImPlotLimits range,bool outliers);
+CIMGUI_API double ImPlot_PlotHistogram2DU64Ptr(const char* label_id,const ImU64* xs,const ImU64* ys,int count,int x_bins,int y_bins,bool density,ImPlotLimits range,bool outliers);
 CIMGUI_API void ImPlot_PlotDigitalFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride);
 CIMGUI_API void ImPlot_PlotDigitaldoublePtr(const char* label_id,const double* xs,const double* ys,int count,int offset,int stride);
 CIMGUI_API void ImPlot_PlotDigitalS8Ptr(const char* label_id,const ImS8* xs,const ImS8* ys,int count,int offset,int stride);
@@ -867,19 +915,25 @@ CIMGUI_API void ImPlot_SetNextErrorBarStyle(const ImVec4 col,float size,float we
 CIMGUI_API void ImPlot_GetLastItemColor(ImVec4 *pOut);
 CIMGUI_API const char* ImPlot_GetStyleColorName(ImPlotCol idx);
 CIMGUI_API const char* ImPlot_GetMarkerName(ImPlotMarker idx);
-CIMGUI_API void ImPlot_PushColormapPlotColormap(ImPlotColormap colormap);
-CIMGUI_API void ImPlot_PushColormapVec4Ptr(const ImVec4* colormap,int size);
+CIMGUI_API ImPlotColormap ImPlot_AddColormapVec4Ptr(const char* name,const ImVec4* cols,int size,bool qual);
+CIMGUI_API ImPlotColormap ImPlot_AddColormapU32Ptr(const char* name,const ImU32* cols,int size,bool qual);
+CIMGUI_API int ImPlot_GetColormapCount(void);
+CIMGUI_API const char* ImPlot_GetColormapName(ImPlotColormap cmap);
+CIMGUI_API ImPlotColormap ImPlot_GetColormapIndex(const char* name);
+CIMGUI_API void ImPlot_PushColormapPlotColormap(ImPlotColormap cmap);
+CIMGUI_API void ImPlot_PushColormapStr(const char* name);
 CIMGUI_API void ImPlot_PopColormap(int count);
-CIMGUI_API void ImPlot_SetColormapVec4Ptr(const ImVec4* colormap,int size);
-CIMGUI_API void ImPlot_SetColormapPlotColormap(ImPlotColormap colormap,int samples);
-CIMGUI_API int ImPlot_GetColormapSize(void);
-CIMGUI_API void ImPlot_GetColormapColor(ImVec4 *pOut,int index);
-CIMGUI_API void ImPlot_LerpColormapFloat(ImVec4 *pOut,float t);
 CIMGUI_API void ImPlot_NextColormapColor(ImVec4 *pOut);
-CIMGUI_API void ImPlot_ShowColormapScale(double scale_min,double scale_max,const ImVec2 size);
-CIMGUI_API const char* ImPlot_GetColormapName(ImPlotColormap colormap);
+CIMGUI_API int ImPlot_GetColormapSize(ImPlotColormap cmap);
+CIMGUI_API void ImPlot_GetColormapColor(ImVec4 *pOut,int idx,ImPlotColormap cmap);
+CIMGUI_API void ImPlot_SampleColormap(ImVec4 *pOut,float t,ImPlotColormap cmap);
+CIMGUI_API void ImPlot_ColormapScale(const char* label,double scale_min,double scale_max,const ImVec2 size,ImPlotColormap cmap);
+CIMGUI_API bool ImPlot_ColormapSlider(const char* label,float* t,ImVec4* out,const char* format,ImPlotColormap cmap);
+CIMGUI_API bool ImPlot_ColormapButton(const char* label,const ImVec2 size,ImPlotColormap cmap);
+CIMGUI_API void ImPlot_BustColorCache(const char* plot_title_id);
 CIMGUI_API void ImPlot_ItemIconVec4(const ImVec4 col);
 CIMGUI_API void ImPlot_ItemIconU32(ImU32 col);
+CIMGUI_API void ImPlot_ColormapIcon(ImPlotColormap cmap);
 CIMGUI_API ImDrawList* ImPlot_GetPlotDrawList(void);
 CIMGUI_API void ImPlot_PushPlotClipRect(void);
 CIMGUI_API void ImPlot_PopPlotClipRect(void);
@@ -888,7 +942,6 @@ CIMGUI_API bool ImPlot_ShowColormapSelector(const char* label);
 CIMGUI_API void ImPlot_ShowStyleEditor(ImPlotStyle* ref);
 CIMGUI_API void ImPlot_ShowUserGuide(void);
 CIMGUI_API void ImPlot_ShowMetricsWindow(bool* p_popen);
-CIMGUI_API void ImPlot_SetImGuiContext(ImGuiContext* ctx);
 CIMGUI_API void ImPlot_ShowDemoWindow(bool* p_open);
 CIMGUI_API float ImPlot_ImLog10Float(float x);
 CIMGUI_API double ImPlot_ImLog10double(double x);
@@ -902,6 +955,16 @@ CIMGUI_API ImS32 ImPlot_ImRemapS32(ImS32 x,ImS32 x0,ImS32 x1,ImS32 y0,ImS32 y1);
 CIMGUI_API ImU32 ImPlot_ImRemapU32(ImU32 x,ImU32 x0,ImU32 x1,ImU32 y0,ImU32 y1);
 CIMGUI_API ImS64 ImPlot_ImRemapS64(ImS64 x,ImS64 x0,ImS64 x1,ImS64 y0,ImS64 y1);
 CIMGUI_API ImU64 ImPlot_ImRemapU64(ImU64 x,ImU64 x0,ImU64 x1,ImU64 y0,ImU64 y1);
+CIMGUI_API float ImPlot_ImRemap01Float(float x,float x0,float x1);
+CIMGUI_API double ImPlot_ImRemap01double(double x,double x0,double x1);
+CIMGUI_API ImS8 ImPlot_ImRemap01S8(ImS8 x,ImS8 x0,ImS8 x1);
+CIMGUI_API ImU8 ImPlot_ImRemap01U8(ImU8 x,ImU8 x0,ImU8 x1);
+CIMGUI_API ImS16 ImPlot_ImRemap01S16(ImS16 x,ImS16 x0,ImS16 x1);
+CIMGUI_API ImU16 ImPlot_ImRemap01U16(ImU16 x,ImU16 x0,ImU16 x1);
+CIMGUI_API ImS32 ImPlot_ImRemap01S32(ImS32 x,ImS32 x0,ImS32 x1);
+CIMGUI_API ImU32 ImPlot_ImRemap01U32(ImU32 x,ImU32 x0,ImU32 x1);
+CIMGUI_API ImS64 ImPlot_ImRemap01S64(ImS64 x,ImS64 x0,ImS64 x1);
+CIMGUI_API ImU64 ImPlot_ImRemap01U64(ImU64 x,ImU64 x0,ImU64 x1);
 CIMGUI_API int ImPlot_ImPosMod(int l,int r);
 CIMGUI_API bool ImPlot_ImNanOrInf(double val);
 CIMGUI_API double ImPlot_ImConstrainNan(double val);
@@ -909,6 +972,59 @@ CIMGUI_API double ImPlot_ImConstrainInf(double val);
 CIMGUI_API double ImPlot_ImConstrainLog(double val);
 CIMGUI_API double ImPlot_ImConstrainTime(double val);
 CIMGUI_API bool ImPlot_ImAlmostEqual(double v1,double v2,int ulp);
+CIMGUI_API float ImPlot_ImMinArrayFloatPtr(const float* values,int count);
+CIMGUI_API double ImPlot_ImMinArraydoublePtr(const double* values,int count);
+CIMGUI_API ImS8 ImPlot_ImMinArrayS8Ptr(const ImS8* values,int count);
+CIMGUI_API ImU8 ImPlot_ImMinArrayU8Ptr(const ImU8* values,int count);
+CIMGUI_API ImS16 ImPlot_ImMinArrayS16Ptr(const ImS16* values,int count);
+CIMGUI_API ImU16 ImPlot_ImMinArrayU16Ptr(const ImU16* values,int count);
+CIMGUI_API ImS32 ImPlot_ImMinArrayS32Ptr(const ImS32* values,int count);
+CIMGUI_API ImU32 ImPlot_ImMinArrayU32Ptr(const ImU32* values,int count);
+CIMGUI_API ImS64 ImPlot_ImMinArrayS64Ptr(const ImS64* values,int count);
+CIMGUI_API ImU64 ImPlot_ImMinArrayU64Ptr(const ImU64* values,int count);
+CIMGUI_API float ImPlot_ImMaxArrayFloatPtr(const float* values,int count);
+CIMGUI_API double ImPlot_ImMaxArraydoublePtr(const double* values,int count);
+CIMGUI_API ImS8 ImPlot_ImMaxArrayS8Ptr(const ImS8* values,int count);
+CIMGUI_API ImU8 ImPlot_ImMaxArrayU8Ptr(const ImU8* values,int count);
+CIMGUI_API ImS16 ImPlot_ImMaxArrayS16Ptr(const ImS16* values,int count);
+CIMGUI_API ImU16 ImPlot_ImMaxArrayU16Ptr(const ImU16* values,int count);
+CIMGUI_API ImS32 ImPlot_ImMaxArrayS32Ptr(const ImS32* values,int count);
+CIMGUI_API ImU32 ImPlot_ImMaxArrayU32Ptr(const ImU32* values,int count);
+CIMGUI_API ImS64 ImPlot_ImMaxArrayS64Ptr(const ImS64* values,int count);
+CIMGUI_API ImU64 ImPlot_ImMaxArrayU64Ptr(const ImU64* values,int count);
+CIMGUI_API void ImPlot_ImMinMaxArrayFloatPtr(const float* values,int count,float* min_out,float* max_out);
+CIMGUI_API void ImPlot_ImMinMaxArraydoublePtr(const double* values,int count,double* min_out,double* max_out);
+CIMGUI_API void ImPlot_ImMinMaxArrayS8Ptr(const ImS8* values,int count,ImS8* min_out,ImS8* max_out);
+CIMGUI_API void ImPlot_ImMinMaxArrayU8Ptr(const ImU8* values,int count,ImU8* min_out,ImU8* max_out);
+CIMGUI_API void ImPlot_ImMinMaxArrayS16Ptr(const ImS16* values,int count,ImS16* min_out,ImS16* max_out);
+CIMGUI_API void ImPlot_ImMinMaxArrayU16Ptr(const ImU16* values,int count,ImU16* min_out,ImU16* max_out);
+CIMGUI_API void ImPlot_ImMinMaxArrayS32Ptr(const ImS32* values,int count,ImS32* min_out,ImS32* max_out);
+CIMGUI_API void ImPlot_ImMinMaxArrayU32Ptr(const ImU32* values,int count,ImU32* min_out,ImU32* max_out);
+CIMGUI_API void ImPlot_ImMinMaxArrayS64Ptr(const ImS64* values,int count,ImS64* min_out,ImS64* max_out);
+CIMGUI_API void ImPlot_ImMinMaxArrayU64Ptr(const ImU64* values,int count,ImU64* min_out,ImU64* max_out);
+CIMGUI_API double ImPlot_ImMeanFloatPtr(const float* values,int count);
+CIMGUI_API double ImPlot_ImMeandoublePtr(const double* values,int count);
+CIMGUI_API double ImPlot_ImMeanS8Ptr(const ImS8* values,int count);
+CIMGUI_API double ImPlot_ImMeanU8Ptr(const ImU8* values,int count);
+CIMGUI_API double ImPlot_ImMeanS16Ptr(const ImS16* values,int count);
+CIMGUI_API double ImPlot_ImMeanU16Ptr(const ImU16* values,int count);
+CIMGUI_API double ImPlot_ImMeanS32Ptr(const ImS32* values,int count);
+CIMGUI_API double ImPlot_ImMeanU32Ptr(const ImU32* values,int count);
+CIMGUI_API double ImPlot_ImMeanS64Ptr(const ImS64* values,int count);
+CIMGUI_API double ImPlot_ImMeanU64Ptr(const ImU64* values,int count);
+CIMGUI_API double ImPlot_ImStdDevFloatPtr(const float* values,int count);
+CIMGUI_API double ImPlot_ImStdDevdoublePtr(const double* values,int count);
+CIMGUI_API double ImPlot_ImStdDevS8Ptr(const ImS8* values,int count);
+CIMGUI_API double ImPlot_ImStdDevU8Ptr(const ImU8* values,int count);
+CIMGUI_API double ImPlot_ImStdDevS16Ptr(const ImS16* values,int count);
+CIMGUI_API double ImPlot_ImStdDevU16Ptr(const ImU16* values,int count);
+CIMGUI_API double ImPlot_ImStdDevS32Ptr(const ImS32* values,int count);
+CIMGUI_API double ImPlot_ImStdDevU32Ptr(const ImU32* values,int count);
+CIMGUI_API double ImPlot_ImStdDevS64Ptr(const ImS64* values,int count);
+CIMGUI_API double ImPlot_ImStdDevU64Ptr(const ImU64* values,int count);
+CIMGUI_API ImU32 ImPlot_ImMixU32(ImU32 a,ImU32 b,ImU32 s);
+CIMGUI_API ImU32 ImPlot_ImLerpU32(const ImU32* colors,int size,float t);
+CIMGUI_API ImU32 ImPlot_ImAlphaU32(ImU32 col,float alpha);
 CIMGUI_API ImBufferWriter* ImBufferWriter_ImBufferWriter(char* buffer,int size);
 CIMGUI_API void ImBufferWriter_destroy(ImBufferWriter* self);
 CIMGUI_API void ImBufferWriter_Write(ImBufferWriter* self,const char* fmt,...);
@@ -923,8 +1039,22 @@ CIMGUI_API ImPlotTime* ImPlotTime_ImPlotTimetime_t(time_t s,int us);
 CIMGUI_API void ImPlotTime_RollOver(ImPlotTime* self);
 CIMGUI_API double ImPlotTime_ToDouble(ImPlotTime* self);
 CIMGUI_API ImPlotTime ImPlotTime_FromDouble(double t);
-CIMGUI_API ImPlotColormapMod* ImPlotColormapMod_ImPlotColormapMod(const ImVec4* colormap,int colormap_size);
-CIMGUI_API void ImPlotColormapMod_destroy(ImPlotColormapMod* self);
+CIMGUI_API ImPlotColormapData* ImPlotColormapData_ImPlotColormapData(void);
+CIMGUI_API void ImPlotColormapData_destroy(ImPlotColormapData* self);
+CIMGUI_API int ImPlotColormapData_Append(ImPlotColormapData* self,const char* name,const ImU32* keys,int count,bool qual);
+CIMGUI_API void ImPlotColormapData__AppendTable(ImPlotColormapData* self,ImPlotColormap cmap);
+CIMGUI_API void ImPlotColormapData_RebuildTables(ImPlotColormapData* self);
+CIMGUI_API bool ImPlotColormapData_IsQual(ImPlotColormapData* self,ImPlotColormap cmap);
+CIMGUI_API const char* ImPlotColormapData_GetName(ImPlotColormapData* self,ImPlotColormap cmap);
+CIMGUI_API ImPlotColormap ImPlotColormapData_GetIndex(ImPlotColormapData* self,const char* name);
+CIMGUI_API const ImU32* ImPlotColormapData_GetKeys(ImPlotColormapData* self,ImPlotColormap cmap);
+CIMGUI_API int ImPlotColormapData_GetKeyCount(ImPlotColormapData* self,ImPlotColormap cmap);
+CIMGUI_API ImU32 ImPlotColormapData_GetKeyColor(ImPlotColormapData* self,ImPlotColormap cmap,int idx);
+CIMGUI_API void ImPlotColormapData_SetKeyColor(ImPlotColormapData* self,ImPlotColormap cmap,int idx,ImU32 value);
+CIMGUI_API const ImU32* ImPlotColormapData_GetTable(ImPlotColormapData* self,ImPlotColormap cmap);
+CIMGUI_API int ImPlotColormapData_GetTableSize(ImPlotColormapData* self,ImPlotColormap cmap);
+CIMGUI_API ImU32 ImPlotColormapData_GetTableColor(ImPlotColormapData* self,ImPlotColormap cmap,int idx);
+CIMGUI_API ImU32 ImPlotColormapData_LerpTable(ImPlotColormapData* self,ImPlotColormap cmap,float t);
 CIMGUI_API ImPlotPointError* ImPlotPointError_ImPlotPointError(double x,double y,double neg,double pos);
 CIMGUI_API void ImPlotPointError_destroy(ImPlotPointError* self);
 CIMGUI_API ImPlotAnnotationCollection* ImPlotAnnotationCollection_ImPlotAnnotationCollection(void);
@@ -952,10 +1082,12 @@ CIMGUI_API double ImPlotAxis_GetAspect(ImPlotAxis* self);
 CIMGUI_API void ImPlotAxis_Constrain(ImPlotAxis* self);
 CIMGUI_API bool ImPlotAxis_IsLabeled(ImPlotAxis* self);
 CIMGUI_API bool ImPlotAxis_IsInverted(ImPlotAxis* self);
-CIMGUI_API bool ImPlotAxis_IsAlwaysLocked(ImPlotAxis* self);
+CIMGUI_API bool ImPlotAxis_IsAutoFitting(ImPlotAxis* self);
+CIMGUI_API bool ImPlotAxis_IsRangeLocked(ImPlotAxis* self);
 CIMGUI_API bool ImPlotAxis_IsLockedMin(ImPlotAxis* self);
 CIMGUI_API bool ImPlotAxis_IsLockedMax(ImPlotAxis* self);
 CIMGUI_API bool ImPlotAxis_IsLocked(ImPlotAxis* self);
+CIMGUI_API bool ImPlotAxis_IsInputLocked(ImPlotAxis* self);
 CIMGUI_API bool ImPlotAxis_IsTime(ImPlotAxis* self);
 CIMGUI_API bool ImPlotAxis_IsLog(ImPlotAxis* self);
 CIMGUI_API ImPlotItem* ImPlotItem_ImPlotItem(void);
@@ -966,7 +1098,7 @@ CIMGUI_API void ImPlotPlot_destroy(ImPlotPlot* self);
 CIMGUI_API int ImPlotPlot_GetLegendCount(ImPlotPlot* self);
 CIMGUI_API ImPlotItem* ImPlotPlot_GetLegendItem(ImPlotPlot* self,int i);
 CIMGUI_API const char* ImPlotPlot_GetLegendLabel(ImPlotPlot* self,int i);
-CIMGUI_API bool ImPlotPlot_IsLocked(ImPlotPlot* self);
+CIMGUI_API bool ImPlotPlot_IsInputLocked(ImPlotPlot* self);
 CIMGUI_API ImPlotNextPlotData* ImPlotNextPlotData_ImPlotNextPlotData(void);
 CIMGUI_API void ImPlotNextPlotData_destroy(ImPlotNextPlotData* self);
 CIMGUI_API void ImPlotNextPlotData_Reset(ImPlotNextPlotData* self);
@@ -1016,13 +1148,15 @@ CIMGUI_API bool ImPlot_IsColorAutoPlotCol(ImPlotCol idx);
 CIMGUI_API void ImPlot_GetAutoColor(ImVec4 *pOut,ImPlotCol idx);
 CIMGUI_API void ImPlot_GetStyleColorVec4(ImVec4 *pOut,ImPlotCol idx);
 CIMGUI_API ImU32 ImPlot_GetStyleColorU32(ImPlotCol idx);
-CIMGUI_API const ImVec4* ImPlot_GetColormap(ImPlotColormap colormap,int* size_out);
-CIMGUI_API void ImPlot_LerpColormapVec4Ptr(ImVec4 *pOut,const ImVec4* colormap,int size,float t);
-CIMGUI_API void ImPlot_ResampleColormap(const ImVec4* colormap_in,int size_in,ImVec4* colormap_out,int size_out);
 CIMGUI_API void ImPlot_AddTextVertical(ImDrawList* DrawList,ImVec2 pos,ImU32 col,const char* text_begin,const char* text_end);
 CIMGUI_API void ImPlot_CalcTextSizeVertical(ImVec2 *pOut,const char* text);
-CIMGUI_API ImU32 ImPlot_CalcTextColor(const ImVec4 bg);
+CIMGUI_API ImU32 ImPlot_CalcTextColorVec4(const ImVec4 bg);
+CIMGUI_API ImU32 ImPlot_CalcTextColorU32(ImU32 bg);
 CIMGUI_API void ImPlot_ClampLabelPos(ImVec2 *pOut,ImVec2 pos,const ImVec2 size,const ImVec2 Min,const ImVec2 Max);
+CIMGUI_API ImU32 ImPlot_GetColormapColorU32(int idx,ImPlotColormap cmap);
+CIMGUI_API ImU32 ImPlot_NextColormapColorU32(void);
+CIMGUI_API ImU32 ImPlot_SampleColormapU32(float t,ImPlotColormap cmap);
+CIMGUI_API void ImPlot_RenderColorBar(const ImU32* colors,int size,ImDrawList* DrawList,const ImRect bounds,bool vert,bool reversed,bool continuous);
 CIMGUI_API double ImPlot_NiceNum(double x,bool round);
 CIMGUI_API int ImPlot_OrderOfMagnitude(double val);
 CIMGUI_API int ImPlot_OrderToPrecision(int order);
@@ -1048,6 +1182,16 @@ CIMGUI_API ImS32 ImPlot_OffsetAndStrideS32Ptr(const ImS32* data,int idx,int coun
 CIMGUI_API ImU32 ImPlot_OffsetAndStrideU32Ptr(const ImU32* data,int idx,int count,int offset,int stride);
 CIMGUI_API ImS64 ImPlot_OffsetAndStrideS64Ptr(const ImS64* data,int idx,int count,int offset,int stride);
 CIMGUI_API ImU64 ImPlot_OffsetAndStrideU64Ptr(const ImU64* data,int idx,int count,int offset,int stride);
+CIMGUI_API void ImPlot_CalculateBinsFloatPtr(const float* values,int count,ImPlotBin meth,const ImPlotRange range,int* bins_out,double* width_out);
+CIMGUI_API void ImPlot_CalculateBinsdoublePtr(const double* values,int count,ImPlotBin meth,const ImPlotRange range,int* bins_out,double* width_out);
+CIMGUI_API void ImPlot_CalculateBinsS8Ptr(const ImS8* values,int count,ImPlotBin meth,const ImPlotRange range,int* bins_out,double* width_out);
+CIMGUI_API void ImPlot_CalculateBinsU8Ptr(const ImU8* values,int count,ImPlotBin meth,const ImPlotRange range,int* bins_out,double* width_out);
+CIMGUI_API void ImPlot_CalculateBinsS16Ptr(const ImS16* values,int count,ImPlotBin meth,const ImPlotRange range,int* bins_out,double* width_out);
+CIMGUI_API void ImPlot_CalculateBinsU16Ptr(const ImU16* values,int count,ImPlotBin meth,const ImPlotRange range,int* bins_out,double* width_out);
+CIMGUI_API void ImPlot_CalculateBinsS32Ptr(const ImS32* values,int count,ImPlotBin meth,const ImPlotRange range,int* bins_out,double* width_out);
+CIMGUI_API void ImPlot_CalculateBinsU32Ptr(const ImU32* values,int count,ImPlotBin meth,const ImPlotRange range,int* bins_out,double* width_out);
+CIMGUI_API void ImPlot_CalculateBinsS64Ptr(const ImS64* values,int count,ImPlotBin meth,const ImPlotRange range,int* bins_out,double* width_out);
+CIMGUI_API void ImPlot_CalculateBinsU64Ptr(const ImU64* values,int count,ImPlotBin meth,const ImPlotRange range,int* bins_out,double* width_out);
 CIMGUI_API bool ImPlot_IsLeapYear(int year);
 CIMGUI_API int ImPlot_GetDaysInMonth(int year,int month);
 CIMGUI_API ImPlotTime ImPlot_MkGmtTime(struct tm* ptm);
@@ -1066,9 +1210,6 @@ CIMGUI_API int ImPlot_FormatDate(const ImPlotTime t,char* buffer,int size,ImPlot
 CIMGUI_API int ImPlot_FormatDateTime(const ImPlotTime t,char* buffer,int size,ImPlotDateTimeFmt fmt);
 CIMGUI_API bool ImPlot_ShowDatePicker(const char* id,int* level,ImPlotTime* t,const ImPlotTime* t1,const ImPlotTime* t2);
 CIMGUI_API bool ImPlot_ShowTimePicker(const char* id,ImPlotTime* t);
-CIMGUI_API void ImPlot_PlotRectsFloatPtr(const char* label_id,const float* xs,const float* ys,int count,int offset,int stride);
-CIMGUI_API void ImPlot_PlotRectsdoublePtr(const char* label_id,const double* xs,const double* ys,int count,int offset,int stride);
-CIMGUI_API void ImPlot_PlotRectsFnPlotPoIntPtr(const char* label_id,ImPlotPoint(*getter)(void* data,int idx),void* data,int count,int offset);
 
 
 typedef void *(*ImPlotPoint_getter)(void* data, int idx, ImPlotPoint *point);
