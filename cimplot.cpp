@@ -1947,9 +1947,9 @@ CIMGUI_API double ImPlotTime_ToDouble(ImPlotTime* self)
 {
     return self->ToDouble();
 }
-CIMGUI_API ImPlotTime ImPlotTime_FromDouble(double t)
+CIMGUI_API void ImPlotTime_FromDouble(ImPlotTime *pOut,double t)
 {
-    return ImPlotTime::FromDouble(t);
+    *pOut = ImPlotTime::FromDouble(t);
 }
 CIMGUI_API ImPlotColormapData* ImPlotColormapData_ImPlotColormapData(void)
 {
@@ -2574,49 +2574,49 @@ CIMGUI_API int ImPlot_GetDaysInMonth(int year,int month)
 {
     return ImPlot::GetDaysInMonth(year,month);
 }
-CIMGUI_API ImPlotTime ImPlot_MkGmtTime(struct tm* ptm)
+CIMGUI_API void ImPlot_MkGmtTime(ImPlotTime *pOut,struct tm* ptm)
 {
-    return ImPlot::MkGmtTime(ptm);
+    *pOut = ImPlot::MkGmtTime(ptm);
 }
 CIMGUI_API tm* ImPlot_GetGmtTime(const ImPlotTime t,tm* ptm)
 {
     return ImPlot::GetGmtTime(t,ptm);
 }
-CIMGUI_API ImPlotTime ImPlot_MkLocTime(struct tm* ptm)
+CIMGUI_API void ImPlot_MkLocTime(ImPlotTime *pOut,struct tm* ptm)
 {
-    return ImPlot::MkLocTime(ptm);
+    *pOut = ImPlot::MkLocTime(ptm);
 }
 CIMGUI_API tm* ImPlot_GetLocTime(const ImPlotTime t,tm* ptm)
 {
     return ImPlot::GetLocTime(t,ptm);
 }
-CIMGUI_API ImPlotTime ImPlot_MakeTime(int year,int month,int day,int hour,int min,int sec,int us)
+CIMGUI_API void ImPlot_MakeTime(ImPlotTime *pOut,int year,int month,int day,int hour,int min,int sec,int us)
 {
-    return ImPlot::MakeTime(year,month,day,hour,min,sec,us);
+    *pOut = ImPlot::MakeTime(year,month,day,hour,min,sec,us);
 }
 CIMGUI_API int ImPlot_GetYear(const ImPlotTime t)
 {
     return ImPlot::GetYear(t);
 }
-CIMGUI_API ImPlotTime ImPlot_AddTime(const ImPlotTime t,ImPlotTimeUnit unit,int count)
+CIMGUI_API void ImPlot_AddTime(ImPlotTime *pOut,const ImPlotTime t,ImPlotTimeUnit unit,int count)
 {
-    return ImPlot::AddTime(t,unit,count);
+    *pOut = ImPlot::AddTime(t,unit,count);
 }
-CIMGUI_API ImPlotTime ImPlot_FloorTime(const ImPlotTime t,ImPlotTimeUnit unit)
+CIMGUI_API void ImPlot_FloorTime(ImPlotTime *pOut,const ImPlotTime t,ImPlotTimeUnit unit)
 {
-    return ImPlot::FloorTime(t,unit);
+    *pOut = ImPlot::FloorTime(t,unit);
 }
-CIMGUI_API ImPlotTime ImPlot_CeilTime(const ImPlotTime t,ImPlotTimeUnit unit)
+CIMGUI_API void ImPlot_CeilTime(ImPlotTime *pOut,const ImPlotTime t,ImPlotTimeUnit unit)
 {
-    return ImPlot::CeilTime(t,unit);
+    *pOut = ImPlot::CeilTime(t,unit);
 }
-CIMGUI_API ImPlotTime ImPlot_RoundTime(const ImPlotTime t,ImPlotTimeUnit unit)
+CIMGUI_API void ImPlot_RoundTime(ImPlotTime *pOut,const ImPlotTime t,ImPlotTimeUnit unit)
 {
-    return ImPlot::RoundTime(t,unit);
+    *pOut = ImPlot::RoundTime(t,unit);
 }
-CIMGUI_API ImPlotTime ImPlot_CombineDateTime(const ImPlotTime date_part,const ImPlotTime time_part)
+CIMGUI_API void ImPlot_CombineDateTime(ImPlotTime *pOut,const ImPlotTime date_part,const ImPlotTime time_part)
 {
-    return ImPlot::CombineDateTime(date_part,time_part);
+    *pOut = ImPlot::CombineDateTime(date_part,time_part);
 }
 CIMGUI_API int ImPlot_FormatTime(const ImPlotTime t,char* buffer,int size,ImPlotTimeFmt fmt,bool use_24_hr_clk)
 {

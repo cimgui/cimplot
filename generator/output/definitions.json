@@ -2149,8 +2149,12 @@
   ],
   "ImPlotTime_FromDouble": [
     {
-      "args": "(double t)",
+      "args": "(ImPlotTime *pOut,double t)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotTime*"
+        },
         {
           "name": "t",
           "type": "double"
@@ -2163,8 +2167,9 @@
       "funcname": "FromDouble",
       "is_static_function": true,
       "location": "implot_internal:328",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlotTime_FromDouble",
-      "ret": "ImPlotTime",
+      "ret": "void",
       "signature": "(double)",
       "stname": "ImPlotTime"
     }
@@ -2515,8 +2520,12 @@
   ],
   "ImPlot_AddTime": [
     {
-      "args": "(const ImPlotTime t,ImPlotTimeUnit unit,int count)",
+      "args": "(ImPlotTime *pOut,const ImPlotTime t,ImPlotTimeUnit unit,int count)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotTime*"
+        },
         {
           "name": "t",
           "type": "const ImPlotTime"
@@ -2537,8 +2546,9 @@
       "funcname": "AddTime",
       "location": "implot_internal:1158",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_AddTime",
-      "ret": "ImPlotTime",
+      "ret": "void",
       "signature": "(const ImPlotTime,ImPlotTimeUnit,int)",
       "stname": ""
     }
@@ -3773,8 +3783,12 @@
   ],
   "ImPlot_CeilTime": [
     {
-      "args": "(const ImPlotTime t,ImPlotTimeUnit unit)",
+      "args": "(ImPlotTime *pOut,const ImPlotTime t,ImPlotTimeUnit unit)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotTime*"
+        },
         {
           "name": "t",
           "type": "const ImPlotTime"
@@ -3791,8 +3805,9 @@
       "funcname": "CeilTime",
       "location": "implot_internal:1162",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_CeilTime",
-      "ret": "ImPlotTime",
+      "ret": "void",
       "signature": "(const ImPlotTime,ImPlotTimeUnit)",
       "stname": ""
     }
@@ -3976,8 +3991,12 @@
   ],
   "ImPlot_CombineDateTime": [
     {
-      "args": "(const ImPlotTime date_part,const ImPlotTime time_part)",
+      "args": "(ImPlotTime *pOut,const ImPlotTime date_part,const ImPlotTime time_part)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotTime*"
+        },
         {
           "name": "date_part",
           "type": "const ImPlotTime"
@@ -3994,8 +4013,9 @@
       "funcname": "CombineDateTime",
       "location": "implot_internal:1166",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_CombineDateTime",
-      "ret": "ImPlotTime",
+      "ret": "void",
       "signature": "(const ImPlotTime,const ImPlotTime)",
       "stname": ""
     }
@@ -4712,8 +4732,12 @@
   ],
   "ImPlot_FloorTime": [
     {
-      "args": "(const ImPlotTime t,ImPlotTimeUnit unit)",
+      "args": "(ImPlotTime *pOut,const ImPlotTime t,ImPlotTimeUnit unit)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotTime*"
+        },
         {
           "name": "t",
           "type": "const ImPlotTime"
@@ -4730,8 +4754,9 @@
       "funcname": "FloorTime",
       "location": "implot_internal:1160",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_FloorTime",
-      "ret": "ImPlotTime",
+      "ret": "void",
       "signature": "(const ImPlotTime,ImPlotTimeUnit)",
       "stname": ""
     }
@@ -8235,8 +8260,12 @@
   ],
   "ImPlot_MakeTime": [
     {
-      "args": "(int year,int month,int day,int hour,int min,int sec,int us)",
+      "args": "(ImPlotTime *pOut,int year,int month,int day,int hour,int min,int sec,int us)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotTime*"
+        },
         {
           "name": "year",
           "type": "int"
@@ -8280,16 +8309,21 @@
       "funcname": "MakeTime",
       "location": "implot_internal:1153",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_MakeTime",
-      "ret": "ImPlotTime",
+      "ret": "void",
       "signature": "(int,int,int,int,int,int,int)",
       "stname": ""
     }
   ],
   "ImPlot_MkGmtTime": [
     {
-      "args": "(struct tm* ptm)",
+      "args": "(ImPlotTime *pOut,struct tm* ptm)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotTime*"
+        },
         {
           "name": "ptm",
           "type": "struct tm*"
@@ -8302,16 +8336,21 @@
       "funcname": "MkGmtTime",
       "location": "implot_internal:1139",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_MkGmtTime",
-      "ret": "ImPlotTime",
+      "ret": "void",
       "signature": "(struct tm*)",
       "stname": ""
     }
   ],
   "ImPlot_MkLocTime": [
     {
-      "args": "(struct tm* ptm)",
+      "args": "(ImPlotTime *pOut,struct tm* ptm)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotTime*"
+        },
         {
           "name": "ptm",
           "type": "struct tm*"
@@ -8324,8 +8363,9 @@
       "funcname": "MkLocTime",
       "location": "implot_internal:1144",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_MkLocTime",
-      "ret": "ImPlotTime",
+      "ret": "void",
       "signature": "(struct tm*)",
       "stname": ""
     }
@@ -22536,8 +22576,12 @@
   ],
   "ImPlot_RoundTime": [
     {
-      "args": "(const ImPlotTime t,ImPlotTimeUnit unit)",
+      "args": "(ImPlotTime *pOut,const ImPlotTime t,ImPlotTimeUnit unit)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotTime*"
+        },
         {
           "name": "t",
           "type": "const ImPlotTime"
@@ -22554,8 +22598,9 @@
       "funcname": "RoundTime",
       "location": "implot_internal:1164",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_RoundTime",
-      "ret": "ImPlotTime",
+      "ret": "void",
       "signature": "(const ImPlotTime,ImPlotTimeUnit)",
       "stname": ""
     }
