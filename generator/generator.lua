@@ -196,7 +196,7 @@ local function parseImGuiHeader(header,names)
 	parser.cname_overloads = cimgui_overloads
 	parser.manuals = cimgui_manuals
 	parser.skipped = cimgui_skipped
-	parser.UDTs = {"ImVec2","ImVec4","ImColor","ImRect","ImPlotPoint","ImPlotLimits"}
+	parser.UDTs = {"ImVec2","ImVec4","ImColor","ImRect","ImPlotPoint","ImPlotLimits","ImPlotTime"}
 	--this list will expand all templated functions
 	parser.ftemplate_list = {}
 	parser.ftemplate_list.T = {"float", "double", "ImS8", "ImU8", "ImS16", "ImU16", "ImS32", "ImU32", "ImS64", "ImU64"}
