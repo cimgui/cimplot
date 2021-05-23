@@ -4,6 +4,8 @@
 #include "cimgui.h"
 
 #ifdef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
+#include <time.h>
+
 #include "imgui_structs.h"
 #else
 
