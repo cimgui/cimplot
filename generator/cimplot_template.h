@@ -5,6 +5,7 @@
 
 #ifdef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 #include <time.h>
+typedef struct tm tm;
 
 #include "imgui_structs.h"
 #else
