@@ -68,7 +68,6 @@ typedef struct ImVector_ImPlotPlot {int Size;int Capacity;ImPlotPlot* Data;} ImV
 typedef struct ImPool_ImPlotPlot {ImVector_ImPlotPlot Buf;ImGuiStorage Map;ImPoolIdx FreeIdx;} ImPool_ImPlotPlot;
 typedef struct ImVector_ImPlotSubplot {int Size;int Capacity;ImPlotSubplot* Data;} ImVector_ImPlotSubplot;
 typedef struct ImPool_ImPlotSubplot {ImVector_ImPlotSubplot Buf;ImGuiStorage Map;ImPoolIdx FreeIdx;} ImPool_ImPlotSubplot;
-typedef struct ImVector_ImPlotAlignmentData {int Size;int Capacity;ImPlotAlignmentData* Data;} ImVector_ImPlotAlignmentData;
 typedef struct ImVector_ImPlotAnnotation {int Size;int Capacity;ImPlotAnnotation* Data;} ImVector_ImPlotAnnotation;
 typedef struct ImVector_ImPlotColormap {int Size;int Capacity;ImPlotColormap* Data;} ImVector_ImPlotColormap;
 typedef struct ImVector_ImPlotRange {int Size;int Capacity;ImPlotRange* Data;} ImVector_ImPlotRange;
