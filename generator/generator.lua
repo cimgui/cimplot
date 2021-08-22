@@ -98,6 +98,7 @@ local function generate_templates(code,templates)
     -- already declared in imgui
     -- table.insert(code,"\n"..[[typedef struct ImVector{int Size;int Capacity;void* Data;} ImVector;]].."\n")
 	--skip ImVector already in cimgui
+	-- generated ImVector are added for avoiding duplicates
 	local ImVectorSkipped = {
 		float = true,
 		ImU32 = true,
@@ -109,17 +110,24 @@ local function generate_templates(code,templates)
 			table_do_sorted(v, function(te,newte)
                 if not ImVectorSkipped[te] then -- these are already declared in imgui
 				    table.insert(code,"typedef struct ImVector_"..newte.." {int Size;int Capacity;"..te.."* Data;} ImVector_"..newte..";\n")
+					ImVectorSkipped[te] = true
                 end
 			end)
 		elseif ttype == "ImPool" then
 			--declare ImGuiStorage
 			table_do_sorted(v, function(te, newte)
-				table.insert(code,"typedef struct ImVector_"..newte.." {int Size;int Capacity;"..te.."* Data;} ImVector_"..newte..";\n")
+				if not ImVectorSkipped[te] then
+					table.insert(code,"typedef struct ImVector_"..newte.." {int Size;int Capacity;"..te.."* Data;} ImVector_"..newte..";\n")
+					ImVectorSkipped[te] = true
+				end
 				table.insert(code,"typedef struct ImPool_"..newte.." {ImVector_"..te.." Buf;ImGuiStorage Map;ImPoolIdx FreeIdx;} ImPool_"..newte..";\n")
 			end)
 		elseif ttype == "ImChunkStream" then
 			table_do_sorted(v, function(te,newte)
-				table.insert(code,"typedef struct ImVector_"..newte.." {int Size;int Capacity;"..te.."* Data;} ImVector_"..newte..";\n")
+				if not ImVectorSkipped[te] then
+					table.insert(code,"typedef struct ImVector_"..newte.." {int Size;int Capacity;"..te.."* Data;} ImVector_"..newte..";\n")
+					ImVectorSkipped[te] = true
+				end
 				table.insert(code,"typedef struct ImChunkStream_"..newte.." {ImVector_"..te.." Buf;} ImChunkStream_"..newte..";\n")
 			end)
 		elseif ttype == "ImSpan" then
