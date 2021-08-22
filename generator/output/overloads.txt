@@ -2,6 +2,9 @@
 ImPlotAxis_SetRange	2
 1	void	ImPlotAxis_SetRange_double (double,double)
 2	void	ImPlotAxis_SetRange_PlotRange (const ImPlotRange)
+ImPlotItemGroup_GetItem	2
+1	ImPlotItem*	ImPlotItemGroup_GetItem_ID (ImGuiID)
+2	ImPlotItem*	ImPlotItemGroup_GetItem_Str (const char*)
 ImPlotLimits_Contains	2
 1	bool	ImPlotLimits_Contains_PlotPoInt (const ImPlotPoint)const
 2	bool	ImPlotLimits_Contains_double (double,double)const
@@ -16,8 +19,8 @@ ImPlotRange_ImPlotRange	2
 1	nil	ImPlotRange_ImPlotRange_Nil ()
 2	nil	ImPlotRange_ImPlotRange_double (double,double)
 ImPlotTickCollection_Append	2
-1	void	ImPlotTickCollection_Append_PlotTick (const ImPlotTick)
-2	void	ImPlotTickCollection_Append_double (double,bool,bool,void(*)(ImPlotTick&,ImGuiTextBuffer&))
+1	const ImPlotTick*	ImPlotTickCollection_Append_PlotTick (const ImPlotTick)
+2	const ImPlotTick*	ImPlotTickCollection_Append_double (double,bool,bool,const char*)
 ImPlotTime_ImPlotTime	2
 1	nil	ImPlotTime_ImPlotTime_Nil ()
 2	nil	ImPlotTime_ImPlotTime_time_t (time_t,int)
@@ -141,23 +144,23 @@ ImPlot_ImStdDev	10
 8	double	ImPlot_ImStdDev_U32Ptr (const ImU32*,int)
 9	double	ImPlot_ImStdDev_S64Ptr (const ImS64*,int)
 10	double	ImPlot_ImStdDev_U64Ptr (const ImU64*,int)
+ImPlot_ImSum	10
+1	float	ImPlot_ImSum_FloatPtr (const float*,int)
+2	double	ImPlot_ImSum_doublePtr (const double*,int)
+3	ImS8	ImPlot_ImSum_S8Ptr (const ImS8*,int)
+4	ImU8	ImPlot_ImSum_U8Ptr (const ImU8*,int)
+5	ImS16	ImPlot_ImSum_S16Ptr (const ImS16*,int)
+6	ImU16	ImPlot_ImSum_U16Ptr (const ImU16*,int)
+7	ImS32	ImPlot_ImSum_S32Ptr (const ImS32*,int)
+8	ImU32	ImPlot_ImSum_U32Ptr (const ImU32*,int)
+9	ImS64	ImPlot_ImSum_S64Ptr (const ImS64*,int)
+10	ImU64	ImPlot_ImSum_U64Ptr (const ImU64*,int)
 ImPlot_IsColorAuto	2
 1	bool	ImPlot_IsColorAuto_Vec4 (const ImVec4)
 2	bool	ImPlot_IsColorAuto_PlotCol (ImPlotCol)
 ImPlot_ItemIcon	2
 1	void	ImPlot_ItemIcon_Vec4 (const ImVec4)
 2	void	ImPlot_ItemIcon_U32 (ImU32)
-ImPlot_OffsetAndStride	10
-1	float	ImPlot_OffsetAndStride_FloatPtr (const float*,int,int,int,int)
-2	double	ImPlot_OffsetAndStride_doublePtr (const double*,int,int,int,int)
-3	ImS8	ImPlot_OffsetAndStride_S8Ptr (const ImS8*,int,int,int,int)
-4	ImU8	ImPlot_OffsetAndStride_U8Ptr (const ImU8*,int,int,int,int)
-5	ImS16	ImPlot_OffsetAndStride_S16Ptr (const ImS16*,int,int,int,int)
-6	ImU16	ImPlot_OffsetAndStride_U16Ptr (const ImU16*,int,int,int,int)
-7	ImS32	ImPlot_OffsetAndStride_S32Ptr (const ImS32*,int,int,int,int)
-8	ImU32	ImPlot_OffsetAndStride_U32Ptr (const ImU32*,int,int,int,int)
-9	ImS64	ImPlot_OffsetAndStride_S64Ptr (const ImS64*,int,int,int,int)
-10	ImU64	ImPlot_OffsetAndStride_U64Ptr (const ImU64*,int,int,int,int)
 ImPlot_PixelsToPlot	2
 1	ImPlotPoint	ImPlot_PixelsToPlot_Vec2 (const ImVec2,ImPlotYAxis)
 2	ImPlotPoint	ImPlot_PixelsToPlot_Float (float,float,ImPlotYAxis)
@@ -456,4 +459,4 @@ ImPlot_SetNextPlotTicksX	2
 ImPlot_SetNextPlotTicksY	2
 1	void	ImPlot_SetNextPlotTicksY_doublePtr (const double*,int,const char* const[],bool,ImPlotYAxis)
 2	void	ImPlot_SetNextPlotTicksY_double (double,double,int,const char* const[],bool,ImPlotYAxis)
-408 overloaded
+410 overloaded

@@ -1,5 +1,6 @@
 {
   "ImBufferWriter": "struct ImBufferWriter",
+  "ImPlotAlignmentData": "struct ImPlotAlignmentData",
   "ImPlotAnnotation": "struct ImPlotAnnotation",
   "ImPlotAnnotationCollection": "struct ImPlotAnnotationCollection",
   "ImPlotAxis": "struct ImPlotAxis",
@@ -15,6 +16,7 @@
   "ImPlotFlags": "int",
   "ImPlotInputMap": "struct ImPlotInputMap",
   "ImPlotItem": "struct ImPlotItem",
+  "ImPlotItemGroup": "struct ImPlotItemGroup",
   "ImPlotLegendData": "struct ImPlotLegendData",
   "ImPlotLimits": "struct ImPlotLimits",
   "ImPlotLocation": "int",
@@ -29,6 +31,8 @@
   "ImPlotScale": "int",
   "ImPlotStyle": "struct ImPlotStyle",
   "ImPlotStyleVar": "int",
+  "ImPlotSubplot": "struct ImPlotSubplot",
+  "ImPlotSubplotFlags": "int",
   "ImPlotTick": "struct ImPlotTick",
   "ImPlotTickCollection": "struct ImPlotTickCollection",
   "ImPlotTime": "struct ImPlotTime",
