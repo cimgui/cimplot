@@ -1,5 +1,42 @@
 {
   "enums": {
+    "ImAxis_": [
+      {
+        "calc_value": 0,
+        "name": "ImAxis_X1",
+        "value": "0"
+      },
+      {
+        "calc_value": 1,
+        "name": "ImAxis_X2",
+        "value": "1"
+      },
+      {
+        "calc_value": 2,
+        "name": "ImAxis_X3",
+        "value": "2"
+      },
+      {
+        "calc_value": 3,
+        "name": "ImAxis_Y1",
+        "value": "3"
+      },
+      {
+        "calc_value": 4,
+        "name": "ImAxis_Y2",
+        "value": "4"
+      },
+      {
+        "calc_value": 5,
+        "name": "ImAxis_Y3",
+        "value": "5"
+      },
+      {
+        "calc_value": 6,
+        "name": "ImAxis_COUNT",
+        "value": "6"
+      }
+    ],
     "ImPlotAxisFlags_": [
       {
         "calc_value": 0,
@@ -28,51 +65,61 @@
       },
       {
         "calc_value": 16,
-        "name": "ImPlotAxisFlags_Foreground",
+        "name": "ImPlotAxisFlags_NoInitialFit",
         "value": "1 << 4"
       },
       {
         "calc_value": 32,
-        "name": "ImPlotAxisFlags_LogScale",
+        "name": "ImPlotAxisFlags_NoMenus",
         "value": "1 << 5"
       },
       {
         "calc_value": 64,
-        "name": "ImPlotAxisFlags_Time",
+        "name": "ImPlotAxisFlags_Opposite",
         "value": "1 << 6"
       },
       {
         "calc_value": 128,
-        "name": "ImPlotAxisFlags_Invert",
+        "name": "ImPlotAxisFlags_Foreground",
         "value": "1 << 7"
       },
       {
         "calc_value": 256,
-        "name": "ImPlotAxisFlags_NoInitialFit",
+        "name": "ImPlotAxisFlags_LogScale",
         "value": "1 << 8"
       },
       {
         "calc_value": 512,
-        "name": "ImPlotAxisFlags_AutoFit",
+        "name": "ImPlotAxisFlags_Time",
         "value": "1 << 9"
       },
       {
         "calc_value": 1024,
-        "name": "ImPlotAxisFlags_RangeFit",
+        "name": "ImPlotAxisFlags_Invert",
         "value": "1 << 10"
       },
       {
         "calc_value": 2048,
-        "name": "ImPlotAxisFlags_LockMin",
+        "name": "ImPlotAxisFlags_AutoFit",
         "value": "1 << 11"
       },
       {
         "calc_value": 4096,
-        "name": "ImPlotAxisFlags_LockMax",
+        "name": "ImPlotAxisFlags_RangeFit",
         "value": "1 << 12"
       },
       {
-        "calc_value": 6144,
+        "calc_value": 8192,
+        "name": "ImPlotAxisFlags_LockMin",
+        "value": "1 << 13"
+      },
+      {
+        "calc_value": 16384,
+        "name": "ImPlotAxisFlags_LockMax",
+        "value": "1 << 14"
+      },
+      {
+        "calc_value": 24576,
         "name": "ImPlotAxisFlags_Lock",
         "value": "ImPlotAxisFlags_LockMin | ImPlotAxisFlags_LockMax"
       },
@@ -80,6 +127,23 @@
         "calc_value": 15,
         "name": "ImPlotAxisFlags_NoDecorations",
         "value": "ImPlotAxisFlags_NoLabel | ImPlotAxisFlags_NoGridLines | ImPlotAxisFlags_NoTickMarks | ImPlotAxisFlags_NoTickLabels"
+      },
+      {
+        "calc_value": 66,
+        "name": "ImPlotAxisFlags_AuxDefault",
+        "value": "ImPlotAxisFlags_NoGridLines | ImPlotAxisFlags_Opposite"
+      }
+    ],
+    "ImPlotBarGroupsFlags_": [
+      {
+        "calc_value": 0,
+        "name": "ImPlotBarGroupsFlags_None",
+        "value": "0"
+      },
+      {
+        "calc_value": 1,
+        "name": "ImPlotBarGroupsFlags_Stacked",
+        "value": "1 << 0"
       }
     ],
     "ImPlotBin_": [
@@ -172,63 +236,48 @@
       },
       {
         "calc_value": 13,
-        "name": "ImPlotCol_XAxis",
+        "name": "ImPlotCol_AxisText",
         "value": "13"
       },
       {
         "calc_value": 14,
-        "name": "ImPlotCol_XAxisGrid",
+        "name": "ImPlotCol_AxisGrid",
         "value": "14"
       },
       {
         "calc_value": 15,
-        "name": "ImPlotCol_YAxis",
+        "name": "ImPlotCol_AxisTick",
         "value": "15"
       },
       {
         "calc_value": 16,
-        "name": "ImPlotCol_YAxisGrid",
+        "name": "ImPlotCol_AxisBg",
         "value": "16"
       },
       {
         "calc_value": 17,
-        "name": "ImPlotCol_YAxis2",
+        "name": "ImPlotCol_AxisBgHovered",
         "value": "17"
       },
       {
         "calc_value": 18,
-        "name": "ImPlotCol_YAxisGrid2",
+        "name": "ImPlotCol_AxisBgActive",
         "value": "18"
       },
       {
         "calc_value": 19,
-        "name": "ImPlotCol_YAxis3",
+        "name": "ImPlotCol_Selection",
         "value": "19"
       },
       {
         "calc_value": 20,
-        "name": "ImPlotCol_YAxisGrid3",
+        "name": "ImPlotCol_Crosshairs",
         "value": "20"
       },
       {
         "calc_value": 21,
-        "name": "ImPlotCol_Selection",
-        "value": "21"
-      },
-      {
-        "calc_value": 22,
-        "name": "ImPlotCol_Query",
-        "value": "22"
-      },
-      {
-        "calc_value": 23,
-        "name": "ImPlotCol_Crosshairs",
-        "value": "23"
-      },
-      {
-        "calc_value": 24,
         "name": "ImPlotCol_COUNT",
-        "value": "24"
+        "value": "21"
       }
     ],
     "ImPlotColormap_": [
@@ -313,6 +362,23 @@
         "value": "15"
       }
     ],
+    "ImPlotCond_": [
+      {
+        "calc_value": 0,
+        "name": "ImPlotCond_None",
+        "value": "ImGuiCond_None"
+      },
+      {
+        "calc_value": 1,
+        "name": "ImPlotCond_Always",
+        "value": "ImGuiCond_Always"
+      },
+      {
+        "calc_value": 2,
+        "name": "ImPlotCond_Once",
+        "value": "ImGuiCond_Once"
+      }
+    ],
     "ImPlotDateFmt_": [
       {
         "calc_value": 0,
@@ -345,6 +411,33 @@
         "value": "5"
       }
     ],
+    "ImPlotDragToolFlags_": [
+      {
+        "calc_value": 0,
+        "name": "ImPlotDragToolFlags_None",
+        "value": "0"
+      },
+      {
+        "calc_value": 1,
+        "name": "ImPlotDragToolFlags_NoCursors",
+        "value": "1 << 0"
+      },
+      {
+        "calc_value": 2,
+        "name": "ImPlotDragToolFlags_NoFit",
+        "value": "1 << 1"
+      },
+      {
+        "calc_value": 4,
+        "name": "ImPlotDragToolFlags_NoInputs",
+        "value": "1 << 2"
+      },
+      {
+        "calc_value": 8,
+        "name": "ImPlotDragToolFlags_Delayed",
+        "value": "1 << 3"
+      }
+    ],
     "ImPlotFlags_": [
       {
         "calc_value": 0,
@@ -363,22 +456,22 @@
       },
       {
         "calc_value": 4,
-        "name": "ImPlotFlags_NoMenus",
+        "name": "ImPlotFlags_NoMouseText",
         "value": "1 << 2"
       },
       {
         "calc_value": 8,
-        "name": "ImPlotFlags_NoBoxSelect",
+        "name": "ImPlotFlags_NoInputs",
         "value": "1 << 3"
       },
       {
         "calc_value": 16,
-        "name": "ImPlotFlags_NoMousePos",
+        "name": "ImPlotFlags_NoMenus",
         "value": "1 << 4"
       },
       {
         "calc_value": 32,
-        "name": "ImPlotFlags_NoHighlight",
+        "name": "ImPlotFlags_NoBoxSelect",
         "value": "1 << 5"
       },
       {
@@ -388,38 +481,65 @@
       },
       {
         "calc_value": 128,
-        "name": "ImPlotFlags_Equal",
+        "name": "ImPlotFlags_NoFrame",
         "value": "1 << 7"
       },
       {
         "calc_value": 256,
-        "name": "ImPlotFlags_YAxis2",
+        "name": "ImPlotFlags_Equal",
         "value": "1 << 8"
       },
       {
         "calc_value": 512,
-        "name": "ImPlotFlags_YAxis3",
+        "name": "ImPlotFlags_Crosshairs",
         "value": "1 << 9"
       },
       {
         "calc_value": 1024,
-        "name": "ImPlotFlags_Query",
+        "name": "ImPlotFlags_AntiAliased",
         "value": "1 << 10"
       },
       {
-        "calc_value": 2048,
-        "name": "ImPlotFlags_Crosshairs",
-        "value": "1 << 11"
-      },
-      {
-        "calc_value": 4096,
-        "name": "ImPlotFlags_AntiAliased",
-        "value": "1 << 12"
-      },
-      {
-        "calc_value": 31,
+        "calc_value": 55,
         "name": "ImPlotFlags_CanvasOnly",
-        "value": "ImPlotFlags_NoTitle | ImPlotFlags_NoLegend | ImPlotFlags_NoMenus | ImPlotFlags_NoBoxSelect | ImPlotFlags_NoMousePos"
+        "value": "ImPlotFlags_NoTitle | ImPlotFlags_NoLegend | ImPlotFlags_NoMenus | ImPlotFlags_NoBoxSelect | ImPlotFlags_NoMouseText"
+      }
+    ],
+    "ImPlotLegendFlags_": [
+      {
+        "calc_value": 0,
+        "name": "ImPlotLegendFlags_None",
+        "value": "0"
+      },
+      {
+        "calc_value": 1,
+        "name": "ImPlotLegendFlags_NoButtons",
+        "value": "1 << 0"
+      },
+      {
+        "calc_value": 2,
+        "name": "ImPlotLegendFlags_NoHighlightItem",
+        "value": "1 << 1"
+      },
+      {
+        "calc_value": 4,
+        "name": "ImPlotLegendFlags_NoHighlightAxis",
+        "value": "1 << 2"
+      },
+      {
+        "calc_value": 8,
+        "name": "ImPlotLegendFlags_NoMenus",
+        "value": "1 << 3"
+      },
+      {
+        "calc_value": 16,
+        "name": "ImPlotLegendFlags_Outside",
+        "value": "1 << 4"
+      },
+      {
+        "calc_value": 32,
+        "name": "ImPlotLegendFlags_Horizontal",
+        "value": "1 << 5"
       }
     ],
     "ImPlotLocation_": [
@@ -531,16 +651,26 @@
         "value": "10"
       }
     ],
-    "ImPlotOrientation_": [
+    "ImPlotMouseTextFlags_": [
       {
         "calc_value": 0,
-        "name": "ImPlotOrientation_Horizontal",
+        "name": "ImPlotMouseTextFlags_None",
         "value": "0"
       },
       {
         "calc_value": 1,
-        "name": "ImPlotOrientation_Vertical",
-        "value": "1"
+        "name": "ImPlotMouseTextFlags_NoAuxAxes",
+        "value": "1 << 0"
+      },
+      {
+        "calc_value": 2,
+        "name": "ImPlotMouseTextFlags_NoFormat",
+        "value": "1 << 1"
+      },
+      {
+        "calc_value": 4,
+        "name": "ImPlotMouseTextFlags_ShowAlways",
+        "value": "1 << 2"
       }
     ],
     "ImPlotScale_": [
@@ -862,86 +992,60 @@
         "name": "ImPlotTimeUnit_COUNT",
         "value": "8"
       }
-    ],
-    "ImPlotYAxis_": [
-      {
-        "calc_value": 0,
-        "name": "ImPlotYAxis_1",
-        "value": "0"
-      },
-      {
-        "calc_value": 1,
-        "name": "ImPlotYAxis_2",
-        "value": "1"
-      },
-      {
-        "calc_value": 2,
-        "name": "ImPlotYAxis_3",
-        "value": "2"
-      }
     ]
   },
   "enumtypes": [],
   "locations": {
-    "ImBufferWriter": "implot_internal:217",
-    "ImPlotAlignmentData": "implot_internal:717",
-    "ImPlotAnnotation": "implot_internal:475",
-    "ImPlotAnnotationCollection": "implot_internal:485",
-    "ImPlotAxis": "implot_internal:594",
-    "ImPlotAxisFlags_": "implot:87",
-    "ImPlotBin_": "implot:250",
-    "ImPlotCol_": "implot:123",
-    "ImPlotColormapData": "implot_internal:364",
-    "ImPlotColormap_": "implot:204",
-    "ImPlotContext": "implot_internal:952",
-    "ImPlotDateFmt_": "implot_internal:281",
-    "ImPlotDateTimeFmt": "implot_internal:324",
-    "ImPlotFlags_": "implot:68",
-    "ImPlotInputMap": "implot_internal:303",
-    "ImPlotItem": "implot_internal:739",
-    "ImPlotItemGroup": "implot_internal:783",
-    "ImPlotLegendData": "implot_internal:760",
-    "ImPlotLimits": "implot:281",
-    "ImPlotLocation_": "implot:224",
-    "ImPlotMarker_": "implot:188",
-    "ImPlotNextItemData": "implot_internal:923",
-    "ImPlotNextPlotData": "implot_internal:882",
-    "ImPlotOrientation_": "implot:237",
-    "ImPlotPlot": "implot_internal:806",
-    "ImPlotPoint": "implot:258",
-    "ImPlotPointError": "implot_internal:467",
-    "ImPlotRange": "implot:272",
-    "ImPlotScale_": "implot_internal:262",
-    "ImPlotStyle": "implot:292",
-    "ImPlotStyleVar_": "implot:154",
-    "ImPlotSubplot": "implot_internal:852",
-    "ImPlotSubplotFlags_": "implot:107",
-    "ImPlotTick": "implot_internal:525",
-    "ImPlotTickCollection": "implot_internal:545",
-    "ImPlotTime": "implot_internal:338",
-    "ImPlotTimeFmt_": "implot_internal:290",
-    "ImPlotTimeUnit_": "implot_internal:269",
-    "ImPlotYAxis_": "implot:243"
+    "ImAxis_": "implot:97",
+    "ImPlotAlignmentData": "implot_internal:828",
+    "ImPlotAnnotation": "implot_internal:424",
+    "ImPlotAnnotationCollection": "implot_internal:434",
+    "ImPlotAxis": "implot_internal:597",
+    "ImPlotAxisFlags_": "implot:128",
+    "ImPlotBarGroupsFlags_": "implot:195",
+    "ImPlotBin_": "implot:320",
+    "ImPlotCol_": "implot:209",
+    "ImPlotColormapData": "implot_internal:313",
+    "ImPlotColormap_": "implot:287",
+    "ImPlotCond_": "implot:201",
+    "ImPlotContext": "implot_internal:1108",
+    "ImPlotDateFmt_": "implot_internal:247",
+    "ImPlotDateTimeFmt": "implot_internal:273",
+    "ImPlotDragToolFlags_": "implot:186",
+    "ImPlotFlags_": "implot:111",
+    "ImPlotInputMap": "implot:409",
+    "ImPlotItem": "implot_internal:851",
+    "ImPlotItemGroup": "implot_internal:897",
+    "ImPlotLegend": "implot_internal:873",
+    "ImPlotLegendFlags_": "implot:167",
+    "ImPlotLocation_": "implot:307",
+    "ImPlotMarker_": "implot:271",
+    "ImPlotMouseTextFlags_": "implot:178",
+    "ImPlotNextItemData": "implot_internal:1079",
+    "ImPlotNextPlotData": "implot_internal:1057",
+    "ImPlotPlot": "implot_internal:920",
+    "ImPlotPoint": "implot:328",
+    "ImPlotPointError": "implot_internal:416",
+    "ImPlotRange": "implot:342",
+    "ImPlotRect": "implot:352",
+    "ImPlotScale_": "implot_internal:228",
+    "ImPlotStyle": "implot:366",
+    "ImPlotStyleVar_": "implot:237",
+    "ImPlotSubplot": "implot_internal:1025",
+    "ImPlotSubplotFlags_": "implot:151",
+    "ImPlotTag": "implot_internal:473",
+    "ImPlotTagCollection": "implot_internal:481",
+    "ImPlotTick": "implot_internal:522",
+    "ImPlotTickCollection": "implot_internal:542",
+    "ImPlotTime": "implot_internal:287",
+    "ImPlotTimeFmt_": "implot_internal:256",
+    "ImPlotTimeUnit_": "implot_internal:235"
   },
   "structs": {
-    "ImBufferWriter": [
-      {
-        "name": "Buffer",
-        "type": "char*"
-      },
-      {
-        "name": "Size",
-        "type": "int"
-      },
-      {
-        "name": "Pos",
-        "type": "int"
-      }
-    ],
     "ImPlotAlignmentData": [
       {
-        "name": "Orientation",
-        "type": "ImPlotOrientation"
+        "name": "Vertical",
+        "type": "bool"
       },
       {
         "name": "PadA",
@@ -1003,6 +1107,10 @@
     ],
     "ImPlotAxis": [
       {
+        "name": "ID",
+        "type": "ImGuiID"
+      },
+      {
         "name": "Flags",
         "type": "ImPlotAxisFlags"
       },
@@ -1011,36 +1119,24 @@
         "type": "ImPlotAxisFlags"
       },
       {
+        "name": "RangeCond",
+        "type": "ImPlotCond"
+      },
+      {
+        "name": "Ticks",
+        "type": "ImPlotTickCollection"
+      },
+      {
         "name": "Range",
         "type": "ImPlotRange"
       },
       {
-        "name": "Pixels",
-        "type": "float"
+        "name": "FitExtents",
+        "type": "ImPlotRange"
       },
       {
-        "name": "Orientation",
-        "type": "ImPlotOrientation"
-      },
-      {
-        "name": "Dragging",
-        "type": "bool"
-      },
-      {
-        "name": "ExtHovered",
-        "type": "bool"
-      },
-      {
-        "name": "AllHovered",
-        "type": "bool"
-      },
-      {
-        "name": "Present",
-        "type": "bool"
-      },
-      {
-        "name": "HasRange",
-        "type": "bool"
+        "name": "OrthoAxis",
+        "type": "ImPlotAxis*"
       },
       {
         "name": "LinkedMin",
@@ -1051,6 +1147,10 @@
         "type": "double*"
       },
       {
+        "name": "PickerLevel",
+        "type": "int"
+      },
+      {
         "name": "PickerTimeMin",
         "type": "ImPlotTime"
       },
@@ -1059,7 +1159,35 @@
         "type": "ImPlotTime"
       },
       {
-        "name": "PickerLevel",
+        "name": "Datum1",
+        "type": "float"
+      },
+      {
+        "name": "Datum2",
+        "type": "float"
+      },
+      {
+        "name": "PixelMin",
+        "type": "float"
+      },
+      {
+        "name": "PixelMax",
+        "type": "float"
+      },
+      {
+        "name": "LinM",
+        "type": "double"
+      },
+      {
+        "name": "LogD",
+        "type": "double"
+      },
+      {
+        "name": "HoverRect",
+        "type": "ImRect"
+      },
+      {
+        "name": "LabelOffset",
         "type": "int"
       },
       {
@@ -1071,16 +1199,73 @@
         "type": "ImU32"
       },
       {
+        "name": "ColorTick",
+        "type": "ImU32"
+      },
+      {
         "name": "ColorTxt",
         "type": "ImU32"
       },
       {
-        "name": "RangeCond",
-        "type": "ImGuiCond"
+        "name": "ColorBg",
+        "type": "ImU32"
       },
       {
-        "name": "HoverRect",
-        "type": "ImRect"
+        "name": "ColorHov",
+        "type": "ImU32"
+      },
+      {
+        "name": "ColorAct",
+        "type": "ImU32"
+      },
+      {
+        "name": "ColorHiLi",
+        "type": "ImU32"
+      },
+      {
+        "name": "FormatSpec[16]",
+        "size": 16,
+        "type": "char"
+      },
+      {
+        "name": "Formatter",
+        "type": "ImPlotFormatter"
+      },
+      {
+        "name": "FormatterData",
+        "type": "void*"
+      },
+      {
+        "name": "Enabled",
+        "type": "bool"
+      },
+      {
+        "name": "Vertical",
+        "type": "bool"
+      },
+      {
+        "name": "FitThisFrame",
+        "type": "bool"
+      },
+      {
+        "name": "HasRange",
+        "type": "bool"
+      },
+      {
+        "name": "HasFormatSpec",
+        "type": "bool"
+      },
+      {
+        "name": "ShowDefaultTicks",
+        "type": "bool"
+      },
+      {
+        "name": "Hovered",
+        "type": "bool"
+      },
+      {
+        "name": "Held",
+        "type": "bool"
       }
     ],
     "ImPlotColormapData": [
@@ -1173,81 +1358,12 @@
         "type": "ImPlotTickCollection"
       },
       {
-        "name": "XTicks",
-        "type": "ImPlotTickCollection"
-      },
-      {
-        "name": "YTicks[3]",
-        "size": 3,
-        "type": "ImPlotTickCollection"
-      },
-      {
-        "name": "YAxisReference[3]",
-        "size": 3,
-        "type": "float"
-      },
-      {
         "name": "Annotations",
         "type": "ImPlotAnnotationCollection"
       },
       {
-        "name": "Scales[3]",
-        "size": 3,
-        "type": "ImPlotScale"
-      },
-      {
-        "name": "PixelRange[3]",
-        "size": 3,
-        "type": "ImRect"
-      },
-      {
-        "name": "Mx",
-        "type": "double"
-      },
-      {
-        "name": "My[3]",
-        "size": 3,
-        "type": "double"
-      },
-      {
-        "name": "LogDenX",
-        "type": "double"
-      },
-      {
-        "name": "LogDenY[3]",
-        "size": 3,
-        "type": "double"
-      },
-      {
-        "name": "ExtentsX",
-        "type": "ImPlotRange"
-      },
-      {
-        "name": "ExtentsY[3]",
-        "size": 3,
-        "type": "ImPlotRange"
-      },
-      {
-        "name": "FitThisFrame",
-        "type": "bool"
-      },
-      {
-        "name": "FitX",
-        "type": "bool"
-      },
-      {
-        "name": "FitY[3]",
-        "size": 3,
-        "type": "bool"
-      },
-      {
-        "name": "RenderX",
-        "type": "bool"
-      },
-      {
-        "name": "RenderY[3]",
-        "size": 3,
-        "type": "bool"
+        "name": "Tags",
+        "type": "ImPlotTagCollection"
       },
       {
         "name": "ChildWindowMade",
@@ -1281,14 +1397,19 @@
         "type": "tm"
       },
       {
-        "name": "Temp1",
+        "name": "TempDouble1",
         "template_type": "double",
         "type": "ImVector_double"
       },
       {
-        "name": "Temp2",
+        "name": "TempDouble2",
         "template_type": "double",
         "type": "ImVector_double"
+      },
+      {
+        "name": "TempInt1",
+        "template_type": "int",
+        "type": "ImVector_int"
       },
       {
         "name": "DigitalPlotItemCnt",
@@ -1311,9 +1432,12 @@
         "type": "ImPlotInputMap"
       },
       {
-        "name": "MousePos[3]",
-        "size": 3,
-        "type": "ImPlotPoint"
+        "name": "OpenContextThisFrame",
+        "type": "bool"
+      },
+      {
+        "name": "MousePosStringBuilder",
+        "type": "ImGuiTextBuffer"
       },
       {
         "name": "AlignmentData",
@@ -1349,7 +1473,7 @@
     ],
     "ImPlotInputMap": [
       {
-        "name": "PanButton",
+        "name": "Pan",
         "type": "ImGuiMouseButton"
       },
       {
@@ -1357,44 +1481,44 @@
         "type": "ImGuiKeyModFlags"
       },
       {
-        "name": "FitButton",
+        "name": "Fit",
         "type": "ImGuiMouseButton"
       },
       {
-        "name": "ContextMenuButton",
+        "name": "Select",
         "type": "ImGuiMouseButton"
       },
       {
-        "name": "BoxSelectButton",
+        "name": "SelectCancel",
         "type": "ImGuiMouseButton"
       },
       {
-        "name": "BoxSelectMod",
+        "name": "SelectMod",
         "type": "ImGuiKeyModFlags"
       },
       {
-        "name": "BoxSelectCancelButton",
+        "name": "SelectHorzMod",
+        "type": "ImGuiKeyModFlags"
+      },
+      {
+        "name": "SelectVertMod",
+        "type": "ImGuiKeyModFlags"
+      },
+      {
+        "name": "Menu",
         "type": "ImGuiMouseButton"
       },
       {
-        "name": "QueryButton",
-        "type": "ImGuiMouseButton"
-      },
-      {
-        "name": "QueryMod",
+        "name": "OverrideMod",
         "type": "ImGuiKeyModFlags"
       },
       {
-        "name": "QueryToggleMod",
+        "name": "ZoomMod",
         "type": "ImGuiKeyModFlags"
       },
       {
-        "name": "HorizontalMod",
-        "type": "ImGuiKeyModFlags"
-      },
-      {
-        "name": "VerticalMod",
-        "type": "ImGuiKeyModFlags"
+        "name": "ZoomRate",
+        "type": "float"
       }
     ],
     "ImPlotItem": [
@@ -1405,6 +1529,10 @@
       {
         "name": "Color",
         "type": "ImU32"
+      },
+      {
+        "name": "LegendHoverRect",
+        "type": "ImRect"
       },
       {
         "name": "NameOffset",
@@ -1430,7 +1558,7 @@
       },
       {
         "name": "Legend",
-        "type": "ImPlotLegendData"
+        "type": "ImPlotLegend"
       },
       {
         "name": "ItemPool",
@@ -1442,7 +1570,23 @@
         "type": "int"
       }
     ],
-    "ImPlotLegendData": [
+    "ImPlotLegend": [
+      {
+        "name": "Flags",
+        "type": "ImPlotLegendFlags"
+      },
+      {
+        "name": "PreviousFlags",
+        "type": "ImPlotLegendFlags"
+      },
+      {
+        "name": "Location",
+        "type": "ImPlotLocation"
+      },
+      {
+        "name": "PreviousLocation",
+        "type": "ImPlotLocation"
+      },
       {
         "name": "Indices",
         "template_type": "int",
@@ -1453,42 +1597,20 @@
         "type": "ImGuiTextBuffer"
       },
       {
+        "name": "Rect",
+        "type": "ImRect"
+      },
+      {
         "name": "Hovered",
         "type": "bool"
       },
       {
-        "name": "Outside",
+        "name": "Held",
         "type": "bool"
       },
       {
         "name": "CanGoInside",
         "type": "bool"
-      },
-      {
-        "name": "FlipSideNextFrame",
-        "type": "bool"
-      },
-      {
-        "name": "Location",
-        "type": "ImPlotLocation"
-      },
-      {
-        "name": "Orientation",
-        "type": "ImPlotOrientation"
-      },
-      {
-        "name": "Rect",
-        "type": "ImRect"
-      }
-    ],
-    "ImPlotLimits": [
-      {
-        "name": "X",
-        "type": "ImPlotRange"
-      },
-      {
-        "name": "Y",
-        "type": "ImPlotRange"
       }
     ],
     "ImPlotNextItemData": [
@@ -1559,90 +1681,38 @@
       },
       {
         "name": "HiddenCond",
-        "type": "ImGuiCond"
+        "type": "ImPlotCond"
       }
     ],
     "ImPlotNextPlotData": [
       {
-        "name": "XRangeCond",
-        "type": "ImGuiCond"
+        "name": "RangeCond[ImAxis_COUNT]",
+        "size": 6,
+        "type": "ImPlotCond"
       },
       {
-        "name": "YRangeCond[3]",
-        "size": 3,
-        "type": "ImGuiCond"
-      },
-      {
-        "name": "XRange",
+        "name": "Range[ImAxis_COUNT]",
+        "size": 6,
         "type": "ImPlotRange"
       },
       {
-        "name": "YRange[3]",
-        "size": 3,
-        "type": "ImPlotRange"
-      },
-      {
-        "name": "HasXRange",
+        "name": "HasRange[ImAxis_COUNT]",
+        "size": 6,
         "type": "bool"
       },
       {
-        "name": "HasYRange[3]",
-        "size": 3,
+        "name": "Fit[ImAxis_COUNT]",
+        "size": 6,
         "type": "bool"
       },
       {
-        "name": "ShowDefaultTicksX",
-        "type": "bool"
-      },
-      {
-        "name": "ShowDefaultTicksY[3]",
-        "size": 3,
-        "type": "bool"
-      },
-      {
-        "name": "FmtX[16]",
-        "size": 16,
-        "type": "char"
-      },
-      {
-        "name": "FmtY[3][16]",
-        "size": 3,
-        "type": "char"
-      },
-      {
-        "name": "HasFmtX",
-        "type": "bool"
-      },
-      {
-        "name": "HasFmtY[3]",
-        "size": 3,
-        "type": "bool"
-      },
-      {
-        "name": "FitX",
-        "type": "bool"
-      },
-      {
-        "name": "FitY[3]",
-        "size": 3,
-        "type": "bool"
-      },
-      {
-        "name": "LinkedXmin",
+        "name": "LinkedMin[ImAxis_COUNT]",
+        "size": 6,
         "type": "double*"
       },
       {
-        "name": "LinkedXmax",
-        "type": "double*"
-      },
-      {
-        "name": "LinkedYmin[3]",
-        "size": 3,
-        "type": "double*"
-      },
-      {
-        "name": "LinkedYmax[3]",
-        "size": 3,
+        "name": "LinkedMax[ImAxis_COUNT]",
+        "size": 6,
         "type": "double*"
       }
     ],
@@ -1660,81 +1730,33 @@
         "type": "ImPlotFlags"
       },
       {
-        "name": "XAxis",
+        "name": "MouseTextLocation",
+        "type": "ImPlotLocation"
+      },
+      {
+        "name": "MouseTextFlags",
+        "type": "ImPlotMouseTextFlags"
+      },
+      {
+        "name": "Axes[ImAxis_COUNT]",
+        "size": 6,
         "type": "ImPlotAxis"
       },
       {
-        "name": "YAxis[3]",
-        "size": 3,
-        "type": "ImPlotAxis"
+        "name": "TextBuffer",
+        "type": "ImGuiTextBuffer"
       },
       {
         "name": "Items",
         "type": "ImPlotItemGroup"
       },
       {
-        "name": "SelectStart",
-        "type": "ImVec2"
+        "name": "CurrentX",
+        "type": "ImAxis"
       },
       {
-        "name": "SelectRect",
-        "type": "ImRect"
-      },
-      {
-        "name": "QueryStart",
-        "type": "ImVec2"
-      },
-      {
-        "name": "QueryRect",
-        "type": "ImRect"
-      },
-      {
-        "name": "Initialized",
-        "type": "bool"
-      },
-      {
-        "name": "Selecting",
-        "type": "bool"
-      },
-      {
-        "name": "Selected",
-        "type": "bool"
-      },
-      {
-        "name": "ContextLocked",
-        "type": "bool"
-      },
-      {
-        "name": "Querying",
-        "type": "bool"
-      },
-      {
-        "name": "Queried",
-        "type": "bool"
-      },
-      {
-        "name": "DraggingQuery",
-        "type": "bool"
-      },
-      {
-        "name": "FrameHovered",
-        "type": "bool"
-      },
-      {
-        "name": "FrameHeld",
-        "type": "bool"
-      },
-      {
-        "name": "PlotHovered",
-        "type": "bool"
-      },
-      {
-        "name": "CurrentYAxis",
-        "type": "int"
-      },
-      {
-        "name": "MousePosLocation",
-        "type": "ImPlotLocation"
+        "name": "CurrentY",
+        "type": "ImAxis"
       },
       {
         "name": "FrameRect",
@@ -1751,6 +1773,54 @@
       {
         "name": "AxesRect",
         "type": "ImRect"
+      },
+      {
+        "name": "SelectRect",
+        "type": "ImRect"
+      },
+      {
+        "name": "SelectStart",
+        "type": "ImVec2"
+      },
+      {
+        "name": "TitleOffset",
+        "type": "int"
+      },
+      {
+        "name": "JustCreated",
+        "type": "bool"
+      },
+      {
+        "name": "Initialized",
+        "type": "bool"
+      },
+      {
+        "name": "SetupLocked",
+        "type": "bool"
+      },
+      {
+        "name": "FitThisFrame",
+        "type": "bool"
+      },
+      {
+        "name": "Hovered",
+        "type": "bool"
+      },
+      {
+        "name": "Held",
+        "type": "bool"
+      },
+      {
+        "name": "Selecting",
+        "type": "bool"
+      },
+      {
+        "name": "Selected",
+        "type": "bool"
+      },
+      {
+        "name": "ContextLocked",
+        "type": "bool"
       }
     ],
     "ImPlotPoint": [
@@ -1789,6 +1859,16 @@
       {
         "name": "Max",
         "type": "double"
+      }
+    ],
+    "ImPlotRect": [
+      {
+        "name": "X",
+        "type": "ImPlotRange"
+      },
+      {
+        "name": "Y",
+        "type": "ImPlotRange"
       }
     ],
     "ImPlotStyle": [
@@ -1902,7 +1982,7 @@
       },
       {
         "name": "Colors[ImPlotCol_COUNT]",
-        "size": 24,
+        "size": 21,
         "type": "ImVec4"
       },
       {
@@ -2005,6 +2085,47 @@
       {
         "name": "FrameHovered",
         "type": "bool"
+      },
+      {
+        "name": "HasTitle",
+        "type": "bool"
+      }
+    ],
+    "ImPlotTag": [
+      {
+        "name": "Axis",
+        "type": "ImAxis"
+      },
+      {
+        "name": "Value",
+        "type": "double"
+      },
+      {
+        "name": "ColorBg",
+        "type": "ImU32"
+      },
+      {
+        "name": "ColorFg",
+        "type": "ImU32"
+      },
+      {
+        "name": "TextOffset",
+        "type": "int"
+      }
+    ],
+    "ImPlotTagCollection": [
+      {
+        "name": "Tags",
+        "template_type": "ImPlotTag",
+        "type": "ImVector_ImPlotTag"
+      },
+      {
+        "name": "TextBuffer",
+        "type": "ImGuiTextBuffer"
+      },
+      {
+        "name": "Size",
+        "type": "int"
       }
     ],
     "ImPlotTick": [
@@ -2048,24 +2169,12 @@
         "type": "ImGuiTextBuffer"
       },
       {
-        "name": "TotalWidthMax",
-        "type": "float"
+        "name": "MaxSize",
+        "type": "ImVec2"
       },
       {
-        "name": "TotalWidth",
-        "type": "float"
-      },
-      {
-        "name": "TotalHeight",
-        "type": "float"
-      },
-      {
-        "name": "MaxWidth",
-        "type": "float"
-      },
-      {
-        "name": "MaxHeight",
-        "type": "float"
+        "name": "LateSize",
+        "type": "ImVec2"
       },
       {
         "name": "Size",
