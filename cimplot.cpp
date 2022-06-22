@@ -2918,24 +2918,24 @@ CIMGUI_API void ImPlot_Locator_SymLog(ImPlotTicker* ticker,const ImPlotRange ran
 ImPlotPoint_getter getter_funcX;
 ImPlotPoint_getter getter_funcX2;
 
-ImPlotPoint Wrapper(void* data, int idx)
+ImPlotPoint Wrapper(int idx, void* data)
 {
 	ImPlotPoint pp;
 	getter_funcX(data, idx, &pp);
 	return pp;
 }
 
-ImPlotPoint Wrapper2(void* data, int idx)
+ImPlotPoint Wrapper2(int idx, void* data)
 {
 	ImPlotPoint pp;
 	getter_funcX2(data, idx, &pp);
 	return pp;
 }
 
-CIMGUI_API void ImPlot_PlotLineG(const char* label_id, ImPlotPoint_getter getter,void* data,int count)
+CIMGUI_API void ImPlot_PlotLineG(const char* label_id, ImPlotPoint_getter getter,void* data,int count,ImPlotLineFlags flags)
 {
     getter_funcX = getter;
-	ImPlot::PlotLineG(label_id,Wrapper,data,count);
+	ImPlot::PlotLineG(label_id,Wrapper,data,count,flags);
 }
 
 CIMGUI_API  void ImPlot_PlotScatterG(const char* label_id, ImPlotPoint_getter getter, void* data, int count)
@@ -2956,13 +2956,13 @@ CIMGUI_API void ImPlot_PlotBarsG(const char* label_id, ImPlotPoint_getter getter
 	getter_funcX = getter;
 	ImPlot::PlotBarsG(label_id, Wrapper, data, count, width);
 }
-
+/*
 CIMGUI_API void ImPlot_PlotBarsHG(const char* label_id, ImPlotPoint_getter getter, void* data, int count, double height)
 {
 	getter_funcX = getter;
 	ImPlot::PlotBarsHG(label_id, Wrapper, data, count, height);
 }
-
+*/
 CIMGUI_API void ImPlot_PlotDigitalG(const char* label_id, ImPlotPoint_getter getter, void* data, int count)
 {
 	getter_funcX = getter;
