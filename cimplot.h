@@ -452,7 +452,7 @@ typedef enum {
     ImPlotTimeFmt_HrMin,
     ImPlotTimeFmt_Hr
 }ImPlotTimeFmt_;
-typedef void (*ImPlotLocator)(ImPlotTicker& ticker, const ImPlotRange& range, float pixels, bool vertical, ImPlotFormatter formatter, void* formatter_data);
+typedef void (*ImPlotLocator)(ImPlotTicker* ticker, const ImPlotRange range, float pixels, bool vertical, ImPlotFormatter formatter, void* formatter_data);
 typedef struct ImPlotDateTimeSpec ImPlotDateTimeSpec;
 struct ImPlotDateTimeSpec
 {
