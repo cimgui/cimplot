@@ -82,7 +82,7 @@ end
 --helper functions
 --------------------------------functions for C generation
 --load parser module
-package.path = package.path.."../../cimgui/generator/?.lua"
+package.path = package.path .. ";../../cimgui/generator/?.lua"
 local cpp2ffi = require"cpp2ffi"
 local read_data = cpp2ffi.read_data
 local save_data = cpp2ffi.save_data
