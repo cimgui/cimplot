@@ -6,7 +6,24 @@
 #include "./implot/implot_internal.h"
 #include "cimplot.h"
 
+//ImPlotPoint getters manually wrapped for taking getters modifying ImPlotPoint*
 
+ImPlotPoint_getter getter_funcX;
+ImPlotPoint_getter getter_funcX2;
+
+ImPlotPoint Wrapper(int idx, void* data)
+{
+	ImPlotPoint pp;
+	getter_funcX(data, idx, &pp);
+	return pp;
+}
+
+ImPlotPoint Wrapper2(int idx, void* data)
+{
+	ImPlotPoint pp;
+	getter_funcX2(data, idx, &pp);
+	return pp;
+}
 
 CIMGUI_API ImPlotPoint* ImPlotPoint_ImPlotPoint_Nil(void)
 {
@@ -304,6 +321,11 @@ CIMGUI_API void ImPlot_PlotLine_U64PtrU64Ptr(const char* label_id,const ImU64* x
 {
     return ImPlot::PlotLine(label_id,xs,ys,count,flags,offset,stride);
 }
+CIMGUI_API void ImPlot_PlotLineG(const char* label_id,ImPlotPoint_getter getter,void* data,int count,ImPlotLineFlags flags)
+{
+    getter_funcX = getter;
+    ImPlot::PlotLineG(label_id,Wrapper,data,count,flags);
+}
 CIMGUI_API void ImPlot_PlotScatter_FloatPtrInt(const char* label_id,const float* values,int count,double xscale,double xstart,ImPlotScatterFlags flags,int offset,int stride)
 {
     return ImPlot::PlotScatter(label_id,values,count,xscale,xstart,flags,offset,stride);
@@ -383,6 +405,11 @@ CIMGUI_API void ImPlot_PlotScatter_S64PtrS64Ptr(const char* label_id,const ImS64
 CIMGUI_API void ImPlot_PlotScatter_U64PtrU64Ptr(const char* label_id,const ImU64* xs,const ImU64* ys,int count,ImPlotScatterFlags flags,int offset,int stride)
 {
     return ImPlot::PlotScatter(label_id,xs,ys,count,flags,offset,stride);
+}
+CIMGUI_API void ImPlot_PlotScatterG(const char* label_id,ImPlotPoint_getter getter,void* data,int count,ImPlotScatterFlags flags)
+{
+    getter_funcX = getter;
+    ImPlot::PlotScatterG(label_id,Wrapper,data,count,flags);
 }
 CIMGUI_API void ImPlot_PlotStairs_FloatPtrInt(const char* label_id,const float* values,int count,double xscale,double xstart,ImPlotStairsFlags flags,int offset,int stride)
 {
@@ -464,9 +491,10 @@ CIMGUI_API void ImPlot_PlotStairs_U64PtrU64Ptr(const char* label_id,const ImU64*
 {
     return ImPlot::PlotStairs(label_id,xs,ys,count,flags,offset,stride);
 }
-CIMGUI_API void ImPlot_PlotStairsG(const char* label_id,ImPlotGetter getter,void* data,int count,ImPlotStairsFlags flags)
+CIMGUI_API void ImPlot_PlotStairsG(const char* label_id,ImPlotPoint_getter getter,void* data,int count,ImPlotStairsFlags flags)
 {
-    return ImPlot::PlotStairsG(label_id,getter,data,count,flags);
+    getter_funcX = getter;
+    ImPlot::PlotStairsG(label_id,Wrapper,data,count,flags);
 }
 CIMGUI_API void ImPlot_PlotShaded_FloatPtrInt(const char* label_id,const float* values,int count,double yref,double xscale,double xstart,ImPlotShadedFlags flags,int offset,int stride)
 {
@@ -588,6 +616,12 @@ CIMGUI_API void ImPlot_PlotShaded_U64PtrU64PtrU64Ptr(const char* label_id,const 
 {
     return ImPlot::PlotShaded(label_id,xs,ys1,ys2,count,flags,offset,stride);
 }
+CIMGUI_API void ImPlot_PlotShadedG(const char* label_id,ImPlotPoint_getter getter1,void* data1,ImPlotPoint_getter getter2,void* data2,int count,ImPlotShadedFlags flags)
+{
+    getter_funcX = getter1;
+    getter_funcX2 = getter2;
+    ImPlot::PlotShadedG(label_id,Wrapper,data1,Wrapper2,data2,count,flags);
+}
 CIMGUI_API void ImPlot_PlotBars_FloatPtrInt(const char* label_id,const float* values,int count,double bar_size,double shift,ImPlotBarsFlags flags,int offset,int stride)
 {
     return ImPlot::PlotBars(label_id,values,count,bar_size,shift,flags,offset,stride);
@@ -667,6 +701,11 @@ CIMGUI_API void ImPlot_PlotBars_S64PtrS64Ptr(const char* label_id,const ImS64* x
 CIMGUI_API void ImPlot_PlotBars_U64PtrU64Ptr(const char* label_id,const ImU64* xs,const ImU64* ys,int count,double bar_size,ImPlotBarsFlags flags,int offset,int stride)
 {
     return ImPlot::PlotBars(label_id,xs,ys,count,bar_size,flags,offset,stride);
+}
+CIMGUI_API void ImPlot_PlotBarsG(const char* label_id,ImPlotPoint_getter getter,void* data,int count,double bar_size,ImPlotBarsFlags flags)
+{
+    getter_funcX = getter;
+    ImPlot::PlotBarsG(label_id,Wrapper,data,count,bar_size,flags);
 }
 CIMGUI_API void ImPlot_PlotBarGroups_FloatPtr(const char* const label_ids[],const float* values,int item_count,int group_count,double group_size,double shift,ImPlotBarGroupsFlags flags)
 {
@@ -1107,6 +1146,11 @@ CIMGUI_API void ImPlot_PlotDigital_S64Ptr(const char* label_id,const ImS64* xs,c
 CIMGUI_API void ImPlot_PlotDigital_U64Ptr(const char* label_id,const ImU64* xs,const ImU64* ys,int count,ImPlotDigitalFlags flags,int offset,int stride)
 {
     return ImPlot::PlotDigital(label_id,xs,ys,count,flags,offset,stride);
+}
+CIMGUI_API void ImPlot_PlotDigitalG(const char* label_id,ImPlotPoint_getter getter,void* data,int count,ImPlotDigitalFlags flags)
+{
+    getter_funcX = getter;
+    ImPlot::PlotDigitalG(label_id,Wrapper,data,count,flags);
 }
 CIMGUI_API void ImPlot_PlotImage(const char* label_id,ImTextureID user_texture_id,const ImPlotPoint bounds_min,const ImPlotPoint bounds_max,const ImVec2 uv0,const ImVec2 uv1,const ImVec4 tint_col,ImPlotImageFlags flags)
 {
@@ -2912,59 +2956,3 @@ CIMGUI_API void ImPlot_Locator_SymLog(ImPlotTicker* ticker,const ImPlotRange ran
     return ImPlot::Locator_SymLog(*ticker,range,pixels,vertical,formatter,formatter_data);
 }
 
-
-//ImPlotPoint getters manually wrapped for taking getters modifying ImPlotPoint*
-
-ImPlotPoint_getter getter_funcX;
-ImPlotPoint_getter getter_funcX2;
-
-ImPlotPoint Wrapper(int idx, void* data)
-{
-	ImPlotPoint pp;
-	getter_funcX(data, idx, &pp);
-	return pp;
-}
-
-ImPlotPoint Wrapper2(int idx, void* data)
-{
-	ImPlotPoint pp;
-	getter_funcX2(data, idx, &pp);
-	return pp;
-}
-
-CIMGUI_API void ImPlot_PlotLineG(const char* label_id, ImPlotPoint_getter getter,void* data,int count,ImPlotLineFlags flags)
-{
-    getter_funcX = getter;
-	ImPlot::PlotLineG(label_id,Wrapper,data,count,flags);
-}
-
-CIMGUI_API  void ImPlot_PlotScatterG(const char* label_id, ImPlotPoint_getter getter, void* data, int count)
-{
-	getter_funcX = getter;
-	ImPlot::PlotScatterG(label_id, Wrapper, data, count);
-}
-
-CIMGUI_API void ImPlot_PlotShadedG(const char* label_id, ImPlotPoint_getter getter1, void* data1, ImPlotPoint_getter getter2, void* data2, int count)
-{
-	getter_funcX = getter1;
-	getter_funcX2 = getter2;
-	ImPlot::PlotShadedG(label_id, Wrapper, data1, Wrapper2, data2, count);
-}
-
-CIMGUI_API void ImPlot_PlotBarsG(const char* label_id, ImPlotPoint_getter getter, void* data, int count, double width)
-{
-	getter_funcX = getter;
-	ImPlot::PlotBarsG(label_id, Wrapper, data, count, width);
-}
-/*
-CIMGUI_API void ImPlot_PlotBarsHG(const char* label_id, ImPlotPoint_getter getter, void* data, int count, double height)
-{
-	getter_funcX = getter;
-	ImPlot::PlotBarsHG(label_id, Wrapper, data, count, height);
-}
-*/
-CIMGUI_API void ImPlot_PlotDigitalG(const char* label_id, ImPlotPoint_getter getter, void* data, int count)
-{
-	getter_funcX = getter;
-	ImPlot::PlotDigitalG(label_id, Wrapper, data, count);
-}

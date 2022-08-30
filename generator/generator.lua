@@ -141,7 +141,36 @@ pipe:close()
 cimgui_header = cimgui_header:gsub("XXX",implot_version)
 print("IMPLOT_VERSION",implot_version)
 
+----------------------------------custom generators for implot_PlotXXXXG
+--functions having ImPlotGetter
 
+local function custom_header(outtab, def)
+	if not def.args:match"ImPlotGetter " then return false end
+	local args = def.args:gsub("ImPlotGetter","ImPlotPoint_getter")
+	table.insert(outtab,"CIMGUI_API "..def.ret.." ".. def.ov_cimguiname ..args..";//custom generation\n")
+	return true
+end
+local function custom_implementation(outtab,def)
+	if not def.args:match"ImPlotGetter " then return false end
+	local args = def.args:gsub("ImPlotGetter","ImPlotPoint_getter")
+    table.insert(outtab,"CIMGUI_API".." "..def.ret.." "..def.ov_cimguiname..args.."\n")
+    table.insert(outtab,"{\n")
+	local ngetter = 0
+	local call_args = "("
+	for i,arg in ipairs(def.argsT) do
+		if arg.type == "ImPlotGetter" then
+			ngetter = ngetter + 1
+			table.insert(outtab,"    getter_funcX"..((ngetter==1 and "") or (ngetter==2 and "2") or error"too much getters").." = "..arg.name..";\n")
+			call_args = call_args..((ngetter==1 and "Wrapper,") or (ngetter==2 and "Wrapper2,"))
+		else
+			call_args = call_args..arg.name..","
+		end
+	end
+	call_args = call_args:sub(1,-2)..")"
+	table.insert(outtab,"    ImPlot::"..def.funcname..call_args..";\n")
+    table.insert(outtab,"}\n")
+	return true
+end
 -------------funtion for parsing implot headers
 local function parseImGuiHeader(header,names)
 	--prepare parser
@@ -161,6 +190,9 @@ local function parseImGuiHeader(header,names)
 	--this list will expand all templated functions
 	parser.ftemplate_list = {}
 	parser.ftemplate_list.T = {"float", "double", "ImS8", "ImU8", "ImS16", "ImU16", "ImS32", "ImU32", "ImS64", "ImU64"}
+	
+	parser.custom_implementation = custom_implementation
+	parser.custom_header = custom_header
 	
 	parser:take_lines(CPRE..header, names, COMPILER)
 	
