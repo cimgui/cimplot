@@ -44,12 +44,7 @@ print("INTERNAL_GENERATION",INTERNAL_GENERATION)
 --this table has the functions to be skipped in generation
 --------------------------------------------------------------------------
 local cimgui_manuals = {
-     ImPlot_PlotLineG = true,
-	 ImPlot_PlotScatterG = true,
-	 ImPlot_PlotShadedG = true,
-	 ImPlot_PlotBarsG = true,
-	 ImPlot_PlotBarsHG = true,
-	 ImPlot_PlotDigitalG = true,
+     --ImPlot_PlotLineG = true,
 }
 local cimgui_skipped = {
 	 --ImPlot_AnnotateClamped = true
