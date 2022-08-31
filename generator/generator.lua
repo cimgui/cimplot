@@ -154,6 +154,7 @@ local function custom_implementation(outtab,def)
 	local call_args = "("
 	for i,arg in ipairs(def.argsT) do
 		if arg.type == "ImPlotGetter" then
+			arg.custom_type = "ImPlotPoint_getter"
 			ngetter = ngetter + 1
 			table.insert(outtab,"    getter_funcX"..((ngetter==1 and "") or (ngetter==2 and "2") or error"too much getters").." = "..arg.name..";\n")
 			call_args = call_args..((ngetter==1 and "Wrapper,") or (ngetter==2 and "Wrapper2,"))
