@@ -3833,7 +3833,7 @@
       "call_args": "(DrawList,top_center,col,text_begin,text_end)",
       "cimguiname": "ImPlot_AddTextCentered",
       "defaults": {
-        "text_end": "((void*)0)"
+        "text_end": "NULL"
       },
       "funcname": "AddTextCentered",
       "location": "implot_internal:1443",
@@ -3873,7 +3873,7 @@
       "call_args": "(DrawList,pos,col,text_begin,text_end)",
       "cimguiname": "ImPlot_AddTextVertical",
       "defaults": {
-        "text_end": "((void*)0)"
+        "text_end": "NULL"
       },
       "funcname": "AddTextVertical",
       "location": "implot_internal:1441",
@@ -4453,9 +4453,9 @@
       "call_args": "(title_id,rows,cols,size,flags,row_ratios,col_ratios)",
       "cimguiname": "ImPlot_BeginSubplots",
       "defaults": {
-        "col_ratios": "((void*)0)",
+        "col_ratios": "NULL",
         "flags": "0",
-        "row_ratios": "((void*)0)"
+        "row_ratios": "NULL"
       },
       "funcname": "BeginSubplots",
       "location": "implot:676",
@@ -4479,7 +4479,7 @@
       "call_args": "(plot_title_id)",
       "cimguiname": "ImPlot_BustColorCache",
       "defaults": {
-        "plot_title_id": "((void*)0)"
+        "plot_title_id": "NULL"
       },
       "funcname": "BustColorCache",
       "location": "implot:1181",
@@ -5300,7 +5300,7 @@
       "defaults": {
         "cmap": "-1",
         "format": "\"\"",
-        "out": "((void*)0)"
+        "out": "NULL"
       },
       "funcname": "ColormapSlider",
       "location": "implot:1170",
@@ -5372,7 +5372,7 @@
       "call_args": "(ctx)",
       "cimguiname": "ImPlot_DestroyContext",
       "defaults": {
-        "ctx": "((void*)0)"
+        "ctx": "NULL"
       },
       "funcname": "DestroyContext",
       "location": "implot:588",
@@ -10434,7 +10434,7 @@
       "call_args": "(dst)",
       "cimguiname": "ImPlot_MapInputDefault",
       "defaults": {
-        "dst": "((void*)0)"
+        "dst": "NULL"
       },
       "funcname": "MapInputDefault",
       "location": "implot:1191",
@@ -10458,7 +10458,7 @@
       "call_args": "(dst)",
       "cimguiname": "ImPlot_MapInputReverse",
       "defaults": {
-        "dst": "((void*)0)"
+        "dst": "NULL"
       },
       "funcname": "MapInputReverse",
       "location": "implot:1193",
@@ -23118,7 +23118,7 @@
       "call_args": "(label_id,flags,just_created)",
       "cimguiname": "ImPlot_RegisterOrGetItem",
       "defaults": {
-        "just_created": "((void*)0)"
+        "just_created": "NULL"
       },
       "funcname": "RegisterOrGetItem",
       "location": "implot_internal:1319",
@@ -23830,7 +23830,7 @@
       "cimguiname": "ImPlot_SetupAxis",
       "defaults": {
         "flags": "0",
-        "label": "((void*)0)"
+        "label": "NULL"
       },
       "funcname": "SetupAxis",
       "location": "implot:718",
@@ -23886,7 +23886,7 @@
       "call_args": "(axis,formatter,data)",
       "cimguiname": "ImPlot_SetupAxisFormat",
       "defaults": {
-        "data": "((void*)0)"
+        "data": "NULL"
       },
       "funcname": "SetupAxisFormat",
       "location": "implot:726",
@@ -24042,7 +24042,7 @@
       "call_args": "(axis,forward,inverse,data)",
       "cimguiname": "ImPlot_SetupAxisScale",
       "defaults": {
-        "data": "((void*)0)"
+        "data": "NULL"
       },
       "funcname": "SetupAxisScale",
       "location": "implot:734",
@@ -24083,7 +24083,7 @@
       "cimguiname": "ImPlot_SetupAxisTicks",
       "defaults": {
         "keep_default": "false",
-        "labels": "((void*)0)"
+        "labels": "NULL"
       },
       "funcname": "SetupAxisTicks",
       "location": "implot:728",
@@ -24126,7 +24126,7 @@
       "cimguiname": "ImPlot_SetupAxisTicks",
       "defaults": {
         "keep_default": "false",
-        "labels": "((void*)0)"
+        "labels": "NULL"
       },
       "funcname": "SetupAxisTicks",
       "location": "implot:730",
@@ -24379,8 +24379,8 @@
       "call_args": "(id,level,t,t1,t2)",
       "cimguiname": "ImPlot_ShowDatePicker",
       "defaults": {
-        "t1": "((void*)0)",
-        "t2": "((void*)0)"
+        "t1": "NULL",
+        "t2": "NULL"
       },
       "funcname": "ShowDatePicker",
       "location": "implot_internal:1582",
@@ -24404,7 +24404,7 @@
       "call_args": "(p_open)",
       "cimguiname": "ImPlot_ShowDemoWindow",
       "defaults": {
-        "p_open": "((void*)0)"
+        "p_open": "NULL"
       },
       "funcname": "ShowDemoWindow",
       "location": "implot:1229",
@@ -24525,7 +24525,7 @@
       "call_args": "(p_popen)",
       "cimguiname": "ImPlot_ShowMetricsWindow",
       "defaults": {
-        "p_popen": "((void*)0)"
+        "p_popen": "NULL"
       },
       "funcname": "ShowMetricsWindow",
       "location": "implot:1222",
@@ -24572,7 +24572,7 @@
       "call_args": "(ref)",
       "cimguiname": "ImPlot_ShowStyleEditor",
       "defaults": {
-        "ref": "((void*)0)"
+        "ref": "NULL"
       },
       "funcname": "ShowStyleEditor",
       "location": "implot:1218",
@@ -24684,7 +24684,7 @@
       "call_args": "(dst)",
       "cimguiname": "ImPlot_StyleColorsAuto",
       "defaults": {
-        "dst": "((void*)0)"
+        "dst": "NULL"
       },
       "funcname": "StyleColorsAuto",
       "location": "implot:1068",
@@ -24708,7 +24708,7 @@
       "call_args": "(dst)",
       "cimguiname": "ImPlot_StyleColorsClassic",
       "defaults": {
-        "dst": "((void*)0)"
+        "dst": "NULL"
       },
       "funcname": "StyleColorsClassic",
       "location": "implot:1070",
@@ -24732,7 +24732,7 @@
       "call_args": "(dst)",
       "cimguiname": "ImPlot_StyleColorsDark",
       "defaults": {
-        "dst": "((void*)0)"
+        "dst": "NULL"
       },
       "funcname": "StyleColorsDark",
       "location": "implot:1072",
@@ -24756,7 +24756,7 @@
       "call_args": "(dst)",
       "cimguiname": "ImPlot_StyleColorsLight",
       "defaults": {
-        "dst": "((void*)0)"
+        "dst": "NULL"
       },
       "funcname": "StyleColorsLight",
       "location": "implot:1074",
