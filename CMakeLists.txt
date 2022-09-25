@@ -17,6 +17,7 @@ file(GLOB IMGUI_SOURCES
 )
 
 set(IMGUI_STATIC "no" CACHE STRING "Build as a static library")
+set(CMAKE_CXX_STANDARD 11)
 
 #add library and link
 if (IMGUI_STATIC)
@@ -29,7 +30,7 @@ target_compile_definitions(cimgui PUBLIC IMGUI_DISABLE_OBSOLETE_FUNCTIONS=1)
 if (WIN32)
     target_compile_definitions(cimgui PUBLIC IMGUI_IMPL_API="extern \"C\" __declspec\(dllexport\)")
 else (WIN32)
-    target_compile_definitions(cimgui PUBLIC IMGUI_IMPL_API="extern \"C\" ")
+    target_compile_definitions(cimgui PUBLIC IMGUI_IMPL_API="extern \" C \" ")
 endif (WIN32)
 
 target_include_directories(cimgui PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/implot)
