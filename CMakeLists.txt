@@ -27,11 +27,7 @@ else (IMGUI_STATIC)
 endif (IMGUI_STATIC)
 
 target_compile_definitions(cimgui PUBLIC IMGUI_DISABLE_OBSOLETE_FUNCTIONS=1)
-if (WIN32)
-    target_compile_definitions(cimgui PUBLIC IMGUI_IMPL_API="extern \"C\" __declspec\(dllexport\)")
-else (WIN32)
-    target_compile_definitions(cimgui PUBLIC IMGUI_IMPL_API="extern \" C \" ")
-endif (WIN32)
+
 
 target_include_directories(cimgui PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/implot)
 target_include_directories(cimgui PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../cimgui/imgui)
@@ -45,9 +41,3 @@ install(TARGETS cimgui
     ARCHIVE DESTINATION  .
 )
 
-#test
-set(CIMGUI_TEST "no" CACHE STRING "Enable compilation of a test unit based on imgui null")
-
-if (CIMGUI_TEST)
-  add_subdirectory(test)
-endif ()
