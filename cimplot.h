@@ -400,16 +400,16 @@ typedef struct ImPlotInputMap ImPlotInputMap;
 struct ImPlotInputMap
 {
     ImGuiMouseButton Pan;
-    ImGuiModFlags PanMod;
+    int PanMod;
     ImGuiMouseButton Fit;
     ImGuiMouseButton Select;
     ImGuiMouseButton SelectCancel;
-    ImGuiModFlags SelectMod;
-    ImGuiModFlags SelectHorzMod;
-    ImGuiModFlags SelectVertMod;
+    int SelectMod;
+    int SelectHorzMod;
+    int SelectVertMod;
     ImGuiMouseButton Menu;
-    ImGuiModFlags OverrideMod;
-    ImGuiModFlags ZoomMod;
+    int OverrideMod;
+    int ZoomMod;
     float ZoomRate;
 };
 typedef int (*ImPlotFormatter)(double value, char* buff, int size, void* user_data);
@@ -474,8 +474,6 @@ struct ImPlotTime
     int Us;
 };
 typedef struct ImPlotColormapData ImPlotColormapData;
-typedef struct ImVector_int {int Size;int Capacity;int* Data;} ImVector_int;
-
 typedef struct ImVector_bool {int Size;int Capacity;bool* Data;} ImVector_bool;
 
 struct ImPlotColormapData
