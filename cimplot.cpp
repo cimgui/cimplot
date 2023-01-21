@@ -1261,9 +1261,9 @@ CIMGUI_API void ImPlot_GetPlotMousePos(ImPlotPoint *pOut,ImAxis x_axis,ImAxis y_
 {
     *pOut = ImPlot::GetPlotMousePos(x_axis,y_axis);
 }
-CIMGUI_API ImPlotRect ImPlot_GetPlotLimits(ImAxis x_axis,ImAxis y_axis)
+CIMGUI_API void ImPlot_GetPlotLimits(ImPlotRect *pOut,ImAxis x_axis,ImAxis y_axis)
 {
-    return ImPlot::GetPlotLimits(x_axis,y_axis);
+    *pOut = ImPlot::GetPlotLimits(x_axis,y_axis);
 }
 CIMGUI_API bool ImPlot_IsPlotHovered()
 {
@@ -1281,9 +1281,9 @@ CIMGUI_API bool ImPlot_IsPlotSelected()
 {
     return ImPlot::IsPlotSelected();
 }
-CIMGUI_API ImPlotRect ImPlot_GetPlotSelection(ImAxis x_axis,ImAxis y_axis)
+CIMGUI_API void ImPlot_GetPlotSelection(ImPlotRect *pOut,ImAxis x_axis,ImAxis y_axis)
 {
-    return ImPlot::GetPlotSelection(x_axis,y_axis);
+    *pOut = ImPlot::GetPlotSelection(x_axis,y_axis);
 }
 CIMGUI_API void ImPlot_CancelPlotSelection()
 {

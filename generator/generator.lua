@@ -180,7 +180,7 @@ local function parseImGuiHeader(header,names)
 	parser.cname_overloads = cimgui_overloads
 	parser.manuals = cimgui_manuals
 	parser.skipped = cimgui_skipped
-	parser.UDTs = {"ImVec2","ImVec4","ImColor","ImRect","ImPlotPoint","ImPlotLimits","ImPlotTime"}
+	parser.UDTs = {"ImVec2","ImVec4","ImColor","ImRect","ImPlotRect","ImPlotPoint","ImPlotLimits","ImPlotTime"}
 	--parser.gentemplatetypedef = gentemplatetypedef
 	parser.cimgui_inherited =  dofile([[../../cimgui/generator/output/structs_and_enums.lua]])
 	--this list will expand all templated functions

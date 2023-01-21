@@ -6855,8 +6855,12 @@
   ],
   "ImPlot_GetPlotLimits": [
     {
-      "args": "(ImAxis x_axis,ImAxis y_axis)",
+      "args": "(ImPlotRect *pOut,ImAxis x_axis,ImAxis y_axis)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotRect*"
+        },
         {
           "name": "x_axis",
           "type": "ImAxis"
@@ -6876,8 +6880,9 @@
       "funcname": "GetPlotLimits",
       "location": "implot:976",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetPlotLimits",
-      "ret": "ImPlotRect",
+      "ret": "void",
       "signature": "(ImAxis,ImAxis)",
       "stname": ""
     }
@@ -6941,8 +6946,12 @@
   ],
   "ImPlot_GetPlotSelection": [
     {
-      "args": "(ImAxis x_axis,ImAxis y_axis)",
+      "args": "(ImPlotRect *pOut,ImAxis x_axis,ImAxis y_axis)",
       "argsT": [
+        {
+          "name": "pOut",
+          "type": "ImPlotRect*"
+        },
         {
           "name": "x_axis",
           "type": "ImAxis"
@@ -6962,8 +6971,9 @@
       "funcname": "GetPlotSelection",
       "location": "implot:988",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetPlotSelection",
-      "ret": "ImPlotRect",
+      "ret": "void",
       "signature": "(ImAxis,ImAxis)",
       "stname": ""
     }

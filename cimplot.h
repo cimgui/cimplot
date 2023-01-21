@@ -1117,12 +1117,12 @@ CIMGUI_API void ImPlot_PlotToPixels_double(ImVec2 *pOut,double x,double y,ImAxis
 CIMGUI_API void ImPlot_GetPlotPos(ImVec2 *pOut);
 CIMGUI_API void ImPlot_GetPlotSize(ImVec2 *pOut);
 CIMGUI_API void ImPlot_GetPlotMousePos(ImPlotPoint *pOut,ImAxis x_axis,ImAxis y_axis);
-CIMGUI_API ImPlotRect ImPlot_GetPlotLimits(ImAxis x_axis,ImAxis y_axis);
+CIMGUI_API void ImPlot_GetPlotLimits(ImPlotRect *pOut,ImAxis x_axis,ImAxis y_axis);
 CIMGUI_API bool ImPlot_IsPlotHovered(void);
 CIMGUI_API bool ImPlot_IsAxisHovered(ImAxis axis);
 CIMGUI_API bool ImPlot_IsSubplotsHovered(void);
 CIMGUI_API bool ImPlot_IsPlotSelected(void);
-CIMGUI_API ImPlotRect ImPlot_GetPlotSelection(ImAxis x_axis,ImAxis y_axis);
+CIMGUI_API void ImPlot_GetPlotSelection(ImPlotRect *pOut,ImAxis x_axis,ImAxis y_axis);
 CIMGUI_API void ImPlot_CancelPlotSelection(void);
 CIMGUI_API void ImPlot_HideNextItem(bool hidden,ImPlotCond cond);
 CIMGUI_API bool ImPlot_BeginAlignedPlots(const char* group_id,bool vertical);
