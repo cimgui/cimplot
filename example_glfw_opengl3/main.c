@@ -8,6 +8,8 @@
 #endif
 #include <GL/gl.h>
 
+#define igGetIO igGetIO_Nil
+
 #include "cimplot.h"
 
 #define WINDOW_WIDTH 1200
