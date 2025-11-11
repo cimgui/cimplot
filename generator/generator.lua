@@ -105,6 +105,7 @@ local function cimgui_generation(parser,name)
 	local cstructsstr = outpre..tdt..outpost 
 
     hstrfile = hstrfile:gsub([[#include "imgui_structs%.h"]],cstructsstr)
+	hstrfile = hstrfile:gsub([[PLACE_STRUCTS_C]],parser:gen_structs_c())
     local cfuncsstr = func_header_generate(parser)
     hstrfile = hstrfile:gsub([[#include "auto_funcs%.h"]],cfuncsstr)
     save_data("./output/"..name..".h",cimgui_header,hstrfile)

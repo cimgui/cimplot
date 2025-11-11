@@ -14,6 +14,9 @@ ImPlotPlot_XAxis	2
 ImPlotPlot_YAxis	2
 1	ImPlotAxis*	ImPlotPlot_YAxis_Nil (int)
 2	const ImPlotAxis*	ImPlotPlot_YAxis__const (int)const
+ImPlotPointError_ImPlotPointError	2
+1	nil	ImPlotPointError_ImPlotPointError_Nil ()
+2	nil	ImPlotPointError_ImPlotPointError_double (double,double,double,double)
 ImPlotPoint_ImPlotPoint	3
 1	nil	ImPlotPoint_ImPlotPoint_Nil ()
 2	nil	ImPlotPoint_ImPlotPoint_double (double,double)
@@ -30,6 +33,9 @@ ImPlotRect_Contains	2
 ImPlotRect_ImPlotRect	2
 1	nil	ImPlotRect_ImPlotRect_Nil ()
 2	nil	ImPlotRect_ImPlotRect_double (double,double,double,double)
+ImPlotTick_ImPlotTick	2
+1	nil	ImPlotTick_ImPlotTick_Nil ()
+2	nil	ImPlotTick_ImPlotTick_double (double,bool,int,bool)
 ImPlotTicker_AddTick	3
 1	ImPlotTick*	ImPlotTicker_AddTick_doubleStr (double,bool,int,bool,const char*)
 2	ImPlotTick*	ImPlotTicker_AddTick_doublePlotFormatter (double,bool,int,bool,ImPlotFormatter,void*)
@@ -460,4 +466,4 @@ ImPlot_TagX	2
 ImPlot_TagY	2
 1	void	ImPlot_TagY_Bool (double,const ImVec4,bool)
 2	void	ImPlot_TagY_Str (double,const ImVec4,const char*,...)
-405 overloaded
+409 overloaded
