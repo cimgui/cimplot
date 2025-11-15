@@ -146,7 +146,7 @@
   ],
   "ImPlotAnnotationCollection_Append": [
     {
-      "args": "(ImPlotAnnotationCollection* self,const ImVec2 pos,const ImVec2 off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,...)",
+      "args": "(ImPlotAnnotationCollection* self,const ImVec2_c pos,const ImVec2_c off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,...)",
       "argsT": [
         {
           "name": "self",
@@ -182,7 +182,7 @@
         }
       ],
       "argsoriginal": "(const ImVec2& pos,const ImVec2& off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,...)",
-      "call_args": "(pos,off,bg,fg,clamp,fmt,...)",
+      "call_args": "(ConvertToCPP_ImVec2(pos),ConvertToCPP_ImVec2(off),bg,fg,clamp,fmt,...)",
       "call_args_old": "(pos,off,bg,fg,clamp,fmt,...)",
       "cimguiname": "ImPlotAnnotationCollection_Append",
       "defaults": {},
@@ -197,7 +197,7 @@
   ],
   "ImPlotAnnotationCollection_AppendV": [
     {
-      "args": "(ImPlotAnnotationCollection* self,const ImVec2 pos,const ImVec2 off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,va_list args)",
+      "args": "(ImPlotAnnotationCollection* self,const ImVec2_c pos,const ImVec2_c off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,va_list args)",
       "argsT": [
         {
           "name": "self",
@@ -233,7 +233,7 @@
         }
       ],
       "argsoriginal": "(const ImVec2& pos,const ImVec2& off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,va_list args)",
-      "call_args": "(pos,off,bg,fg,clamp,fmt,args)",
+      "call_args": "(ConvertToCPP_ImVec2(pos),ConvertToCPP_ImVec2(off),bg,fg,clamp,fmt,args)",
       "call_args_old": "(pos,off,bg,fg,clamp,fmt,args)",
       "cimguiname": "ImPlotAnnotationCollection_AppendV",
       "defaults": {},
@@ -2791,7 +2791,7 @@
       "stname": "ImPlotPoint"
     },
     {
-      "args": "(const ImVec2 p)",
+      "args": "(const ImVec2_c p)",
       "argsT": [
         {
           "name": "p",
@@ -2799,7 +2799,7 @@
         }
       ],
       "argsoriginal": "(const ImVec2& p)",
-      "call_args": "(p)",
+      "call_args": "(ConvertToCPP_ImVec2(p))",
       "call_args_old": "(p)",
       "cimguiname": "ImPlotPoint_ImPlotPoint",
       "constructor": true,
@@ -3759,7 +3759,7 @@
   ],
   "ImPlotTicker_OverrideSizeLate": [
     {
-      "args": "(ImPlotTicker* self,const ImVec2 size)",
+      "args": "(ImPlotTicker* self,const ImVec2_c size)",
       "argsT": [
         {
           "name": "self",
@@ -3771,7 +3771,7 @@
         }
       ],
       "argsoriginal": "(const ImVec2& size)",
-      "call_args": "(size)",
+      "call_args": "(ConvertToCPP_ImVec2(size))",
       "call_args_old": "(size)",
       "cimguiname": "ImPlotTicker_OverrideSizeLate",
       "defaults": {},
@@ -4053,7 +4053,7 @@
   ],
   "ImPlot_AddTextCentered": [
     {
-      "args": "(ImDrawList* DrawList,ImVec2 top_center,ImU32 col,const char* text_begin,const char* text_end)",
+      "args": "(ImDrawList* DrawList,ImVec2_c top_center,ImU32 col,const char* text_begin,const char* text_end)",
       "argsT": [
         {
           "name": "DrawList",
@@ -4077,7 +4077,7 @@
         }
       ],
       "argsoriginal": "(ImDrawList* DrawList,ImVec2 top_center,ImU32 col,const char* text_begin,const char* text_end=nullptr)",
-      "call_args": "(DrawList,top_center,col,text_begin,text_end)",
+      "call_args": "(DrawList,ConvertToCPP_ImVec2(top_center),col,text_begin,text_end)",
       "call_args_old": "(DrawList,top_center,col,text_begin,text_end)",
       "cimguiname": "ImPlot_AddTextCentered",
       "defaults": {
@@ -4094,7 +4094,7 @@
   ],
   "ImPlot_AddTextVertical": [
     {
-      "args": "(ImDrawList* DrawList,ImVec2 pos,ImU32 col,const char* text_begin,const char* text_end)",
+      "args": "(ImDrawList* DrawList,ImVec2_c pos,ImU32 col,const char* text_begin,const char* text_end)",
       "argsT": [
         {
           "name": "DrawList",
@@ -4118,7 +4118,7 @@
         }
       ],
       "argsoriginal": "(ImDrawList* DrawList,ImVec2 pos,ImU32 col,const char* text_begin,const char* text_end=nullptr)",
-      "call_args": "(DrawList,pos,col,text_begin,text_end)",
+      "call_args": "(DrawList,ConvertToCPP_ImVec2(pos),col,text_begin,text_end)",
       "call_args_old": "(DrawList,pos,col,text_begin,text_end)",
       "cimguiname": "ImPlot_AddTextVertical",
       "defaults": {
@@ -4195,7 +4195,7 @@
   ],
   "ImPlot_Annotation": [
     {
-      "args": "(double x,double y,const ImVec4 col,const ImVec2 pix_offset,bool clamp,bool round)",
+      "args": "(double x,double y,const ImVec4_c col,const ImVec2_c pix_offset,bool clamp,bool round)",
       "argsT": [
         {
           "name": "x",
@@ -4223,7 +4223,7 @@
         }
       ],
       "argsoriginal": "(double x,double y,const ImVec4& col,const ImVec2& pix_offset,bool clamp,bool round=false)",
-      "call_args": "(x,y,col,pix_offset,clamp,round)",
+      "call_args": "(x,y,ConvertToCPP_ImVec4(col),ConvertToCPP_ImVec2(pix_offset),clamp,round)",
       "call_args_old": "(x,y,col,pix_offset,clamp,round)",
       "cimguiname": "ImPlot_Annotation",
       "defaults": {
@@ -4238,7 +4238,7 @@
       "stname": ""
     },
     {
-      "args": "(double x,double y,const ImVec4 col,const ImVec2 pix_offset,bool clamp,const char* fmt,...)",
+      "args": "(double x,double y,const ImVec4_c col,const ImVec2_c pix_offset,bool clamp,const char* fmt,...)",
       "argsT": [
         {
           "name": "x",
@@ -4270,7 +4270,7 @@
         }
       ],
       "argsoriginal": "(double x,double y,const ImVec4& col,const ImVec2& pix_offset,bool clamp,const char* fmt,...)",
-      "call_args": "(x,y,col,pix_offset,clamp,fmt,...)",
+      "call_args": "(x,y,ConvertToCPP_ImVec4(col),ConvertToCPP_ImVec2(pix_offset),clamp,fmt,...)",
       "call_args_old": "(x,y,col,pix_offset,clamp,fmt,...)",
       "cimguiname": "ImPlot_Annotation",
       "defaults": {},
@@ -4286,7 +4286,7 @@
   ],
   "ImPlot_AnnotationV": [
     {
-      "args": "(double x,double y,const ImVec4 col,const ImVec2 pix_offset,bool clamp,const char* fmt,va_list args)",
+      "args": "(double x,double y,const ImVec4_c col,const ImVec2_c pix_offset,bool clamp,const char* fmt,va_list args)",
       "argsT": [
         {
           "name": "x",
@@ -4318,7 +4318,7 @@
         }
       ],
       "argsoriginal": "(double x,double y,const ImVec4& col,const ImVec2& pix_offset,bool clamp,const char* fmt,va_list args)",
-      "call_args": "(x,y,col,pix_offset,clamp,fmt,args)",
+      "call_args": "(x,y,ConvertToCPP_ImVec4(col),ConvertToCPP_ImVec2(pix_offset),clamp,fmt,args)",
       "call_args_old": "(x,y,col,pix_offset,clamp,fmt,args)",
       "cimguiname": "ImPlot_AnnotationV",
       "defaults": {},
@@ -4648,7 +4648,7 @@
   ],
   "ImPlot_BeginPlot": [
     {
-      "args": "(const char* title_id,const ImVec2 size,ImPlotFlags flags)",
+      "args": "(const char* title_id,const ImVec2_c size,ImPlotFlags flags)",
       "argsT": [
         {
           "name": "title_id",
@@ -4664,7 +4664,7 @@
         }
       ],
       "argsoriginal": "(const char* title_id,const ImVec2& size=ImVec2(-1,0),ImPlotFlags flags=0)",
-      "call_args": "(title_id,size,flags)",
+      "call_args": "(title_id,ConvertToCPP_ImVec2(size),flags)",
       "call_args_old": "(title_id,size,flags)",
       "cimguiname": "ImPlot_BeginPlot",
       "defaults": {
@@ -4682,7 +4682,7 @@
   ],
   "ImPlot_BeginSubplots": [
     {
-      "args": "(const char* title_id,int rows,int cols,const ImVec2 size,ImPlotSubplotFlags flags,float* row_ratios,float* col_ratios)",
+      "args": "(const char* title_id,int rows,int cols,const ImVec2_c size,ImPlotSubplotFlags flags,float* row_ratios,float* col_ratios)",
       "argsT": [
         {
           "name": "title_id",
@@ -4714,7 +4714,7 @@
         }
       ],
       "argsoriginal": "(const char* title_id,int rows,int cols,const ImVec2& size,ImPlotSubplotFlags flags=0,float* row_ratios=nullptr,float* col_ratios=nullptr)",
-      "call_args": "(title_id,rows,cols,size,flags,row_ratios,col_ratios)",
+      "call_args": "(title_id,rows,cols,ConvertToCPP_ImVec2(size),flags,row_ratios,col_ratios)",
       "call_args_old": "(title_id,rows,cols,size,flags,row_ratios,col_ratios)",
       "cimguiname": "ImPlot_BeginSubplots",
       "defaults": {
@@ -4817,7 +4817,7 @@
   ],
   "ImPlot_CalcLegendSize": [
     {
-      "args": "(ImPlotItemGroup* items,const ImVec2 pad,const ImVec2 spacing,bool vertical)",
+      "args": "(ImPlotItemGroup* items,const ImVec2_c pad,const ImVec2_c spacing,bool vertical)",
       "argsT": [
         {
           "name": "items",
@@ -4838,22 +4838,24 @@
         }
       ],
       "argsoriginal": "(ImPlotItemGroup& items,const ImVec2& pad,const ImVec2& spacing,bool vertical)",
-      "call_args": "(*items,pad,spacing,vertical)",
+      "call_args": "(*items,ConvertToCPP_ImVec2(pad),ConvertToCPP_ImVec2(spacing),vertical)",
       "call_args_old": "(*items,pad,spacing,vertical)",
       "cimguiname": "ImPlot_CalcLegendSize",
+      "conv": "ImVec2",
       "defaults": {},
       "funcname": "CalcLegendSize",
       "location": "implot_internal:1439",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_CalcLegendSize",
-      "ret": "ImVec2",
+      "ret": "ImVec2_c",
       "signature": "(ImPlotItemGroup*,const ImVec2,const ImVec2,bool)",
       "stname": ""
     }
   ],
   "ImPlot_CalcTextColor": [
     {
-      "args": "(const ImVec4 bg)",
+      "args": "(const ImVec4_c bg)",
       "argsT": [
         {
           "name": "bg",
@@ -4861,7 +4863,7 @@
         }
       ],
       "argsoriginal": "(const ImVec4& bg)",
-      "call_args": "(bg)",
+      "call_args": "(ConvertToCPP_ImVec4(bg))",
       "call_args_old": "(bg)",
       "cimguiname": "ImPlot_CalcTextColor",
       "defaults": {},
@@ -4908,12 +4910,14 @@
       "call_args": "(text)",
       "call_args_old": "(text)",
       "cimguiname": "ImPlot_CalcTextSizeVertical",
+      "conv": "ImVec2",
       "defaults": {},
       "funcname": "CalcTextSizeVertical",
       "location": "implot_internal:1479",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_CalcTextSizeVertical",
-      "ret": "ImVec2",
+      "ret": "ImVec2_c",
       "signature": "(const char*)",
       "stname": ""
     }
@@ -5399,7 +5403,7 @@
   ],
   "ImPlot_ClampLabelPos": [
     {
-      "args": "(ImVec2 pos,const ImVec2 size,const ImVec2 Min,const ImVec2 Max)",
+      "args": "(ImVec2_c pos,const ImVec2_c size,const ImVec2_c Min,const ImVec2_c Max)",
       "argsT": [
         {
           "name": "pos",
@@ -5419,22 +5423,24 @@
         }
       ],
       "argsoriginal": "(ImVec2 pos,const ImVec2& size,const ImVec2& Min,const ImVec2& Max)",
-      "call_args": "(pos,size,Min,Max)",
+      "call_args": "(ConvertToCPP_ImVec2(pos),ConvertToCPP_ImVec2(size),ConvertToCPP_ImVec2(Min),ConvertToCPP_ImVec2(Max))",
       "call_args_old": "(pos,size,Min,Max)",
       "cimguiname": "ImPlot_ClampLabelPos",
+      "conv": "ImVec2",
       "defaults": {},
       "funcname": "ClampLabelPos",
       "location": "implot_internal:1490",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_ClampLabelPos",
-      "ret": "ImVec2",
+      "ret": "ImVec2_c",
       "signature": "(ImVec2,const ImVec2,const ImVec2,const ImVec2)",
       "stname": ""
     }
   ],
   "ImPlot_ClampLegendRect": [
     {
-      "args": "(ImRect* legend_rect,const ImRect outer_rect,const ImVec2 pad)",
+      "args": "(ImRect* legend_rect,const ImRect_c outer_rect,const ImVec2_c pad)",
       "argsT": [
         {
           "name": "legend_rect",
@@ -5451,7 +5457,7 @@
         }
       ],
       "argsoriginal": "(ImRect& legend_rect,const ImRect& outer_rect,const ImVec2& pad)",
-      "call_args": "(*legend_rect,outer_rect,pad)",
+      "call_args": "(*legend_rect,ConvertToCPP_ImRect(outer_rect),ConvertToCPP_ImVec2(pad))",
       "call_args_old": "(*legend_rect,outer_rect,pad)",
       "cimguiname": "ImPlot_ClampLegendRect",
       "defaults": {},
@@ -5466,7 +5472,7 @@
   ],
   "ImPlot_ColormapButton": [
     {
-      "args": "(const char* label,const ImVec2 size,ImPlotColormap cmap)",
+      "args": "(const char* label,const ImVec2_c size,ImPlotColormap cmap)",
       "argsT": [
         {
           "name": "label",
@@ -5482,7 +5488,7 @@
         }
       ],
       "argsoriginal": "(const char* label,const ImVec2& size=ImVec2(0,0),ImPlotColormap cmap=-1)",
-      "call_args": "(label,size,cmap)",
+      "call_args": "(label,ConvertToCPP_ImVec2(size),cmap)",
       "call_args_old": "(label,size,cmap)",
       "cimguiname": "ImPlot_ColormapButton",
       "defaults": {
@@ -5523,7 +5529,7 @@
   ],
   "ImPlot_ColormapScale": [
     {
-      "args": "(const char* label,double scale_min,double scale_max,const ImVec2 size,const char* format,ImPlotColormapScaleFlags flags,ImPlotColormap cmap)",
+      "args": "(const char* label,double scale_min,double scale_max,const ImVec2_c size,const char* format,ImPlotColormapScaleFlags flags,ImPlotColormap cmap)",
       "argsT": [
         {
           "name": "label",
@@ -5555,7 +5561,7 @@
         }
       ],
       "argsoriginal": "(const char* label,double scale_min,double scale_max,const ImVec2& size=ImVec2(0,0),const char* format=\"%g\",ImPlotColormapScaleFlags flags=0,ImPlotColormap cmap=-1)",
-      "call_args": "(label,scale_min,scale_max,size,format,flags,cmap)",
+      "call_args": "(label,scale_min,scale_max,ConvertToCPP_ImVec2(size),format,flags,cmap)",
       "call_args_old": "(label,scale_min,scale_max,size,format,flags,cmap)",
       "cimguiname": "ImPlot_ColormapScale",
       "defaults": {
@@ -5690,7 +5696,7 @@
   ],
   "ImPlot_DragLineX": [
     {
-      "args": "(int id,double* x,const ImVec4 col,float thickness,ImPlotDragToolFlags flags,bool* out_clicked,bool* out_hovered,bool* out_held)",
+      "args": "(int id,double* x,const ImVec4_c col,float thickness,ImPlotDragToolFlags flags,bool* out_clicked,bool* out_hovered,bool* out_held)",
       "argsT": [
         {
           "name": "id",
@@ -5726,7 +5732,7 @@
         }
       ],
       "argsoriginal": "(int id,double* x,const ImVec4& col,float thickness=1,ImPlotDragToolFlags flags=0,bool* out_clicked=nullptr,bool* out_hovered=nullptr,bool* out_held=nullptr)",
-      "call_args": "(id,x,col,thickness,flags,out_clicked,out_hovered,out_held)",
+      "call_args": "(id,x,ConvertToCPP_ImVec4(col),thickness,flags,out_clicked,out_hovered,out_held)",
       "call_args_old": "(id,x,col,thickness,flags,out_clicked,out_hovered,out_held)",
       "cimguiname": "ImPlot_DragLineX",
       "defaults": {
@@ -5747,7 +5753,7 @@
   ],
   "ImPlot_DragLineY": [
     {
-      "args": "(int id,double* y,const ImVec4 col,float thickness,ImPlotDragToolFlags flags,bool* out_clicked,bool* out_hovered,bool* out_held)",
+      "args": "(int id,double* y,const ImVec4_c col,float thickness,ImPlotDragToolFlags flags,bool* out_clicked,bool* out_hovered,bool* out_held)",
       "argsT": [
         {
           "name": "id",
@@ -5783,7 +5789,7 @@
         }
       ],
       "argsoriginal": "(int id,double* y,const ImVec4& col,float thickness=1,ImPlotDragToolFlags flags=0,bool* out_clicked=nullptr,bool* out_hovered=nullptr,bool* out_held=nullptr)",
-      "call_args": "(id,y,col,thickness,flags,out_clicked,out_hovered,out_held)",
+      "call_args": "(id,y,ConvertToCPP_ImVec4(col),thickness,flags,out_clicked,out_hovered,out_held)",
       "call_args_old": "(id,y,col,thickness,flags,out_clicked,out_hovered,out_held)",
       "cimguiname": "ImPlot_DragLineY",
       "defaults": {
@@ -5804,7 +5810,7 @@
   ],
   "ImPlot_DragPoint": [
     {
-      "args": "(int id,double* x,double* y,const ImVec4 col,float size,ImPlotDragToolFlags flags,bool* out_clicked,bool* out_hovered,bool* out_held)",
+      "args": "(int id,double* x,double* y,const ImVec4_c col,float size,ImPlotDragToolFlags flags,bool* out_clicked,bool* out_hovered,bool* out_held)",
       "argsT": [
         {
           "name": "id",
@@ -5844,7 +5850,7 @@
         }
       ],
       "argsoriginal": "(int id,double* x,double* y,const ImVec4& col,float size=4,ImPlotDragToolFlags flags=0,bool* out_clicked=nullptr,bool* out_hovered=nullptr,bool* out_held=nullptr)",
-      "call_args": "(id,x,y,col,size,flags,out_clicked,out_hovered,out_held)",
+      "call_args": "(id,x,y,ConvertToCPP_ImVec4(col),size,flags,out_clicked,out_hovered,out_held)",
       "call_args_old": "(id,x,y,col,size,flags,out_clicked,out_hovered,out_held)",
       "cimguiname": "ImPlot_DragPoint",
       "defaults": {
@@ -5865,7 +5871,7 @@
   ],
   "ImPlot_DragRect": [
     {
-      "args": "(int id,double* x1,double* y1,double* x2,double* y2,const ImVec4 col,ImPlotDragToolFlags flags,bool* out_clicked,bool* out_hovered,bool* out_held)",
+      "args": "(int id,double* x1,double* y1,double* x2,double* y2,const ImVec4_c col,ImPlotDragToolFlags flags,bool* out_clicked,bool* out_hovered,bool* out_held)",
       "argsT": [
         {
           "name": "id",
@@ -5909,7 +5915,7 @@
         }
       ],
       "argsoriginal": "(int id,double* x1,double* y1,double* x2,double* y2,const ImVec4& col,ImPlotDragToolFlags flags=0,bool* out_clicked=nullptr,bool* out_hovered=nullptr,bool* out_held=nullptr)",
-      "call_args": "(id,x1,y1,x2,y2,col,flags,out_clicked,out_hovered,out_held)",
+      "call_args": "(id,x1,y1,x2,y2,ConvertToCPP_ImVec4(col),flags,out_clicked,out_hovered,out_held)",
       "call_args_old": "(id,x1,y1,x2,y2,col,flags,out_clicked,out_hovered,out_held)",
       "cimguiname": "ImPlot_DragRect",
       "defaults": {
@@ -6742,12 +6748,14 @@
       "call_args": "(idx)",
       "call_args_old": "(idx)",
       "cimguiname": "ImPlot_GetAutoColor",
+      "conv": "ImVec4",
       "defaults": {},
       "funcname": "GetAutoColor",
       "location": "implot_internal:1468",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetAutoColor",
-      "ret": "ImVec4",
+      "ret": "ImVec4_c",
       "signature": "(ImPlotCol)",
       "stname": ""
     }
@@ -6769,14 +6777,16 @@
       "call_args": "(idx,cmap)",
       "call_args_old": "(idx,cmap)",
       "cimguiname": "ImPlot_GetColormapColor",
+      "conv": "ImVec4",
       "defaults": {
         "cmap": "-1"
       },
       "funcname": "GetColormapColor",
       "location": "implot:1190",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetColormapColor",
-      "ret": "ImVec4",
+      "ret": "ImVec4_c",
       "signature": "(int,ImPlotColormap)",
       "stname": ""
     }
@@ -7074,12 +7084,14 @@
       "call_args": "()",
       "call_args_old": "()",
       "cimguiname": "ImPlot_GetLastItemColor",
+      "conv": "ImVec4",
       "defaults": {},
       "funcname": "GetLastItemColor",
       "location": "implot:1137",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetLastItemColor",
-      "ret": "ImVec4",
+      "ret": "ImVec4_c",
       "signature": "()",
       "stname": ""
     }
@@ -7113,7 +7125,7 @@
   ],
   "ImPlot_GetLocationPos": [
     {
-      "args": "(const ImRect outer_rect,const ImVec2 inner_size,ImPlotLocation location,const ImVec2 pad)",
+      "args": "(const ImRect_c outer_rect,const ImVec2_c inner_size,ImPlotLocation location,const ImVec2_c pad)",
       "argsT": [
         {
           "name": "outer_rect",
@@ -7133,17 +7145,19 @@
         }
       ],
       "argsoriginal": "(const ImRect& outer_rect,const ImVec2& inner_size,ImPlotLocation location,const ImVec2& pad=ImVec2(0,0))",
-      "call_args": "(outer_rect,inner_size,location,pad)",
+      "call_args": "(ConvertToCPP_ImRect(outer_rect),ConvertToCPP_ImVec2(inner_size),location,ConvertToCPP_ImVec2(pad))",
       "call_args_old": "(outer_rect,inner_size,location,pad)",
       "cimguiname": "ImPlot_GetLocationPos",
+      "conv": "ImVec2",
       "defaults": {
         "pad": "ImVec2(0,0)"
       },
       "funcname": "GetLocationPos",
       "location": "implot_internal:1437",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetLocationPos",
-      "ret": "ImVec2",
+      "ret": "ImVec2_c",
       "signature": "(const ImRect,const ImVec2,ImPlotLocation,const ImVec2)",
       "stname": ""
     }
@@ -7307,12 +7321,14 @@
       "call_args": "()",
       "call_args_old": "()",
       "cimguiname": "ImPlot_GetPlotPos",
+      "conv": "ImVec2",
       "defaults": {},
       "funcname": "GetPlotPos",
       "location": "implot:984",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetPlotPos",
-      "ret": "ImVec2",
+      "ret": "ImVec2_c",
       "signature": "()",
       "stname": ""
     }
@@ -7357,12 +7373,14 @@
       "call_args": "()",
       "call_args_old": "()",
       "cimguiname": "ImPlot_GetPlotSize",
+      "conv": "ImVec2",
       "defaults": {},
       "funcname": "GetPlotSize",
       "location": "implot:986",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetPlotSize",
-      "ret": "ImVec2",
+      "ret": "ImVec2_c",
       "signature": "()",
       "stname": ""
     }
@@ -7445,12 +7463,14 @@
       "call_args": "(idx)",
       "call_args_old": "(idx)",
       "cimguiname": "ImPlot_GetStyleColorVec4",
+      "conv": "ImVec4",
       "defaults": {},
       "funcname": "GetStyleColorVec4",
       "location": "implot_internal:1471",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_GetStyleColorVec4",
-      "ret": "ImVec4",
+      "ret": "ImVec4_c",
       "signature": "(ImPlotCol)",
       "stname": ""
     }
@@ -10460,7 +10480,7 @@
   ],
   "ImPlot_Intersection": [
     {
-      "args": "(const ImVec2 a1,const ImVec2 a2,const ImVec2 b1,const ImVec2 b2)",
+      "args": "(const ImVec2_c a1,const ImVec2_c a2,const ImVec2_c b1,const ImVec2_c b2)",
       "argsT": [
         {
           "name": "a1",
@@ -10480,15 +10500,17 @@
         }
       ],
       "argsoriginal": "(const ImVec2& a1,const ImVec2& a2,const ImVec2& b1,const ImVec2& b2)",
-      "call_args": "(a1,a2,b1,b2)",
+      "call_args": "(ConvertToCPP_ImVec2(a1),ConvertToCPP_ImVec2(a2),ConvertToCPP_ImVec2(b1),ConvertToCPP_ImVec2(b2))",
       "call_args_old": "(a1,a2,b1,b2)",
       "cimguiname": "ImPlot_Intersection",
+      "conv": "ImVec2",
       "defaults": {},
       "funcname": "Intersection",
       "location": "implot_internal:1524",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_Intersection",
-      "ret": "ImVec2",
+      "ret": "ImVec2_c",
       "signature": "(const ImVec2,const ImVec2,const ImVec2,const ImVec2)",
       "stname": ""
     }
@@ -10518,7 +10540,7 @@
   ],
   "ImPlot_IsColorAuto": [
     {
-      "args": "(const ImVec4 col)",
+      "args": "(const ImVec4_c col)",
       "argsT": [
         {
           "name": "col",
@@ -10526,7 +10548,7 @@
         }
       ],
       "argsoriginal": "(const ImVec4& col)",
-      "call_args": "(col)",
+      "call_args": "(ConvertToCPP_ImVec4(col))",
       "call_args_old": "(col)",
       "cimguiname": "ImPlot_IsColorAuto",
       "defaults": {},
@@ -10662,7 +10684,7 @@
   ],
   "ImPlot_ItemIcon": [
     {
-      "args": "(const ImVec4 col)",
+      "args": "(const ImVec4_c col)",
       "argsT": [
         {
           "name": "col",
@@ -10670,7 +10692,7 @@
         }
       ],
       "argsoriginal": "(const ImVec4& col)",
-      "call_args": "(col)",
+      "call_args": "(ConvertToCPP_ImVec4(col))",
       "call_args_old": "(col)",
       "cimguiname": "ImPlot_ItemIcon",
       "defaults": {},
@@ -11110,12 +11132,14 @@
       "call_args": "()",
       "call_args_old": "()",
       "cimguiname": "ImPlot_NextColormapColor",
+      "conv": "ImVec4",
       "defaults": {},
       "funcname": "NextColormapColor",
       "location": "implot:1182",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_NextColormapColor",
-      "ret": "ImVec4",
+      "ret": "ImVec4_c",
       "signature": "()",
       "stname": ""
     }
@@ -11233,7 +11257,7 @@
   ],
   "ImPlot_PixelsToPlot": [
     {
-      "args": "(const ImVec2 pix,ImAxis x_axis,ImAxis y_axis)",
+      "args": "(const ImVec2_c pix,ImAxis x_axis,ImAxis y_axis)",
       "argsT": [
         {
           "name": "pix",
@@ -11249,7 +11273,7 @@
         }
       ],
       "argsoriginal": "(const ImVec2& pix,ImAxis x_axis=-1,ImAxis y_axis=-1)",
-      "call_args": "(pix,x_axis,y_axis)",
+      "call_args": "(ConvertToCPP_ImVec2(pix),x_axis,y_axis)",
       "call_args_old": "(pix,x_axis,y_axis)",
       "cimguiname": "ImPlot_PixelsToPlot",
       "conv": "ImPlotPoint",
@@ -16278,7 +16302,7 @@
   ],
   "ImPlot_PlotImage": [
     {
-      "args": "(const char* label_id,ImTextureRef tex_ref,const ImPlotPoint_c bounds_min,const ImPlotPoint_c bounds_max,const ImVec2 uv0,const ImVec2 uv1,const ImVec4 tint_col,ImPlotImageFlags flags)",
+      "args": "(const char* label_id,ImTextureRef_c tex_ref,const ImPlotPoint_c bounds_min,const ImPlotPoint_c bounds_max,const ImVec2_c uv0,const ImVec2_c uv1,const ImVec4_c tint_col,ImPlotImageFlags flags)",
       "argsT": [
         {
           "name": "label_id",
@@ -16314,7 +16338,7 @@
         }
       ],
       "argsoriginal": "(const char* label_id,ImTextureRef tex_ref,const ImPlotPoint& bounds_min,const ImPlotPoint& bounds_max,const ImVec2& uv0=ImVec2(0,0),const ImVec2& uv1=ImVec2(1,1),const ImVec4& tint_col=ImVec4(1,1,1,1),ImPlotImageFlags flags=0)",
-      "call_args": "(label_id,tex_ref,ConvertToCPP_ImPlotPoint(bounds_min),ConvertToCPP_ImPlotPoint(bounds_max),uv0,uv1,tint_col,flags)",
+      "call_args": "(label_id,ConvertToCPP_ImTextureRef(tex_ref),ConvertToCPP_ImPlotPoint(bounds_min),ConvertToCPP_ImPlotPoint(bounds_max),ConvertToCPP_ImVec2(uv0),ConvertToCPP_ImVec2(uv1),ConvertToCPP_ImVec4(tint_col),flags)",
       "call_args_old": "(label_id,tex_ref,bounds_min,bounds_max,uv0,uv1,tint_col,flags)",
       "cimguiname": "ImPlot_PlotImage",
       "defaults": {
@@ -24085,7 +24109,7 @@
   ],
   "ImPlot_PlotText": [
     {
-      "args": "(const char* text,double x,double y,const ImVec2 pix_offset,ImPlotTextFlags flags)",
+      "args": "(const char* text,double x,double y,const ImVec2_c pix_offset,ImPlotTextFlags flags)",
       "argsT": [
         {
           "name": "text",
@@ -24109,7 +24133,7 @@
         }
       ],
       "argsoriginal": "(const char* text,double x,double y,const ImVec2& pix_offset=ImVec2(0,0),ImPlotTextFlags flags=0)",
-      "call_args": "(text,x,y,pix_offset,flags)",
+      "call_args": "(text,x,y,ConvertToCPP_ImVec2(pix_offset),flags)",
       "call_args_old": "(text,x,y,pix_offset,flags)",
       "cimguiname": "ImPlot_PlotText",
       "defaults": {
@@ -24146,6 +24170,7 @@
       "call_args": "(ConvertToCPP_ImPlotPoint(plt),x_axis,y_axis)",
       "call_args_old": "(plt,x_axis,y_axis)",
       "cimguiname": "ImPlot_PlotToPixels",
+      "conv": "ImVec2",
       "defaults": {
         "x_axis": "-1",
         "y_axis": "-1"
@@ -24153,8 +24178,9 @@
       "funcname": "PlotToPixels",
       "location": "implot:980",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_PlotToPixels_PlotPoInt",
-      "ret": "ImVec2",
+      "ret": "ImVec2_c",
       "signature": "(const ImPlotPoint,ImAxis,ImAxis)",
       "stname": ""
     },
@@ -24182,6 +24208,7 @@
       "call_args": "(x,y,x_axis,y_axis)",
       "call_args_old": "(x,y,x_axis,y_axis)",
       "cimguiname": "ImPlot_PlotToPixels",
+      "conv": "ImVec2",
       "defaults": {
         "x_axis": "-1",
         "y_axis": "-1"
@@ -24189,8 +24216,9 @@
       "funcname": "PlotToPixels",
       "location": "implot:981",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_PlotToPixels_double",
-      "ret": "ImVec2",
+      "ret": "ImVec2_c",
       "signature": "(double,double,ImAxis,ImAxis)",
       "stname": ""
     }
@@ -24407,7 +24435,7 @@
       "stname": ""
     },
     {
-      "args": "(ImPlotCol idx,const ImVec4 col)",
+      "args": "(ImPlotCol idx,const ImVec4_c col)",
       "argsT": [
         {
           "name": "idx",
@@ -24419,7 +24447,7 @@
         }
       ],
       "argsoriginal": "(ImPlotCol idx,const ImVec4& col)",
-      "call_args": "(idx,col)",
+      "call_args": "(idx,ConvertToCPP_ImVec4(col))",
       "call_args_old": "(idx,col)",
       "cimguiname": "ImPlot_PushStyleColor",
       "defaults": {},
@@ -24484,7 +24512,7 @@
       "stname": ""
     },
     {
-      "args": "(ImPlotStyleVar idx,const ImVec2 val)",
+      "args": "(ImPlotStyleVar idx,const ImVec2_c val)",
       "argsT": [
         {
           "name": "idx",
@@ -24496,7 +24524,7 @@
         }
       ],
       "argsoriginal": "(ImPlotStyleVar idx,const ImVec2& val)",
-      "call_args": "(idx,val)",
+      "call_args": "(idx,ConvertToCPP_ImVec2(val))",
       "call_args_old": "(idx,val)",
       "cimguiname": "ImPlot_PushStyleVar",
       "defaults": {},
@@ -24571,7 +24599,7 @@
   ],
   "ImPlot_RenderColorBar": [
     {
-      "args": "(const ImU32* colors,int size,ImDrawList* DrawList,const ImRect bounds,bool vert,bool reversed,bool continuous)",
+      "args": "(const ImU32* colors,int size,ImDrawList* DrawList,const ImRect_c bounds,bool vert,bool reversed,bool continuous)",
       "argsT": [
         {
           "name": "colors",
@@ -24604,7 +24632,7 @@
         }
       ],
       "argsoriginal": "(const ImU32* colors,int size,ImDrawList& DrawList,const ImRect& bounds,bool vert,bool reversed,bool continuous)",
-      "call_args": "(colors,size,*DrawList,bounds,vert,reversed,continuous)",
+      "call_args": "(colors,size,*DrawList,ConvertToCPP_ImRect(bounds),vert,reversed,continuous)",
       "call_args_old": "(colors,size,*DrawList,bounds,vert,reversed,continuous)",
       "cimguiname": "ImPlot_RenderColorBar",
       "defaults": {},
@@ -24759,14 +24787,16 @@
       "call_args": "(t,cmap)",
       "call_args_old": "(t,cmap)",
       "cimguiname": "ImPlot_SampleColormap",
+      "conv": "ImVec4",
       "defaults": {
         "cmap": "-1"
       },
       "funcname": "SampleColormap",
       "location": "implot:1192",
       "namespace": "ImPlot",
+      "nonUDT": 1,
       "ov_cimguiname": "ImPlot_SampleColormap",
-      "ret": "ImVec4",
+      "ret": "ImVec4_c",
       "signature": "(float,ImPlotColormap)",
       "stname": ""
     }
@@ -25046,7 +25076,7 @@
   ],
   "ImPlot_SetNextErrorBarStyle": [
     {
-      "args": "(const ImVec4 col,float size,float weight)",
+      "args": "(const ImVec4_c col,float size,float weight)",
       "argsT": [
         {
           "name": "col",
@@ -25062,7 +25092,7 @@
         }
       ],
       "argsoriginal": "(const ImVec4& col=ImVec4(0,0,0,-1),float size=-1,float weight=-1)",
-      "call_args": "(col,size,weight)",
+      "call_args": "(ConvertToCPP_ImVec4(col),size,weight)",
       "call_args_old": "(col,size,weight)",
       "cimguiname": "ImPlot_SetNextErrorBarStyle",
       "defaults": {
@@ -25081,7 +25111,7 @@
   ],
   "ImPlot_SetNextFillStyle": [
     {
-      "args": "(const ImVec4 col,float alpha_mod)",
+      "args": "(const ImVec4_c col,float alpha_mod)",
       "argsT": [
         {
           "name": "col",
@@ -25093,7 +25123,7 @@
         }
       ],
       "argsoriginal": "(const ImVec4& col=ImVec4(0,0,0,-1),float alpha_mod=-1)",
-      "call_args": "(col,alpha_mod)",
+      "call_args": "(ConvertToCPP_ImVec4(col),alpha_mod)",
       "call_args_old": "(col,alpha_mod)",
       "cimguiname": "ImPlot_SetNextFillStyle",
       "defaults": {
@@ -25111,7 +25141,7 @@
   ],
   "ImPlot_SetNextLineStyle": [
     {
-      "args": "(const ImVec4 col,float weight)",
+      "args": "(const ImVec4_c col,float weight)",
       "argsT": [
         {
           "name": "col",
@@ -25123,7 +25153,7 @@
         }
       ],
       "argsoriginal": "(const ImVec4& col=ImVec4(0,0,0,-1),float weight=-1)",
-      "call_args": "(col,weight)",
+      "call_args": "(ConvertToCPP_ImVec4(col),weight)",
       "call_args_old": "(col,weight)",
       "cimguiname": "ImPlot_SetNextLineStyle",
       "defaults": {
@@ -25141,7 +25171,7 @@
   ],
   "ImPlot_SetNextMarkerStyle": [
     {
-      "args": "(ImPlotMarker marker,float size,const ImVec4 fill,float weight,const ImVec4 outline)",
+      "args": "(ImPlotMarker marker,float size,const ImVec4_c fill,float weight,const ImVec4_c outline)",
       "argsT": [
         {
           "name": "marker",
@@ -25165,7 +25195,7 @@
         }
       ],
       "argsoriginal": "(ImPlotMarker marker=-1,float size=-1,const ImVec4& fill=ImVec4(0,0,0,-1),float weight=-1,const ImVec4& outline=ImVec4(0,0,0,-1))",
-      "call_args": "(marker,size,fill,weight,outline)",
+      "call_args": "(marker,size,ConvertToCPP_ImVec4(fill),weight,ConvertToCPP_ImVec4(outline))",
       "call_args_old": "(marker,size,fill,weight,outline)",
       "cimguiname": "ImPlot_SetNextMarkerStyle",
       "defaults": {
@@ -25729,7 +25759,7 @@
   ],
   "ImPlot_ShowAltLegend": [
     {
-      "args": "(const char* title_id,bool vertical,const ImVec2 size,bool interactable)",
+      "args": "(const char* title_id,bool vertical,const ImVec2_c size,bool interactable)",
       "argsT": [
         {
           "name": "title_id",
@@ -25749,7 +25779,7 @@
         }
       ],
       "argsoriginal": "(const char* title_id,bool vertical=true,const ImVec2 size=ImVec2(0,0),bool interactable=true)",
-      "call_args": "(title_id,vertical,size,interactable)",
+      "call_args": "(title_id,vertical,ConvertToCPP_ImVec2(size),interactable)",
       "call_args_old": "(title_id,vertical,size,interactable)",
       "cimguiname": "ImPlot_ShowAltLegend",
       "defaults": {
@@ -25943,7 +25973,7 @@
   ],
   "ImPlot_ShowLegendEntries": [
     {
-      "args": "(ImPlotItemGroup* items,const ImRect legend_bb,bool interactable,const ImVec2 pad,const ImVec2 spacing,bool vertical,ImDrawList* DrawList)",
+      "args": "(ImPlotItemGroup* items,const ImRect_c legend_bb,bool interactable,const ImVec2_c pad,const ImVec2_c spacing,bool vertical,ImDrawList* DrawList)",
       "argsT": [
         {
           "name": "items",
@@ -25977,7 +26007,7 @@
         }
       ],
       "argsoriginal": "(ImPlotItemGroup& items,const ImRect& legend_bb,bool interactable,const ImVec2& pad,const ImVec2& spacing,bool vertical,ImDrawList& DrawList)",
-      "call_args": "(*items,legend_bb,interactable,pad,spacing,vertical,*DrawList)",
+      "call_args": "(*items,ConvertToCPP_ImRect(legend_bb),interactable,ConvertToCPP_ImVec2(pad),ConvertToCPP_ImVec2(spacing),vertical,*DrawList)",
       "call_args_old": "(*items,legend_bb,interactable,pad,spacing,vertical,*DrawList)",
       "cimguiname": "ImPlot_ShowLegendEntries",
       "defaults": {},
@@ -26276,7 +26306,7 @@
   ],
   "ImPlot_TagX": [
     {
-      "args": "(double x,const ImVec4 col,bool round)",
+      "args": "(double x,const ImVec4_c col,bool round)",
       "argsT": [
         {
           "name": "x",
@@ -26292,7 +26322,7 @@
         }
       ],
       "argsoriginal": "(double x,const ImVec4& col,bool round=false)",
-      "call_args": "(x,col,round)",
+      "call_args": "(x,ConvertToCPP_ImVec4(col),round)",
       "call_args_old": "(x,col,round)",
       "cimguiname": "ImPlot_TagX",
       "defaults": {
@@ -26307,7 +26337,7 @@
       "stname": ""
     },
     {
-      "args": "(double x,const ImVec4 col,const char* fmt,...)",
+      "args": "(double x,const ImVec4_c col,const char* fmt,...)",
       "argsT": [
         {
           "name": "x",
@@ -26327,7 +26357,7 @@
         }
       ],
       "argsoriginal": "(double x,const ImVec4& col,const char* fmt,...)",
-      "call_args": "(x,col,fmt,...)",
+      "call_args": "(x,ConvertToCPP_ImVec4(col),fmt,...)",
       "call_args_old": "(x,col,fmt,...)",
       "cimguiname": "ImPlot_TagX",
       "defaults": {},
@@ -26343,7 +26373,7 @@
   ],
   "ImPlot_TagXV": [
     {
-      "args": "(double x,const ImVec4 col,const char* fmt,va_list args)",
+      "args": "(double x,const ImVec4_c col,const char* fmt,va_list args)",
       "argsT": [
         {
           "name": "x",
@@ -26363,7 +26393,7 @@
         }
       ],
       "argsoriginal": "(double x,const ImVec4& col,const char* fmt,va_list args)",
-      "call_args": "(x,col,fmt,args)",
+      "call_args": "(x,ConvertToCPP_ImVec4(col),fmt,args)",
       "call_args_old": "(x,col,fmt,args)",
       "cimguiname": "ImPlot_TagXV",
       "defaults": {},
@@ -26378,7 +26408,7 @@
   ],
   "ImPlot_TagY": [
     {
-      "args": "(double y,const ImVec4 col,bool round)",
+      "args": "(double y,const ImVec4_c col,bool round)",
       "argsT": [
         {
           "name": "y",
@@ -26394,7 +26424,7 @@
         }
       ],
       "argsoriginal": "(double y,const ImVec4& col,bool round=false)",
-      "call_args": "(y,col,round)",
+      "call_args": "(y,ConvertToCPP_ImVec4(col),round)",
       "call_args_old": "(y,col,round)",
       "cimguiname": "ImPlot_TagY",
       "defaults": {
@@ -26409,7 +26439,7 @@
       "stname": ""
     },
     {
-      "args": "(double y,const ImVec4 col,const char* fmt,...)",
+      "args": "(double y,const ImVec4_c col,const char* fmt,...)",
       "argsT": [
         {
           "name": "y",
@@ -26429,7 +26459,7 @@
         }
       ],
       "argsoriginal": "(double y,const ImVec4& col,const char* fmt,...)",
-      "call_args": "(y,col,fmt,...)",
+      "call_args": "(y,ConvertToCPP_ImVec4(col),fmt,...)",
       "call_args_old": "(y,col,fmt,...)",
       "cimguiname": "ImPlot_TagY",
       "defaults": {},
@@ -26445,7 +26475,7 @@
   ],
   "ImPlot_TagYV": [
     {
-      "args": "(double y,const ImVec4 col,const char* fmt,va_list args)",
+      "args": "(double y,const ImVec4_c col,const char* fmt,va_list args)",
       "argsT": [
         {
           "name": "y",
@@ -26465,7 +26495,7 @@
         }
       ],
       "argsoriginal": "(double y,const ImVec4& col,const char* fmt,va_list args)",
-      "call_args": "(y,col,fmt,args)",
+      "call_args": "(y,ConvertToCPP_ImVec4(col),fmt,args)",
       "call_args_old": "(y,col,fmt,args)",
       "cimguiname": "ImPlot_TagYV",
       "defaults": {},
