@@ -1445,6 +1445,19 @@
     "ImVec4": "inherited",
     "ImVector": "inherited"
   },
+  "nonPOD_used": {
+    "ImPlotAxis": true,
+    "ImPlotDateTimeSpec": true,
+    "ImPlotPoint": true,
+    "ImPlotRange": true,
+    "ImPlotRect": true,
+    "ImPlotTick": true,
+    "ImPlotTime": true,
+    "ImRect": "inherited",
+    "ImTextureRef": "inherited",
+    "ImVec2": "inherited",
+    "ImVec4": "inherited"
+  },
   "structs": {
     "Formatter_Time_Data": [
       {
