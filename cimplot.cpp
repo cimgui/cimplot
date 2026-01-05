@@ -370,7 +370,7 @@ CIMGUI_API ImPlotRect* ImPlotRect_ImPlotRect_double(double x_min,double x_max,do
 {
     return IM_NEW(ImPlotRect)(x_min,x_max,y_min,y_max);
 }
-CIMGUI_API bool ImPlotRect_Contains_PlotPoInt(ImPlotRect* self,const ImPlotPoint_c p)
+CIMGUI_API bool ImPlotRect_Contains_PlotPoint(ImPlotRect* self,const ImPlotPoint_c p)
 {
     return self->Contains(ConvertToCPP_ImPlotPoint(p));
 }
@@ -382,7 +382,7 @@ CIMGUI_API ImPlotPoint_c ImPlotRect_Size(ImPlotRect* self)
 {
     return ConvertFromCPP_ImPlotPoint(self->Size());
 }
-CIMGUI_API ImPlotPoint_c ImPlotRect_Clamp_PlotPoInt(ImPlotRect* self,const ImPlotPoint_c p)
+CIMGUI_API ImPlotPoint_c ImPlotRect_Clamp_PlotPoint(ImPlotRect* self,const ImPlotPoint_c p)
 {
     return ConvertFromCPP_ImPlotPoint(self->Clamp(ConvertToCPP_ImPlotPoint(p)));
 }
@@ -1592,7 +1592,7 @@ CIMGUI_API ImPlotPoint_c ImPlot_PixelsToPlot_Float(float x,float y,ImAxis x_axis
 {
     return ConvertFromCPP_ImPlotPoint(ImPlot::PixelsToPlot(x,y,x_axis,y_axis));
 }
-CIMGUI_API ImVec2_c ImPlot_PlotToPixels_PlotPoInt(const ImPlotPoint_c plt,ImAxis x_axis,ImAxis y_axis)
+CIMGUI_API ImVec2_c ImPlot_PlotToPixels_PlotPoint(const ImPlotPoint_c plt,ImAxis x_axis,ImAxis y_axis)
 {
     return ConvertFromCPP_ImVec2(ImPlot::PlotToPixels(ConvertToCPP_ImPlotPoint(plt),x_axis,y_axis));
 }

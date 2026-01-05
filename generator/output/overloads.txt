@@ -25,10 +25,10 @@ ImPlotRange_ImPlotRange	2
 1	nil	ImPlotRange_ImPlotRange_Nil ()
 2	nil	ImPlotRange_ImPlotRange_double (double,double)
 ImPlotRect_Clamp	2
-1	ImPlotPoint	ImPlotRect_Clamp_PlotPoInt (const ImPlotPoint)
+1	ImPlotPoint	ImPlotRect_Clamp_PlotPoint (const ImPlotPoint)
 2	ImPlotPoint	ImPlotRect_Clamp_double (double,double)
 ImPlotRect_Contains	2
-1	bool	ImPlotRect_Contains_PlotPoInt (const ImPlotPoint)const
+1	bool	ImPlotRect_Contains_PlotPoint (const ImPlotPoint)const
 2	bool	ImPlotRect_Contains_double (double,double)const
 ImPlotRect_ImPlotRect	2
 1	nil	ImPlotRect_ImPlotRect_Nil ()
@@ -439,7 +439,7 @@ ImPlot_PlotStems	20
 19	void	ImPlot_PlotStems_S64PtrS64Ptr (const char*,const ImS64*,const ImS64*,int,double,ImPlotStemsFlags,int,int)
 20	void	ImPlot_PlotStems_U64PtrU64Ptr (const char*,const ImU64*,const ImU64*,int,double,ImPlotStemsFlags,int,int)
 ImPlot_PlotToPixels	2
-1	ImVec2	ImPlot_PlotToPixels_PlotPoInt (const ImPlotPoint,ImAxis,ImAxis)
+1	ImVec2	ImPlot_PlotToPixels_PlotPoint (const ImPlotPoint,ImAxis,ImAxis)
 2	ImVec2	ImPlot_PlotToPixels_double (double,double,ImAxis,ImAxis)
 ImPlot_PushColormap	2
 1	void	ImPlot_PushColormap_PlotColormap (ImPlotColormap)

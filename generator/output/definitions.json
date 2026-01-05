@@ -2988,7 +2988,7 @@
       "funcname": "Clamp",
       "location": "implot:506",
       "nonUDT": 1,
-      "ov_cimguiname": "ImPlotRect_Clamp_PlotPoInt",
+      "ov_cimguiname": "ImPlotRect_Clamp_PlotPoint",
       "ret": "ImPlotPoint_c",
       "signature": "(const ImPlotPoint)",
       "stname": "ImPlotRect"
@@ -3044,7 +3044,7 @@
       "defaults": {},
       "funcname": "Contains",
       "location": "implot:503",
-      "ov_cimguiname": "ImPlotRect_Contains_PlotPoInt",
+      "ov_cimguiname": "ImPlotRect_Contains_PlotPoint",
       "ret": "bool",
       "signature": "(const ImPlotPoint)const",
       "stname": "ImPlotRect"
@@ -24179,7 +24179,7 @@
       "location": "implot:980",
       "namespace": "ImPlot",
       "nonUDT": 1,
-      "ov_cimguiname": "ImPlot_PlotToPixels_PlotPoInt",
+      "ov_cimguiname": "ImPlot_PlotToPixels_PlotPoint",
       "ret": "ImVec2_c",
       "signature": "(const ImPlotPoint,ImAxis,ImAxis)",
       "stname": ""
