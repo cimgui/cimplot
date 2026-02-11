@@ -149,9 +149,21 @@ end
 local function custom_implementation(outtab,def)
 	if not def.args:match"ImPlotGetter " then return false end
 	local args = def.args:gsub("ImPlotGetter","ImPlotPoint_getter")
-    table.insert(outtab,"CIMGUI_API".." "..def.ret.." "..def.ov_cimguiname..args.."\n")
+    table.insert(outtab,"CIMGUI_API".." "..def.ret.." "..def.ov_cimguiname..args.."//custom implementation\n")
+	--cpp2ffi.prtable(def)
     table.insert(outtab,"{\n")
 	local ngetter = 0
+	---[[
+	local call_args = def.call_args
+	for i,arg in ipairs(def.argsT) do
+		if arg.type == "ImPlotGetter" then
+			ngetter = ngetter + 1
+			table.insert(outtab,"    getter_funcX"..((ngetter==1 and "") or (ngetter==2 and "2") or error"too much getters").." = "..arg.name..";\n")
+			call_args = call_args:gsub(arg.name, ((ngetter==1 and "Wrapper") or (ngetter==2 and "Wrapper2")))
+		end
+	end
+	--]]
+	--[[
 	local call_args = "("
 	for i,arg in ipairs(def.argsT) do
 		if arg.type == "ImPlotGetter" then
@@ -164,6 +176,8 @@ local function custom_implementation(outtab,def)
 		end
 	end
 	call_args = call_args:sub(1,-2)..")"
+	print("call_args",call_args)
+	--]]
 	table.insert(outtab,"    ImPlot::"..def.funcname..call_args..";\n")
     table.insert(outtab,"}\n")
 	return true

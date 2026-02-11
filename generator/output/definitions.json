@@ -12912,7 +12912,6 @@
           "type": "const char*"
         },
         {
-          "custom_type": "ImPlotPoint_getter",
           "name": "getter",
           "type": "ImPlotGetter"
         },
@@ -13450,7 +13449,6 @@
           "type": "const char*"
         },
         {
-          "custom_type": "ImPlotPoint_getter",
           "name": "getter",
           "type": "ImPlotGetter"
         },
@@ -17859,7 +17857,6 @@
           "type": "const char*"
         },
         {
-          "custom_type": "ImPlotPoint_getter",
           "name": "getter",
           "type": "ImPlotGetter"
         },
@@ -20125,7 +20122,6 @@
           "type": "const char*"
         },
         {
-          "custom_type": "ImPlotPoint_getter",
           "name": "getter",
           "type": "ImPlotGetter"
         },
@@ -21839,7 +21835,6 @@
           "type": "const char*"
         },
         {
-          "custom_type": "ImPlotPoint_getter",
           "name": "getter1",
           "type": "ImPlotGetter"
         },
@@ -21848,7 +21843,6 @@
           "type": "void*"
         },
         {
-          "custom_type": "ImPlotPoint_getter",
           "name": "getter2",
           "type": "ImPlotGetter"
         },
@@ -22932,7 +22926,6 @@
           "type": "const char*"
         },
         {
-          "custom_type": "ImPlotPoint_getter",
           "name": "getter",
           "type": "ImPlotGetter"
         },
