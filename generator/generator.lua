@@ -143,13 +143,16 @@ print("IMPLOT_VERSION",implot_version)
 local function custom_header(outtab, def)
 	if not def.args:match"ImPlotGetter " then return false end
 	local args = def.args:gsub("ImPlotGetter","ImPlotPoint_getter")
-	table.insert(outtab,"CIMGUI_API "..def.ret.." ".. def.ov_cimguiname ..args..";//custom generation\n")
-	return true
+	table.insert(outtab,"CIMGUI_API "..def.ret.." ".. def.ov_cimguiname.."_LJ" ..args..";//custom generation\n")
+	return false --true
 end
-local function custom_implementation(outtab,def)
+local function custom_implementation(outtab,def, FP)
 	if not def.args:match"ImPlotGetter " then return false end
 	local args = def.args:gsub("ImPlotGetter","ImPlotPoint_getter")
-    table.insert(outtab,"CIMGUI_API".." "..def.ret.." "..def.ov_cimguiname..args.."//custom implementation\n")
+	local def2 = cpp2ffi.deepcopy(def)
+	def2.ov_cimguiname = def2.ov_cimguiname .. "_LJ"
+	--cpp2ffi.prtable(def2)
+    table.insert(outtab,"CIMGUI_API".." "..def.ret.." "..def.ov_cimguiname.."_LJ"..args.."//custom implementation\n")
 	--cpp2ffi.prtable(def)
     table.insert(outtab,"{\n")
 	local ngetter = 0
@@ -162,6 +165,7 @@ local function custom_implementation(outtab,def)
 			call_args = call_args:gsub(arg.name, ((ngetter==1 and "Wrapper") or (ngetter==2 and "Wrapper2")))
 		end
 	end
+	def2.call_args = call_args
 	--]]
 	--[[
 	local call_args = "("
@@ -178,9 +182,10 @@ local function custom_implementation(outtab,def)
 	call_args = call_args:sub(1,-2)..")"
 	print("call_args",call_args)
 	--]]
-	table.insert(outtab,"    ImPlot::"..def.funcname..call_args..";\n")
+	table.insert(outtab,"    ImPlot::"..def2.funcname..call_args..";\n")
     table.insert(outtab,"}\n")
-	return true
+	FP.defsT[def2.cimguiname.."_LJ"]  = {def2}
+	return false --true
 end
 -------------funtion for parsing implot headers
 local function parseImGuiHeader(header,names)
