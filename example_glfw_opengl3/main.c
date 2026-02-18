@@ -55,7 +55,26 @@ void gui_render() {
     ImGui_ImplOpenGL3_RenderDrawData(igGetDrawData());
 }
 
-gui_update() {
+
+void ImPlotPoint_getterA(void* data, int idx, ImPlotPoint *pp)
+{
+	ImS64 *datat = (ImS64*)data;
+	pp->x = idx;
+	pp->y = datat[idx];
+}
+
+ImPlotPoint ImPlotPoint_getterB(int idx, void* data)
+{
+	ImS64 *datat = (ImS64*)data;
+	ImPlotPoint pp;// = *ImPlotPoint_ImPlotPoint_Nil();
+	pp.x = idx;
+	pp.y = datat[idx];
+	return pp;
+}
+
+
+	
+void gui_update() {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     igNewFrame();
@@ -71,13 +90,32 @@ gui_update() {
     plot_size.x = 500;
     plot_size.y = 300; // Set plot size (width x height)
     
+	ImPlotSpec *specp = ImPlotSpec_ImPlotSpec();
+	ImPlotSpec spec = *specp;
+	//ImPlotSpec spec;
+	// spec.LineColor.x = 1;
+	// spec.LineColor.y = 1;
+	// spec.LineColor.z = 0;
+	// spec.LineColor.w = 1;
+	// spec.LineWeight = 1.0f;
+	// spec.FillColor.x = 1;
+	// spec.FillColor.y = 0.5f;
+	// spec.FillColor.z = 0;
+	// spec.FillColor.w = 1;
+	// spec.FillAlpha = 0.5f;
+	// spec.Marker = ImPlotMarker_Square;
+	// spec.Size = 6;
+	// spec.Stride = sizeof(ImS64);
+	// spec.Flags = ImPlotItemFlags_NoLegend | ImPlotLineFlags_Shaded;
+	
     igBegin("My Window", NULL, 0);
-    
     if (ImPlot_BeginPlot("My Plot",plot_size,0)) { //THIS BREAKS
-        ImPlot_PlotBars_S64PtrInt("My Bar Plot", bar_data, 11,0.67,0,0,0,sizeof(ImS64));
+        ImPlot_PlotBars_S64PtrInt("My Bar Plot", bar_data, 11,0.67,0,spec);// 0,0,sizeof(ImS64));
+		//ImPlot_PlotBarsG("My Bar PlotG", ImPlotPoint_getterA, bar_data,11,0,spec);// 0,0,sizeof(ImS64));
+		ImPlot_PlotBarsG("My Bar PlotH", ImPlotPoint_getterB, bar_data,11,0,spec);// 0,0,sizeof(ImS64));
         ImPlot_EndPlot();
     }
-    
+    ImPlotSpec_destroy(specp);
     //igText("Test");
     //igButton("Test",(struct ImVec2){200,50});
 
