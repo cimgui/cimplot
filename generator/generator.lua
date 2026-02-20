@@ -148,11 +148,12 @@ local function custom_header(outtab, def)
 end
 local function custom_implementation(outtab,def, FP)
 	if not def.args:match"ImPlotGetter " then return false end
-	local args = def.args:gsub("ImPlotGetter","ImPlotPoint_getter")
 	local def2 = cpp2ffi.deepcopy(def)
+	def2.args = def2.args:gsub("ImPlotGetter","ImPlotPoint_getter")
+	def2.signature = def2.signature:gsub("ImPlotGetter","ImPlotPoint_getter")
 	def2.ov_cimguiname = def2.ov_cimguiname .. "_LJ"
 	--cpp2ffi.prtable(def2)
-    table.insert(outtab,"CIMGUI_API".." "..def.ret.." "..def.ov_cimguiname.."_LJ"..args.."//custom implementation\n")
+    table.insert(outtab,"CIMGUI_API".." "..def2.ret.." "..def2.ov_cimguiname..def2.args.."//custom implementation\n")
 	--cpp2ffi.prtable(def)
     table.insert(outtab,"{\n")
 	local ngetter = 0
@@ -163,6 +164,7 @@ local function custom_implementation(outtab,def, FP)
 			ngetter = ngetter + 1
 			table.insert(outtab,"    getter_funcX"..((ngetter==1 and "") or (ngetter==2 and "2") or error"too much getters").." = "..arg.name..";\n")
 			call_args = call_args:gsub(arg.name, ((ngetter==1 and "Wrapper") or (ngetter==2 and "Wrapper2")))
+			def2.argsT[i].type = "ImPlotPoint_getter"
 		end
 	end
 	def2.call_args = call_args
