@@ -48,6 +48,7 @@ local t={
   ImPlotPlot="struct ImPlotPlot",
   ImPlotPoint="struct ImPlotPoint",
   ImPlotPointError="struct ImPlotPointError",
+  ImPlotPolygonFlags="int",
   ImPlotProp="int",
   ImPlotRange="struct ImPlotRange",
   ImPlotRect="struct ImPlotRect",

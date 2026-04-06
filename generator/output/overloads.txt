@@ -33,7 +33,7 @@ ImPlotRect_Contains	2
 ImPlotRect_ImPlotRect	2
 1	nil	ImPlotRect_ImPlotRect_Nil ()
 2	nil	ImPlotRect_ImPlotRect_double (double,double,double,double)
-ImPlotSpec_SetProp	11
+ImPlotSpec_SetProp	13
 1	void	ImPlotSpec_SetProp_Float (ImPlotProp,float)
 2	void	ImPlotSpec_SetProp_double (ImPlotProp,double)
 3	void	ImPlotSpec_SetProp_S8 (ImPlotProp,ImS8)
@@ -44,7 +44,9 @@ ImPlotSpec_SetProp	11
 8	void	ImPlotSpec_SetProp_U32 (ImPlotProp,ImU32)
 9	void	ImPlotSpec_SetProp_S64 (ImPlotProp,ImS64)
 10	void	ImPlotSpec_SetProp_U64 (ImPlotProp,ImU64)
-11	void	ImPlotSpec_SetProp_Vec4 (ImPlotProp,const ImVec4)
+11	void	ImPlotSpec_SetProp_U32Ptr (ImPlotProp,ImU32*)
+12	void	ImPlotSpec_SetProp_FloatPtr (ImPlotProp,float*)
+13	void	ImPlotSpec_SetProp_Vec4 (ImPlotProp,const ImVec4)
 ImPlotTick_ImPlotTick	2
 1	nil	ImPlotTick_ImPlotTick_Nil ()
 2	nil	ImPlotTick_ImPlotTick_double (double,bool,int,bool)
@@ -366,6 +368,17 @@ ImPlot_PlotPieChart	20
 18	void	ImPlot_PlotPieChart_U32PtrStr (const char* const[],const ImU32*,int,double,double,double,const char*,double,const ImPlotSpec)
 19	void	ImPlot_PlotPieChart_S64PtrStr (const char* const[],const ImS64*,int,double,double,double,const char*,double,const ImPlotSpec)
 20	void	ImPlot_PlotPieChart_U64PtrStr (const char* const[],const ImU64*,int,double,double,double,const char*,double,const ImPlotSpec)
+ImPlot_PlotPolygon	10
+1	void	ImPlot_PlotPolygon_FloatPtr (const char*,const float*,const float*,int,const ImPlotSpec)
+2	void	ImPlot_PlotPolygon_doublePtr (const char*,const double*,const double*,int,const ImPlotSpec)
+3	void	ImPlot_PlotPolygon_S8Ptr (const char*,const ImS8*,const ImS8*,int,const ImPlotSpec)
+4	void	ImPlot_PlotPolygon_U8Ptr (const char*,const ImU8*,const ImU8*,int,const ImPlotSpec)
+5	void	ImPlot_PlotPolygon_S16Ptr (const char*,const ImS16*,const ImS16*,int,const ImPlotSpec)
+6	void	ImPlot_PlotPolygon_U16Ptr (const char*,const ImU16*,const ImU16*,int,const ImPlotSpec)
+7	void	ImPlot_PlotPolygon_S32Ptr (const char*,const ImS32*,const ImS32*,int,const ImPlotSpec)
+8	void	ImPlot_PlotPolygon_U32Ptr (const char*,const ImU32*,const ImU32*,int,const ImPlotSpec)
+9	void	ImPlot_PlotPolygon_S64Ptr (const char*,const ImS64*,const ImS64*,int,const ImPlotSpec)
+10	void	ImPlot_PlotPolygon_U64Ptr (const char*,const ImU64*,const ImU64*,int,const ImPlotSpec)
 ImPlot_PlotScatter	20
 1	void	ImPlot_PlotScatter_FloatPtrInt (const char*,const float*,int,double,double,const ImPlotSpec)
 2	void	ImPlot_PlotScatter_doublePtrInt (const char*,const double*,int,double,double,const ImPlotSpec)
@@ -488,4 +501,4 @@ ImPlot_TagX	2
 ImPlot_TagY	2
 1	void	ImPlot_TagY_Bool (double,const ImVec4,bool)
 2	void	ImPlot_TagY_Str (double,const ImVec4,const char*,...)
-430 overloaded
+442 overloaded
