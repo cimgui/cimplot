@@ -1236,6 +1236,7 @@ local t={
     ImTextureRef="inherited",
     ImVec2="inherited",
     ImVec4="inherited"},
+  opaque_structs={},
   structs={
     Formatter_Time_Data={
       [1]={
