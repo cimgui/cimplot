@@ -6198,6 +6198,7 @@
         {
           "name": "buffer",
           "reftoptr": true,
+          "template_orig": "ImVector<float>& buffer",
           "type": "ImVector_float *"
         },
         {
@@ -6232,6 +6233,7 @@
         {
           "name": "buffer",
           "reftoptr": true,
+          "template_orig": "ImVector<double>& buffer",
           "type": "ImVector_double *"
         },
         {
@@ -6266,6 +6268,7 @@
         {
           "name": "buffer",
           "reftoptr": true,
+          "template_orig": "ImVector<ImS8>& buffer",
           "type": "ImVector_ImS8 *"
         },
         {
@@ -6300,6 +6303,7 @@
         {
           "name": "buffer",
           "reftoptr": true,
+          "template_orig": "ImVector<ImU8>& buffer",
           "type": "ImVector_ImU8 *"
         },
         {
@@ -6334,6 +6338,7 @@
         {
           "name": "buffer",
           "reftoptr": true,
+          "template_orig": "ImVector<ImS16>& buffer",
           "type": "ImVector_ImS16 *"
         },
         {
@@ -6368,6 +6373,7 @@
         {
           "name": "buffer",
           "reftoptr": true,
+          "template_orig": "ImVector<ImU16>& buffer",
           "type": "ImVector_ImU16 *"
         },
         {
@@ -6402,6 +6408,7 @@
         {
           "name": "buffer",
           "reftoptr": true,
+          "template_orig": "ImVector<ImS32>& buffer",
           "type": "ImVector_ImS32 *"
         },
         {
@@ -6436,6 +6443,7 @@
         {
           "name": "buffer",
           "reftoptr": true,
+          "template_orig": "ImVector<ImU32>& buffer",
           "type": "ImVector_ImU32 *"
         },
         {
@@ -6470,6 +6478,7 @@
         {
           "name": "buffer",
           "reftoptr": true,
+          "template_orig": "ImVector<ImS64>& buffer",
           "type": "ImVector_ImS64 *"
         },
         {
@@ -6504,6 +6513,7 @@
         {
           "name": "buffer",
           "reftoptr": true,
+          "template_orig": "ImVector<ImU64>& buffer",
           "type": "ImVector_ImU64 *"
         },
         {
