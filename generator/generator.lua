@@ -131,6 +131,7 @@ local function parseImGuiHeader(header,names,modulename)
 		local pre = (stname == "") and (namespace and (namespace=="ImGui" and "ig" or namespace.."_") or "ImPlot_") or stname.."_"
 		return pre..funcname
 	end
+	parser.COMMENTS_GENERATION = COMMENTS_GENERATION
 	parser.cname_overloads = cimgui_overloads
 	parser:set_manuals(cimgui_manuals, modulename)
 	parser.skipped = cimgui_skipped

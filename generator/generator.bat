@@ -13,7 +13,7 @@ set PATH=%PATH%;C:\anima;C:\mingws\i686-7.2.0-release-posix-dwarf-rt_v5-rev1\min
 :: set PATH=%PATH%;C:\luaGL\sources\luajit-master\luajit-master\bin\mingw32;C:\mingw32\bin;
 ::process  files
 :: arg[1] compiler name gcc, clang or cl
-:: arg[2] options as words in one string: internal for imgui_internal generation
+:: arg[2] options as words in one string: internal for imgui_internal generation, comments
 :: examples: "" "internal"
 luajit ./generator.lua gcc "internal"
 
