@@ -201,6 +201,54 @@
       "stname": "ImPlotAnnotationCollection"
     }
   ],
+  "ImPlotAnnotationCollection_Append0": [
+    {
+      "args": "(ImPlotAnnotationCollection* self,const ImVec2_c pos,const ImVec2_c off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotAnnotationCollection*"
+        },
+        {
+          "name": "pos",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "off",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "bg",
+          "type": "ImU32"
+        },
+        {
+          "name": "fg",
+          "type": "ImU32"
+        },
+        {
+          "name": "clamp",
+          "type": "bool"
+        },
+        {
+          "name": "fmt",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(const ImVec2& pos,const ImVec2& off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,...)",
+      "call_args": "(ConvertToCPP_ImVec2(pos),ConvertToCPP_ImVec2(off),bg,fg,clamp,fmt)",
+      "call_args_old": "(pos,off,bg,fg,clamp,fmt)",
+      "cimguiname": "ImPlotAnnotationCollection_Append0",
+      "defaults": {},
+      "funcname": "Append",
+      "isVARG0": true,
+      "location": "implot_internal:477",
+      "namespace": "ImPlotAnnotationCollection",
+      "ov_cimguiname": "ImPlotAnnotationCollection_Append0",
+      "ret": "void",
+      "signature": "(const ImVec2,const ImVec2,ImU32,ImU32,bool,const char*)",
+      "stname": "ImPlotAnnotationCollection"
+    }
+  ],
   "ImPlotAnnotationCollection_AppendV": [
     {
       "args": "(ImPlotAnnotationCollection* self,const ImVec2_c pos,const ImVec2_c off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,va_list args)",
@@ -3875,6 +3923,50 @@
       "ov_cimguiname": "ImPlotTagCollection_Append",
       "ret": "void",
       "signature": "(ImAxis,double,ImU32,ImU32,const char*,...)",
+      "stname": "ImPlotTagCollection"
+    }
+  ],
+  "ImPlotTagCollection_Append0": [
+    {
+      "args": "(ImPlotTagCollection* self,ImAxis axis,double value,ImU32 bg,ImU32 fg,const char* fmt)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "ImPlotTagCollection*"
+        },
+        {
+          "name": "axis",
+          "type": "ImAxis"
+        },
+        {
+          "name": "value",
+          "type": "double"
+        },
+        {
+          "name": "bg",
+          "type": "ImU32"
+        },
+        {
+          "name": "fg",
+          "type": "ImU32"
+        },
+        {
+          "name": "fmt",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(ImAxis axis,double value,ImU32 bg,ImU32 fg,const char* fmt,...)",
+      "call_args": "(axis,value,bg,fg,fmt)",
+      "call_args_old": "(axis,value,bg,fg,fmt)",
+      "cimguiname": "ImPlotTagCollection_Append0",
+      "defaults": {},
+      "funcname": "Append",
+      "isVARG0": true,
+      "location": "implot_internal:533",
+      "namespace": "ImPlotTagCollection",
+      "ov_cimguiname": "ImPlotTagCollection_Append0",
+      "ret": "void",
+      "signature": "(ImAxis,double,ImU32,ImU32,const char*)",
       "stname": "ImPlotTagCollection"
     }
   ],
