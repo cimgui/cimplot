@@ -4935,6 +4935,50 @@
       "stname": ""
     }
   ],
+  "ImPlot_Annotation0": [
+    {
+      "args": "(double x,double y,const ImVec4_c col,const ImVec2_c pix_offset,bool clamp,const char* fmt)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "double"
+        },
+        {
+          "name": "y",
+          "type": "double"
+        },
+        {
+          "name": "col",
+          "type": "const ImVec4"
+        },
+        {
+          "name": "pix_offset",
+          "type": "const ImVec2"
+        },
+        {
+          "name": "clamp",
+          "type": "bool"
+        },
+        {
+          "name": "fmt",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(double x,double y,const ImVec4& col,const ImVec2& pix_offset,bool clamp,const char* fmt,...)",
+      "call_args": "(x,y,ConvertToCPP_ImVec4(col),ConvertToCPP_ImVec2(pix_offset),clamp,fmt)",
+      "call_args_old": "(x,y,col,pix_offset,clamp,fmt)",
+      "cimguiname": "ImPlot_Annotation0",
+      "defaults": {},
+      "funcname": "Annotation",
+      "isVARG0": true,
+      "location": "implot:1088",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_Annotation_Str0",
+      "ret": "void",
+      "signature": "(double,double,const ImVec4,const ImVec2,bool,const char*)",
+      "stname": ""
+    }
+  ],
   "ImPlot_AnnotationV": [
     {
       "args": "(double x,double y,const ImVec4_c col,const ImVec2_c pix_offset,bool clamp,const char* fmt,va_list args)",
@@ -26348,6 +26392,38 @@
       "stname": ""
     }
   ],
+  "ImPlot_TagX0": [
+    {
+      "args": "(double x,const ImVec4_c col,const char* fmt)",
+      "argsT": [
+        {
+          "name": "x",
+          "type": "double"
+        },
+        {
+          "name": "col",
+          "type": "const ImVec4"
+        },
+        {
+          "name": "fmt",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(double x,const ImVec4& col,const char* fmt,...)",
+      "call_args": "(x,ConvertToCPP_ImVec4(col),fmt)",
+      "call_args_old": "(x,col,fmt)",
+      "cimguiname": "ImPlot_TagX0",
+      "defaults": {},
+      "funcname": "TagX",
+      "isVARG0": true,
+      "location": "implot:1093",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_TagX_Str0",
+      "ret": "void",
+      "signature": "(double,const ImVec4,const char*)",
+      "stname": ""
+    }
+  ],
   "ImPlot_TagXV": [
     {
       "args": "(double x,const ImVec4_c col,const char* fmt,va_list args)",
@@ -26447,6 +26523,38 @@
       "ov_cimguiname": "ImPlot_TagY_Str",
       "ret": "void",
       "signature": "(double,const ImVec4,const char*,...)",
+      "stname": ""
+    }
+  ],
+  "ImPlot_TagY0": [
+    {
+      "args": "(double y,const ImVec4_c col,const char* fmt)",
+      "argsT": [
+        {
+          "name": "y",
+          "type": "double"
+        },
+        {
+          "name": "col",
+          "type": "const ImVec4"
+        },
+        {
+          "name": "fmt",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(double y,const ImVec4& col,const char* fmt,...)",
+      "call_args": "(y,ConvertToCPP_ImVec4(col),fmt)",
+      "call_args_old": "(y,col,fmt)",
+      "cimguiname": "ImPlot_TagY0",
+      "defaults": {},
+      "funcname": "TagY",
+      "isVARG0": true,
+      "location": "implot:1098",
+      "namespace": "ImPlot",
+      "ov_cimguiname": "ImPlot_TagY_Str0",
+      "ret": "void",
+      "signature": "(double,const ImVec4,const char*)",
       "stname": ""
     }
   ],
