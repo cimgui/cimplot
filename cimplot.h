@@ -1553,6 +1553,9 @@ CIMGUI_API ImPlotAnnotationCollection* ImPlotAnnotationCollection_ImPlotAnnotati
 CIMGUI_API void ImPlotAnnotationCollection_destroy(ImPlotAnnotationCollection* self);
 CIMGUI_API void ImPlotAnnotationCollection_AppendV(ImPlotAnnotationCollection* self,const ImVec2_c pos,const ImVec2_c off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,va_list args);
 CIMGUI_API void ImPlotAnnotationCollection_Append(ImPlotAnnotationCollection* self,const ImVec2_c pos,const ImVec2_c off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt,...);
+#ifdef CIMGUI_VARGS0
+CIMGUI_API void ImPlotAnnotationCollection_Append0(ImPlotAnnotationCollection* self,const ImVec2_c pos,const ImVec2_c off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt);
+#endif
 CIMGUI_API const char* ImPlotAnnotationCollection_GetText(ImPlotAnnotationCollection* self,int idx);
 CIMGUI_API void ImPlotAnnotationCollection_Reset(ImPlotAnnotationCollection* self);
 CIMGUI_API ImPlotTag* ImPlotTag_ImPlotTag(void);
@@ -1561,6 +1564,9 @@ CIMGUI_API ImPlotTagCollection* ImPlotTagCollection_ImPlotTagCollection(void);
 CIMGUI_API void ImPlotTagCollection_destroy(ImPlotTagCollection* self);
 CIMGUI_API void ImPlotTagCollection_AppendV(ImPlotTagCollection* self,ImAxis axis,double value,ImU32 bg,ImU32 fg,const char* fmt,va_list args);
 CIMGUI_API void ImPlotTagCollection_Append(ImPlotTagCollection* self,ImAxis axis,double value,ImU32 bg,ImU32 fg,const char* fmt,...);
+#ifdef CIMGUI_VARGS0
+CIMGUI_API void ImPlotTagCollection_Append0(ImPlotTagCollection* self,ImAxis axis,double value,ImU32 bg,ImU32 fg,const char* fmt);
+#endif
 CIMGUI_API const char* ImPlotTagCollection_GetText(ImPlotTagCollection* self,int idx);
 CIMGUI_API void ImPlotTagCollection_Reset(ImPlotTagCollection* self);
 CIMGUI_API ImPlotTick* ImPlotTick_ImPlotTick_Nil(void);

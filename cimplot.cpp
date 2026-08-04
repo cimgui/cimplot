@@ -1829,7 +1829,7 @@ CIMGUI_API void ImPlot_Annotation_Str(double x,double y,const ImVec4_c col,const
 #ifdef CIMGUI_VARGS0
 CIMGUI_API void ImPlot_Annotation_Str0(double x,double y,const ImVec4_c col,const ImVec2_c pix_offset,bool clamp,const char* fmt)
 {
-    return ImPlot_Annotation_Str(x,y,col,pix_offset,clamp,fmt);
+    ImPlot_Annotation_Str(x,y,col,pix_offset,clamp,fmt);
 }
 #endif
 CIMGUI_API void ImPlot_AnnotationV(double x,double y,const ImVec4_c col,const ImVec2_c pix_offset,bool clamp,const char* fmt,va_list args)
@@ -1850,7 +1850,7 @@ CIMGUI_API void ImPlot_TagX_Str(double x,const ImVec4_c col,const char* fmt,...)
 #ifdef CIMGUI_VARGS0
 CIMGUI_API void ImPlot_TagX_Str0(double x,const ImVec4_c col,const char* fmt)
 {
-    return ImPlot_TagX_Str(x,col,fmt);
+    ImPlot_TagX_Str(x,col,fmt);
 }
 #endif
 CIMGUI_API void ImPlot_TagXV(double x,const ImVec4_c col,const char* fmt,va_list args)
@@ -1871,7 +1871,7 @@ CIMGUI_API void ImPlot_TagY_Str(double y,const ImVec4_c col,const char* fmt,...)
 #ifdef CIMGUI_VARGS0
 CIMGUI_API void ImPlot_TagY_Str0(double y,const ImVec4_c col,const char* fmt)
 {
-    return ImPlot_TagY_Str(y,col,fmt);
+    ImPlot_TagY_Str(y,col,fmt);
 }
 #endif
 CIMGUI_API void ImPlot_TagYV(double y,const ImVec4_c col,const char* fmt,va_list args)
@@ -2757,6 +2757,12 @@ CIMGUI_API void ImPlotAnnotationCollection_Append(ImPlotAnnotationCollection* se
     self->AppendV(ConvertToCPP_ImVec2(pos),ConvertToCPP_ImVec2(off),bg,fg,clamp,fmt,args);
     va_end(args);
 }
+#ifdef CIMGUI_VARGS0
+CIMGUI_API void ImPlotAnnotationCollection_Append0(ImPlotAnnotationCollection* self,const ImVec2_c pos,const ImVec2_c off,ImU32 bg,ImU32 fg,bool clamp,const char* fmt)
+{
+    ImPlotAnnotationCollection_Append(self,pos,off,bg,fg,clamp,fmt);
+}
+#endif
 CIMGUI_API const char* ImPlotAnnotationCollection_GetText(ImPlotAnnotationCollection* self,int idx)
 {
     return self->GetText(idx);
@@ -2792,6 +2798,12 @@ CIMGUI_API void ImPlotTagCollection_Append(ImPlotTagCollection* self,ImAxis axis
     self->AppendV(axis,value,bg,fg,fmt,args);
     va_end(args);
 }
+#ifdef CIMGUI_VARGS0
+CIMGUI_API void ImPlotTagCollection_Append0(ImPlotTagCollection* self,ImAxis axis,double value,ImU32 bg,ImU32 fg,const char* fmt)
+{
+    ImPlotTagCollection_Append(self,axis,value,bg,fg,fmt);
+}
+#endif
 CIMGUI_API const char* ImPlotTagCollection_GetText(ImPlotTagCollection* self,int idx)
 {
     return self->GetText(idx);
