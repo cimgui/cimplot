@@ -10,6 +10,14 @@
 #include <time.h>
 typedef struct tm tm;
 
+typedef struct ImPlotAxis_c ImPlotAxis;
+typedef struct ImPlotDateTimeSpec_c ImPlotDateTimeSpec;
+typedef struct ImPlotPoint_c ImPlotPoint;
+typedef struct ImPlotRange_c ImPlotRange;
+typedef struct ImPlotRect_c ImPlotRect;
+typedef struct ImPlotSpec_c ImPlotSpec;
+typedef struct ImPlotTick_c ImPlotTick;
+typedef struct ImPlotTime_c ImPlotTime;
 
 typedef struct ImPlotContext ImPlotContext;
 typedef struct ImPlotTick_c ImPlotTick_c;
