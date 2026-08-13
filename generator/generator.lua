@@ -90,8 +90,8 @@ local function custom_implementation(outtab,def, FP)
 	--cpp2ffi.prtable(def)
     table.insert(outtab,"{\n")
 	local ngetter = 0
-	---[[
-	local call_args = def.call_args
+
+	local call_args = def.call_args_conv or def.call_args
 	for i,arg in ipairs(def.argsT) do
 		if arg.type == "ImPlotGetter" then
 			ngetter = ngetter + 1
@@ -100,23 +100,12 @@ local function custom_implementation(outtab,def, FP)
 			def2.argsT[i].type = "ImPlotPoint_getter"
 		end
 	end
-	def2.call_args = call_args
-	--]]
-	--[[
-	local call_args = "("
-	for i,arg in ipairs(def.argsT) do
-		if arg.type == "ImPlotGetter" then
-			arg.custom_type = "ImPlotPoint_getter"
-			ngetter = ngetter + 1
-			table.insert(outtab,"    getter_funcX"..((ngetter==1 and "") or (ngetter==2 and "2") or error"too much getters").." = "..arg.name..";\n")
-			call_args = call_args..((ngetter==1 and "Wrapper,") or (ngetter==2 and "Wrapper2,"))
-		else
-			call_args = call_args..arg.name..","
-		end
+	if def.call_args_conv then
+		def2.call_args_conv = call_args
+	else
+		def2.call_args = call_args
 	end
-	call_args = call_args:sub(1,-2)..")"
-	print("call_args",call_args)
-	--]]
+
 	table.insert(outtab,"    ImPlot::"..def2.funcname..call_args..";\n")
     table.insert(outtab,"}\n")
 	FP.defsT[def2.cimguiname.."_LJ"]  = {def2}
