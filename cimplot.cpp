@@ -3408,6 +3408,14 @@ CIMGUI_API void ImPlot_RenderColorBar(const ImU32* colors,int size,ImDrawList* D
 {
     return ImPlot::RenderColorBar(colors,size,*DrawList,ConvertToCPP_ImRect(bounds),vert,reversed,continuous);
 }
+CIMGUI_API void ImPlot_AddLineH(ImDrawList* draw_list,float x1,float x2,float y,ImU32 col,float thickness)
+{
+    return ImPlot::AddLineH(draw_list,x1,x2,y,col,thickness);
+}
+CIMGUI_API void ImPlot_AddLineV(ImDrawList* draw_list,float x,float y1,float y2,ImU32 col,float thickness)
+{
+    return ImPlot::AddLineV(draw_list,x,y1,y2,col,thickness);
+}
 CIMGUI_API double ImPlot_NiceNum(double x,bool round)
 {
     return ImPlot::NiceNum(x,round);
