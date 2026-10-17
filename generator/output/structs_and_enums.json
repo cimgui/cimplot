@@ -1480,7 +1480,7 @@
     "ImGuiTableTempData": "inherited",
     "ImGuiTextBuffer": "inherited",
     "ImGuiTextFilter": "inherited",
-    "ImGuiTextRange": "inherited",
+    "ImGuiTextFilterItem": "inherited",
     "ImGuiTypingSelectState": "inherited",
     "ImGuiViewport": "inherited",
     "ImGuiViewportP": "inherited",
